@@ -1,3 +1,2 @@
-class Scan < ActiveRecord::Base
+class Scan < ApplicationRecord
 end
-  

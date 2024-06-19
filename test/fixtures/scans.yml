@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  file_name: MyString
+  file_type: MyString
+  hashcode: MyString
+  file_size: 1
+  upload_date: 2024-06-19 20:19:04
+  vote_up: 1
+  vote_down: 1
+
+two:
+  file_name: MyString
+  file_type: MyString
+  hashcode: MyString
+  file_size: 1
+  upload_date: 2024-06-19 20:19:04
+  vote_up: 1
+  vote_down: 1

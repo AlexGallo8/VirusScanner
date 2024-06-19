@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Scans</h1>
+
+<div id="scans">
+  <% @scans.each do |scan| %>
+    <%= render scan %>
+    <p>
+      <%= link_to "Show this scan", scan %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New scan", new_scan_path %>

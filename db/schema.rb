@@ -10,8 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_13_154819) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_19_181904) do
   create_table "scans", force: :cascade do |t|
+    t.string "file_name"
+    t.string "file_type"
+    t.string "hashcode"
+    t.integer "file_size"
+    t.datetime "upload_date"
+    t.integer "vote_up", default: 0
+    t.integer "vote_down", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

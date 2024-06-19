@@ -1,0 +1,52 @@
+<%= form_with(model: scan) do |form| %>
+  <% if scan.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(scan.errors.count, "error") %> prohibited this scan from being saved:</h2>
+
+      <ul>
+        <% scan.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :file_name, style: "display: block" %>
+    <%= form.text_field :file_name %>
+  </div>
+
+  <div>
+    <%= form.label :file_type, style: "display: block" %>
+    <%= form.text_field :file_type %>
+  </div>
+
+  <div>
+    <%= form.label :hashcode, style: "display: block" %>
+    <%= form.text_field :hashcode %>
+  </div>
+
+  <div>
+    <%= form.label :file_size, style: "display: block" %>
+    <%= form.number_field :file_size %>
+  </div>
+
+  <div>
+    <%= form.label :upload_date, style: "display: block" %>
+    <%= form.datetime_field :upload_date %>
+  </div>
+
+  <div>
+    <%= form.label :vote_up, style: "display: block" %>
+    <%= form.number_field :vote_up %>
+  </div>
+
+  <div>
+    <%= form.label :vote_down, style: "display: block" %>
+    <%= form.number_field :vote_down %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

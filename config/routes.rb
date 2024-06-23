@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :scans
   
   get "/about",to: "about#index", as: :about
+  get "sign_up", to: "registrations#new", as: :sign_up
   root to: "main#index"
+
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

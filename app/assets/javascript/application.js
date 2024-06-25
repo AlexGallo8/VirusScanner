@@ -3,6 +3,23 @@
 //= require_tree .
 
 
+console.log("Hello World from Webpacker")
+
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+  
+signUpButton.addEventListener('click', () => {
+    container.classList.add("right-panel-active");
+});
+  
+signInButton.addEventListener('click', () => {
+    container.classList.remove("right-panel-active");
+});
+  
+
+
 
 // index.html.erb - container for the two boxes 
 document.getElementById('box1').addEventListener('mouseover', function() {
@@ -36,16 +53,4 @@ document.getElementById('box2').addEventListener('mouseout', function() {
 
 // new.html.erb - sign up and sign in buttons animation
 
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-  
-signUpButton.addEventListener('click', () => {
-    container.classList.add("right-panel-active");
-});
-  
-signInButton.addEventListener('click', () => {
-    container.classList.remove("right-panel-active");
-});
-  
 

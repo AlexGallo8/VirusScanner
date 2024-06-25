@@ -2,64 +2,95 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Welcome to VirusScanner</h1>
-            <p class="text-center">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+            <h1 class="text-center text-4xl pb-10">Welcome to VirusScanner</h1>
+            <p class="text-center pb-20">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
         </div>
     </div>
 </div>
 
+
 <div class="row panel-container" >
     <div class="card left-panel" id="box1">
         <div class="card-body">
-            <h5 class="card-title">Scan File</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title text-3xl">Scan File</h5>
+            <p class="card-text"> Upload your file to analyze it</p>
             <form action="/scan" method="post" enctype="multipart/form-data">
-                <input type="file" name="file">
-                <button type="submit">Scan</button>
+                <div class="flex justify-center items-center">
+                    <label class="cursor-pointer py-4">
+                        <input id="dropzone-file" type="file" class="hidden"  />
+                        <div id="d-area"class=" border-dotted border-2  border-gray-300 rounded-md  p-4 ">
+                            <div class="text-center">
+                                <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+                            </div>
+                        </div>
+                        <div id="file-info" class="hidden p-4 text-center">
+                            <p class="text-gray-800"> <span id="file-name"></span></p>
+                            <button class="button-red"> remove </button>
+                        </div>
+                    </label>
+                </div>
+                <button class="button" type="submit">Scan</button>
             </form>
         </div>
     </div>
     <div class="card right-panel"  id="box2">
         <div class="card-body">
-            <h5 class="card-title">Search</h5>
-            <p class="card-text">Search for a hash, domain, IP address, URL or gain additional context and threat landscape visibility </p>
+            <h5 class="card-title text-3xl">Search</h5>
+            <p class="card-text " >Search for a hash, domain, IP address, URL or gain additional context and threat landscape visibility </p>
             <form action="/scan" method="post">
-                <input type="text" name="hashcode">
-                <button type="submit">Scan</button>
+                <input type="text" class="form-input border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Enter your hashcode, domain, IP address, URL ">
+                <button class="button pt-8" type="submit">Scan</button>
             </form>
         </div>
     </div>
 </div>
 
-
 <script>
+document.addEventListener('turbolinks:load', function() {
 
-document.getElementById('box1').addEventListener('mouseover', function() {
-    this.style.width = "100%";
-    this.style.transform = "translateX(30%)";
-    document.getElementById('box2').style.width = "0%";
-    document.getElementById('box2').style.transform = "translateX(100%)";
-});
+    document.getElementById('dropzone-file').addEventListener('change', function(event) {
+    var fileInfoDiv = document.getElementById('file-info');
+    var dropAreaDiv = document.getElementById('d-area');
+    var fileNameSpan = document.getElementById('file-name');
+
+    if (event.target.files.length > 0) {
+        var file = event.target.files[0];
+        var filename = file.name;
+        var filenameWithoutExtension = filename.split('.').slice(0, -1).join('.');
+        fileNameSpan.textContent = filenameWithoutExtension;
+
+        fileInfoDiv.classList.remove('hidden');
+        dropAreaDiv.classList.add('hidden');
+        }
+    });
+
+    document.getElementById('box1').addEventListener('mouseover', function() {
+        this.style.width = "100%";
+        this.style.transform = "translateX(30%)";
+        document.getElementById('box2').style.width = "0%";
+        document.getElementById('box2').style.transform = "translateX(100%)";
+    });
   
-document.getElementById('box1').addEventListener('mouseout', function() {
-    this.style.width = "50%";
-    this.style.transform = "translateX(0%)";
-    document.getElementById('box2').style.width = "50%";
-    document.getElementById('box2').style.transform = "translateX(0%)";
-});
-  
-document.getElementById('box2').addEventListener('mouseover', function() {
-    this.style.width = "100%";
-    this.style.transform = "translateX(-30%)";
-    document.getElementById('box1').style.width = "0%";
-    document.getElementById('box1').style.transform = "translateX(-100%)";
-});
-  
-document.getElementById('box2').addEventListener('mouseout', function() {
-    this.style.width = "50%";
-    this.style.transform = "translateX(0%)";
-    document.getElementById('box1').style.width = "50%";
-    document.getElementById('box1').style.transform = "translateX(0%)";
+    document.getElementById('box1').addEventListener('mouseout', function() {
+        this.style.width = "50%";
+        this.style.transform = "translateX(0%)";
+        document.getElementById('box2').style.width = "50%";
+        document.getElementById('box2').style.transform = "translateX(0%)";
+    });
+    
+    document.getElementById('box2').addEventListener('mouseover', function() {
+        this.style.width = "100%";
+        this.style.transform = "translateX(-30%)";
+        document.getElementById('box1').style.width = "0%";
+        document.getElementById('box1').style.transform = "translateX(-110%)";
+    });
+    
+    document.getElementById('box2').addEventListener('mouseout', function() {
+        this.style.width = "50%";
+        this.style.transform = "translateX(0%)";
+        document.getElementById('box1').style.width = "50%";
+        document.getElementById('box1').style.transform = "translateX(0%)";
+    });
 });
 
 </script>

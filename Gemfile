@@ -20,6 +20,8 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
+# http requests
+gem 'net-http'
 
 # Turbolinks makes navigating your web application faster [
 gem 'turbolinks', '~> 5'
@@ -29,6 +31,8 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
+gem 'json', '~> 2.6', '>= 2.6.3'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

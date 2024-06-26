@@ -1,3 +1,8 @@
+<% if @current_user%>
+    Logged in as <%= @current_user.email %>
+
+    <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+<% end %>
 
 <div class="container">
     <div class="row">
@@ -25,7 +30,7 @@
                         </div>
                         <div id="file-info" class="hidden p-4 text-center">
                             <p class="text-gray-800"> <span id="file-name"></span></p>
-                            <button class="button-red"> remove </button>
+                            <%= link_to "Remove",root_path, class:"button-red" %>
                         </div>
                     </label>
                 </div>
@@ -44,6 +49,7 @@
         </div>
     </div>
 </div>
+
 
 <script>
 document.addEventListener('turbolinks:load', function() {

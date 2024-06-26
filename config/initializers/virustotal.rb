@@ -1,0 +1,2 @@
+# config/initializers/virus_total.rb
+Rails.application.config.virus_total_api_key = '4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6'

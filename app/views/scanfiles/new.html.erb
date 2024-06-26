@@ -1,0 +1,17 @@
+<div>
+  <h1 class="font-bold text-4xl">Scanfiles#new</h1>
+  <p>Find me in app/views/scanfiles/new.html.erb</p>
+</div>
+
+
+
+<h1>Upload a File to Scan</h1>
+<%= form_with url: scanfiles_path, local: true, multipart: true do |form| %>
+  <div>
+    <%= form.label :file %>
+    <%= form.file_field :file %>
+  </div>
+  <div>
+    <%= form.submit "Scan File" %>
+  </div>
+<% end %>

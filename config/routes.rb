@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
+  get 'scanfiles/new'
+  get 'scanfiles/create'
+  get 'scanfiles/show'
   resources :scans
-  
+  delete "sign_out", to: "sessions#destroy", as: :sign_out
   get "/about",to: "about#index", as: :about
   get "sign_up", to: "registrations#new", as: :sign_up
   post "sign_up", to: "registrations#create"
+  
+  get "sign_in", to: "sessions#new", as: :sign_in
+  post "sign_in", to: "sessions#create"
+
   root to: "main#index"
 
   

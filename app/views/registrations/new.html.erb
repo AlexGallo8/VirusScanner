@@ -2,6 +2,17 @@
 
 <div class="containersignup container" id="container">
   <%= form_with model: @user, url: sign_up_path, html: { class: "form-container sign-up-container" } do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
     <h1 class="text-4xl">Create Account</h1>
     <div class="social-container">
       <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>

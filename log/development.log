@@ -41356,3 +41356,20 @@ Migrating to AddFileDataToScans (20240628091712)
   â†³ lib/test_scan.rb:6:in `<main>'
   [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
   â†³ lib/test_scan.rb:6:in `<main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  â†³ lib/test_scan.rb:6:in `<main>'
+  [1m[36mScan Create (2.8ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "virustotal_file_id", "scan_status", "scan_id", "file_data") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", nil], ["file_type", nil], ["hashcode", nil], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2024-06-28 10:28:47.361449"], ["updated_at", "2024-06-28 10:28:47.361449"], ["virustotal_file_id", nil], ["scan_status", nil], ["scan_id", nil], ["file_data", nil]]
+  â†³ lib/test_scan.rb:6:in `<main>'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  â†³ lib/test_scan.rb:6:in `<main>'
+File data decoded: Z§v‰Ş²ææŠÛaŠÇ§¶*Ş~)^¶‹ay«­¢
+ÚuêÏj»uuçìºf«¬7ŸŠwš™ëa¡Û.™ªëk+ajÛZ‘ëªëk*Š{^êìjÆ§j¸.™éíjwkzÛ«ËazË¦¡ø­±é^™éí°Z+jw¦¦Üš®¶²ŠÛ!¢é]­ën®|Ş®„n«,¡ÈšµçmzËl¾&«²—œzË¦²—œş–«·[)yÊÛ`åàÄDD²é
+File data decoded: Z§v‰Ş²ææŠÛaŠÇ§¶*Ş~)^¶‹ay«­¢
+ÚuêÏj»uuçìºf«¬7ŸŠwš™ëa¡Û.™ªëk+ajÛZ‘ëªëk*Š{^êìjÆ§j¸.™éíjwkzÛ«ËazË¦¡ø­±é^™éí°Z+jw¦¦Üš®¶²ŠÛ!¢é]­ën®|Ş®„n«,¡ÈšµçmzËl¾&«²—œzË¦²—œş–«·[)yÊÛ`åàÄDD²é
+File data decoded: Z§v‰Ş²ææŠÛaŠÇ§¶*Ş~)^¶‹ay«­¢
+ÚuêÏj»uuçìºf«¬7ŸŠwš™ëa¡Û.™ªëk+ajÛZ‘ëªëk*Š{^êìjÆ§j¸.™éíjwkzÛ«ËazË¦¡ø­±é^™éí°Z+jw¦¦Üš®¶²ŠÛ!¢é]­ën®|Ş®„n«,¡ÈšµçmzËl¾&«²—œzË¦²—œş–«·[)yÊÛ`åàÄDD²é
+File data decoded: Z§v‰Ş²ææŠÛaŠÇ§¶*Ş~)^¶‹ay«­¢
+ÚuêÏj»uuçìºf«¬7ŸŠwš™ëa¡Û.™ªëk+ajÛZ‘ëªëk*Š{^êìjÆ§j¸.™éíjwkzÛ«ËazË¦¡ø­±é^™éí°Z+jw¦¦Üš®¶²ŠÛ!¢é]­ën®|Ş®„n«,¡ÈšµçmzËl¾&«²—œzË¦²—œş–«·[)yÊÛ`åàÄDD²é
+File data decoded: Z§v‰Ş²ææŠÛaŠÇ§¶*Ş~)^¶‹ay«­¢
+ÚuêÏj»uuçìºf«¬7ŸŠwš™ëa¡Û.™ªëk+ajÛZ‘ëªëk*Š{^êìjÆ§j¸.™éíjwkzÛ«ËazË¦¡ø­±é^™éí°Z+jw¦¦Üš®¶²ŠÛ!¢é]­ën®|Ş®„n«,¡ÈšµçmzËl¾&«²—œzË¦²—œş–«·[)yÊÛ`åàÄDD²é
+File data decoded: r&¨r&¨r&¨

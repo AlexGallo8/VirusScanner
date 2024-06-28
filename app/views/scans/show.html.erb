@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<h1>Scan Report</h1>
 
-<%= render @scan %>
+<% if @scan.scan_id.present? %>
+  <% report = @scan.virustotal_report %>
+  <h2>File: <%= @scan.file.filename %></h2>
+  <h3>Scan ID: <%= @scan.scan_id %></h3>
 
-<div>
-  <%= link_to "Edit this scan", edit_scan_path(@scan) %> |
-  <%= link_to "Back to scans", scans_path %>
-
-  <%= button_to "Destroy this scan", @scan, method: :delete %>
-</div>
+  <h3>Report:</h3>
+  <pre><%= JSON.pretty_generate(report) %></pre>
+<% else %>
+  <p>Scan in progress or failed.</p>
+<% end %>

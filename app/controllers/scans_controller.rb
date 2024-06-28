@@ -12,6 +12,7 @@ class ScansController < ApplicationController
 
   # GET /scans/1 or /scans/1.json
   def show
+    @scan = Scan.find(params[:id])
   end
 
   # GET /scans/new
@@ -25,7 +26,14 @@ class ScansController < ApplicationController
 
   # POST /scans or /scans.json
   def create
-    @scan
+    @scan = Scan.new(scan_params)
+    if @scan.save
+      @scan.save_file
+      VirusTotal.new(@scan).scan_file
+      redirect_to @scan, notice: 'File uploaded and scan initiated.'
+    else
+      render :new
+    end
   end
 
 =begin
@@ -75,6 +83,6 @@ class ScansController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def scan_params
-      params.require(:scan).permit(:file_name, :file_type, :hashcode, :file_size, :upload_date, :vote_up, :vote_down)
+      params.require(:scan).permit(:file_name, :file_type, :hashcode, :file_size, :upload_date, :vote_up, :vote_down, :file_data)
     end
 end

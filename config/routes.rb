@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'scanfiles/new'
   get 'scanfiles/create'
   get 'scanfiles/show'
-  resources :scans
+  resources :scans, only: [:new, :create, :show]
   delete "sign_out", to: "sessions#destroy", as: :sign_out
   get "/about",to: "about#index", as: :about
   get "sign_up", to: "registrations#new", as: :sign_up

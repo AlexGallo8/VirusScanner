@@ -1,38 +1,27 @@
-class ScanfilesController < ApplicationController
-  def new
-  end
 
+class ScanfilesController < ApplicationController
   def create
+    @scan_file = Scanfile.new(scan_file_params)
+    if @scan_file.save
+      virus_total_service = VirusTotalService.new('4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6')
+      response = virus_total_service.upload_file(@scan_file)
+      @scan_file.update(scan_result: response)
+      render json: @scan_file, status: :created
+    else
+      render json: @scan_file.errors, status: :unprocessable_entity
+    end
   end
 
   def show
-  end
-end
-
-
-
-# app/controllers/scans_controller.rb
-class ScanfilesController < ApplicationController
-  def new
+    @scan_file = Scanfile.find(params[:id])
+    virus_total_service = VirusTotalService.new('4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6')
+    response = virus_total_service.get_file_report(@scan_file)
+    render json: response
   end
 
-  def create
-    file = params[:file]
-    file_path = file.tempfile.path
+  private
 
-    service = VirusTotalService.new(Rails.application.config.virus_total_api_key)
-    response = service.scan_file(file_path)
-    
-    scan_id = response['scan_id']
-
-    redirect_to scan_path(scan_id: scan_id)
-  end
-
-  def show
-    scan_id = params[:scan_id]
-    service = VirusTotalService.new(Rails.application.config.virus_total_api_key)
-    response = service.fetch_report(scan_id)
-
-    @report = response
+  def scan_file_params
+    params.require(:scan_file).permit(:filename, :file_path)
   end
 end

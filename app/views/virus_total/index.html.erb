@@ -1,0 +1,10 @@
+<!-- app/views/virus_total/index.html.erb -->
+<h1>Scansione VirusTotal</h1>
+
+<%= form_tag(virus_total_scan_path, multipart: true) do %>
+  <div class="form-group">
+    <%= label_tag :file, "Seleziona un file da scansionare" %>
+    <%= file_field_tag :file, class: "form-control-file" %>
+  </div>
+  <%= submit_tag "Scansiona", class: "btn btn-primary" %>
+<% end %>

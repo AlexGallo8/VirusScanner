@@ -1,0 +1,15 @@
+<!-- app/views/virus_total/loading.html.erb -->
+<h1>Analisi in corso</h1>
+
+<div class="text-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Caricamento...</span>
+  </div>
+  <p class="mt-3">Stiamo analizzando il tuo file con VirusTotal. Questo processo potrebbe richiedere alcuni secondi.</p>
+</div>
+
+<script>
+  setTimeout(function() {
+    window.location.href = '<%= virus_total_scan_path %>';
+  }, 15000);  // Reindirizza dopo 15 secondi
+</script>

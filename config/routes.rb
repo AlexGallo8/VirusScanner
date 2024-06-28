@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'scanfiles/new'
-  get 'scanfiles/create'
-  get 'scanfiles/show'
-  resources :scans
+
+  get 'virus_total', to: 'virus_total#index'
+  post 'virus_total/scan', to: 'virus_total#scan'
+  get 'virus_total/result', to: 'virus_total#result'
+  get 'virus_total/loading', to: 'virus_total#loading', as: 'loading_virus_total'
+  resources :scans, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   delete "sign_out", to: "sessions#destroy", as: :sign_out
   get "/about",to: "about#index", as: :about
   get "sign_up", to: "registrations#new", as: :sign_up

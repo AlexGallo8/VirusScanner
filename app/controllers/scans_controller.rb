@@ -7,7 +7,13 @@ class ScansController < ApplicationController
   end
 
   # GET /scans/1 or /scans/1.json
+
   def show
+    @scan = Scan.find(params[:id])
+    virus_total_service = VirusTotalService.new('4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6')
+    response = virus_total_service.get_file_report(@scan)
+    @scan.update(scan_result: response)
+    render json: @scan
   end
 
   # GET /scans/new
@@ -20,6 +26,9 @@ class ScansController < ApplicationController
   end
 
   # POST /scans or /scans.json
+  
+  
+=begin  
   def create
     @scan = Scan.new(scan_params)
 
@@ -31,6 +40,18 @@ class ScansController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @scan.errors, status: :unprocessable_entity }
       end
+    end
+  end
+=end
+  def create
+    @scan = Scan.new(scan_params)
+    if @scan.save
+      virus_total_service = VirusTotalService.new('4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6')
+      response = virus_total_service.upload_file(@scan)
+      @scan.update(scan_result: response)
+      render json: @scan, status: :created
+    else
+      render json: @scan.errors, status: :unprocessable_entity
     end
   end
 

@@ -8,3 +8,12 @@
 
   <%= button_to "Destroy this scan", @scan, method: :delete %>
 </div>
+
+
+
+<!-- app/views/scans/show.html.erb -->
+
+<h1>Dettagli Scansione File</h1>
+<p><strong>Nome File:</strong> <%= @scan.filename %></p>
+<p><strong>Risultati Scansione:</strong></p>
+<pre><%= JSON.pretty_generate(@scan.scan_result) %></pre>

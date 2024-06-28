@@ -1,0 +1,47 @@
+<!-- app/views/virus_total/scan.html.erb -->
+<h1>Risultati della Scansione</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Antivirus</th>
+      <th>Stato</th>
+      <th>Dettagli</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.sort_by { |k, v| v['category'] == 'malicious' ? 0 : 1 }.each do |engine, result| %>
+      <tr>
+        <td><%= engine %></td>
+        <td>
+          <% if result['category'] == 'malicious' %>
+            <span class="text-danger">✗</span>
+          <% else %>
+            <span class="text-success">✓</span>
+          <% end %>
+        </td>
+        <td><%= result['result'] || 'Pulito' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% stats = @results.values.group_by { |r| r['category'] }.transform_values(&:count) %>
+<% total = @results.size %>
+<% malicious = stats['malicious'] || 0 %>
+<% clean = total - malicious %>
+
+<h2>Riepilogo</h2>
+<p>Totale motori: <%= total %></p>
+<p>File pulito: <%= clean %> (<%= (clean.to_f / total * 100).round(2) %>%)</p>
+<p>File sospetto: <%= malicious %> (<%= (malicious.to_f / total * 100).round(2) %>%)</p>
+
+<% threat_level = case malicious
+                  when 0 then "Basso"
+                  when 1..3 then "Medio"
+                  else "Alto"
+                  end %>
+
+<p>Livello di minaccia: <%= threat_level %></p>
+
+<%= link_to "Scansiona un altro file", virus_total_path, class: "btn btn-primary" %>

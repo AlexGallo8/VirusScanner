@@ -1,3 +1,7 @@
+require 'net/http'
+require 'uri'
+require 'json'
+
 class ScansController < ApplicationController
   before_action :set_scan, only: %i[ show edit update destroy ]
 
@@ -21,6 +25,11 @@ class ScansController < ApplicationController
 
   # POST /scans or /scans.json
   def create
+    @scan
+  end
+
+=begin
+  def create
     @scan = Scan.new(scan_params)
 
     respond_to do |format|
@@ -33,6 +42,7 @@ class ScansController < ApplicationController
       end
     end
   end
+=end
 
   # PATCH/PUT /scans/1 or /scans/1.json
   def update

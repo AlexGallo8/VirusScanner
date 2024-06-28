@@ -43991,3 +43991,467 @@ Processing by VirusTotalController#scan as HTML
 Completed 200 OK in 16299ms (Views: 28.7ms | ActiveRecord: 0.1ms | Allocations: 14184)
 
 
+Started GET "/" for 127.0.0.1 at 2024-06-28 16:25:32 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 731)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 1248)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 58.3ms | Allocations: 57194)
+Completed 200 OK in 91ms (Views: 60.8ms | ActiveRecord: 1.1ms | Allocations: 153166)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 16:25:44 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 409)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 9151)
+Completed 200 OK in 43ms (Views: 33.1ms | ActiveRecord: 2.0ms | Allocations: 10278)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-28 16:25:48 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000001196aa3a0 @tempfile=#<Tempfile:/var/folders/qm/g3d2nnbn7p98n6df7558zjzr0000gn/T/RackMultipart20240628-8579-19tv8o1.png>, @content_type="image/png", @original_filename="cybersecurity_12250031.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"cybersecurity_12250031.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Scansiona"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1085)
+  Rendered shared/_navbar.html.erb (Duration: 3.6ms | Allocations: 719)
+  Rendered shared/_flash.html.erb (Duration: 1.9ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 10096)
+Completed 200 OK in 16917ms (Views: 29.2ms | ActiveRecord: 0.1ms | Allocations: 14455)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 16:26:12 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 180)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 713)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 8918)
+Completed 200 OK in 20ms (Views: 13.8ms | ActiveRecord: 0.3ms | Allocations: 9891)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-28 16:27:24 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 63)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 8852)
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 2.0ms | Allocations: 9816)
+
+
+Started POST "/" for 127.0.0.1 at 2024-06-28 16:33:29 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 16:33:39 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 19.8ms | Allocations: 4346)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 4417)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 6.5ms | Allocations: 9603)
+
+
+  
+ActionView::Template::Error (undefined method `javascript_pack_tag' for #<ActionView::Base:0x000000000111c0>
+Did you mean?  javascript_path
+               javascript_tag):
+    18: 
+    19: <div id="scan-results"></div>
+    20: 
+    21: <%= javascript_pack_tag 'virus_total_scan' %>
+  
+app/views/virus_total/index.html.erb:21
+Started GET "/" for 127.0.0.1 at 2024-06-28 16:33:39 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 672)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 1215)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 13828)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.1ms | Allocations: 14910)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 16:33:41 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 29.2ms | Allocations: 4186)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 4257)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.2ms | Allocations: 5222)
+
+
+  
+ActionView::Template::Error (undefined method `javascript_pack_tag' for #<ActionView::Base:0x000000000115f8>
+Did you mean?  javascript_path
+               javascript_tag):
+    18: 
+    19: <div id="scan-results"></div>
+    20: 
+    21: <%= javascript_pack_tag 'virus_total_scan' %>
+  
+app/views/virus_total/index.html.erb:21
+Started GET "/" for 127.0.0.1 at 2024-06-28 16:34:29 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 673)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 1216)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 11081)
+Completed 200 OK in 20ms (Views: 11.6ms | ActiveRecord: 1.9ms | Allocations: 16787)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 16:34:30 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 387)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 9129)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.1ms | Allocations: 10224)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-28 16:34:35 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000000118675ef8 @tempfile=#<Tempfile:/var/folders/qm/g3d2nnbn7p98n6df7558zjzr0000gn/T/RackMultipart20240628-8579-1q1upre.png>, @content_type="image/png", @original_filename="cybersecurity_12250031.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"cybersecurity_12250031.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Scansiona"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 4.9ms | Allocations: 591)
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 9331)
+Completed 200 OK in 16621ms (Views: 32.9ms | ActiveRecord: 0.1ms | Allocations: 12462)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-28 16:35:59 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 731)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 1262)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 55.1ms | Allocations: 47185)
+Completed 200 OK in 88ms (Views: 57.3ms | ActiveRecord: 1.1ms | Allocations: 143144)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 16:36:02 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 409)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 9151)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 0.2ms | Allocations: 10262)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-28 16:36:06 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000000125b5ed68 @tempfile=#<Tempfile:/var/folders/qm/g3d2nnbn7p98n6df7558zjzr0000gn/T/RackMultipart20240628-9666-ihf59v.png>, @content_type="image/png", @original_filename="cybersecurity_12250031.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"cybersecurity_12250031.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Scansiona"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1082)
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 9822)
+Completed 200 OK in 16402ms (Views: 24.2ms | ActiveRecord: 0.1ms | Allocations: 14056)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 16:36:29 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 180)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 713)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 8918)
+Completed 200 OK in 20ms (Views: 15.3ms | ActiveRecord: 0.2ms | Allocations: 9885)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-28 16:36:33 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000000126e567e0 @tempfile=#<Tempfile:/var/folders/qm/g3d2nnbn7p98n6df7558zjzr0000gn/T/RackMultipart20240628-9666-1r64o9.png>, @content_type="image/png", @original_filename="logo-verde.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"logo-verde.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Scansiona"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 2.0ms | Allocations: 64)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 717)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 9076)
+Completed 200 OK in 17184ms (Views: 26.6ms | ActiveRecord: 0.1ms | Allocations: 12173)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-28 16:37:33 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 675)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 1216)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 10861)
+Completed 200 OK in 24ms (Views: 14.7ms | ActiveRecord: 4.2ms | Allocations: 16539)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 16:37:34 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 387)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 9232)
+Completed 200 OK in 20ms (Views: 16.2ms | ActiveRecord: 0.1ms | Allocations: 10333)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-28 16:37:42 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000000125b045c0 @tempfile=#<Tempfile:/var/folders/qm/g3d2nnbn7p98n6df7558zjzr0000gn/T/RackMultipart20240628-9666-7avpb9.yaml>, @content_type="application/x-yaml", @original_filename="results.yaml", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"results.yaml\"\r\nContent-Type: application/x-yaml\r\n">, "commit"=>"Scansiona"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 4.1ms | Allocations: 592)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 717)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 9435)
+Completed 200 OK in 16499ms (Views: 26.9ms | ActiveRecord: 0.6ms | Allocations: 13065)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-28 17:08:24 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 731)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 1262)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 44407)
+Completed 200 OK in 70ms (Views: 40.6ms | ActiveRecord: 1.1ms | Allocations: 140382)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 17:08:26 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 409)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 9151)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 10256)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-28 17:08:31 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000010dc62268 @tempfile=#<Tempfile:/var/folders/qm/g3d2nnbn7p98n6df7558zjzr0000gn/T/RackMultipart20240628-11773-14e4zcf.png>, @content_type="image/png", @original_filename="cybersecurity_12250031.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"cybersecurity_12250031.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Scansiona"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 3.4ms | Allocations: 622)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 9363)
+Completed 200 OK in 2432ms (Views: 23.1ms | ActiveRecord: 1.7ms | Allocations: 12831)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-28 17:11:10 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 675)
+  Rendered shared/_navbar.html.erb (Duration: 12.0ms | Allocations: 1217)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | Allocations: 11092)
+Completed 200 OK in 68ms (Views: 45.1ms | ActiveRecord: 4.7ms | Allocations: 16776)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 17:11:12 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 387)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 9129)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.1ms | Allocations: 10248)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-28 17:11:16 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000010cea8eb0 @tempfile=#<Tempfile:/var/folders/qm/g3d2nnbn7p98n6df7558zjzr0000gn/T/RackMultipart20240628-11773-az3opi.png>, @content_type="image/png", @original_filename="cybersecurity_12250031.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"cybersecurity_12250031.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Scansiona"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1054)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 9794)
+Completed 200 OK in 2086ms (Views: 18.8ms | ActiveRecord: 0.1ms | Allocations: 15982)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-28 17:11:22 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 63)
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | Allocations: 716)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 8824)
+Completed 200 OK in 30ms (Views: 24.3ms | ActiveRecord: 0.3ms | Allocations: 9791)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 17:11:24 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 180)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 713)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 8953)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 9896)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-28 17:11:27 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000010cd3ca18 @tempfile=#<Tempfile:/var/folders/qm/g3d2nnbn7p98n6df7558zjzr0000gn/T/RackMultipart20240628-11773-jupfvr.png>, @content_type="image/png", @original_filename="cybersecurity_12250031.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"cybersecurity_12250031.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Scansiona"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 0.9ms | Allocations: 526)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 713)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 9437)
+Completed 200 OK in 2245ms (Views: 20.4ms | ActiveRecord: 0.1ms | Allocations: 15330)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-28 17:11:31 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 63)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 714)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 8808)
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 0.1ms | Allocations: 9785)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-28 17:11:32 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 179)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 713)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 8918)
+Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 0.1ms | Allocations: 9876)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-28 17:11:36 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000010da28df8 @tempfile=#<Tempfile:/var/folders/qm/g3d2nnbn7p98n6df7558zjzr0000gn/T/RackMultipart20240628-11773-kbxv3m.yaml>, @content_type="application/x-yaml", @original_filename="results.yaml", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"results.yaml\"\r\nContent-Type: application/x-yaml\r\n">, "commit"=>"Scansiona"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 1.8ms | Allocations: 526)
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 713)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 9261)
+Completed 200 OK in 68194ms (Views: 38.4ms | ActiveRecord: 0.1ms | Allocations: 24634)
+
+

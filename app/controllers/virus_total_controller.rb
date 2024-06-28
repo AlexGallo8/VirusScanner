@@ -14,7 +14,7 @@ class VirusTotalController < ApplicationController
     if params[:file].present?
       file_path = params[:file].tempfile.path
       file_id = upload_file(file_path)
-      sleep 15 # Attendi 15 secondi prima di controllare i risultati
+      sleep(5) until get_analysis_result(file_id).size > 0
       @results = get_analysis_result(file_id)
     else
       flash[:alert] = "Per favore, seleziona un file da scansionare."
@@ -54,4 +54,5 @@ class VirusTotalController < ApplicationController
     
     JSON.parse(response.body)['data']['attributes']['results']
   end
+
 end

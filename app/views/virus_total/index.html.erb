@@ -1,10 +1,88 @@
-<!-- app/views/virus_total/index.html.erb -->
-<h1>Scansione VirusTotal</h1>
+<div class=" card flex justify-center items-center mx-auto ">
+  <h1 class="text-center mb-4">Scansione VirusTotal</h1>
+  <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+    <label class="cursor-pointer py-4 w-full">
+      <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+      <div id="d-area" class="border-dotted border-2 border-gray-300 rounded-md p-4 text-center">
+        <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+      </div>
+      <div id="file-info" class="hidden p-4 text-center">
+        <p class="text-gray-800"><span id="file-name"></span></p>
+        <%= link_to "Remove", virus_total_path, class: "button-red" %>
+      </div>
+    </label>
+    <%= submit_tag "Scansiona", class: "btn btn-primary mt-4" %>
+  <% end %>
+</div>
 
-<%= form_tag(virus_total_scan_path, multipart: true) do %>
-  <div class="form-group">
-    <%= label_tag :file, "Seleziona un file da scansionare" %>
-    <%= file_field_tag :file, class: "form-control-file" %>
-  </div>
-  <%= submit_tag "Scansiona", class: "btn btn-primary" %>
-<% end %>
+
+<script>
+document.addEventListener('turbolinks:load', function() {
+
+    document.getElementById('dropzone-file').addEventListener('change', function(event) {
+    var fileInfoDiv = document.getElementById('file-info');
+    var dropAreaDiv = document.getElementById('d-area');
+    var fileNameSpan = document.getElementById('file-name');
+
+    if (event.target.files.length > 0) {
+        var file = event.target.files[0];
+        var filename = file.name;
+        var filenameWithoutExtension = filename.split('.').slice(0, -1).join('.');
+        fileNameSpan.textContent = filenameWithoutExtension;
+
+        fileInfoDiv.classList.remove('hidden');
+        dropAreaDiv.classList.add('hidden');
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const dropArea = document.getElementById('d-area');
+  const fileInput = document.getElementById('dropzone-file');
+  const fileInfo = document.getElementById('file-info');
+  const fileNameDisplay = document.getElementById('file-name');
+
+  // Prevenire il comportamento di default per gli eventi dragover e drop
+  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, preventDefaults, false);
+  });
+
+  function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  // Evidenziare la dropzone quando un file è trascinato sopra
+  ['dragenter', 'dragover'].forEach(eventName => {
+    dropArea.addEventListener(eventName, highlight, false);
+  });
+
+  ['dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, unhighlight, false);
+  });
+
+  function highlight(e) {
+    dropArea.classList.add('border-blue-500'); // Cambia il colore del bordo quando si trascina un file sopra
+  }
+
+  function unhighlight(e) {
+    dropArea.classList.remove('border-blue-500'); // Ripristina il colore del bordo originale
+  }
+
+  // Gestire il file rilasciato
+  dropArea.addEventListener('drop', handleDrop, false);
+
+  function handleDrop(e) {
+    const dt = e.dataTransfer;
+    const files = dt.files;
+
+    handleFiles(files);
+  }
+
+  function handleFiles(files) {
+    fileInput.files = files;
+    fileInfo.style.display = 'block';
+    fileNameDisplay.textContent = files[0].name; // Mostra il nome del file caricato
+  }
+});
+
+</script>

@@ -4,101 +4,86 @@
     <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
 <% end %>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center text-4xl pb-10">Welcome to VirusScanner</h1>
-            <p class="text-center pb-20">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
-        </div>
-    </div>
-</div>
+<div class="container mx-auto px-4 py-8 animate-fade-in">
+  <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+  <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
 
-
-<div class="row panel-container" >
-    <div class="card left-panel" id="box1">
-        <div class="card-body">
-            <h5 class="card-title text-3xl">Scan File</h5>
-            <p class="card-text"> Upload your file to analyze it</p>
-            <form action="/scan" method="post" enctype="multipart/form-data">
-                <div class="flex justify-center items-center">
-                    <label class="cursor-pointer py-4">
-                        <input id="dropzone-file" type="file" class="hidden"  />
-                        <div id="d-area"class=" border-dotted border-2  border-gray-300 rounded-md  p-4 ">
-                            <div class="text-center">
-                                <p class="text-gray-500">Drag and drop your file here or click to browse</p>
-                            </div>
-                        </div>
-                        <div id="file-info" class="hidden p-4 text-center">
-                            <p class="text-gray-800"> <span id="file-name"></span></p>
-                            <%= link_to "Remove",root_path, class:"button-red" %>
-                        </div>
-                    </label>
-                </div>
-                <%= link_to "Scan File", virus_total_path, class: "btn button" %>
-            </form>
+  <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+      <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+      <p class="mb-4">Upload your file to analyze it</p>
+      <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+        <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+           <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+          <label for="dropzone-file" class="cursor-pointer">
+            <div class="text-center" id="d-area">
+              <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+            </div>
+          </label>
         </div>
-    </div>
-    <div class="card right-panel"  id="box2">
-        <div class="card-body">
-            <h5 class="card-title text-3xl">Search</h5>
-            <p class="card-text " >Search for a hash, domain, IP address, URL or gain additional context and threat landscape visibility </p>
-            <form action="/scan" method="post">
-                <input type="text" class="form-input border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Enter your hashcode, domain, IP address, URL ">
-                <button class="button pt-8" type="submit">Scan</button>
-            </form>
+        <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+        <div id="file-info" class="hidden text-center mb-4">
+          <p class="text-gray-800">File: <span id="file-name"></span></p>
+          <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
         </div>
+      </form>
+      <% end %>
     </div>
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+    <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+    <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+    <form action="<%= virus_total_scan_path %>" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="text" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+      <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+    </form>
+  </div>
 </div>
 
 
 
 <script>
 document.addEventListener('turbolinks:load', function() {
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('dropzone-file');
+  const fileInfo = document.getElementById('file-info');
+  const fileName = document.getElementById('file-name');
+  const dArea = document.getElementById('d-area');
 
-    document.getElementById('dropzone-file').addEventListener('change', function(event) {
-    var fileInfoDiv = document.getElementById('file-info');
-    var dropAreaDiv = document.getElementById('d-area');
-    var fileNameSpan = document.getElementById('file-name');
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('border-blue-500');
+  });
 
-    if (event.target.files.length > 0) {
-        var file = event.target.files[0];
-        var filename = file.name;
-        var filenameWithoutExtension = filename.split('.').slice(0, -1).join('.');
-        fileNameSpan.textContent = filenameWithoutExtension;
+  dropzone.addEventListener('dragleave', () => {
+    dropzone.classList.remove('border-blue-500');
+  });
 
-        fileInfoDiv.classList.remove('hidden');
-        dropAreaDiv.classList.add('hidden');
-        }
-    });
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('border-blue-500');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      updateFileInfo();
+    }
+  });
 
-    document.getElementById('box1').addEventListener('mouseover', function() {
-        this.style.width = "100%";
-        this.style.transform = "translateX(30%)";
-        document.getElementById('box2').style.width = "0%";
-        document.getElementById('box2').style.transform = "translateX(100%)";
-    });
-  
-    document.getElementById('box1').addEventListener('mouseout', function() {
-        this.style.width = "50%";
-        this.style.transform = "translateX(0%)";
-        document.getElementById('box2').style.width = "50%";
-        document.getElementById('box2').style.transform = "translateX(0%)";
-    });
-    
-    document.getElementById('box2').addEventListener('mouseover', function() {
-        this.style.width = "100%";
-        this.style.transform = "translateX(-30%)";
-        document.getElementById('box1').style.width = "0%";
-        document.getElementById('box1').style.transform = "translateX(-110%)";
-    });
-    
-    document.getElementById('box2').addEventListener('mouseout', function() {
-        this.style.width = "50%";
-        this.style.transform = "translateX(0%)";
-        document.getElementById('box1').style.width = "50%";
-        document.getElementById('box1').style.transform = "translateX(0%)";
-    });
+  fileInput.addEventListener('change', updateFileInfo);
+
+  function updateFileInfo() {
+    if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+      fileInfo.classList.remove('hidden');
+      dArea.classList.add('hidden');
+    }
+  }
+
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
 });
-
 </script>
-

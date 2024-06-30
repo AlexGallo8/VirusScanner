@@ -15,7 +15,15 @@
   <% end %>
 </div>
 
-
+<div class=" card flex justify-center items-center mx-auto ">
+  <h1 class="text-center mb-4">Scansione VirusTotal</h1>
+  <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+    <label class="cursor-pointer py-4 w-full">
+      <%= text_field_tag (:url) %>
+    </label>
+    <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+  <% end %>
+</div>
 <script>
 document.addEventListener('turbolinks:load', function() {
 

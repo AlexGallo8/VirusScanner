@@ -51145,3 +51145,1508 @@ Processing by MainController#index as HTML
 Completed 200 OK in 41ms (Views: 34.1ms | ActiveRecord: 0.3ms | Allocations: 10016)
 
 
+Started GET "/" for 127.0.0.1 at 2024-06-30 16:58:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+Started GET "/" for 127.0.0.1 at 2024-06-30 16:58:04 +0200
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 975)
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 249)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 1866)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 2068)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 307)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 329)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 95.0ms | Allocations: 87610)
+  Rendered layout layouts/application.html.erb (Duration: 100.6ms | Allocations: 91135)
+Completed 200 OK in 98ms (Views: 95.2ms | ActiveRecord: 0.7ms | Allocations: 88910)
+
+
+Completed 200 OK in 161ms (Views: 104.1ms | ActiveRecord: 2.7ms | Allocations: 114664)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-30 16:58:12 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000011630adb0 @tempfile=#<Tempfile:/var/folders/qm/g3d2nnbn7p98n6df7558zjzr0000gn/T/RackMultipart20240630-49462-17siw57.dmg>, @content_type="application/x-diskcopy", @original_filename="gpt4all-installer-darwin.dmg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"gpt4all-installer-darwin.dmg\"\r\nContent-Type: application/x-diskcopy\r\n">, "commit"=>"Scansiona"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+Started GET "/" for 127.0.0.1 at 2024-06-30 16:58:20 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 251)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 689)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 9240)
+Completed 200 OK in 35ms (Views: 30.4ms | ActiveRecord: 0.2ms | Allocations: 10187)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-30 16:58:28 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+Redirected to http://127.0.0.1:3000/virus_total
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms | Allocations: 946)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-30 16:58:28 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 782)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 686)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 9494)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.1ms | Allocations: 10530)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1202)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 686)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 9912)
+Completed 200 OK in 93290ms (Views: 43.8ms | ActiveRecord: 0.1ms | Allocations: 69835)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:01:22 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 854)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 1310)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 11087)
+Completed 200 OK in 34ms (Views: 22.1ms | ActiveRecord: 4.7ms | Allocations: 14681)
+
+
+Started POST "/scan" for 127.0.0.1 at 2024-06-30 17:01:33 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/scan"):
+  
+Started POST "/scan" for 127.0.0.1 at 2024-06-30 17:02:56 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/scan"):
+  
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:06:53 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 1314)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 11224)
+Completed 200 OK in 33ms (Views: 19.9ms | ActiveRecord: 6.0ms | Allocations: 14809)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:07:12 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1387)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | Allocations: 1469)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.4ms | Allocations: 5071)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% if @current_user%>
+    Logged in as <%= @current_user.email %>
+
+    <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+<% end %>
+
+<div class="container mx-auto px-4 py-8 animate-fade-in">
+  <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+  <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+
+  <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+      <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+      <p class="mb-4">Upload your file to analyze it</p>
+      <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+        <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+           <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+          <label for="dropzone-file" class="cursor-pointer">
+            <div class="text-center" id="d-area">
+              <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+            </div>
+          </label>
+        </div>
+        <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+        <div id="file-info" class="hidden text-center mb-4">
+          <p class="text-gray-800">File: <span id="file-name"></span></p>
+          <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+        </div>
+      </form>
+      <% end %>
+    </div>
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+    <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+    <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+    <form action="<%= virus_total_scan_path, %>" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="url" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+      <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script>
+document.addEventListener('turbolinks:load', function() {
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('dropzone-file');
+  const fileInfo = document.getElementById('file-info');
+  const fileName = document.getElementById('file-name');
+  const dArea = document.getElementById('d-area');
+
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('border-blue-500');
+  });
+
+  dropzone.addEventListener('dragleave', () => {
+    dropzone.classList.remove('border-blue-500');
+  });
+
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('border-blue-500');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      updateFileInfo();
+    }
+  });
+
+  fileInput.addEventListener('change', updateFileInfo);
+
+  function updateFileInfo() {
+    if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+      fileInfo.classList.remove('hidden');
+      dArea.classList.add('hidden');
+    }
+  }
+
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+});
+</script>
+):
+1:    <% if @current_user%>
+2:        Logged in as <%= @current_user.email %>
+3:    
+4:        <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+5:    <% end %>
+6:    
+7:    <div class="container mx-auto px-4 py-8 animate-fade-in">
+8:      <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+9:      <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+10:    
+11:      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+12:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+13:          <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+14:          <p class="mb-4">Upload your file to analyze it</p>
+15:          <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+16:            <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+17:               <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+18:              <label for="dropzone-file" class="cursor-pointer">
+19:                <div class="text-center" id="d-area">
+20:                  <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+21:                </div>
+22:              </label>
+23:            </div>
+24:            <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+25:            <div id="file-info" class="hidden text-center mb-4">
+26:              <p class="text-gray-800">File: <span id="file-name"></span></p>
+27:              <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+28:            </div>
+29:          </form>
+30:          <% end %>
+31:        </div>
+32:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+33:        <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+34:        <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+35:        <form action="<%= virus_total_scan_path, %>" method="post">
+36:          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+37:          <input type="url" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+38:          <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+39:        </form>
+40:      </div>
+41:    </div>
+42:    
+43:    
+44:    
+45:    <script>
+46:    document.addEventListener('turbolinks:load', function() {
+47:      const dropzone = document.getElementById('dropzone');
+48:      const fileInput = document.getElementById('dropzone-file');
+49:      const fileInfo = document.getElementById('file-info');
+50:      const fileName = document.getElementById('file-name');
+51:      const dArea = document.getElementById('d-area');
+52:    
+53:      dropzone.addEventListener('dragover', (e) => {
+54:        e.preventDefault();
+55:        dropzone.classList.add('border-blue-500');
+56:      });
+57:    
+58:      dropzone.addEventListener('dragleave', () => {
+59:        dropzone.classList.remove('border-blue-500');
+60:      });
+61:    
+62:      dropzone.addEventListener('drop', (e) => {
+63:        e.preventDefault();
+64:        dropzone.classList.remove('border-blue-500');
+65:        if (e.dataTransfer.files.length) {
+66:          fileInput.files = e.dataTransfer.files;
+67:          updateFileInfo();
+68:        }
+69:      });
+70:    
+71:      fileInput.addEventListener('change', updateFileInfo);
+72:    
+73:      function updateFileInfo() {
+74:        if (fileInput.files.length > 0) {
+75:          const file = fileInput.files[0];
+76:          fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+77:          fileInfo.classList.remove('hidden');
+78:          dArea.classList.add('hidden');
+79:        }
+80:      }
+81:    
+82:      const mobileMenuButton = document.getElementById('mobile-menu-button');
+83:      const menu = document.getElementById('menu');
+84:    
+85:      mobileMenuButton.addEventListener('click', () => {
+86:        menu.classList.toggle('hidden');
+87:      });
+88:    });
+89:    </script>
+  
+app/views/main/index.html.erb:35: syntax error, unexpected ')', expecting '='
+app/views/main/index.html.erb:91: syntax error, unexpected `end', expecting ')'
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:07:12 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 2168)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | Allocations: 2339)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.9ms | Allocations: 4598)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% if @current_user%>
+    Logged in as <%= @current_user.email %>
+
+    <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+<% end %>
+
+<div class="container mx-auto px-4 py-8 animate-fade-in">
+  <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+  <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+
+  <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+      <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+      <p class="mb-4">Upload your file to analyze it</p>
+      <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+        <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+           <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+          <label for="dropzone-file" class="cursor-pointer">
+            <div class="text-center" id="d-area">
+              <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+            </div>
+          </label>
+        </div>
+        <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+        <div id="file-info" class="hidden text-center mb-4">
+          <p class="text-gray-800">File: <span id="file-name"></span></p>
+          <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+        </div>
+      </form>
+      <% end %>
+    </div>
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+    <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+    <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+    <form action="<%= virus_total_scan_path, %>" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="url" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+      <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script>
+document.addEventListener('turbolinks:load', function() {
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('dropzone-file');
+  const fileInfo = document.getElementById('file-info');
+  const fileName = document.getElementById('file-name');
+  const dArea = document.getElementById('d-area');
+
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('border-blue-500');
+  });
+
+  dropzone.addEventListener('dragleave', () => {
+    dropzone.classList.remove('border-blue-500');
+  });
+
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('border-blue-500');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      updateFileInfo();
+    }
+  });
+
+  fileInput.addEventListener('change', updateFileInfo);
+
+  function updateFileInfo() {
+    if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+      fileInfo.classList.remove('hidden');
+      dArea.classList.add('hidden');
+    }
+  }
+
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+});
+</script>
+):
+1:    <% if @current_user%>
+2:        Logged in as <%= @current_user.email %>
+3:    
+4:        <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+5:    <% end %>
+6:    
+7:    <div class="container mx-auto px-4 py-8 animate-fade-in">
+8:      <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+9:      <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+10:    
+11:      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+12:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+13:          <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+14:          <p class="mb-4">Upload your file to analyze it</p>
+15:          <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+16:            <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+17:               <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+18:              <label for="dropzone-file" class="cursor-pointer">
+19:                <div class="text-center" id="d-area">
+20:                  <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+21:                </div>
+22:              </label>
+23:            </div>
+24:            <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+25:            <div id="file-info" class="hidden text-center mb-4">
+26:              <p class="text-gray-800">File: <span id="file-name"></span></p>
+27:              <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+28:            </div>
+29:          </form>
+30:          <% end %>
+31:        </div>
+32:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+33:        <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+34:        <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+35:        <form action="<%= virus_total_scan_path, %>" method="post">
+36:          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+37:          <input type="url" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+38:          <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+39:        </form>
+40:      </div>
+41:    </div>
+42:    
+43:    
+44:    
+45:    <script>
+46:    document.addEventListener('turbolinks:load', function() {
+47:      const dropzone = document.getElementById('dropzone');
+48:      const fileInput = document.getElementById('dropzone-file');
+49:      const fileInfo = document.getElementById('file-info');
+50:      const fileName = document.getElementById('file-name');
+51:      const dArea = document.getElementById('d-area');
+52:    
+53:      dropzone.addEventListener('dragover', (e) => {
+54:        e.preventDefault();
+55:        dropzone.classList.add('border-blue-500');
+56:      });
+57:    
+58:      dropzone.addEventListener('dragleave', () => {
+59:        dropzone.classList.remove('border-blue-500');
+60:      });
+61:    
+62:      dropzone.addEventListener('drop', (e) => {
+63:        e.preventDefault();
+64:        dropzone.classList.remove('border-blue-500');
+65:        if (e.dataTransfer.files.length) {
+66:          fileInput.files = e.dataTransfer.files;
+67:          updateFileInfo();
+68:        }
+69:      });
+70:    
+71:      fileInput.addEventListener('change', updateFileInfo);
+72:    
+73:      function updateFileInfo() {
+74:        if (fileInput.files.length > 0) {
+75:          const file = fileInput.files[0];
+76:          fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+77:          fileInfo.classList.remove('hidden');
+78:          dArea.classList.add('hidden');
+79:        }
+80:      }
+81:    
+82:      const mobileMenuButton = document.getElementById('mobile-menu-button');
+83:      const menu = document.getElementById('menu');
+84:    
+85:      mobileMenuButton.addEventListener('click', () => {
+86:        menu.classList.toggle('hidden');
+87:      });
+88:    });
+89:    </script>
+  
+app/views/main/index.html.erb:35: syntax error, unexpected ')', expecting '='
+app/views/main/index.html.erb:91: syntax error, unexpected `end', expecting ')'
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:07:26 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1387)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | Allocations: 1469)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.5ms | Allocations: 5065)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% if @current_user%>
+    Logged in as <%= @current_user.email %>
+
+    <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+<% end %>
+
+<div class="container mx-auto px-4 py-8 animate-fade-in">
+  <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+  <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+
+  <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+      <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+      <p class="mb-4">Upload your file to analyze it</p>
+      <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+        <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+           <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+          <label for="dropzone-file" class="cursor-pointer">
+            <div class="text-center" id="d-area">
+              <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+            </div>
+          </label>
+        </div>
+        <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+        <div id="file-info" class="hidden text-center mb-4">
+          <p class="text-gray-800">File: <span id="file-name"></span></p>
+          <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+        </div>
+      </form>
+      <% end %>
+    </div>
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+    <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+    <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+    <form action="<%= virus_total_scan_path, %>" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="text" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+      <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script>
+document.addEventListener('turbolinks:load', function() {
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('dropzone-file');
+  const fileInfo = document.getElementById('file-info');
+  const fileName = document.getElementById('file-name');
+  const dArea = document.getElementById('d-area');
+
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('border-blue-500');
+  });
+
+  dropzone.addEventListener('dragleave', () => {
+    dropzone.classList.remove('border-blue-500');
+  });
+
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('border-blue-500');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      updateFileInfo();
+    }
+  });
+
+  fileInput.addEventListener('change', updateFileInfo);
+
+  function updateFileInfo() {
+    if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+      fileInfo.classList.remove('hidden');
+      dArea.classList.add('hidden');
+    }
+  }
+
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+});
+</script>
+):
+1:    <% if @current_user%>
+2:        Logged in as <%= @current_user.email %>
+3:    
+4:        <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+5:    <% end %>
+6:    
+7:    <div class="container mx-auto px-4 py-8 animate-fade-in">
+8:      <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+9:      <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+10:    
+11:      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+12:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+13:          <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+14:          <p class="mb-4">Upload your file to analyze it</p>
+15:          <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+16:            <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+17:               <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+18:              <label for="dropzone-file" class="cursor-pointer">
+19:                <div class="text-center" id="d-area">
+20:                  <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+21:                </div>
+22:              </label>
+23:            </div>
+24:            <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+25:            <div id="file-info" class="hidden text-center mb-4">
+26:              <p class="text-gray-800">File: <span id="file-name"></span></p>
+27:              <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+28:            </div>
+29:          </form>
+30:          <% end %>
+31:        </div>
+32:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+33:        <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+34:        <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+35:        <form action="<%= virus_total_scan_path, %>" method="post">
+36:          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+37:          <input type="text" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+38:          <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+39:        </form>
+40:      </div>
+41:    </div>
+42:    
+43:    
+44:    
+45:    <script>
+46:    document.addEventListener('turbolinks:load', function() {
+47:      const dropzone = document.getElementById('dropzone');
+48:      const fileInput = document.getElementById('dropzone-file');
+49:      const fileInfo = document.getElementById('file-info');
+50:      const fileName = document.getElementById('file-name');
+51:      const dArea = document.getElementById('d-area');
+52:    
+53:      dropzone.addEventListener('dragover', (e) => {
+54:        e.preventDefault();
+55:        dropzone.classList.add('border-blue-500');
+56:      });
+57:    
+58:      dropzone.addEventListener('dragleave', () => {
+59:        dropzone.classList.remove('border-blue-500');
+60:      });
+61:    
+62:      dropzone.addEventListener('drop', (e) => {
+63:        e.preventDefault();
+64:        dropzone.classList.remove('border-blue-500');
+65:        if (e.dataTransfer.files.length) {
+66:          fileInput.files = e.dataTransfer.files;
+67:          updateFileInfo();
+68:        }
+69:      });
+70:    
+71:      fileInput.addEventListener('change', updateFileInfo);
+72:    
+73:      function updateFileInfo() {
+74:        if (fileInput.files.length > 0) {
+75:          const file = fileInput.files[0];
+76:          fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+77:          fileInfo.classList.remove('hidden');
+78:          dArea.classList.add('hidden');
+79:        }
+80:      }
+81:    
+82:      const mobileMenuButton = document.getElementById('mobile-menu-button');
+83:      const menu = document.getElementById('menu');
+84:    
+85:      mobileMenuButton.addEventListener('click', () => {
+86:        menu.classList.toggle('hidden');
+87:      });
+88:    });
+89:    </script>
+  
+app/views/main/index.html.erb:35: syntax error, unexpected ')', expecting '='
+app/views/main/index.html.erb:91: syntax error, unexpected `end', expecting ')'
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:07:26 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1456)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1538)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 2496)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% if @current_user%>
+    Logged in as <%= @current_user.email %>
+
+    <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+<% end %>
+
+<div class="container mx-auto px-4 py-8 animate-fade-in">
+  <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+  <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+
+  <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+      <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+      <p class="mb-4">Upload your file to analyze it</p>
+      <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+        <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+           <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+          <label for="dropzone-file" class="cursor-pointer">
+            <div class="text-center" id="d-area">
+              <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+            </div>
+          </label>
+        </div>
+        <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+        <div id="file-info" class="hidden text-center mb-4">
+          <p class="text-gray-800">File: <span id="file-name"></span></p>
+          <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+        </div>
+      </form>
+      <% end %>
+    </div>
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+    <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+    <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+    <form action="<%= virus_total_scan_path, %>" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="text" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+      <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script>
+document.addEventListener('turbolinks:load', function() {
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('dropzone-file');
+  const fileInfo = document.getElementById('file-info');
+  const fileName = document.getElementById('file-name');
+  const dArea = document.getElementById('d-area');
+
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('border-blue-500');
+  });
+
+  dropzone.addEventListener('dragleave', () => {
+    dropzone.classList.remove('border-blue-500');
+  });
+
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('border-blue-500');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      updateFileInfo();
+    }
+  });
+
+  fileInput.addEventListener('change', updateFileInfo);
+
+  function updateFileInfo() {
+    if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+      fileInfo.classList.remove('hidden');
+      dArea.classList.add('hidden');
+    }
+  }
+
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+});
+</script>
+):
+1:    <% if @current_user%>
+2:        Logged in as <%= @current_user.email %>
+3:    
+4:        <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+5:    <% end %>
+6:    
+7:    <div class="container mx-auto px-4 py-8 animate-fade-in">
+8:      <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+9:      <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+10:    
+11:      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+12:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+13:          <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+14:          <p class="mb-4">Upload your file to analyze it</p>
+15:          <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+16:            <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+17:               <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+18:              <label for="dropzone-file" class="cursor-pointer">
+19:                <div class="text-center" id="d-area">
+20:                  <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+21:                </div>
+22:              </label>
+23:            </div>
+24:            <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+25:            <div id="file-info" class="hidden text-center mb-4">
+26:              <p class="text-gray-800">File: <span id="file-name"></span></p>
+27:              <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+28:            </div>
+29:          </form>
+30:          <% end %>
+31:        </div>
+32:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+33:        <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+34:        <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+35:        <form action="<%= virus_total_scan_path, %>" method="post">
+36:          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+37:          <input type="text" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+38:          <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+39:        </form>
+40:      </div>
+41:    </div>
+42:    
+43:    
+44:    
+45:    <script>
+46:    document.addEventListener('turbolinks:load', function() {
+47:      const dropzone = document.getElementById('dropzone');
+48:      const fileInput = document.getElementById('dropzone-file');
+49:      const fileInfo = document.getElementById('file-info');
+50:      const fileName = document.getElementById('file-name');
+51:      const dArea = document.getElementById('d-area');
+52:    
+53:      dropzone.addEventListener('dragover', (e) => {
+54:        e.preventDefault();
+55:        dropzone.classList.add('border-blue-500');
+56:      });
+57:    
+58:      dropzone.addEventListener('dragleave', () => {
+59:        dropzone.classList.remove('border-blue-500');
+60:      });
+61:    
+62:      dropzone.addEventListener('drop', (e) => {
+63:        e.preventDefault();
+64:        dropzone.classList.remove('border-blue-500');
+65:        if (e.dataTransfer.files.length) {
+66:          fileInput.files = e.dataTransfer.files;
+67:          updateFileInfo();
+68:        }
+69:      });
+70:    
+71:      fileInput.addEventListener('change', updateFileInfo);
+72:    
+73:      function updateFileInfo() {
+74:        if (fileInput.files.length > 0) {
+75:          const file = fileInput.files[0];
+76:          fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+77:          fileInfo.classList.remove('hidden');
+78:          dArea.classList.add('hidden');
+79:        }
+80:      }
+81:    
+82:      const mobileMenuButton = document.getElementById('mobile-menu-button');
+83:      const menu = document.getElementById('menu');
+84:    
+85:      mobileMenuButton.addEventListener('click', () => {
+86:        menu.classList.toggle('hidden');
+87:      });
+88:    });
+89:    </script>
+  
+app/views/main/index.html.erb:35: syntax error, unexpected ')', expecting '='
+app/views/main/index.html.erb:91: syntax error, unexpected `end', expecting ')'
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:07:27 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1458)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 1540)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 2500)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% if @current_user%>
+    Logged in as <%= @current_user.email %>
+
+    <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+<% end %>
+
+<div class="container mx-auto px-4 py-8 animate-fade-in">
+  <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+  <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+
+  <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+      <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+      <p class="mb-4">Upload your file to analyze it</p>
+      <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+        <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+           <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+          <label for="dropzone-file" class="cursor-pointer">
+            <div class="text-center" id="d-area">
+              <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+            </div>
+          </label>
+        </div>
+        <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+        <div id="file-info" class="hidden text-center mb-4">
+          <p class="text-gray-800">File: <span id="file-name"></span></p>
+          <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+        </div>
+      </form>
+      <% end %>
+    </div>
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+    <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+    <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+    <form action="<%= virus_total_scan_path, %>" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="text" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+      <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script>
+document.addEventListener('turbolinks:load', function() {
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('dropzone-file');
+  const fileInfo = document.getElementById('file-info');
+  const fileName = document.getElementById('file-name');
+  const dArea = document.getElementById('d-area');
+
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('border-blue-500');
+  });
+
+  dropzone.addEventListener('dragleave', () => {
+    dropzone.classList.remove('border-blue-500');
+  });
+
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('border-blue-500');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      updateFileInfo();
+    }
+  });
+
+  fileInput.addEventListener('change', updateFileInfo);
+
+  function updateFileInfo() {
+    if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+      fileInfo.classList.remove('hidden');
+      dArea.classList.add('hidden');
+    }
+  }
+
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+});
+</script>
+):
+1:    <% if @current_user%>
+2:        Logged in as <%= @current_user.email %>
+3:    
+4:        <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+5:    <% end %>
+6:    
+7:    <div class="container mx-auto px-4 py-8 animate-fade-in">
+8:      <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+9:      <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+10:    
+11:      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+12:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+13:          <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+14:          <p class="mb-4">Upload your file to analyze it</p>
+15:          <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+16:            <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+17:               <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+18:              <label for="dropzone-file" class="cursor-pointer">
+19:                <div class="text-center" id="d-area">
+20:                  <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+21:                </div>
+22:              </label>
+23:            </div>
+24:            <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+25:            <div id="file-info" class="hidden text-center mb-4">
+26:              <p class="text-gray-800">File: <span id="file-name"></span></p>
+27:              <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+28:            </div>
+29:          </form>
+30:          <% end %>
+31:        </div>
+32:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+33:        <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+34:        <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+35:        <form action="<%= virus_total_scan_path, %>" method="post">
+36:          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+37:          <input type="text" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+38:          <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+39:        </form>
+40:      </div>
+41:    </div>
+42:    
+43:    
+44:    
+45:    <script>
+46:    document.addEventListener('turbolinks:load', function() {
+47:      const dropzone = document.getElementById('dropzone');
+48:      const fileInput = document.getElementById('dropzone-file');
+49:      const fileInfo = document.getElementById('file-info');
+50:      const fileName = document.getElementById('file-name');
+51:      const dArea = document.getElementById('d-area');
+52:    
+53:      dropzone.addEventListener('dragover', (e) => {
+54:        e.preventDefault();
+55:        dropzone.classList.add('border-blue-500');
+56:      });
+57:    
+58:      dropzone.addEventListener('dragleave', () => {
+59:        dropzone.classList.remove('border-blue-500');
+60:      });
+61:    
+62:      dropzone.addEventListener('drop', (e) => {
+63:        e.preventDefault();
+64:        dropzone.classList.remove('border-blue-500');
+65:        if (e.dataTransfer.files.length) {
+66:          fileInput.files = e.dataTransfer.files;
+67:          updateFileInfo();
+68:        }
+69:      });
+70:    
+71:      fileInput.addEventListener('change', updateFileInfo);
+72:    
+73:      function updateFileInfo() {
+74:        if (fileInput.files.length > 0) {
+75:          const file = fileInput.files[0];
+76:          fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+77:          fileInfo.classList.remove('hidden');
+78:          dArea.classList.add('hidden');
+79:        }
+80:      }
+81:    
+82:      const mobileMenuButton = document.getElementById('mobile-menu-button');
+83:      const menu = document.getElementById('menu');
+84:    
+85:      mobileMenuButton.addEventListener('click', () => {
+86:        menu.classList.toggle('hidden');
+87:      });
+88:    });
+89:    </script>
+  
+app/views/main/index.html.erb:35: syntax error, unexpected ')', expecting '='
+app/views/main/index.html.erb:91: syntax error, unexpected `end', expecting ')'
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:07:28 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1458)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1540)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms | Allocations: 2498)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% if @current_user%>
+    Logged in as <%= @current_user.email %>
+
+    <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+<% end %>
+
+<div class="container mx-auto px-4 py-8 animate-fade-in">
+  <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+  <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+
+  <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+      <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+      <p class="mb-4">Upload your file to analyze it</p>
+      <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+        <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+           <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+          <label for="dropzone-file" class="cursor-pointer">
+            <div class="text-center" id="d-area">
+              <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+            </div>
+          </label>
+        </div>
+        <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+        <div id="file-info" class="hidden text-center mb-4">
+          <p class="text-gray-800">File: <span id="file-name"></span></p>
+          <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+        </div>
+      </form>
+      <% end %>
+    </div>
+    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+    <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+    <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+    <form action="<%= virus_total_scan_path, %>" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="text" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+      <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script>
+document.addEventListener('turbolinks:load', function() {
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('dropzone-file');
+  const fileInfo = document.getElementById('file-info');
+  const fileName = document.getElementById('file-name');
+  const dArea = document.getElementById('d-area');
+
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('border-blue-500');
+  });
+
+  dropzone.addEventListener('dragleave', () => {
+    dropzone.classList.remove('border-blue-500');
+  });
+
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('border-blue-500');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      updateFileInfo();
+    }
+  });
+
+  fileInput.addEventListener('change', updateFileInfo);
+
+  function updateFileInfo() {
+    if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+      fileInfo.classList.remove('hidden');
+      dArea.classList.add('hidden');
+    }
+  }
+
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+});
+</script>
+):
+1:    <% if @current_user%>
+2:        Logged in as <%= @current_user.email %>
+3:    
+4:        <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
+5:    <% end %>
+6:    
+7:    <div class="container mx-auto px-4 py-8 animate-fade-in">
+8:      <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+9:      <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
+10:    
+11:      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+12:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+13:          <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+14:          <p class="mb-4">Upload your file to analyze it</p>
+15:          <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+16:            <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+17:               <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
+18:              <label for="dropzone-file" class="cursor-pointer">
+19:                <div class="text-center" id="d-area">
+20:                  <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+21:                </div>
+22:              </label>
+23:            </div>
+24:            <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+25:            <div id="file-info" class="hidden text-center mb-4">
+26:              <p class="text-gray-800">File: <span id="file-name"></span></p>
+27:              <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+28:            </div>
+29:          </form>
+30:          <% end %>
+31:        </div>
+32:        <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+33:        <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+34:        <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+35:        <form action="<%= virus_total_scan_path, %>" method="post">
+36:          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+37:          <input type="text" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
+38:          <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
+39:        </form>
+40:      </div>
+41:    </div>
+42:    
+43:    
+44:    
+45:    <script>
+46:    document.addEventListener('turbolinks:load', function() {
+47:      const dropzone = document.getElementById('dropzone');
+48:      const fileInput = document.getElementById('dropzone-file');
+49:      const fileInfo = document.getElementById('file-info');
+50:      const fileName = document.getElementById('file-name');
+51:      const dArea = document.getElementById('d-area');
+52:    
+53:      dropzone.addEventListener('dragover', (e) => {
+54:        e.preventDefault();
+55:        dropzone.classList.add('border-blue-500');
+56:      });
+57:    
+58:      dropzone.addEventListener('dragleave', () => {
+59:        dropzone.classList.remove('border-blue-500');
+60:      });
+61:    
+62:      dropzone.addEventListener('drop', (e) => {
+63:        e.preventDefault();
+64:        dropzone.classList.remove('border-blue-500');
+65:        if (e.dataTransfer.files.length) {
+66:          fileInput.files = e.dataTransfer.files;
+67:          updateFileInfo();
+68:        }
+69:      });
+70:    
+71:      fileInput.addEventListener('change', updateFileInfo);
+72:    
+73:      function updateFileInfo() {
+74:        if (fileInput.files.length > 0) {
+75:          const file = fileInput.files[0];
+76:          fileName.textContent = file.name.split('.').slice(0, -1).join('.');
+77:          fileInfo.classList.remove('hidden');
+78:          dArea.classList.add('hidden');
+79:        }
+80:      }
+81:    
+82:      const mobileMenuButton = document.getElementById('mobile-menu-button');
+83:      const menu = document.getElementById('menu');
+84:    
+85:      mobileMenuButton.addEventListener('click', () => {
+86:        menu.classList.toggle('hidden');
+87:      });
+88:    });
+89:    </script>
+  
+app/views/main/index.html.erb:35: syntax error, unexpected ')', expecting '='
+app/views/main/index.html.erb:91: syntax error, unexpected `end', expecting ')'
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:07:51 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 1314)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 11385)
+Completed 200 OK in 35ms (Views: 29.3ms | ActiveRecord: 1.3ms | Allocations: 14954)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:08:33 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 1310)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 11107)
+Completed 200 OK in 18ms (Views: 12.3ms | ActiveRecord: 1.3ms | Allocations: 14688)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-30 17:08:47 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+Redirected to http://127.0.0.1:3000/virus_total
+Completed 302 Found in 16ms (ActiveRecord: 0.6ms | Allocations: 907)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-30 17:08:47 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 766)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 687)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 9479)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.1ms | Allocations: 10567)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-30 17:08:55 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+Redirected to http://127.0.0.1:3000/virus_total
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms | Allocations: 915)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-30 17:08:55 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 194)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 683)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 8902)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.1ms | Allocations: 9877)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-06-30 17:10:36 +0200
+Processing by VirusTotalController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1005)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 1318)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 11422)
+Completed 200 OK in 37ms (Views: 21.3ms | ActiveRecord: 6.5ms | Allocations: 15000)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-30 17:10:43 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://genius.com", "commit"=>"Scansiona"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1178)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 686)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 9890)
+Completed 200 OK in 15975ms (Views: 28.7ms | ActiveRecord: 0.3ms | Allocations: 13543)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:13:37 +0200
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:13:37 +0200
+Processing by MainController#index as HTML
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1146)
+  Rendered main/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 793)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 2175)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 1190)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | Allocations: 298)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 320)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 135)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 139)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 20070)
+Completed 200 OK in 43ms (Views: 25.6ms | ActiveRecord: 0.8ms | Allocations: 25609)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 20729)
+Completed 200 OK in 43ms (Views: 25.6ms | ActiveRecord: 9.3ms | Allocations: 25817)
+
+
+Started POST "/" for 127.0.0.1 at 2024-06-30 17:14:04 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/virus_total/scan" for 127.0.0.1 at 2024-06-30 17:15:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/virus_total/scan"):
+  
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:15:03 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1082)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 1313)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 11592)
+Completed 200 OK in 32ms (Views: 15.9ms | ActiveRecord: 5.9ms | Allocations: 15116)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:15:58 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1095)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 1314)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 11606)
+Completed 200 OK in 25ms (Views: 12.9ms | ActiveRecord: 4.6ms | Allocations: 15178)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:16:20 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1082)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 1310)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 11315)
+Completed 200 OK in 18ms (Views: 12.5ms | ActiveRecord: 1.2ms | Allocations: 14900)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:16:20 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 389)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 685)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 9100)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.1ms | Allocations: 10057)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-06-30 17:16:32 +0200
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://genius.com", "commit"=>"Scansiona"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1178)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 9889)
+Completed 200 OK in 15815ms (Views: 42.4ms | ActiveRecord: 0.2ms | Allocations: 13874)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-30 17:16:55 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1086)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 1316)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 11599)
+Completed 200 OK in 34ms (Views: 26.0ms | ActiveRecord: 4.8ms | Allocations: 15188)
+
+

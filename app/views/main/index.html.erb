@@ -32,13 +32,17 @@
     <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
     <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
     <p class="mb-4">Enter a URL to analyze it for potential threats</p>
-    <form action="<%= virus_total_scan_path %>" method="post">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input type="text" class="w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" placeholder="Enter your hashcode, domain, IP address, URL">
-      <button type="submit" class="btn btn-primary mt-4 button">Scan</button>
-    </form>
-  </div>
+    <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <label class="cursor-pointer py-4 w-full">
+    <%= text_field_tag :url, nil, placeholder: "Enter URL here", class:"w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" %>
+    </label>
+    <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+    <% end %>
+    </div>
 </div>
+
+
 
 
 

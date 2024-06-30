@@ -9,7 +9,7 @@ class VirusTotalController < ApplicationController
 
   def index
   end
-
+ 
   def scan
     if params[:file].present?
       file_path = params[:file].tempfile.path

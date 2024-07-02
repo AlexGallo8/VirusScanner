@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   get "sign_in", to: "sessions#new", as: :sign_in
   post "sign_in", to: "sessions#create"
 
+  get '/auth/auth0/callback' => 'auth0#callback'
+  get '/auth/failure' => 'auth0#failure'
+  get '/auth/logout' => 'auth0#logout'
+
   root to: "main#index"
 
   
@@ -24,4 +28,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
 end

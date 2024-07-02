@@ -30,9 +30,10 @@
     <form action="#">
       <h1 class="text-4xl">Sign in</h1>
       <div class="social-container">
-        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <%= button_to 'Login', '/auth/auth0', method: :post, data: { turbo: false } %>
+        <%# <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> %>
       </div>
       <span>or use your account</span>
       <input class="border-solid border-gray-300 rounded form-control" type="email" placeholder="Email" />

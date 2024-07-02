@@ -44,6 +44,7 @@
         <% if Current.user %>
           <span class="block px-3 py-2 text-gray-700">Logged in as <%= Current.user.email %></span>
           <%= button_to "Logout", sign_out_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %>
+          <%# <%= button_to 'Logout', 'auth/logout', method: :get, data: { turbo: false } %> %>
         <% else %>
           <%= link_to "LOG IN / SIGN UP", sign_up_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %>
         <% end %>

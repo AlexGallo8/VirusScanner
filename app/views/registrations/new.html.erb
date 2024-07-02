@@ -1,5 +1,6 @@
 
 
+  <%= button_to 'Login', '/auth/auth0', method: :post, data: { turbo: false } , class: "button"%>
 <div class="containersignup container" id="container">
   <%= form_with model: @user, url: sign_up_path, html: { class: "form-container sign-up-container" } do |form| %>
   <% if @user.errors.any? %>
@@ -15,9 +16,9 @@
 
     <h1 class="text-4xl">Create Account</h1>
     <div class="social-container">
-      <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+      <%# <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
       <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-      <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> %>
     </div>
     <span>or use your email for registration</span>
     <%= form.email_field :email, placeholder: "Email", class: "border-solid border-gray-300 rounded form-control" %>
@@ -30,10 +31,9 @@
     <form action="#">
       <h1 class="text-4xl">Sign in</h1>
       <div class="social-container">
-        <%= button_to 'Login', '/auth/auth0', method: :post, data: { turbo: false } %>
-        <%# <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> %>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
       </div>
       <span>or use your account</span>
       <input class="border-solid border-gray-300 rounded form-control" type="email" placeholder="Email" />
@@ -58,7 +58,6 @@
     </div>
   </div>
 </div>
-
 
 
 <script>

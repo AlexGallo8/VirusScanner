@@ -54474,3 +54474,149 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.0ms | Allocations: 9166)
 
 
+Started GET "/" for ::1 at 2024-11-12 17:03:43 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 94.7ms | Allocations: 1085)
+  Rendered shared/_navbar.html.erb (Duration: 11.7ms | Allocations: 1421)
+  Rendered shared/_flash.html.erb (Duration: 2.8ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 279.1ms | Allocations: 11667)
+Completed 200 OK in 333ms (Views: 316.6ms | ActiveRecord: 0.0ms | Allocations: 12874)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:03:44 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 228)
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 703)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 9090)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 9566)
+
+
+Started GET "/" for ::1 at 2024-11-12 17:08:12 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 382)
+  Rendered shared/_navbar.html.erb (Duration: 4.7ms | Allocations: 683)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 75.7ms | Allocations: 9128)
+Completed 200 OK in 84ms (Views: 77.5ms | ActiveRecord: 0.0ms | Allocations: 9529)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:08:35 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 6.8ms | Allocations: 696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 50.0ms | Allocations: 8766)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms | Allocations: 9166)
+
+
+Started GET "/" for ::1 at 2024-11-12 17:09:35 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 683)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 9125)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.0ms | Allocations: 9524)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:09:39 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 5.1ms | Allocations: 697)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 54.1ms | Allocations: 8782)
+Completed 200 OK in 58ms (Views: 55.9ms | ActiveRecord: 0.0ms | Allocations: 9182)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-12 17:12:54 +0100
+Started GET "/" for 127.0.0.1 at 2024-11-12 17:12:57 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 386)
+  Rendered shared/_navbar.html.erb (Duration: 3.8ms | Allocations: 687)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 136.9ms | Allocations: 9441)
+Completed 200 OK in 148ms (Views: 139.4ms | ActiveRecord: 0.0ms | Allocations: 9749)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-11-12 17:13:00 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 8766)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.0ms | Allocations: 9140)
+
+
+Started GET "/" for ::1 at 2024-11-12 17:13:53 +0100
+Started GET "/" for ::1 at 2024-11-12 17:13:55 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 384)
+  Rendered shared/_navbar.html.erb (Duration: 4.0ms | Allocations: 683)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 54.6ms | Allocations: 9128)
+Completed 200 OK in 59ms (Views: 55.4ms | ActiveRecord: 0.0ms | Allocations: 9434)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:13:58 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 8820)
+Completed 200 OK in 48ms (Views: 45.4ms | ActiveRecord: 0.0ms | Allocations: 9196)
+
+
+Started GET "/" for ::1 at 2024-11-12 17:22:00 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 33.4ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 71.0ms | Allocations: 683)
+  Rendered shared/_flash.html.erb (Duration: 30.9ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 244.2ms | Allocations: 9126)
+Completed 200 OK in 368ms (Views: 290.2ms | ActiveRecord: 0.0ms | Allocations: 9525)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:22:04 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 699)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 8945)
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.0ms | Allocations: 9345)
+
+

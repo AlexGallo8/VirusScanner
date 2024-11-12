@@ -1,0 +1,32 @@
+<h2>Login</h2>
+
+<div id="clerk-login"></div>
+
+<%# <script>
+  // Carica e mostra il widget di login di Clerk
+  const clerk = new Clerk({
+    apiVersion: 2,
+    frontendApi: 'https://fair-gopher-54.clerk.accounts.dev'
+  });
+  clerk.load().then(() => {
+    clerk.mount("#clerk-login", {
+      signIn: true,  // Mostra il modulo di login
+    });
+  });
+</script> %>
+
+<script src="https://cdn.clerk.dev/clerk.js"></script>
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof Clerk !== 'undefined') {
+      Clerk.load({
+        frontendApi: 'https://fair-gopher-54.clerk.accounts.dev',
+      }).then(clerk => {
+        clerk.createSignIn({container: '#clerk-login'});
+      });
+    } else {
+      console.error("Clerk non è stato caricato correttamente.");
+    }
+  });
+</script>
+

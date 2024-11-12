@@ -7,6 +7,18 @@ import "controllers"
 //= require turbolinks
 //= require_tree .
 
+// Clerk API
+import Clerk from '@clerk/clerk-sdk-js';
+
+Clerk.load({
+    apiVersion: 2,
+    frontendApi: 'https://fair-gopher-54.clerk.accounts.dev'
+    })
+  .then(() => {
+    // Si può configurare il widget di login qui
+  });
+
+
 
 console.log("Hello World from Webpacker")
 

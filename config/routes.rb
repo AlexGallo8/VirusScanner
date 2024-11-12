@@ -5,17 +5,30 @@ Rails.application.routes.draw do
   
 
   resources :scans, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  delete "sign_out", to: "sessions#destroy", as: :sign_out
+  #delete "sign_out", to: "sessions#destroy", as: :sign_out
   get "/about",to: "about#index", as: :about
-  get "sign_up", to: "registrations#new", as: :sign_up
-  post "sign_up", to: "registrations#create"
   
-  get "sign_in", to: "sessions#new", as: :sign_in
-  post "sign_in", to: "sessions#create"
+  #------------- old login method -------------#
 
-  get '/auth/auth0/callback' => 'auth0#callback'
-  get '/auth/failure' => 'auth0#failure'
-  get '/auth/logout' => 'auth0#logout'
+  #get "sign_up", to: "registrations#new", as: :sign_up
+  #post "sign_up", to: "registrations#create"
+  
+  #get "sign_in", to: "sessions#new", as: :sign_in
+  #post "sign_in", to: "sessions#create"
+
+  #get '/auth/auth0/callback' => 'auth0#callback'
+  #get '/auth/failure' => 'auth0#failure'
+  #get '/auth/logout' => 'auth0#logout'
+
+  #------------- end -------------#
+
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+
+  get 'dashboard', to: 'dashboard#index'
+
+
 
   root to: "main#index"
 

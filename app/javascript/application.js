@@ -1,73 +1,51 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
 import "controllers"
 
+// window.startClerk = async () => {
+//     try {
+//         if (!window.Clerk) {
+//             console.error('Clerk non è stato caricato correttamente');
+//             return;
+//         }
 
-//= require rails-ujs
-//= require turbolinks
-//= require_tree .
+//         await window.Clerk.load({
+//             // Aggiungi qui le opzioni di configurazione se necessarie
+//         });
 
-// Clerk API
-import Clerk from '@clerk/clerk-sdk-js';
+//         const mountUserButton = () => {
+//             const userButtonEl = document.getElementById('user-button');
+//             if (userButtonEl && !userButtonEl.hasChildNodes()) {
+//                 window.Clerk.mountUserButton(userButtonEl);
+//             }
+//         };
 
-Clerk.load({
-    apiVersion: 2,
-    frontendApi: 'https://fair-gopher-54.clerk.accounts.dev'
-    })
-  .then(() => {
-    // Si può configurare il widget di login qui
-  });
+//         // Usa gli eventi Turbo invece di Turbolinks
+//         document.addEventListener("turbo:load", mountUserButton);
+//         document.addEventListener("turbo:render", mountUserButton);
 
+//         // Montaggio iniziale
+//         mountUserButton();
 
+//         console.log('Clerk inizializzato con successo');
+//     } catch (err) {
+//         console.error('Errore durante l\'inizializzazione di Clerk:', err);
+//     }
+// };
 
-console.log("Hello World from Webpacker")
-
-
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-  
-signUpButton.addEventListener('click', () => {
-    container.classList.add("right-panel-active");
-});
-  
-signInButton.addEventListener('click', () => {
-    container.classList.remove("right-panel-active");
-});
-  
-
-
-
-// index.html.erb - container for the two boxes 
-document.getElementById('box1').addEventListener('mouseover', function() {
-    this.style.width = "100%";
-    this.style.transform = "translateX(30%)";
-    document.getElementById('box2').style.width = "0%";
-    document.getElementById('box2').style.transform = "translateX(100%)";
-});
-  
-document.getElementById('box1').addEventListener('mouseout', function() {
-    this.style.width = "50%";
-    this.style.transform = "translateX(0%)";
-    document.getElementById('box2').style.width = "50%";
-    document.getElementById('box2').style.transform = "translateX(0%)";
-});
-  
-document.getElementById('box2').addEventListener('mouseover', function() {
-    this.style.width = "100%";
-    this.style.transform = "translateX(-30%)";
-    document.getElementById('box1').style.width = "0%";
-    document.getElementById('box1').style.transform = "translateX(-100%)";
-});
-  
-document.getElementById('box2').addEventListener('mouseout', function() {
-    this.style.width = "50%";
-    this.style.transform = "translateX(0%)";
-    document.getElementById('box1').style.width = "50%";
-    document.getElementById('box1').style.transform = "translateX(0%)";
+document.addEventListener("turbo:load", () => {
+    if (window.Clerk) {
+        const userButtonEl = document.getElementById('user-button');
+        if (userButtonEl && !userButtonEl.hasChildNodes()) {
+            window.Clerk.mountUserButton(userButtonEl);
+        }
+    }
 });
 
-
-// new.html.erb - sign up and sign in buttons animation
-
-
+document.addEventListener("turbo:render", () => {
+    if (window.Clerk) {
+        const userButtonEl = document.getElementById('user-button');
+        if (userButtonEl && !userButtonEl.hasChildNodes()) {
+            window.Clerk.mountUserButton(userButtonEl);
+        }
+    }
+});

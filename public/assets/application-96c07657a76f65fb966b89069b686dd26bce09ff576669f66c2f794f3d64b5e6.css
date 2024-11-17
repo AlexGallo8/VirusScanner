@@ -1,0 +1,334 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+*/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+
+ 
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+ 
+
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body {
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-weight: bold;
+  margin: 20px;
+font-size: large;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+span {
+  font-size: 12px;
+}
+
+a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #000000;
+  background-color: #212529;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+.button {
+    border-radius: 20px;
+    border: 1px solid #000000;
+    background-color: #212529;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+  }
+  .button-red{
+    border-radius: 20px;
+    background-color: #b41313;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+  }
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+input {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.containersignup {
+  background-color: #fff;
+  box-shadow:  0 14px 28px rgba(0,0,0,0.25), 
+  0 10px 10px rgba(0,0,0,0.22);;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.containersignup.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.containersignup.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.containersignup.right-panel-active .overlay-container{
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: #212529;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #FFFFFF;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+    transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.containersignup.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.containersignup.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.containersignup.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #DDDDDD;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+/* index.html.erb  pannelli */ 
+
+
+.panel-container {
+  display: flex; /* Imposta il container per usare Flexbox */
+  justify-content: center; /* Allinea gli elementi ai lati opposti */
+  width: 90%; /* Larghezza del container principale */
+  margin: 0px 50px;
+  overflow: hidden; 
+}
+
+.left-panel, .right-panel {
+  width: 40%; /* Larghezza di ciascun pannello (puoi modificare secondo necessità) */
+  padding: 20px; /* Spazio interno per non attaccare il testo ai bordi */
+  flex: 1; /* Fa sì che ciascun pannello prenda la metà dello spazio disponibile */
+  transition: all 0.5s ease; /* Transizione fluida per tutti i cambiamenti */
+  position: relative; /* Necessario per le trasformazioni */
+  height: 500px;
+  opacity: 1; /* Opacità piena quando non c'è hover */
+  visibility: visible; /* Visibilità piena quando non c'è hover */
+}
+
+.left-panel {
+  background-color: #FFFFFF; /* Colore di sfondo per il pannello sinistro */
+  text-align: left; /* Allinea il testo a sinistra */
+  margin-right: 1%;
+  z-index: 1;
+}
+
+.right-panel {
+  background-color: #FFFFFF; /* Colore di sfondo per il pannello destro */
+  text-align: left; /* Allinea il testo a destra */
+  margin-left: 1%; 
+  z-index: 1;
+}
+
+.container:hover .left-panel:not(:hover) {
+  transform: translateX(-100%); /* Sposta il pannello non hover fuori dallo schermo a destra */
+  opacity: 0; 
+  visibility: hidden;
+}
+
+.left-panel:hover, .right-panel:hover {
+  flex-grow: 2; /* Aumenta lo spazio preso dal pannello su cui si fa hover */
+  z-index: 2; /* Alza il z-index per mantenere il pannello hover sopra l'altro */
+}
+
+.container:hover .right-panel:not(:hover) {
+  transform: translateX(100%); /* Sposta il pannello non hover fuori dallo schermo a destra */
+  opacity: 0;
+  visibility: hidden;
+}

@@ -54620,3 +54620,1390 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.0ms | Allocations: 9345)
 
 
+Started GET "/" for ::1 at 2024-11-12 17:45:05 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/login" for ::1 at 2024-11-12 17:45:06 +0100
+Processing by MainController#index as HTML
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 253)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1707)
+  Rendered shared/_navbar.html.erb (Duration: 37.9ms | Allocations: 2916)
+  Rendered shared/_navbar.html.erb (Duration: 38.4ms | Allocations: 3008)
+  Rendered shared/_flash.html.erb (Duration: 5.3ms | Allocations: 309)
+  Rendered shared/_flash.html.erb (Duration: 3.0ms | Allocations: 361)
+  Rendered shared/_footer.html.erb (Duration: 4.9ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 585.1ms | Allocations: 80544)
+  Rendered layout layouts/application.html.erb (Duration: 588.6ms | Allocations: 80981)
+Completed 200 OK in 708ms (Views: 617.6ms | ActiveRecord: 0.0ms | Allocations: 89931)
+
+
+Completed 200 OK in 632ms (Views: 625.5ms | ActiveRecord: 0.0ms | Allocations: 84351)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:45:27 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 705)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 8778)
+Completed 200 OK in 38ms (Views: 34.2ms | ActiveRecord: 0.0ms | Allocations: 9180)
+
+
+Started GET "/" for ::1 at 2024-11-12 17:48:58 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1087)
+  Rendered shared/_navbar.html.erb (Duration: 8.0ms | Allocations: 1422)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 50.4ms | Allocations: 11781)
+Completed 200 OK in 60ms (Views: 54.6ms | ActiveRecord: 0.0ms | Allocations: 12991)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:49:02 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 246)
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 705)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 39.7ms | Allocations: 9087)
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 0.0ms | Allocations: 9564)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:49:06 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 696)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 8766)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.0ms | Allocations: 9167)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:49:08 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 7.3ms | Allocations: 696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 8766)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.0ms | Allocations: 9166)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:49:33 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 3.4ms | Allocations: 696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 41.7ms | Allocations: 8766)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.0ms | Allocations: 9166)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:52:39 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 246)
+  Rendered shared/_navbar.html.erb (Duration: 5.0ms | Allocations: 1432)
+  Rendered shared/_flash.html.erb (Duration: 1.0ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 52.3ms | Allocations: 10731)
+Completed 200 OK in 60ms (Views: 58.5ms | ActiveRecord: 0.0ms | Allocations: 11745)
+
+
+Started GET "/" for ::1 at 2024-11-12 17:57:27 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1085)
+  Rendered shared/_navbar.html.erb (Duration: 12.6ms | Allocations: 1418)
+  Rendered shared/_flash.html.erb (Duration: 3.4ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 87.7ms | Allocations: 11578)
+Completed 200 OK in 113ms (Views: 102.7ms | ActiveRecord: 0.0ms | Allocations: 12784)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:57:36 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 246)
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 703)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 37.3ms | Allocations: 9015)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.0ms | Allocations: 9492)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:57:49 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 696)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 49.0ms | Allocations: 8766)
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.0ms | Allocations: 9167)
+
+
+Started GET "/login" for ::1 at 2024-11-12 17:58:21 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 247)
+  Rendered shared/_navbar.html.erb (Duration: 43.1ms | Allocations: 1437)
+  Rendered shared/_flash.html.erb (Duration: 1.4ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 144.4ms | Allocations: 10961)
+Completed 200 OK in 161ms (Views: 157.2ms | ActiveRecord: 0.0ms | Allocations: 11977)
+
+
+Started GET "/" for ::1 at 2024-11-12 18:01:37 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1085)
+  Rendered shared/_navbar.html.erb (Duration: 13.8ms | Allocations: 1418)
+  Rendered shared/_flash.html.erb (Duration: 2.2ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 29.1ms | Allocations: 117)
+  Rendered layout layouts/application.html.erb (Duration: 177.4ms | Allocations: 11572)
+Completed 200 OK in 303ms (Views: 203.0ms | ActiveRecord: 0.0ms | Allocations: 12778)
+
+
+Started GET "/login" for ::1 at 2024-11-12 18:01:43 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 245)
+  Rendered shared/_navbar.html.erb (Duration: 10.0ms | Allocations: 705)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 101.2ms | Allocations: 9168)
+Completed 200 OK in 109ms (Views: 106.0ms | ActiveRecord: 0.0ms | Allocations: 9645)
+
+
+Started GET "/login" for ::1 at 2024-11-12 18:01:48 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 699)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 124.0ms | Allocations: 8770)
+Completed 200 OK in 145ms (Views: 137.2ms | ActiveRecord: 0.0ms | Allocations: 9171)
+
+
+Started GET "/login" for ::1 at 2024-11-12 18:02:37 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 255)
+  Rendered shared/_navbar.html.erb (Duration: 12.8ms | Allocations: 1436)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 279)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 56.8ms | Allocations: 10800)
+Completed 200 OK in 64ms (Views: 62.0ms | ActiveRecord: 0.0ms | Allocations: 11815)
+
+
+Started GET "/" for ::1 at 2024-11-17 12:03:29 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20241115132500_add_file_data_to_scans.rb
+
+
+):
+  
+activerecord (7.1.3.4) lib/active_record/migration.rb:755:in `check_pending_migrations'
+activerecord (7.1.3.4) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.3.4) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.3.4) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.1) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-11-17 12:04:22 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20241115132500_add_file_data_to_scans.rb
+
+
+):
+  
+activerecord (7.1.3.4) lib/active_record/migration.rb:755:in `check_pending_migrations'
+activerecord (7.1.3.4) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.3.4) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.3.4) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.1) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-11-17 12:04:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20241115132500_add_file_data_to_scans.rb
+
+
+):
+  
+activerecord (7.1.3.4) lib/active_record/migration.rb:755:in `check_pending_migrations'
+activerecord (7.1.3.4) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.3.4) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.3.4) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.1) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-11-17 12:04:28 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20241115132500_add_file_data_to_scans.rb
+
+
+):
+  
+activerecord (7.1.3.4) lib/active_record/migration.rb:755:in `check_pending_migrations'
+activerecord (7.1.3.4) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.3.4) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.3.4) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.1) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-11-17 12:04:35 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20241115132500_add_file_data_to_scans.rb
+
+
+):
+  
+activerecord (7.1.3.4) lib/active_record/migration.rb:755:in `check_pending_migrations'
+activerecord (7.1.3.4) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.3.4) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.3.4) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.1) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-11-17 12:05:44 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20241115132500_add_file_data_to_scans.rb
+
+
+):
+  
+activerecord (7.1.3.4) lib/active_record/migration.rb:755:in `check_pending_migrations'
+activerecord (7.1.3.4) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.3.4) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.3.4) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.3.4) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.1) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFileDataToScans (20241115132500)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (6.9ms)[0m  [1m[35mALTER TABLE "scans" ADD "file_data" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241115132500') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-11-17 12:07:25 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 7.0ms | Allocations: 2358)
+  Rendered layout layouts/application.html.erb (Duration: 123.4ms | Allocations: 44696)
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 0.0ms | Allocations: 52858)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+  .animate-slide-down { animation: slideDown 0.5s ease-out; }
+</style>
+
+<nav class="bg-white shadow-md">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <%= link_to root_path, class: "flex items-center" do %>
+        <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+      <% end %>
+
+      <button class="lg:hidden" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+
+      <div class="hidden lg:flex items-center space-x-4">
+        <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+        <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+        
+        <% if Current.user %>
+        <!--
+          
+          <span class="text-gray-700">Logged in as <%= Current.user.email %></span>
+          <%= button_to "Logout", logout_path, method: :delete, class: "bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300" %>
+        <% else %>
+          <%= link_to "LOG IN / SIGN UP", login_path, class: "bg-black hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded transition" %>
+        
+        -->
+
+          <!-- Clerk UserButton -->
+          <div id="user-button"></div>
+        <% else %>
+          <!-- Clerk Sign up and Sign in links -->
+          <button onclick="Clerk.openSignIn()">Sign in</button>
+          <button onclick="Clerk.openSignUp()">Sign up</button>
+
+        <% end %>
+      </div>
+    </div>
+
+    <div class="lg:hidden">
+      <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+        <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        
+        <% if Current.user %>
+          <span class="block px-3 py-2 text-gray-700">Logged in as <%= Current.user.email %></span>
+          <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %>
+          <%# <%= button_to 'Logout', 'auth/logout', method: :get, data: { turbo: false } %> %>
+        <% else %>
+          <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('animate-slide-down');
+    });
+  });
+</script>
+):
+1:    <style>
+2:      @keyframes fadeIn {
+3:        from { opacity: 0; }
+4:        to { opacity: 1; }
+5:      }
+6:      @keyframes slideDown {
+7:        from { transform: translateY(-20px); opacity: 0; }
+8:        to { transform: translateY(0); opacity: 1; }
+9:      }
+10:    
+11:      .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+12:      .animate-slide-down { animation: slideDown 0.5s ease-out; }
+13:    </style>
+14:    
+15:    <nav class="bg-white shadow-md">
+16:      <div class="container mx-auto px-4 py-3">
+17:        <div class="flex justify-between items-center">
+18:          <%= link_to root_path, class: "flex items-center" do %>
+19:            <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+20:          <% end %>
+21:    
+22:          <button class="lg:hidden" id="mobile-menu-button">
+23:            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+24:          </button>
+25:    
+26:          <div class="hidden lg:flex items-center space-x-4">
+27:            <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+28:            <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+29:            
+30:            <% if Current.user %>
+31:            <!--
+32:              
+33:              <span class="text-gray-700">Logged in as <%= Current.user.email %></span>
+34:              <%= button_to "Logout", logout_path, method: :delete, class: "bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300" %>
+35:            <% else %>
+36:              <%= link_to "LOG IN / SIGN UP", login_path, class: "bg-black hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded transition" %>
+37:            
+38:            -->
+39:    
+40:              <!-- Clerk UserButton -->
+41:              <div id="user-button"></div>
+42:            <% else %>
+43:              <!-- Clerk Sign up and Sign in links -->
+44:              <button onclick="Clerk.openSignIn()">Sign in</button>
+45:              <button onclick="Clerk.openSignUp()">Sign up</button>
+46:    
+47:            <% end %>
+48:          </div>
+49:        </div>
+50:    
+51:        <div class="lg:hidden">
+52:          <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+53:            <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+54:            <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+55:            
+56:            <% if Current.user %>
+57:              <span class="block px-3 py-2 text-gray-700">Logged in as <%= Current.user.email %></span>
+58:              <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %>
+59:              <%# <%= button_to 'Logout', 'auth/logout', method: :get, data: { turbo: false } %> %>
+60:            <% else %>
+61:              <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %>
+62:            <% end %>
+63:          </div>
+64:        </div>
+65:      </div>
+66:    </nav>
+67:    
+68:    <script>
+69:      document.addEventListener('DOMContentLoaded', () => {
+70:        const mobileMenuButton = document.getElementById('mobile-menu-button');
+71:        const mobileMenu = document.getElementById('mobile-menu');
+72:    
+73:        mobileMenuButton.addEventListener('click', () => {
+74:          mobileMenu.classList.toggle('hidden');
+75:          mobileMenu.classList.toggle('animate-slide-down');
+76:        });
+77:      });
+78:    </script>
+  
+app/views/shared/_navbar.html.erb:42: syntax error, unexpected `else', expecting `end'
+app/views/layouts/application.html.erb:26
+Started GET "/" for ::1 at 2024-11-17 12:12:55 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 6.8ms | Allocations: 2360)
+  Rendered layout layouts/application.html.erb (Duration: 126.9ms | Allocations: 44867)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 0.0ms | Allocations: 53029)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+  .animate-slide-down { animation: slideDown 0.5s ease-out; }
+</style>
+
+<nav class="bg-white shadow-md">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <%= link_to root_path, class: "flex items-center" do %>
+        <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+      <% end %>
+
+      <button class="lg:hidden" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+
+      <div class="hidden lg:flex items-center space-x-4">
+        <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+        <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+        
+        <% if Current.user %>
+        <!--
+          
+          <span class="text-gray-700">Logged in as <%= Current.user.email %></span>
+          <%= button_to "Logout", logout_path, method: :delete, class: "bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300" %>
+        <% else %>
+          <%= link_to "LOG IN / SIGN UP", login_path, class: "bg-black hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded transition" %>
+        
+        -->
+
+          <!-- Clerk UserButton -->
+          <div id="user-button"></div>
+
+        <% else %>
+          
+          <!-- Clerk Sign up and Sign in links -->
+          <button onclick="Clerk.openSignIn()">Sign in</button>
+          <button onclick="Clerk.openSignUp()">Sign up</button>
+
+        <% end %>
+      </div>
+    </div>
+
+    <div class="lg:hidden">
+      <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+        <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        
+        <% if Current.user %>
+          <span class="block px-3 py-2 text-gray-700">Logged in as <%= Current.user.email %></span>
+          <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %>
+          <%# <%= button_to 'Logout', 'auth/logout', method: :get, data: { turbo: false } %> %>
+        <% else %>
+          <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('animate-slide-down');
+    });
+  });
+</script>
+):
+1:    <style>
+2:      @keyframes fadeIn {
+3:        from { opacity: 0; }
+4:        to { opacity: 1; }
+5:      }
+6:      @keyframes slideDown {
+7:        from { transform: translateY(-20px); opacity: 0; }
+8:        to { transform: translateY(0); opacity: 1; }
+9:      }
+10:    
+11:      .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+12:      .animate-slide-down { animation: slideDown 0.5s ease-out; }
+13:    </style>
+14:    
+15:    <nav class="bg-white shadow-md">
+16:      <div class="container mx-auto px-4 py-3">
+17:        <div class="flex justify-between items-center">
+18:          <%= link_to root_path, class: "flex items-center" do %>
+19:            <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+20:          <% end %>
+21:    
+22:          <button class="lg:hidden" id="mobile-menu-button">
+23:            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+24:          </button>
+25:    
+26:          <div class="hidden lg:flex items-center space-x-4">
+27:            <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+28:            <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+29:            
+30:            <% if Current.user %>
+31:            <!--
+32:              
+33:              <span class="text-gray-700">Logged in as <%= Current.user.email %></span>
+34:              <%= button_to "Logout", logout_path, method: :delete, class: "bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300" %>
+35:            <% else %>
+36:              <%= link_to "LOG IN / SIGN UP", login_path, class: "bg-black hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded transition" %>
+37:            
+38:            -->
+39:    
+40:              <!-- Clerk UserButton -->
+41:              <div id="user-button"></div>
+42:    
+43:            <% else %>
+44:              
+45:              <!-- Clerk Sign up and Sign in links -->
+46:              <button onclick="Clerk.openSignIn()">Sign in</button>
+47:              <button onclick="Clerk.openSignUp()">Sign up</button>
+48:    
+49:            <% end %>
+50:          </div>
+51:        </div>
+52:    
+53:        <div class="lg:hidden">
+54:          <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+55:            <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+56:            <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+57:            
+58:            <% if Current.user %>
+59:              <span class="block px-3 py-2 text-gray-700">Logged in as <%= Current.user.email %></span>
+60:              <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %>
+61:              <%# <%= button_to 'Logout', 'auth/logout', method: :get, data: { turbo: false } %> %>
+62:            <% else %>
+63:              <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %>
+64:            <% end %>
+65:          </div>
+66:        </div>
+67:      </div>
+68:    </nav>
+69:    
+70:    <script>
+71:      document.addEventListener('DOMContentLoaded', () => {
+72:        const mobileMenuButton = document.getElementById('mobile-menu-button');
+73:        const mobileMenu = document.getElementById('mobile-menu');
+74:    
+75:        mobileMenuButton.addEventListener('click', () => {
+76:          mobileMenu.classList.toggle('hidden');
+77:          mobileMenu.classList.toggle('animate-slide-down');
+78:        });
+79:      });
+80:    </script>
+  
+app/views/shared/_navbar.html.erb:43: syntax error, unexpected `else', expecting `end'
+app/views/layouts/application.html.erb:26
+Started GET "/" for ::1 at 2024-11-17 12:15:20 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 12.3ms | Allocations: 2197)
+  Rendered shared/_flash.html.erb (Duration: 1.1ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 126.5ms | Allocations: 45161)
+Completed 200 OK in 219ms (Views: 146.6ms | ActiveRecord: 0.0ms | Allocations: 53308)
+
+
+Started GET "/login" for ::1 at 2024-11-17 12:15:41 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 261)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 683)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 9010)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 9487)
+
+
+Started GET "/login" for ::1 at 2024-11-17 12:33:18 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | Allocations: 676)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 8747)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.0ms | Allocations: 9149)
+
+
+Started GET "/login" for ::1 at 2024-11-17 12:34:04 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 3.1ms | Allocations: 674)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 8744)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.0ms | Allocations: 9144)
+
+
+Started GET "/login" for ::1 at 2024-11-17 12:38:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 280)
+  Rendered shared/_navbar.html.erb (Duration: 14.5ms | Allocations: 2232)
+  Rendered shared/_flash.html.erb (Duration: 1.6ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 1.8ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 140.7ms | Allocations: 44391)
+Completed 200 OK in 194ms (Views: 161.1ms | ActiveRecord: 0.0ms | Allocations: 50319)
+
+
+Started GET "/" for ::1 at 2024-11-17 12:38:19 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1124)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 665)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 9851)
+Completed 200 OK in 61ms (Views: 56.8ms | ActiveRecord: 0.0ms | Allocations: 10391)
+
+
+Started GET "/" for ::1 at 2024-11-17 12:41:17 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 4.1ms | Allocations: 2197)
+  Rendered shared/_flash.html.erb (Duration: 1.2ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 107.7ms | Allocations: 45237)
+Completed 200 OK in 134ms (Views: 112.6ms | ActiveRecord: 0.0ms | Allocations: 53384)
+
+
+Started GET "/" for ::1 at 2024-11-17 12:43:52 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 12.2ms | Allocations: 2197)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 161.1ms | Allocations: 44504)
+Completed 200 OK in 202ms (Views: 168.9ms | ActiveRecord: 0.0ms | Allocations: 52651)
+
+
+Started GET "/" for ::1 at 2024-11-17 13:03:01 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 12.7ms | Allocations: 2197)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 214.2ms | Allocations: 45234)
+Completed 200 OK in 291ms (Views: 233.9ms | ActiveRecord: 0.0ms | Allocations: 53381)
+
+
+Started GET "/login" for ::1 at 2024-11-17 13:03:07 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 261)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 683)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 9010)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 9487)
+
+
+Started GET "/login" for ::1 at 2024-11-17 13:17:39 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 280)
+  Rendered shared/_navbar.html.erb (Duration: 10.3ms | Allocations: 2232)
+  Rendered shared/_flash.html.erb (Duration: 1.1ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 1.3ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 127.7ms | Allocations: 44427)
+Completed 200 OK in 198ms (Views: 148.6ms | ActiveRecord: 0.0ms | Allocations: 50355)
+
+
+Started GET "/login" for ::1 at 2024-11-17 13:21:34 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/" for ::1 at 2024-11-17 13:21:46 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1154)
+  Rendered shared/_navbar.html.erb (Duration: 25.8ms | Allocations: 6525)
+  Rendered layout layouts/application.html.erb (Duration: 264.8ms | Allocations: 48361)
+Completed 500 Internal Server Error in 281ms (ActiveRecord: 0.0ms | Allocations: 51041)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `login_path' for #<ActionView::Base:0x0000000000cc60>):
+    50:           <span class="block px-3 py-2 text-gray-700">Logged in as <%= Current.user.email %></span>
+    51:           <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %>
+    52:         <% else %>
+    53:           <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %>
+    54:         <% end %>
+    55:       </div>
+    56:     </div>
+  
+app/views/shared/_navbar.html.erb:53
+app/views/layouts/application.html.erb:24
+Started GET "/" for ::1 at 2024-11-17 13:24:07 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 12.7ms | Allocations: 2175)
+  Rendered shared/_flash.html.erb (Duration: 1.0ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 166.3ms | Allocations: 45206)
+Completed 200 OK in 265ms (Views: 186.7ms | ActiveRecord: 0.0ms | Allocations: 53357)
+
+
+Started GET "/" for ::1 at 2024-11-17 13:35:38 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 5.6ms | Allocations: 1280)
+  Rendered shared/_flash.html.erb (Duration: 5.9ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 1.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 217.4ms | Allocations: 44430)
+Completed 200 OK in 305ms (Views: 238.6ms | ActiveRecord: 0.0ms | Allocations: 52586)
+
+
+Started GET "/" for ::1 at 2024-11-17 13:36:16 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 389)
+  Rendered shared/_navbar.html.erb (Duration: 3.1ms | Allocations: 645)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 9105)
+Completed 200 OK in 45ms (Views: 38.0ms | ActiveRecord: 0.0ms | Allocations: 9516)
+
+
+Started GET "/" for ::1 at 2024-11-17 13:36:45 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 643)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 9093)
+Completed 200 OK in 26ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 9503)
+
+
+Started GET "/" for ::1 at 2024-11-17 13:38:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 1280)
+  Rendered shared/_flash.html.erb (Duration: 1.5ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 124.0ms | Allocations: 44356)
+Completed 200 OK in 204ms (Views: 143.6ms | ActiveRecord: 0.0ms | Allocations: 52512)
+
+
+Started GET "/" for ::1 at 2024-11-17 13:43:52 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 1266)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 370.2ms | Allocations: 62376)
+Completed 200 OK in 462ms (Views: 389.8ms | ActiveRecord: 0.0ms | Allocations: 70534)
+
+
+Started GET "/" for ::1 at 2024-11-17 15:54:16 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 10.4ms | Allocations: 1280)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 213.5ms | Allocations: 44793)
+Completed 200 OK in 300ms (Views: 232.8ms | ActiveRecord: 0.0ms | Allocations: 52953)
+
+
+Started GET "/" for ::1 at 2024-11-17 15:58:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 1266)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 359.0ms | Allocations: 76585)
+Completed 200 OK in 438ms (Views: 383.3ms | ActiveRecord: 0.0ms | Allocations: 84743)
+
+
+Started GET "/" for ::1 at 2024-11-17 16:09:58 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 1267)
+  Rendered shared/_flash.html.erb (Duration: 0.7ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 451.1ms | Allocations: 77022)
+Completed 200 OK in 537ms (Views: 472.4ms | ActiveRecord: 0.0ms | Allocations: 85152)
+
+
+Started GET "/" for ::1 at 2024-11-17 16:19:11 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 1269)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 288)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 468.9ms | Allocations: 116748)
+Completed 200 OK in 559ms (Views: 486.4ms | ActiveRecord: 0.0ms | Allocations: 124906)
+
+
+Started GET "/" for ::1 at 2024-11-17 16:26:52 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 25.3ms | Allocations: 3302)
+  Rendered layout layouts/application.html.erb (Duration: 923.5ms | Allocations: 233527)
+Completed 500 Internal Server Error in 979ms (ActiveRecord: 0.0ms | Allocations: 239539)
+
+
+  
+ActionView::Template::Error (couldn't find file 'turbolinks' with type 'application/javascript'
+Checked in these paths: 
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/builds
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/config
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/images
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/javascript
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/tailwindcss-rails-2.0.31-x86_64-darwin/app/assets/fonts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/tailwindcss-rails-2.0.31-x86_64-darwin/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/stimulus-rails-1.3.3/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/turbo-rails-2.0.5/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actioncable-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activestorage-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/assets/compiled
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/javascript
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/vendor/javascript):
+    12:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    13:     
+    14:     <%= clerk_script_tag %>
+    15:     <%= javascript_importmap_tags %>
+    16:     <%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> %>
+    17: 
+    18:     <script type="text/javascript">
+  
+app/views/layouts/application.html.erb:15
+Started GET "/" for ::1 at 2024-11-17 16:34:41 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 22.6ms | Allocations: 3302)
+  Rendered layout layouts/application.html.erb (Duration: 265.6ms | Allocations: 52956)
+Completed 500 Internal Server Error in 335ms (ActiveRecord: 0.0ms | Allocations: 58968)
+
+
+  
+ActionView::Template::Error (couldn't find file 'turbolinks' with type 'application/javascript'
+Checked in these paths: 
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/builds
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/config
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/images
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/javascript
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/tailwindcss-rails-2.0.31-x86_64-darwin/app/assets/fonts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/tailwindcss-rails-2.0.31-x86_64-darwin/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/stimulus-rails-1.3.3/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/turbo-rails-2.0.5/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actioncable-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activestorage-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/assets/compiled
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/javascript
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/vendor/javascript):
+    11:     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    12:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    13:     
+    14:     <%= javascript_importmap_tags %>
+    15:     <%= clerk_script_tag %>
+    16:     <%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> %>
+    17: 
+  
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2024-11-17 16:36:26 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 21.1ms | Allocations: 3302)
+  Rendered layout layouts/application.html.erb (Duration: 210.8ms | Allocations: 84483)
+Completed 500 Internal Server Error in 255ms (ActiveRecord: 0.0ms | Allocations: 90495)
+
+
+  
+ActionView::Template::Error (couldn't find file 'turbolinks' with type 'application/javascript'
+Checked in these paths: 
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/builds
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/config
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/images
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/javascript
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/tailwindcss-rails-2.0.31-x86_64-darwin/app/assets/fonts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/tailwindcss-rails-2.0.31-x86_64-darwin/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/stimulus-rails-1.3.3/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/turbo-rails-2.0.5/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actioncable-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activestorage-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/assets/compiled
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/javascript
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/vendor/javascript):
+    11:     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    12:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    13:     
+    14:     <%= javascript_importmap_tags %>
+    15:     <%= clerk_script_tag %>
+    16:     <%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> %>
+    17: 
+  
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2024-11-17 16:37:03 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 552)
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 13485)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms | Allocations: 13716)
+
+
+  
+ActionView::Template::Error (couldn't find file 'turbolinks' with type 'application/javascript'
+Checked in these paths: 
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/builds
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/config
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/images
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/javascript
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/tailwindcss-rails-2.0.31-x86_64-darwin/app/assets/fonts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/tailwindcss-rails-2.0.31-x86_64-darwin/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/stimulus-rails-1.3.3/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/turbo-rails-2.0.5/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actioncable-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activestorage-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/assets/compiled
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/javascript
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/vendor/javascript):
+    11:     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    12:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    13:     
+    14:     <%= javascript_importmap_tags %>
+    15:     <%= clerk_script_tag %>
+    16:     <%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> %>
+    17: 
+  
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2024-11-17 16:37:50 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 3.6ms | Allocations: 1274)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 1182.9ms | Allocations: 241904)
+Completed 200 OK in 1253ms (Views: 1199.5ms | ActiveRecord: 0.0ms | Allocations: 250060)
+
+

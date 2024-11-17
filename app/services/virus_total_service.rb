@@ -2,6 +2,7 @@
 require 'net/http'
 require 'uri'
 require 'json'
+require 'net/http/post/multipart'
 
 class VirusTotalService
   BASE_URI = 'https://www.virustotal.com/vtapi/v2'.freeze

@@ -33,12 +33,24 @@
       <div class="hidden lg:flex items-center space-x-4">
         <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
         <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
-        <% if current_user.present? %>
-          <div id="user-button"></div>
-        <% else %>
-          <button onclick="Clerk.openSignIn()">Sign in</button>
-          <button onclick="Clerk.openSignUp()">Sign up</button>
-        <% end %>
+        
+        <<div class="hidden lg:flex items-center space-x-4 login-buttons">>
+          <% if current_user.present? %>
+            <div id="user-button">
+              <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                  if (Clerk) {
+                    Clerk.mountUserButton(document.getElementById('user-button'));
+                  }
+                });
+              </script>
+            </div>
+            <button onclick="Clerk.signOut()">Logout</button>
+          <% else %>
+            <button onclick="Clerk.openSignIn()">Sign in</button>
+            <button onclick="Clerk.openSignUp()">Sign up</button>
+          <% end %>
+        </div>
       </div>
     </div>
 
@@ -47,7 +59,7 @@
         <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
         <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
         <% if current_user.present? %>
-          <span class="block px-3 py-2 text-gray-700">Logged in as <%= Current.user.email %></span>
+          <span class="block px-3 py-2 text-gray-700">Logged in as <%= current_user["email_address"] %></span>
           <%# <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %> %>
         <% else %>
           <%# <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %> %>

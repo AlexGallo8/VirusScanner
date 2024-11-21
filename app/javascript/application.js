@@ -1,5 +1,6 @@
 import "@hotwired/turbo-rails"
 import "controllers"
+import './clerk_events'
 
 // window.startClerk = async () => {
 //     try {

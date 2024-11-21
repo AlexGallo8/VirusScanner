@@ -56007,3 +56007,625 @@ Processing by MainController#index as HTML
 Completed 200 OK in 1253ms (Views: 1199.5ms | ActiveRecord: 0.0ms | Allocations: 250060)
 
 
+Started GET "/?__clerk_db_jwt=dvb_2okrFWShhTgmw3QZvRwBtS5G12f" for ::1 at 2024-11-17 22:33:25 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Parameters: {"__clerk_db_jwt"=>"dvb_2okrFWShhTgmw3QZvRwBtS5G12f"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 58.4ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 1284)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 246.7ms | Allocations: 63442)
+Completed 200 OK in 385ms (Views: 309.4ms | ActiveRecord: 0.0ms | Allocations: 71600)
+
+
+Started GET "/about" for ::1 at 2024-11-17 22:33:31 +0100
+  
+ArgumentError (Clerk secret key is not set):
+  
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:57:in `block in initialize'
+faraday (2.7.12) lib/faraday/request/authorization.rb:45:in `header_from'
+faraday (2.7.12) lib/faraday/request/authorization.rb:26:in `on_request'
+faraday (2.7.12) lib/faraday/middleware.rb:16:in `call'
+faraday (2.7.12) lib/faraday/request/url_encoded.rb:25:in `call'
+faraday (2.7.12) lib/faraday/rack_builder.rb:153:in `build_response'
+faraday (2.7.12) lib/faraday/connection.rb:444:in `run_request'
+faraday (2.7.12) lib/faraday/connection.rb:200:in `get'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:78:in `request'
+clerk-sdk-ruby (3.0.0) lib/clerk/resources/jwks.rb:14:in `all'
+clerk-sdk-ruby (3.0.0) lib/clerk/jwks_cache.rb:21:in `block in fetch'
+concurrent-ruby (1.3.3) lib/concurrent-ruby/concurrent/atomic/read_write_lock.rb:98:in `with_write_lock'
+clerk-sdk-ruby (3.0.0) lib/clerk/jwks_cache.rb:17:in `fetch'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:185:in `block in verify_token'
+jwt (2.8.2) lib/jwt/jwk/key_finder.rb:35:in `resolve_key'
+jwt (2.8.2) lib/jwt/jwk/key_finder.rb:21:in `key_for'
+jwt (2.8.2) lib/jwt/decode.rb:60:in `set_key'
+jwt (2.8.2) lib/jwt/decode.rb:29:in `decode_segments'
+jwt (2.8.2) lib/jwt.rb:31:in `block in decode'
+jwt (2.8.2) lib/jwt/deprecations.rb:8:in `context'
+jwt (2.8.2) lib/jwt.rb:30:in `decode'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:188:in `verify_token'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:257:in `verify_token'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:182:in `call'
+rack (3.1.3) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.3) lib/rack/etag.rb:29:in `call'
+rack (3.1.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.1) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-11-17 22:33:44 +0100
+  
+ArgumentError (Clerk secret key is not set):
+  
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:57:in `block in initialize'
+faraday (2.7.12) lib/faraday/request/authorization.rb:45:in `header_from'
+faraday (2.7.12) lib/faraday/request/authorization.rb:26:in `on_request'
+faraday (2.7.12) lib/faraday/middleware.rb:16:in `call'
+faraday (2.7.12) lib/faraday/request/url_encoded.rb:25:in `call'
+faraday (2.7.12) lib/faraday/rack_builder.rb:153:in `build_response'
+faraday (2.7.12) lib/faraday/connection.rb:444:in `run_request'
+faraday (2.7.12) lib/faraday/connection.rb:200:in `get'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:78:in `request'
+clerk-sdk-ruby (3.0.0) lib/clerk/resources/jwks.rb:14:in `all'
+clerk-sdk-ruby (3.0.0) lib/clerk/jwks_cache.rb:21:in `block in fetch'
+concurrent-ruby (1.3.3) lib/concurrent-ruby/concurrent/atomic/read_write_lock.rb:98:in `with_write_lock'
+clerk-sdk-ruby (3.0.0) lib/clerk/jwks_cache.rb:17:in `fetch'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:185:in `block in verify_token'
+jwt (2.8.2) lib/jwt/jwk/key_finder.rb:35:in `resolve_key'
+jwt (2.8.2) lib/jwt/jwk/key_finder.rb:21:in `key_for'
+jwt (2.8.2) lib/jwt/decode.rb:60:in `set_key'
+jwt (2.8.2) lib/jwt/decode.rb:29:in `decode_segments'
+jwt (2.8.2) lib/jwt.rb:31:in `block in decode'
+jwt (2.8.2) lib/jwt/deprecations.rb:8:in `context'
+jwt (2.8.2) lib/jwt.rb:30:in `decode'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:188:in `verify_token'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:257:in `verify_token'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:182:in `call'
+rack (3.1.3) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.3) lib/rack/etag.rb:29:in `call'
+rack (3.1.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.1) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-11-17 22:34:19 +0100
+  
+ArgumentError (Clerk secret key is not set):
+  
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:57:in `block in initialize'
+faraday (2.7.12) lib/faraday/request/authorization.rb:45:in `header_from'
+faraday (2.7.12) lib/faraday/request/authorization.rb:26:in `on_request'
+faraday (2.7.12) lib/faraday/middleware.rb:16:in `call'
+faraday (2.7.12) lib/faraday/request/url_encoded.rb:25:in `call'
+faraday (2.7.12) lib/faraday/rack_builder.rb:153:in `build_response'
+faraday (2.7.12) lib/faraday/connection.rb:444:in `run_request'
+faraday (2.7.12) lib/faraday/connection.rb:200:in `get'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:78:in `request'
+clerk-sdk-ruby (3.0.0) lib/clerk/resources/jwks.rb:14:in `all'
+clerk-sdk-ruby (3.0.0) lib/clerk/jwks_cache.rb:21:in `block in fetch'
+concurrent-ruby (1.3.3) lib/concurrent-ruby/concurrent/atomic/read_write_lock.rb:98:in `with_write_lock'
+clerk-sdk-ruby (3.0.0) lib/clerk/jwks_cache.rb:17:in `fetch'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:185:in `block in verify_token'
+jwt (2.8.2) lib/jwt/jwk/key_finder.rb:35:in `resolve_key'
+jwt (2.8.2) lib/jwt/jwk/key_finder.rb:21:in `key_for'
+jwt (2.8.2) lib/jwt/decode.rb:60:in `set_key'
+jwt (2.8.2) lib/jwt/decode.rb:29:in `decode_segments'
+jwt (2.8.2) lib/jwt.rb:31:in `block in decode'
+jwt (2.8.2) lib/jwt/deprecations.rb:8:in `context'
+jwt (2.8.2) lib/jwt.rb:30:in `decode'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:188:in `verify_token'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:257:in `verify_token'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:182:in `call'
+rack (3.1.3) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.3) lib/rack/etag.rb:29:in `call'
+rack (3.1.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.1) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/?__clerk_db_jwt=dvb_2okrFWShhTgmw3QZvRwBtS5G12f" for ::1 at 2024-11-17 22:34:22 +0100
+  
+ArgumentError (Clerk secret key is not set):
+  
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:57:in `block in initialize'
+faraday (2.7.12) lib/faraday/request/authorization.rb:45:in `header_from'
+faraday (2.7.12) lib/faraday/request/authorization.rb:26:in `on_request'
+faraday (2.7.12) lib/faraday/middleware.rb:16:in `call'
+faraday (2.7.12) lib/faraday/request/url_encoded.rb:25:in `call'
+faraday (2.7.12) lib/faraday/rack_builder.rb:153:in `build_response'
+faraday (2.7.12) lib/faraday/connection.rb:444:in `run_request'
+faraday (2.7.12) lib/faraday/connection.rb:200:in `get'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:78:in `request'
+clerk-sdk-ruby (3.0.0) lib/clerk/resources/jwks.rb:14:in `all'
+clerk-sdk-ruby (3.0.0) lib/clerk/jwks_cache.rb:21:in `block in fetch'
+concurrent-ruby (1.3.3) lib/concurrent-ruby/concurrent/atomic/read_write_lock.rb:98:in `with_write_lock'
+clerk-sdk-ruby (3.0.0) lib/clerk/jwks_cache.rb:17:in `fetch'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:185:in `block in verify_token'
+jwt (2.8.2) lib/jwt/jwk/key_finder.rb:35:in `resolve_key'
+jwt (2.8.2) lib/jwt/jwk/key_finder.rb:21:in `key_for'
+jwt (2.8.2) lib/jwt/decode.rb:60:in `set_key'
+jwt (2.8.2) lib/jwt/decode.rb:29:in `decode_segments'
+jwt (2.8.2) lib/jwt.rb:31:in `block in decode'
+jwt (2.8.2) lib/jwt/deprecations.rb:8:in `context'
+jwt (2.8.2) lib/jwt.rb:30:in `decode'
+clerk-sdk-ruby (3.0.0) lib/clerk/sdk.rb:188:in `verify_token'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:257:in `verify_token'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:182:in `call'
+rack (3.1.3) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.3) lib/rack/etag.rb:29:in `call'
+rack (3.1.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.1) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/?__clerk_db_jwt=dvb_2okrFWShhTgmw3QZvRwBtS5G12f" for ::1 at 2024-11-17 22:34:35 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-11-17 22:34:36 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1183)
+  Rendered shared/_navbar.html.erb (Duration: 345.6ms | Allocations: 5430)
+  Rendered layout layouts/application.html.erb (Duration: 532.4ms | Allocations: 67679)
+Completed 500 Internal Server Error in 565ms (ActiveRecord: 0.0ms | Allocations: 75823)
+
+
+  
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    47:         <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    48:         <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    49:         <% if current_user.present? %>
+    50:           <span class="block px-3 py-2 text-gray-700">Logged in as <%= Current.user.email %></span>
+    51:           <%# <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %> %>
+    52:         <% else %>
+    53:           <%# <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %> %>
+  
+app/views/shared/_navbar.html.erb:50
+app/views/layouts/application.html.erb:39
+Started GET "/" for ::1 at 2024-11-17 22:34:41 +0100
+Started GET "/" for ::1 at 2024-11-17 22:34:42 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 384)
+  Rendered shared/_navbar.html.erb (Duration: 327.7ms | Allocations: 3181)
+  Rendered layout layouts/application.html.erb (Duration: 360.9ms | Allocations: 12527)
+Completed 500 Internal Server Error in 365ms (ActiveRecord: 0.0ms | Allocations: 12928)
+
+
+  
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    47:         <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    48:         <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    49:         <% if current_user.present? %>
+    50:           <span class="block px-3 py-2 text-gray-700">Logged in as <%= Current.user.email %></span>
+    51:           <%# <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %> %>
+    52:         <% else %>
+    53:           <%# <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %> %>
+  
+app/views/shared/_navbar.html.erb:50
+app/views/layouts/application.html.erb:39
+Started GET "/" for ::1 at 2024-11-17 22:35:03 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 817.4ms | Allocations: 3179)
+  Rendered layout layouts/application.html.erb (Duration: 842.1ms | Allocations: 12513)
+Completed 500 Internal Server Error in 844ms (ActiveRecord: 0.0ms | Allocations: 12913)
+
+
+  
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    47:         <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    48:         <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    49:         <% if current_user.present? %>
+    50:           <span class="block px-3 py-2 text-gray-700">Logged in as <%= Current.user.email %></span>
+    51:           <%# <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %> %>
+    52:         <% else %>
+    53:           <%# <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %> %>
+  
+app/views/shared/_navbar.html.erb:50
+app/views/layouts/application.html.erb:39
+Started GET "/" for ::1 at 2024-11-17 22:38:41 +0100
+Started GET "/" for ::1 at 2024-11-17 22:38:43 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 464.7ms | Allocations: 3162)
+  Rendered layout layouts/application.html.erb (Duration: 494.0ms | Allocations: 12496)
+Completed 500 Internal Server Error in 497ms (ActiveRecord: 0.0ms | Allocations: 12891)
+
+
+  
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    47:         <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    48:         <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    49:         <% if current_user.present? %>
+    50:           <span class="block px-3 py-2 text-gray-700">Logged in as <%= Current.user.email %></span>
+    51:           <%# <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %> %>
+    52:         <% else %>
+    53:           <%# <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %> %>
+  
+app/views/shared/_navbar.html.erb:50
+app/views/layouts/application.html.erb:39
+Started GET "/" for ::1 at 2024-11-17 22:45:32 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-11-17 22:45:33 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1183)
+  Rendered shared/_navbar.html.erb (Duration: 505.8ms | Allocations: 5287)
+  Rendered layout layouts/application.html.erb (Duration: 682.1ms | Allocations: 67571)
+Completed 500 Internal Server Error in 788ms (ActiveRecord: 0.0ms | Allocations: 75715)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<Hash:0x00007f980bbeb928>):
+    47:         <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    48:         <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    49:         <% if current_user.present? %>
+    50:           <span class="block px-3 py-2 text-gray-700">Logged in as <%= current_user.email %></span>
+    51:           <%# <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %> %>
+    52:         <% else %>
+    53:           <%# <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %> %>
+  
+app/views/shared/_navbar.html.erb:50
+app/views/layouts/application.html.erb:39
+Started GET "/" for ::1 at 2024-11-17 22:56:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-11-17 22:56:25 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1183)
+  Rendered shared/_navbar.html.erb (Duration: 466.5ms | Allocations: 5274)
+  Rendered layout layouts/application.html.erb (Duration: 736.2ms | Allocations: 67420)
+Completed 500 Internal Server Error in 823ms (ActiveRecord: 0.0ms | Allocations: 75564)
+
+
+  
+ActionView::Template::Error (undefined method `email_addresses' for #<Hash:0x00007f840848a588>):
+    47:         <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    48:         <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+    49:         <% if current_user.present? %>
+    50:           <span class="block px-3 py-2 text-gray-700">Logged in as <%= current_user.email_addresses.first.email_address %></span>
+    51:           <%# <%= button_to "Logout", logout_path, method: :delete, class: "block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white" %> %>
+    52:         <% else %>
+    53:           <%# <%= link_to "LOG IN / SIGN UP", login_path, class: "block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-indigo-500 text-white" %> %>
+  
+app/views/shared/_navbar.html.erb:50
+app/views/layouts/application.html.erb:39
+Started GET "/" for ::1 at 2024-11-17 22:58:51 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-11-17 22:58:52 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1183)
+  Rendered shared/_navbar.html.erb (Duration: 361.7ms | Allocations: 2239)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 523.8ms | Allocations: 64340)
+Completed 200 OK in 611ms (Views: 543.5ms | ActiveRecord: 0.0ms | Allocations: 72498)
+
+
+Started GET "/" for ::1 at 2024-11-17 22:58:59 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 389)
+  Rendered shared/_navbar.html.erb (Duration: 367.6ms | Allocations: 1577)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 393.2ms | Allocations: 10854)
+Completed 200 OK in 395ms (Views: 394.0ms | ActiveRecord: 0.0ms | Allocations: 11265)
+
+
+Started GET "/" for ::1 at 2024-11-21 17:42:26 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-11-21 17:43:22 +0100
+Started GET "/" for ::1 at 2024-11-21 17:43:44 +0100
+Started GET "/" for ::1 at 2024-11-21 17:43:46 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1183)
+  Rendered shared/_navbar.html.erb (Duration: 485.6ms | Allocations: 2254)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 851.6ms | Allocations: 64565)
+Completed 200 OK in 956ms (Views: 869.5ms | ActiveRecord: 0.0ms | Allocations: 72720)
+
+
+Started GET "/" for ::1 at 2024-11-21 17:44:54 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 389)
+  Rendered shared/_navbar.html.erb (Duration: 519.7ms | Allocations: 1586)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 551.9ms | Allocations: 10863)
+Completed 200 OK in 556ms (Views: 552.9ms | ActiveRecord: 0.0ms | Allocations: 11274)
+
+
+Started GET "/about" for ::1 at 2024-11-21 17:44:56 +0100
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 120)
+  Rendered shared/_navbar.html.erb (Duration: 445.3ms | Allocations: 1586)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 461.3ms | Allocations: 10598)
+Completed 200 OK in 467ms (Views: 463.5ms | ActiveRecord: 0.0ms | Allocations: 11140)
+
+
+Started GET "/" for ::1 at 2024-11-21 17:45:00 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 382)
+  Rendered shared/_navbar.html.erb (Duration: 480.8ms | Allocations: 1564)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 550.2ms | Allocations: 10933)
+Completed 200 OK in 553ms (Views: 551.1ms | ActiveRecord: 0.0ms | Allocations: 11340)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:03:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1183)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 414.6ms | Allocations: 2271)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 811.6ms | Allocations: 86565)
+Completed 200 OK in 911ms (Views: 833.9ms | ActiveRecord: 0.0ms | Allocations: 94724)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:03:34 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 389)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 648)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 9925)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 10339)
+
+
+Started GET "/?__clerk_db_jwt=dvb_2okrFWShhTgmw3QZvRwBtS5G12f" for ::1 at 2024-11-21 18:04:04 +0100
+Started GET "/" for ::1 at 2024-11-21 18:04:05 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 343.9ms | Allocations: 1599)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 380.0ms | Allocations: 10902)
+Completed 200 OK in 383ms (Views: 381.5ms | ActiveRecord: 0.0ms | Allocations: 11311)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:04:56 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 646)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 9907)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.0ms | Allocations: 10315)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:07:01 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1087)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 5.1ms | Allocations: 1296)
+  Rendered shared/_footer.html.erb (Duration: 1.7ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 88.1ms | Allocations: 37215)
+Completed 200 OK in 95ms (Views: 91.7ms | ActiveRecord: 0.0ms | Allocations: 38432)
+
+
+Started GET "/?__clerk_handshake=eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yb2tCOGdSZTJNMVFuRVZJeVhydmtoOHY2SWwiLCJ0eXAiOiJKV1QifQ.eyJoYW5kc2hha2UiOlsiX19jbGllbnRfdWF0PTsgUGF0aD0vOyBFeHBpcmVzPVRodSwgMDEgSmFuIDE5NzAgMDA6MDA6MDAgR01UOyBTYW1lU2l0ZT1MYXgiLCJfX2NsaWVudF91YXQ9MTczMjIwODgyNjsgUGF0aD0vOyBEb21haW49bG9jYWxob3N0OyBNYXgtQWdlPTMxNTM2MDAwMDsgU2FtZVNpdGU9TGF4IiwiX19zZXNzaW9uPWV5SmhiR2NpT2lKU1V6STFOaUlzSW1OaGRDSTZJbU5zWDBJM1pEUlFSREV4TVVGQlFTSXNJbXRwWkNJNkltbHVjMTh5YjJ0Q09HZFNaVEpOTVZGdVJWWkplVmh5ZG10b09IWTJTV3dpTENKMGVYQWlPaUpLVjFRaWZRLmV5SmhlbkFpT2lKb2RIUndPaTh2Ykc5allXeG9iM04wT2pNd01EQWlMQ0psZUhBaU9qRTNNekl5TURnNE9EWXNJbVoyWVNJNld6QXNMVEZkTENKcFlYUWlPakUzTXpJeU1EZzRNallzSW1semN5STZJbWgwZEhCek9pOHZabUZwY2kxbmIzQm9aWEl0TlRRdVkyeGxjbXN1WVdOamIzVnVkSE11WkdWMklpd2libUptSWpveE56TXlNakE0T0RFMkxDSnphV1FpT2lKelpYTnpYekp3UVZaT1VrMU9lV3hIWVVaSE0yRjRlalJGV1dFeU5VVktUaUlzSW5OMVlpSTZJblZ6WlhKZk1uQkJWakJSY214RFZqQk9OR3B1UmxSWmFFUkhhMlI1WWpWbUluMC5iLVcteVJpcWlyWWxMZHVibGtGLTVqZnVYVUdLMHF1UGdudWhza0NEZi1yNTZCclVZRmJPX0RBU1dFWVlkTFJCbnNzYUR1a3JlaW1aUE9xOFZEWWNzOTF2MDRrd2dqVUtyaDhNRlFRWEZzQlE2cngzVnF0ZndnRUM3clJfRDUwaEJ1czdEZGJFb21KelY2bVNacWVQZ01BUEpHS015MWpVcHRPQUVXRDFjbGRYMllIeW0tbkhNek5uR3hWd0I5akl6SWs0ZUR0QVVDTWwzLVVrSE41VVd0ZEhnZVhlbEx5Z0VzN21Bd08zTTIyN1JpSHh4S1J4bDFZdXFuLWZSTWFGSUdwemwtcmV6UHVHWWw4YkdPc09BUzRpQ3ZUVFlzajBBMTdsR2d5aHBhZEpxVkFrRnJqaE1Wb1dYZk9LRWZveG15NDhnbldfZ1BMaWl3c0VuV21nUkE7IFBhdGg9LzsgRXhwaXJlcz1GcmksIDIxIE5vdiAyMDI1IDE3OjA3OjA2IEdNVDsgU2FtZVNpdGU9TGF4IiwiX19yZWZyZXNoXzBIQXBRZS1hPXRYRmE4OFRlVjJibUJiRmdmcDJlOyBQYXRoPS87IEV4cGlyZXM9RnJpLCAyMSBOb3YgMjAyNSAxNzowNzowNiBHTVQ7IEh0dHBPbmx5OyBTYW1lU2l0ZT1MYXgiXX0.HaMP-1yJVv_4R39vujb7e-C-9xdglEHcTKrm3CPXXENFAwNiyTQzCYlH1CWbqfrTzb8VInHJv_9OIKw3rpB46O4_Jo6kqoQ1bFQQBVnicHscLnXo2Lx0_2AuRYTqBL9QMGdQtJw3mAM5ysNiSIqCbqf8bWKqrc36aJky1VQ5f05grgLWBVKwL4Jtzykid-zYOUOXD2pWQcCdW7OZEvSCj5wLHchUcD4nvWn7QbugTZnCy6PVnjUx4MtXpVE41X6i3lT644EAe7cZGkIWkjJt0cc8dTpkBkBEu7l9ThjK-oAGpt0cxWF2bAQtyJmI-inhsJmsJ7p34ftlcynsBHbocQ" for ::1 at 2024-11-21 18:07:07 +0100
+Started GET "/" for ::1 at 2024-11-21 18:07:09 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 389)
+  Rendered shared/_navbar.html.erb (Duration: 466.6ms | Allocations: 1579)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 500.7ms | Allocations: 10856)
+Completed 200 OK in 510ms (Views: 503.1ms | ActiveRecord: 0.0ms | Allocations: 11268)
+
+

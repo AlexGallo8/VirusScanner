@@ -16,8 +16,15 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    # Logout: rimuovi l'ID dell'utente dalla sessione
-    session.delete(:user_id)
-    redirect_to login_path
+    clerk_session = Clerk::Session.find_by(user_id: current_user.id)
+    clerk_session.destroy if clerk_session
+
+    redirect_to root_path, notice: 'Logged out successfully'
   end
+
+  # def destroy
+  #   # Logout: rimuovi l'ID dell'utente dalla sessione
+  #   session.delete(:user_id)
+  #   redirect_to login_path
+  # end
 end

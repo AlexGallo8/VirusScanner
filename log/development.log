@@ -56709,3 +56709,252 @@ Processing by MainController#index as HTML
 Completed 200 OK in 441ms (Views: 440.2ms | ActiveRecord: 0.0ms | Allocations: 11288)
 
 
+Started GET "/about" for ::1 at 2024-11-21 18:40:01 +0100
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 120)
+Started GET "/about" for ::1 at 2024-11-21 18:40:01 +0100
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 531.1ms | Allocations: 13488)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 555.9ms | Allocations: 22500)
+Completed 200 OK in 564ms (Views: 559.3ms | ActiveRecord: 0.0ms | Allocations: 23046)
+
+
+  Rendered shared/_navbar.html.erb (Duration: 412.9ms | Allocations: 2641)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 427.4ms | Allocations: 11529)
+Completed 200 OK in 429ms (Views: 428.1ms | ActiveRecord: 0.0ms | Allocations: 11938)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:40:41 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1085)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 431.1ms | Allocations: 2168)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 513.2ms | Allocations: 38359)
+Completed 200 OK in 520ms (Views: 516.6ms | ActiveRecord: 0.0ms | Allocations: 39579)
+
+
+Started GET "/about" for ::1 at 2024-11-21 18:40:47 +0100
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 118)
+  Rendered shared/_navbar.html.erb (Duration: 444.8ms | Allocations: 1605)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 464.0ms | Allocations: 10748)
+Completed 200 OK in 470ms (Views: 466.0ms | ActiveRecord: 0.0ms | Allocations: 11295)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:41:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1183)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 425.2ms | Allocations: 2242)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 680.1ms | Allocations: 71760)
+Completed 200 OK in 772ms (Views: 702.0ms | ActiveRecord: 0.0ms | Allocations: 79919)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:41:52 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1085)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 740.5ms | Allocations: 2197)
+  Rendered shared/_footer.html.erb (Duration: 51.9ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 855.2ms | Allocations: 37938)
+Completed 200 OK in 863ms (Views: 858.8ms | ActiveRecord: 0.0ms | Allocations: 39153)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:42:13 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1085)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 592.1ms | Allocations: 2163)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 646.4ms | Allocations: 38152)
+Completed 200 OK in 653ms (Views: 650.8ms | ActiveRecord: 0.0ms | Allocations: 39373)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:52:34 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1085)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 940.9ms | Allocations: 2198)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 1013.5ms | Allocations: 38073)
+Completed 200 OK in 1020ms (Views: 1017.1ms | ActiveRecord: 0.0ms | Allocations: 39292)
+
+
+Started GET "/about" for ::1 at 2024-11-21 18:53:44 +0100
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 120)
+  Rendered shared/_navbar.html.erb (Duration: 485.1ms | Allocations: 1582)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 562.5ms | Allocations: 10647)
+Completed 200 OK in 585ms (Views: 567.0ms | ActiveRecord: 0.0ms | Allocations: 11191)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:53:48 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 382)
+  Rendered shared/_navbar.html.erb (Duration: 471.2ms | Allocations: 1577)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 488.7ms | Allocations: 10840)
+Completed 200 OK in 493ms (Views: 489.9ms | ActiveRecord: 0.0ms | Allocations: 11249)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:53:51 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 646)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 9908)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.0ms | Allocations: 10319)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:55:28 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1087)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 1260)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 71.7ms | Allocations: 37455)
+Completed 200 OK in 79ms (Views: 75.8ms | ActiveRecord: 0.0ms | Allocations: 38674)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:55:48 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1085)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 11.9ms | Allocations: 1258)
+  Rendered shared/_footer.html.erb (Duration: 1.4ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 149.2ms | Allocations: 37201)
+Completed 200 OK in 160ms (Views: 156.6ms | ActiveRecord: 0.0ms | Allocations: 38420)
+
+
+Started GET "/?__clerk_handshake=eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yb2tCOGdSZTJNMVFuRVZJeVhydmtoOHY2SWwiLCJ0eXAiOiJKV1QifQ.eyJoYW5kc2hha2UiOlsiX19jbGllbnRfdWF0PTsgUGF0aD0vOyBFeHBpcmVzPVRodSwgMDEgSmFuIDE5NzAgMDA6MDA6MDAgR01UOyBTYW1lU2l0ZT1MYXgiLCJfX2NsaWVudF91YXQ9MTczMjIxMTc1ODsgUGF0aD0vOyBEb21haW49bG9jYWxob3N0OyBNYXgtQWdlPTMxNTM2MDAwMDsgU2FtZVNpdGU9TGF4IiwiX19zZXNzaW9uPWV5SmhiR2NpT2lKU1V6STFOaUlzSW1OaGRDSTZJbU5zWDBJM1pEUlFSREV4TVVGQlFTSXNJbXRwWkNJNkltbHVjMTh5YjJ0Q09HZFNaVEpOTVZGdVJWWkplVmh5ZG10b09IWTJTV3dpTENKMGVYQWlPaUpLVjFRaWZRLmV5SmhlbkFpT2lKb2RIUndPaTh2Ykc5allXeG9iM04wT2pNd01EQWlMQ0psZUhBaU9qRTNNekl5TVRFNE1UZ3NJbVoyWVNJNld6QXNMVEZkTENKcFlYUWlPakUzTXpJeU1URTNOVGdzSW1semN5STZJbWgwZEhCek9pOHZabUZwY2kxbmIzQm9aWEl0TlRRdVkyeGxjbXN1WVdOamIzVnVkSE11WkdWMklpd2libUptSWpveE56TXlNakV4TnpRNExDSnphV1FpT2lKelpYTnpYekp3UVdKS2MweG9WVE5TWnpsM1pVNTFZelF5UVc1TVEzYzJSQ0lzSW5OMVlpSTZJblZ6WlhKZk1uQkJWakJSY214RFZqQk9OR3B1UmxSWmFFUkhhMlI1WWpWbUluMC5FNlYxaHBDZTY4TjllZGRnc0ZOVXhkREVsd29seEh4NS1WQ0hGY0lVeVkxM29aeUdaMG5FS3BIZEc5WE5jMy1YMzBBczZYQ2hadDJ1OHNHcjM2eWQ4WXk1MWFwaDktQjB3dzU4aXkwRzVsTWNJLUlEY2ZVR1F0dzBtdXJrSUJHVU1Bb0Rrek1VeXptVFdPbWU0NDJQNmxjamlBaVg1NGtZMmsxSTY1UnNXZExrWWFUQnRweGxVVS1XS2VtUmdmMGdXZEg5ZXB1bEViZjVUS1YySmY1Z1pudERDVXFlM19KaWV0WUpUdGl6a2VuQTF1d0NxMHg2RHUxZVNLdENKWEdIR3N2dDU5N0ZoVnA5OHNlTDJvYWNXNE5EWkNlOU5lRVdXNkRMellIS29RWUwzZjlzT3JRVEFGT3FJZ3J6TXdObVdlUDRUcXhxX0JoZXVEdk5OaGlsVlE7IFBhdGg9LzsgRXhwaXJlcz1GcmksIDIxIE5vdiAyMDI1IDE3OjU1OjU4IEdNVDsgU2FtZVNpdGU9TGF4IiwiX19yZWZyZXNoXzBIQXBRZS1hPTZIa25mN3RRa3pvQ3E4M0c4eGdPOyBQYXRoPS87IEV4cGlyZXM9RnJpLCAyMSBOb3YgMjAyNSAxNzo1NTo1OSBHTVQ7IEh0dHBPbmx5OyBTYW1lU2l0ZT1MYXgiXX0.QPvQrUlbtm5YEHkDQU07F4H4LzdqrVZ_etoEymWWLKQnSz0ClHk_AGDM_97ZZyMg9_bi_dCfui919F-4Xq-bNzQ4HQYtZvtFYc1LRMKYNauvtpfTJRfdhBjl6wUdWd5O3ujbci0VIvz91536zm0MYJa4YhIUi_4PrC_QIyIfI1QnttVkAPBeXbO2uuf5pybHKcOTUDiXdp7urenKExtuR_xV42UDnnlNb5TKGuUtj-A1VdvydpUYtjrUb4-cv1chuPKws1mBDK_M6xe8VIxj0fxhSEtZ6eep7TtQyc3ZrnaGDQgvYty9QihiDUioEnkpFyjMIzxS52sUPqj3GoANQg" for ::1 at 2024-11-21 18:56:00 +0100
+Started GET "/" for ::1 at 2024-11-21 18:56:01 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 389)
+  Rendered shared/_navbar.html.erb (Duration: 820.7ms | Allocations: 1564)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 861.1ms | Allocations: 10951)
+Completed 200 OK in 866ms (Views: 862.3ms | ActiveRecord: 0.0ms | Allocations: 11360)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:56:08 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 4.0ms | Allocations: 647)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 60.7ms | Allocations: 9960)
+Completed 200 OK in 63ms (Views: 61.4ms | ActiveRecord: 0.0ms | Allocations: 10369)
+
+
+Started GET "/?__clerk_handshake=eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yb2tCOGdSZTJNMVFuRVZJeVhydmtoOHY2SWwiLCJ0eXAiOiJKV1QifQ.eyJoYW5kc2hha2UiOlsiX19jbGllbnRfdWF0PTsgUGF0aD0vOyBFeHBpcmVzPVRodSwgMDEgSmFuIDE5NzAgMDA6MDA6MDAgR01UOyBTYW1lU2l0ZT1MYXgiLCJfX2NsaWVudF91YXQ9MTczMjIxMTc4OTsgUGF0aD0vOyBEb21haW49bG9jYWxob3N0OyBNYXgtQWdlPTMxNTM2MDAwMDsgU2FtZVNpdGU9TGF4IiwiX19zZXNzaW9uPWV5SmhiR2NpT2lKU1V6STFOaUlzSW1OaGRDSTZJbU5zWDBJM1pEUlFSREV4TVVGQlFTSXNJbXRwWkNJNkltbHVjMTh5YjJ0Q09HZFNaVEpOTVZGdVJWWkplVmh5ZG10b09IWTJTV3dpTENKMGVYQWlPaUpLVjFRaWZRLmV5SmhlbkFpT2lKb2RIUndPaTh2Ykc5allXeG9iM04wT2pNd01EQWlMQ0psZUhBaU9qRTNNekl5TVRFNE5Ea3NJbVoyWVNJNld6QXNMVEZkTENKcFlYUWlPakUzTXpJeU1URTNPRGtzSW1semN5STZJbWgwZEhCek9pOHZabUZwY2kxbmIzQm9aWEl0TlRRdVkyeGxjbXN1WVdOamIzVnVkSE11WkdWMklpd2libUptSWpveE56TXlNakV4TnpjNUxDSnphV1FpT2lKelpYTnpYekp3UVdKT2JqSlJSSE51YjNCc1pGZFROazFIY0ZkUk1qbHNkaUlzSW5OMVlpSTZJblZ6WlhKZk1uQkJWakJSY214RFZqQk9OR3B1UmxSWmFFUkhhMlI1WWpWbUluMC5XTU5oOFZtdktqY1dLaFh4ZGJ4dWxEMzF2aW5kd2dFRWZfSlJ0LUpCY0I0OFE0ZGR2SHFYdjFEMUF3VjVYaTE3R29vTUEzcElqVUNueHB4N2dMLVZmdjNVejd6M1VDeTJZU2lST21aN1FrakU4eDRZVXdPNUNRNFZuZlJTTm1DQVB0dGFWU1pFMTkzZ0o5Z1kxcGhOZlliQWUwQ3NsMlJBZFlGYWhSSUtQMVQ2SDItLXpVekRNZXRVWVQ4NGtEaHdoWF9MbjN1Y3NiQURTbWY4Q0RuRVZTV3VxV1M0MlFkWWxXbHR6WTRLamVUYkJtaldpUFhpeHJzaWRFSFRDRFI0c3dnNG9NU1p2czBzOGpkZHRESUFMX2t5VU5KRVB5UjRCaGt2RmVib1ZFYkVHVUJ3bnRPNXBuZzBkOFpmdTJWYWhnUzlubjZVb005a2JkOEN5dlc4aXc7IFBhdGg9LzsgRXhwaXJlcz1GcmksIDIxIE5vdiAyMDI1IDE3OjU2OjI5IEdNVDsgU2FtZVNpdGU9TGF4IiwiX19yZWZyZXNoXzBIQXBRZS1hPVhYNzVYZ2JDS2hzb01IZUxLZ0lmOyBQYXRoPS87IEV4cGlyZXM9RnJpLCAyMSBOb3YgMjAyNSAxNzo1NjoyOSBHTVQ7IEh0dHBPbmx5OyBTYW1lU2l0ZT1MYXgiXX0.D-sVt2_x2ISXlRuWcK3pfY0AZiZDu7PoEqFjnDuGU-Xf76v5Lt5jUcR6j17vAXfWp5Opr2e8rZTy42CdHqdoud-uWW2lvxN8CA8zRW_kUSQBjjI8wlYboGhHRUv6j99FQALqRoiu0itSKus6hmOwkRfWCszXhB2xhZIUr24obC-NM0d9LeihVSlqbIlXJOkFwUkAhg38QqmgAbJ-ZLEv9HnhtRlL8yFnkzLO-IzVmu26DaBzFhKKhMxQUhEdb6ejp_XnjlIweBW1NKOYZ3rTZv-GexZbiUy0n6lOlMS27v8qnlFv5nM3gEl8J9WS6DP1gxkNNASIvOcrzKeK5bYPGA" for ::1 at 2024-11-21 18:56:30 +0100
+Started GET "/" for ::1 at 2024-11-21 18:56:32 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 497.4ms | Allocations: 1582)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 548.0ms | Allocations: 10844)
+Completed 200 OK in 551ms (Views: 549.3ms | ActiveRecord: 0.0ms | Allocations: 11252)
+
+

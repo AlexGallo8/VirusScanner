@@ -13,24 +13,34 @@
     
     <%= javascript_importmap_tags %>
     <%= clerk_script_tag %>
-    <%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> %>
+    <%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
-        if (window.Clerk) {
-          window.Clerk.load()
-            .then(() => {
-              const userButtonEl = document.getElementById('user-button');
-              if (userButtonEl) {
-                window.Clerk.mountUserButton(userButtonEl, {
-                  afterSignOutUrl: '/',
-                  userProfileUrl: '/profile'
-                });
-              }
-            })
-            .catch(error => {
-              console.error('Error loading Clerk:', error);
-            });
+      if (window.Clerk) {
+        window.Clerk.load()
+          .then(() => {
+            // User button per desktop
+            const desktopUserButtonEl = document.getElementById('user-button');
+            if (desktopUserButtonEl) {
+              window.Clerk.mountUserButton(desktopUserButtonEl, {
+                afterSignOutUrl: '/',
+                userProfileUrl: '/profile'
+              });
+            }
+
+            // User button per mobile
+            const mobileUserButtonEl = document.getElementById('mobile-user-button');
+            if (mobileUserButtonEl) {
+              window.Clerk.mountUserButton(mobileUserButtonEl, {
+                afterSignOutUrl: '/',
+                userProfileUrl: '/profile'
+              });
+            }
+          })
+          .catch(error => {
+            console.error('Error loading Clerk:', error);
+          });
         }
       });
     </script>

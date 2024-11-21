@@ -34,18 +34,9 @@
         <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
         <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
         
-        <<div class="hidden lg:flex items-center space-x-4 login-buttons">>
+        <div class="hidden lg:flex items-center space-x-4 login-buttons">
           <% if current_user.present? %>
-            <div id="user-button">
-              <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                  if (Clerk) {
-                    Clerk.mountUserButton(document.getElementById('user-button'));
-                  }
-                });
-              </script>
-            </div>
-            <button onclick="Clerk.signOut()">Logout</button>
+            <div id="user-button" data-clerk-component="userButton"></div>
           <% else %>
             <button onclick="Clerk.openSignIn()">Sign in</button>
             <button onclick="Clerk.openSignUp()">Sign up</button>

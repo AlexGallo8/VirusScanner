@@ -56629,3 +56629,83 @@ Processing by MainController#index as HTML
 Completed 200 OK in 510ms (Views: 503.1ms | ActiveRecord: 0.0ms | Allocations: 11268)
 
 
+Started GET "/" for ::1 at 2024-11-21 18:13:19 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1085)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 1035.1ms | Allocations: 2254)
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 1128.5ms | Allocations: 38140)
+Completed 200 OK in 1139ms (Views: 1132.6ms | ActiveRecord: 0.0ms | Allocations: 39355)
+
+
+Started GET "/" for ::1 at 2024-11-21 18:36:33 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1183)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 920.5ms | Allocations: 2274)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 1167.5ms | Allocations: 72114)
+Completed 200 OK in 1255ms (Views: 1189.0ms | ActiveRecord: 0.0ms | Allocations: 80273)
+
+
+Started GET "/profile" for ::1 at 2024-11-21 18:37:12 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/profile"):
+  
+Started GET "/" for ::1 at 2024-11-21 18:37:21 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1085)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 3.4ms | Allocations: 1263)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 64.2ms | Allocations: 37423)
+Completed 200 OK in 69ms (Views: 66.5ms | ActiveRecord: 0.0ms | Allocations: 38593)
+
+
+Started GET "/?__clerk_handshake=eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yb2tCOGdSZTJNMVFuRVZJeVhydmtoOHY2SWwiLCJ0eXAiOiJKV1QifQ.eyJoYW5kc2hha2UiOlsiX19jbGllbnRfdWF0PTsgUGF0aD0vOyBFeHBpcmVzPVRodSwgMDEgSmFuIDE5NzAgMDA6MDA6MDAgR01UOyBTYW1lU2l0ZT1MYXgiLCJfX2NsaWVudF91YXQ9MTczMjIxMDY0NjsgUGF0aD0vOyBEb21haW49bG9jYWxob3N0OyBNYXgtQWdlPTMxNTM2MDAwMDsgU2FtZVNpdGU9TGF4IiwiX19zZXNzaW9uPWV5SmhiR2NpT2lKU1V6STFOaUlzSW1OaGRDSTZJbU5zWDBJM1pEUlFSREV4TVVGQlFTSXNJbXRwWkNJNkltbHVjMTh5YjJ0Q09HZFNaVEpOTVZGdVJWWkplVmh5ZG10b09IWTJTV3dpTENKMGVYQWlPaUpLVjFRaWZRLmV5SmhlbkFpT2lKb2RIUndPaTh2Ykc5allXeG9iM04wT2pNd01EQWlMQ0psZUhBaU9qRTNNekl5TVRBM01EWXNJbVoyWVNJNld6QXNMVEZkTENKcFlYUWlPakUzTXpJeU1UQTJORFlzSW1semN5STZJbWgwZEhCek9pOHZabUZwY2kxbmIzQm9aWEl0TlRRdVkyeGxjbXN1WVdOamIzVnVkSE11WkdWMklpd2libUptSWpveE56TXlNakV3TmpNMkxDSnphV1FpT2lKelpYTnpYekp3UVZvMFJrTk9aMDloT1RWbU1rbDZVRXRQWm0xRk9HZE5TQ0lzSW5OMVlpSTZJblZ6WlhKZk1uQkJWakJSY214RFZqQk9OR3B1UmxSWmFFUkhhMlI1WWpWbUluMC5TMmRPRnc1dWc2LUdiTkk5WThDWlhfODFXSjlRZE9sUWRWbHZlUlRzXy1zd1E0OUVLWUxZNHdoSGVVMEdFOXhTdlkzU0kzcGU2U2ZYNW0wek9uTmVoT0Z4cFdxMS1rTVBDa0RVdW95SFVCR01qSlRjMDdEekVReHBBYnZaSWxHeHhEZF9vVmp2WEplbDhfdlR3YkJ5YVIzUWhLY3U0eDd1WGp6aGRQdXhsN2E3ZjV6UGxPb3F4N2R2MkwwOWhFV3phUWRISmVxMmN5ajJWTnZJdFhmLXoyRGU4ZkQ0ajhIcjVzd1dwa1lkZzlUU1NDclBXLVNDWTlTZXZZRGMtdXJJaWdPS1V1QzJDRXFvLWd0bWdRZHpRRFczQkk1VE9PU1FjRTdmd3ZIVkxUOFh2LThrOFJWZEZuMXZpMXdmTUZNS3BXc050V0VFR1VyQS1aTVd0N09hY1E7IFBhdGg9LzsgRXhwaXJlcz1GcmksIDIxIE5vdiAyMDI1IDE3OjM3OjI2IEdNVDsgU2FtZVNpdGU9TGF4IiwiX19yZWZyZXNoXzBIQXBRZS1hPTBZVVN3eDc3eWdjb0ptbVl4WmVpOyBQYXRoPS87IEV4cGlyZXM9RnJpLCAyMSBOb3YgMjAyNSAxNzozNzoyNiBHTVQ7IEh0dHBPbmx5OyBTYW1lU2l0ZT1MYXgiXX0.M6Ii9M8K6JIbw0skhrwVlpLkQM8LLTqkyv7hjLQgwUvrU09xf1_UQ2GD1ByTo_sOdDRxDoQl8XvaCUs_zy-KWxMzTzTyaAJHp8SVXHlfq2ZSiuLTdWp0tL__bdZpnkdSEWjTAqJb3QcOFj4T-IkA0wHKa0zOFuIA06589RchOx081VG5XJmfCdzBox06ESXkvhomDEasQOM0nqMrlrtQEPm4kf6xcd2PDrh6eqAZRYc385N0gnxXpfAKat0b6FMKeybGiYPx0Pem16gVA9vbczjy9JrT9u4GCduwpgI0YJz8nxDMA0dnEERq_UKJbdEDFRo_PpUqcxqmiT9UeWtfHQ" for ::1 at 2024-11-21 18:37:27 +0100
+Started GET "/" for ::1 at 2024-11-21 18:37:28 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 389)
+  Rendered shared/_navbar.html.erb (Duration: 407.6ms | Allocations: 1568)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 439.1ms | Allocations: 10879)
+Completed 200 OK in 441ms (Views: 440.2ms | ActiveRecord: 0.0ms | Allocations: 11288)
+
+

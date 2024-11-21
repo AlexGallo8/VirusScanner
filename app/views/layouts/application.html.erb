@@ -22,7 +22,10 @@
             .then(() => {
               const userButtonEl = document.getElementById('user-button');
               if (userButtonEl) {
-                window.Clerk.mountUserButton(userButtonEl);
+                window.Clerk.mountUserButton(userButtonEl, {
+                  afterSignOutUrl: '/',
+                  userProfileUrl: '/profile'
+                });
               }
             })
             .catch(error => {

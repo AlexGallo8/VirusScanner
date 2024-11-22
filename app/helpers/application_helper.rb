@@ -1,6 +1,5 @@
 module ApplicationHelper
     def clerk_frontend_api
-      #Base64.decode64(ENV.fetch("CLERK_PUBLISHABLE_KEY").sub(/pk_(test|live)/, "")).sub("$", "")
       Base64.decode64(ENV["CLERK_PUBLISHABLE_KEY"]&.sub(/pk_(test|live)/, "") || "").sub("$", "")
     end
   
@@ -11,7 +10,6 @@ module ApplicationHelper
       javascript_include_tag(
         script_url,
         {
-          #"data-clerk-publishable-key": ENV.fetch("CLERK_PUBLISHABLE_KEY"),
           "data-clerk-publishable-key": ENV["CLERK_PUBLISHABLE_KEY"],
           crossorigin: "anonymous",
         #   onload: "startClerk()",

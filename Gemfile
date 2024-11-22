@@ -27,9 +27,6 @@ gem "virustotal_api"
 # http requests
 gem 'net-http'
 
-# Turbolinks makes navigating your web application faster [
-gem 'turbolinks', '~> 5'
-
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 

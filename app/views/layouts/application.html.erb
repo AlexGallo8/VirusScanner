@@ -9,9 +9,9 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
     
+    <%= clerk_script_tag %>
     <%# perché va rimosso? %>
     <%= javascript_importmap_tags %>
-    <%= clerk_script_tag %>
 
     <%# <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {

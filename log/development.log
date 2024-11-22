@@ -57097,3 +57097,68 @@ Processing by MainController#index as HTML
 Completed 200 OK in 387ms (Views: 289.2ms | ActiveRecord: 0.0ms | Allocations: 52661)
 
 
+Started GET "/" for ::1 at 2024-11-22 11:39:27 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 48.5ms | Allocations: 4356)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 3.9ms | Allocations: 1285)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 1765.3ms | Allocations: 222040)
+Completed 200 OK in 1881ms (Views: 1797.4ms | ActiveRecord: 0.0ms | Allocations: 230967)
+
+
+Started GET "/" for ::1 at 2024-11-22 11:40:19 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1258)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 9.5ms | Allocations: 1252)
+  Rendered shared/_footer.html.erb (Duration: 1.9ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 197.8ms | Allocations: 36410)
+Completed 200 OK in 206ms (Views: 202.0ms | ActiveRecord: 0.0ms | Allocations: 37454)
+
+
+Started GET "/" for ::1 at 2024-11-22 11:40:51 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 30.6ms | Allocations: 3311)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 24.7ms | Allocations: 1292)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 431.5ms | Allocations: 71806)
+Completed 200 OK in 500ms (Views: 459.7ms | ActiveRecord: 0.0ms | Allocations: 77836)
+
+

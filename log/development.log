@@ -56958,3 +56958,142 @@ Processing by MainController#index as HTML
 Completed 200 OK in 551ms (Views: 549.3ms | ActiveRecord: 0.0ms | Allocations: 11252)
 
 
+Started GET "/" for ::1 at 2024-11-22 10:27:46 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1183)
+  Rendered shared/_navbar.html.erb (Duration: 304.2ms | Allocations: 2271)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 544.2ms | Allocations: 50278)
+Completed 200 OK in 641ms (Views: 567.1ms | ActiveRecord: 0.0ms | Allocations: 58448)
+
+
+Started GET "/" for ::1 at 2024-11-22 10:37:47 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1183)
+  Rendered shared/_navbar.html.erb (Duration: 392.8ms | Allocations: 2257)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 725.6ms | Allocations: 61185)
+Completed 200 OK in 816ms (Views: 745.4ms | ActiveRecord: 0.0ms | Allocations: 69353)
+
+
+Started GET "/" for ::1 at 2024-11-22 10:37:49 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 389)
+  Rendered shared/_navbar.html.erb (Duration: 436.9ms | Allocations: 1572)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 464.5ms | Allocations: 10631)
+Completed 200 OK in 466ms (Views: 465.4ms | ActiveRecord: 0.0ms | Allocations: 11053)
+
+
+Started GET "/" for ::1 at 2024-11-22 10:43:44 +0100
+Started GET "/" for ::1 at 2024-11-22 10:43:46 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 328.2ms | Allocations: 1578)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 374.3ms | Allocations: 10625)
+Completed 200 OK in 382ms (Views: 378.0ms | ActiveRecord: 0.0ms | Allocations: 11041)
+
+
+Started GET "/" for ::1 at 2024-11-22 11:04:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-11-22 11:04:21 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1183)
+  Rendered shared/_navbar.html.erb (Duration: 403.4ms | Allocations: 2263)
+  Rendered shared/_footer.html.erb (Duration: 2.1ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 1043.8ms | Allocations: 61084)
+Completed 200 OK in 1227ms (Views: 1061.8ms | ActiveRecord: 0.0ms | Allocations: 69255)
+
+
+Started GET "/" for ::1 at 2024-11-22 11:04:27 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 389)
+  Rendered shared/_navbar.html.erb (Duration: 4.0ms | Allocations: 648)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 9707)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.0ms | Allocations: 10129)
+
+
+Started GET "/?__clerk_handshake=eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yb2tCOGdSZTJNMVFuRVZJeVhydmtoOHY2SWwiLCJ0eXAiOiJKV1QifQ.eyJoYW5kc2hha2UiOlsiX19jbGllbnRfdWF0PTsgUGF0aD0vOyBFeHBpcmVzPVRodSwgMDEgSmFuIDE5NzAgMDA6MDA6MDAgR01UOyBTYW1lU2l0ZT1MYXgiLCJfX2NsaWVudF91YXQ9MTczMjI2OTg3MzsgUGF0aD0vOyBEb21haW49bG9jYWxob3N0OyBNYXgtQWdlPTMxNTM2MDAwMDsgU2FtZVNpdGU9TGF4IiwiX19zZXNzaW9uPWV5SmhiR2NpT2lKU1V6STFOaUlzSW1OaGRDSTZJbU5zWDBJM1pEUlFSREV4TVVGQlFTSXNJbXRwWkNJNkltbHVjMTh5YjJ0Q09HZFNaVEpOTVZGdVJWWkplVmh5ZG10b09IWTJTV3dpTENKMGVYQWlPaUpLVjFRaWZRLmV5SmhlbkFpT2lKb2RIUndPaTh2Ykc5allXeG9iM04wT2pNd01EQWlMQ0psZUhBaU9qRTNNekl5TmprNU16UXNJbVoyWVNJNld6QXNMVEZkTENKcFlYUWlPakUzTXpJeU5qazROelFzSW1semN5STZJbWgwZEhCek9pOHZabUZwY2kxbmIzQm9aWEl0TlRRdVkyeGxjbXN1WVdOamIzVnVkSE11WkdWMklpd2libUptSWpveE56TXlNalk1T0RZMExDSnphV1FpT2lKelpYTnpYekp3UTFZM00wcDRTMkpWVG1wbFIzUm1hVkE1VDI5blJIWmFSQ0lzSW5OMVlpSTZJblZ6WlhKZk1uQkJWakJSY214RFZqQk9OR3B1UmxSWmFFUkhhMlI1WWpWbUluMC5peFlDUUloQktoYTV1ZFdxV3NLVDNnYjhqYTRDTWxfejFuTU1FYUNPM3Y2Z0RpMnJFX05BMjh1V1BjOEREU2dfV0t3dGhBb29VRDBUdGhqQmxlRHVKQ096M3BISHVTRFN1REgwcmVCM0xDampZd1JCNC1XWVlCYXdTTzRvTHFUTWJsMEJtWDJaLXlkOEc0Wm15T1pVSHFOS0VZNmRueWdzbHM3M1pLT016ekVUdGMwN0tuMTlKNzJzRjNlWEt1V2w0MnRpVjhPR0twX2c2eHZIUDVhaVJLZ3lOUlVBT194UXJaR2dZbmJiQ3o4azlRT0VOc3BOMndFRXFOeHBSZnZuV2p1T2E4YmloZUVtR0psZ0FWeE9LYjc5b3BoWDlpS1Bvc2NRX3gyYjhGN2JDY3B0b1VhQmVIYlhVTHJXNEFOVHotMDR6RXNtQjNhM2RKQkNTdnQwWkE7IFBhdGg9LzsgRXhwaXJlcz1TYXQsIDIyIE5vdiAyMDI1IDEwOjA0OjM0IEdNVDsgU2FtZVNpdGU9TGF4IiwiX19yZWZyZXNoXzBIQXBRZS1hPWhlYmhxS09lSjRTZVNGZTZmRHRxOyBQYXRoPS87IEV4cGlyZXM9U2F0LCAyMiBOb3YgMjAyNSAxMDowNDozNCBHTVQ7IEh0dHBPbmx5OyBTYW1lU2l0ZT1MYXgiXX0.Tb9B_oTgyrqioYz98UFtZQQeVSwrdK5cab_wEFwHv0OqkNxHxDNRqhWdXLC0vueVQwu5pKAv_IeZJ3MJ3AqZwznVxPlbUWMZ_hrDKbCWY9lffHCMMnLDioScARhwbc1vmsbBDJU1UeEhQGZcGY06ux5X4I8xlQ1mXaUE1LEeOIrYAt5nlbKBQVYBOSFMOorH7LbTI1UyHsdRLJ8vhtDJtauRfEvjbXdEvHe5qLI0M7frLts4D8pWGHIScxTLFYF--1CqmjTv0iLaTdiuZWeyPL5nH50bwY5HPCsIMceBs7k46egluxEYQjLxd6qfB2dNdSMlU_rnydyXtOuiuwYbRQ" for ::1 at 2024-11-22 11:04:34 +0100
+Started GET "/" for ::1 at 2024-11-22 11:04:36 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 787.2ms | Allocations: 1585)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 812.9ms | Allocations: 10632)
+Completed 200 OK in 816ms (Views: 814.0ms | ActiveRecord: 0.0ms | Allocations: 11049)
+
+
+Started GET "/" for ::1 at 2024-11-22 11:05:03 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 381)
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 649)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 9939)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.0ms | Allocations: 10356)
+
+
+Started GET "/" for ::1 at 2024-11-22 11:06:19 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1184)
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+Importmap skipped missing path: ./application.js
+Importmap skipped missing path: ./clerk_events.js
+Importmap skipped missing path: ./controllers/application.js
+Importmap skipped missing path: ./controllers/hello_controller.js
+Importmap skipped missing path: ./controllers/index.js
+  Rendered shared/_navbar.html.erb (Duration: 18.7ms | Allocations: 1295)
+  Rendered shared/_footer.html.erb (Duration: 7.2ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 539.9ms | Allocations: 74938)
+Completed 200 OK in 680ms (Views: 571.0ms | ActiveRecord: 0.0ms | Allocations: 83108)
+
+
+Started GET "/" for ::1 at 2024-11-22 11:06:58 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1085)
+  Rendered shared/_navbar.html.erb (Duration: 17.2ms | Allocations: 1255)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 109.4ms | Allocations: 11699)
+Completed 200 OK in 120ms (Views: 114.2ms | ActiveRecord: 0.0ms | Allocations: 12925)
+
+
+Started GET "/" for ::1 at 2024-11-22 11:07:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1184)
+  Rendered shared/_navbar.html.erb (Duration: 6.6ms | Allocations: 1295)
+  Rendered shared/_footer.html.erb (Duration: 7.7ms | Allocations: 121)
+  Rendered layout layouts/application.html.erb (Duration: 268.2ms | Allocations: 44491)
+Completed 200 OK in 387ms (Views: 289.2ms | ActiveRecord: 0.0ms | Allocations: 52661)
+
+

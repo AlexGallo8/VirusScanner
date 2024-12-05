@@ -1,5 +1,3 @@
-
-
 class User < ApplicationRecord
     has_secure_password
   
@@ -7,4 +5,7 @@ class User < ApplicationRecord
               presence: true,
               uniqueness: true,
               format: { with: URI::MailTo::EMAIL_REGEXP, message: "must be a valid email address" }
-  end
+    normalizes :email, with: ->(email) {email.strip.downcase}
+
+    # generates_token_for
+end

@@ -58703,3 +58703,1145 @@ Processing by PasswordsController#edit as HTML
 Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.1ms | Allocations: 10838)
 
 
+Started GET "/" for 127.0.0.1 at 2024-12-05 21:23:34 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 29.1ms | Allocations: 3276)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 143.3ms | Allocations: 102333)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 524.0ms | Allocations: 147180)
+Completed 200 OK in 595ms (Views: 549.1ms | ActiveRecord: 3.6ms | Allocations: 153188)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2024-12-05 21:23:38 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 898)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-05 21:23:38 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 540)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 1969)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 11192)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.2ms | Allocations: 11422)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2024-12-05 21:23:39 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 3429)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 4.3ms | Allocations: 1942)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | Allocations: 14052)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.1ms | Allocations: 14417)
+
+
+Started GET "/password_reset/new" for 127.0.0.1 at 2024-12-05 21:23:41 +0100
+  
+SyntaxError (/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/controllers/password_resets_controller.rb:31: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/password_resets_controller.rb:31: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for 127.0.0.1 at 2024-12-05 21:24:13 +0100
+Started GET "/" for 127.0.0.1 at 2024-12-05 21:24:14 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1224)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 15.5ms | Allocations: 4072)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 14930)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 2.5ms | Allocations: 15909)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2024-12-05 21:24:17 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2520)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 8.6ms | Allocations: 1927)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 13214)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.1ms | Allocations: 13578)
+
+
+Started GET "/password_reset/new" for 127.0.0.1 at 2024-12-05 21:24:19 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1514)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 4.4ms | Allocations: 1943)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 12138)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.1ms | Allocations: 12502)
+
+
+Started POST "/password_reset" for 127.0.0.1 at 2024-12-05 21:24:24 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone7@gmail.com", "commit"=>"Reset Your Passsword"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3460)
+
+
+  
+NameError (undefined local variable or method `prams' for #<PasswordResetsController:0x00000000012c78>
+Did you mean?  params
+               params=
+               @_params):
+  
+app/controllers/password_resets_controller.rb:6:in `create'
+Started POST "/password_reset" for 127.0.0.1 at 2024-12-05 21:24:48 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone7@gmail.com", "commit"=>"Reset Your Passsword"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone7@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: a188c67d-13a8-4906-9ff7-b1b0936a2580) to Async(default) with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007f957c347a88 @uri=#<URI::GID gid://virusscanner/User/15>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzE1LCJaTmxwSWdkLnV1Il0sImV4cCI6IjIwMjQtMTItMDVUMjA6Mzk6NDguMzg5WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--8bb8d724412fe8c75624ee24cdde5524eb3a6a07"}, :args=>[]}
+[ActiveJob] ↳ app/controllers/password_resets_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 234ms (ActiveRecord: 5.0ms | Allocations: 52901)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-05 21:24:48 +0100
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a188c67d-13a8-4906-9ff7-b1b0936a2580]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a188c67d-13a8-4906-9ff7-b1b0936a2580] Performing ActionMailer::MailDeliveryJob (Job ID: a188c67d-13a8-4906-9ff7-b1b0936a2580) from Async(default) enqueued at 2024-12-05T20:24:48.397114000Z with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007f957bf45340 @uri=#<URI::GID gid://virusscanner/User/15>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzE1LCJaTmxwSWdkLnV1Il0sImV4cCI6IjIwMjQtMTItMDVUMjA6Mzk6NDguMzg5WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--8bb8d724412fe8c75624ee24cdde5524eb3a6a07"}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a188c67d-13a8-4906-9ff7-b1b0936a2580]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a188c67d-13a8-4906-9ff7-b1b0936a2580]   Rendering password_mailer/password_reset.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a188c67d-13a8-4906-9ff7-b1b0936a2580]   Rendered password_mailer/password_reset.html.erb within layouts/mailer (Duration: 1.1ms | Allocations: 912)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a188c67d-13a8-4906-9ff7-b1b0936a2580]   Rendered layout layouts/mailer.html.erb (Duration: 1.9ms | Allocations: 1005)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a188c67d-13a8-4906-9ff7-b1b0936a2580] PasswordMailer#password_reset: processed outbound mail in 18.4ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a188c67d-13a8-4906-9ff7-b1b0936a2580] Error performing ActionMailer::MailDeliveryJob (Job ID: a188c67d-13a8-4906-9ff7-b1b0936a2580) from Async(default) in 46.93ms: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= link:to "Reset your password", edit_password_reset_path(token: params[:token]) %>
+):
+/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/views/password_mailer/password_reset.html.erb:1: syntax error, unexpected tLABEL
+...; @output_buffer.append=( link:to "Reset your password", edi...
+...                          ^~~~~
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:474:in `module_eval'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:474:in `compile'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:409:in `block (2 levels) in compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:208:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:545:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:408:in `block in compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:400:in `synchronize'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:400:in `compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:250:in `block in render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:208:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:549:in `instrument_render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:249:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:66:in `block (2 levels) in render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:76:in `block in render_with_layout'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:75:in `render_with_layout'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:11:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/renderer.rb:63:in `render_template_to_object'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:135:in `block in _render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/base.rb:291:in `in_rendering_context'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:134:in `_render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:121:in `render_to_body'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/rendering.rb:27:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1004:in `block in collect_responses_from_templates'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `each'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `each'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `map'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `collect_responses_from_templates'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:979:in `collect_responses'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:887:in `mail'
+/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/mailers/password_mailer.rb:3:in `password_reset'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/base.rb:224:in `process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/lib/action_text/rendering.rb:23:in `with_renderer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/callbacks.rb:258:in `process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/base.rb:160:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:29:in `block in process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:21:in `handle_exceptions'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:28:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:40:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:658:in `block in process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:657:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:142:in `block in processed_mailer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:140:in `tap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:140:in `processed_mailer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/message_delivery.rb:124:in `deliver_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/mail_delivery_job.rb:28:in `perform'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:69:in `block in _perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/i18n-1.14.5/lib/i18n.rb:351:in `with_locale'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:68:in `_perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:32:in `_perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:52:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:26:in `block in perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-7.1.3.4/lib/active_record/railties/job_runtime.rb:13:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:40:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:39:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-7.1.3.4/lib/active_record/railties/job_runtime.rb:11:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:26:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:18:in `block in perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `block in tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:39:in `tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/broadcast_logger.rb:240:in `method_missing'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:25:in `tag_logger'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:18:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:30:in `block in execute'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/railtie.rb:67:in `block (4 levels) in <class:Railtie>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/reloader.rb:77:in `block in wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/reloader.rb:74:in `wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/railtie.rb:66:in `block (3 levels) in <class:Railtie>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:28:in `execute'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `loop'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1233)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 9.5ms | Allocations: 2724)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 13586)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.2ms | Allocations: 14371)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2024-12-05 21:24:52 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2520)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 1927)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 13130)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.1ms | Allocations: 13496)
+
+
+Started GET "/password_reset/new" for 127.0.0.1 at 2024-12-05 21:24:57 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1511)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 8.0ms | Allocations: 1927)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 12119)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.1ms | Allocations: 12483)
+
+
+Started POST "/password_reset" for 127.0.0.1 at 2024-12-05 21:24:59 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone8@gmail.com", "commit"=>"Reset Your Passsword"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: f2937cd1-b79e-4210-b5f5-cb12586711ee) to Async(default) with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007f9577b8f2b8 @uri=#<URI::GID gid://virusscanner/User/11>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjA6Mzk6NTkuNTA3WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--609b07a70382639df55dac7955d96c75d466bddb"}, :args=>[]}
+[ActiveJob] ↳ app/controllers/password_resets_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms | Allocations: 1774)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-05 21:24:59 +0100
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f2937cd1-b79e-4210-b5f5-cb12586711ee]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f2937cd1-b79e-4210-b5f5-cb12586711ee] Performing ActionMailer::MailDeliveryJob (Job ID: f2937cd1-b79e-4210-b5f5-cb12586711ee) from Async(default) enqueued at 2024-12-05T20:24:59.508447000Z with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007f957c551e28 @uri=#<URI::GID gid://virusscanner/User/11>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjA6Mzk6NTkuNTA3WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--609b07a70382639df55dac7955d96c75d466bddb"}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f2937cd1-b79e-4210-b5f5-cb12586711ee]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f2937cd1-b79e-4210-b5f5-cb12586711ee]   Rendering password_mailer/password_reset.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f2937cd1-b79e-4210-b5f5-cb12586711ee]   Rendered password_mailer/password_reset.html.erb within layouts/mailer (Duration: 2.9ms | Allocations: 975)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f2937cd1-b79e-4210-b5f5-cb12586711ee]   Rendered layout layouts/mailer.html.erb (Duration: 6.4ms | Allocations: 1096)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f2937cd1-b79e-4210-b5f5-cb12586711ee] PasswordMailer#password_reset: processed outbound mail in 8.6ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f2937cd1-b79e-4210-b5f5-cb12586711ee] Error performing ActionMailer::MailDeliveryJob (Job ID: f2937cd1-b79e-4210-b5f5-cb12586711ee) from Async(default) in 12.79ms: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= link:to "Reset your password", edit_password_reset_path(token: params[:token]) %>
+):
+/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/views/password_mailer/password_reset.html.erb:1: syntax error, unexpected tLABEL
+...; @output_buffer.append=( link:to "Reset your password", edi...
+...                          ^~~~~
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:474:in `module_eval'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:474:in `compile'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:409:in `block (2 levels) in compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:208:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:545:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:408:in `block in compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:400:in `synchronize'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:400:in `compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:250:in `block in render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:208:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:549:in `instrument_render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:249:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:66:in `block (2 levels) in render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:76:in `block in render_with_layout'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:75:in `render_with_layout'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:11:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/renderer.rb:63:in `render_template_to_object'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:135:in `block in _render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/base.rb:291:in `in_rendering_context'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:134:in `_render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:121:in `render_to_body'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/rendering.rb:27:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1004:in `block in collect_responses_from_templates'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `each'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `each'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `map'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `collect_responses_from_templates'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:979:in `collect_responses'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:887:in `mail'
+/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/mailers/password_mailer.rb:3:in `password_reset'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/base.rb:224:in `process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/lib/action_text/rendering.rb:23:in `with_renderer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/callbacks.rb:258:in `process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/base.rb:160:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:29:in `block in process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:21:in `handle_exceptions'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:28:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:40:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:658:in `block in process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:657:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:142:in `block in processed_mailer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:140:in `tap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:140:in `processed_mailer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/message_delivery.rb:124:in `deliver_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/mail_delivery_job.rb:28:in `perform'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:69:in `block in _perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/i18n-1.14.5/lib/i18n.rb:351:in `with_locale'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:68:in `_perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:32:in `_perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:52:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:26:in `block in perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-7.1.3.4/lib/active_record/railties/job_runtime.rb:13:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:40:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:39:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-7.1.3.4/lib/active_record/railties/job_runtime.rb:11:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:26:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:18:in `block in perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `block in tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:39:in `tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/broadcast_logger.rb:240:in `method_missing'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:25:in `tag_logger'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:18:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:30:in `block in execute'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/railtie.rb:67:in `block (4 levels) in <class:Railtie>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/reloader.rb:77:in `block in wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/reloader.rb:74:in `wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/railtie.rb:66:in `block (3 levels) in <class:Railtie>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:28:in `execute'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `loop'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 529)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 5.9ms | Allocations: 1920)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 11127)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.1ms | Allocations: 11356)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2024-12-05 21:31:14 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 59.9ms | Allocations: 5390)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 114.4ms | Allocations: 16339)
+  Rendered shared/_footer.html.erb (Duration: 1.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 606.5ms | Allocations: 63301)
+Completed 200 OK in 676ms (Views: 624.3ms | ActiveRecord: 3.3ms | Allocations: 69309)
+
+
+Started GET "/password_reset/new" for 127.0.0.1 at 2024-12-05 21:31:16 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1514)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 9.0ms | Allocations: 1941)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 12136)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.2ms | Allocations: 12505)
+
+
+Started POST "/password_reset" for 127.0.0.1 at 2024-12-05 21:31:19 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone8@gmail.com", "commit"=>"Reset Your Passsword"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: c7d928e4-f51e-4cfd-b69e-0f6934845202) to Async(default) with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fae4f0c2a60 @uri=#<URI::GID gid://virusscanner/User/11>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjA6NDY6MTkuNjkxWiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--82e10b43fbeed2b121c4755edfa2f90e36d1d862"}, :args=>[]}
+[ActiveJob] ↳ app/controllers/password_resets_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 274ms (ActiveRecord: 0.4ms | Allocations: 134985)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-05 21:31:19 +0100
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c7d928e4-f51e-4cfd-b69e-0f6934845202]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c7d928e4-f51e-4cfd-b69e-0f6934845202] Performing ActionMailer::MailDeliveryJob (Job ID: c7d928e4-f51e-4cfd-b69e-0f6934845202) from Async(default) enqueued at 2024-12-05T20:31:19.713515000Z with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fae4f0b7ca0 @uri=#<URI::GID gid://virusscanner/User/11>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjA6NDY6MTkuNjkxWiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--82e10b43fbeed2b121c4755edfa2f90e36d1d862"}, :args=>[]}
+Processing by MainController#index as HTML
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c7d928e4-f51e-4cfd-b69e-0f6934845202]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c7d928e4-f51e-4cfd-b69e-0f6934845202]   Rendering password_mailer/password_reset.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c7d928e4-f51e-4cfd-b69e-0f6934845202]   Rendered password_mailer/password_reset.html.erb within layouts/mailer (Duration: 6.0ms | Allocations: 1840)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c7d928e4-f51e-4cfd-b69e-0f6934845202]   Rendered layout layouts/mailer.html.erb (Duration: 7.0ms | Allocations: 1969)
+  Rendering layout layouts/application.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c7d928e4-f51e-4cfd-b69e-0f6934845202] PasswordMailer#password_reset: processed outbound mail in 34.6ms
+  Rendering main/index.html.erb within layouts/application
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c7d928e4-f51e-4cfd-b69e-0f6934845202] Error performing ActionMailer::MailDeliveryJob (Job ID: c7d928e4-f51e-4cfd-b69e-0f6934845202) from Async(default) in 46.06ms: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= link:to "Reset your password", edit_password_reset_url(token: params[:token]) %>
+):
+/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/views/password_mailer/password_reset.html.erb:1: syntax error, unexpected tLABEL
+...; @output_buffer.append=( link:to "Reset your password", edi...
+...                          ^~~~~
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:474:in `module_eval'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:474:in `compile'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:409:in `block (2 levels) in compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:208:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:545:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:408:in `block in compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:400:in `synchronize'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:400:in `compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:250:in `block in render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:208:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:549:in `instrument_render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:249:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:66:in `block (2 levels) in render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:76:in `block in render_with_layout'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:75:in `render_with_layout'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:11:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/renderer.rb:63:in `render_template_to_object'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:135:in `block in _render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/base.rb:291:in `in_rendering_context'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:134:in `_render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:121:in `render_to_body'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/rendering.rb:27:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1004:in `block in collect_responses_from_templates'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `each'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `each'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `map'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `collect_responses_from_templates'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:979:in `collect_responses'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:887:in `mail'
+/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/mailers/password_mailer.rb:3:in `password_reset'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/base.rb:224:in `process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/lib/action_text/rendering.rb:23:in `with_renderer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/callbacks.rb:258:in `process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/base.rb:160:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:29:in `block in process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:21:in `handle_exceptions'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:28:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:40:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:658:in `block in process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:657:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:142:in `block in processed_mailer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:140:in `tap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:140:in `processed_mailer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/message_delivery.rb:124:in `deliver_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/mail_delivery_job.rb:28:in `perform'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:69:in `block in _perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/i18n-1.14.5/lib/i18n.rb:351:in `with_locale'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:68:in `_perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:32:in `_perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:52:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:26:in `block in perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-7.1.3.4/lib/active_record/railties/job_runtime.rb:13:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:40:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:39:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-7.1.3.4/lib/active_record/railties/job_runtime.rb:11:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:26:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:18:in `block in perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `block in tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:39:in `tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/broadcast_logger.rb:240:in `method_missing'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:25:in `tag_logger'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:18:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:30:in `block in execute'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/railtie.rb:67:in `block (4 levels) in <class:Railtie>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/reloader.rb:77:in `block in wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/reloader.rb:74:in `wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/railtie.rb:66:in `block (3 levels) in <class:Railtie>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:28:in `execute'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `loop'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+  Rendered main/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1283)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 4.6ms | Allocations: 1931)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 12586)
+Completed 200 OK in 43ms (Views: 35.9ms | ActiveRecord: 0.1ms | Allocations: 14790)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-05 21:33:21 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 16.9ms | Allocations: 4075)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 14667)
+Completed 200 OK in 52ms (Views: 44.6ms | ActiveRecord: 1.8ms | Allocations: 15646)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2024-12-05 21:33:23 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2520)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 11.8ms | Allocations: 1944)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 13145)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.3ms | Allocations: 13514)
+
+
+Started GET "/password_reset/new" for 127.0.0.1 at 2024-12-05 21:33:26 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1511)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 6.9ms | Allocations: 1927)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 12152)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.1ms | Allocations: 12516)
+
+
+Started POST "/password_reset" for 127.0.0.1 at 2024-12-05 21:33:28 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone8@gmail.com", "commit"=>"Reset Your Passsword"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: cfc9adc8-6f07-4fe6-8062-fd8c5dedfc32) to Async(default) with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fae4e8ca2b8 @uri=#<URI::GID gid://virusscanner/User/11>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjA6NDg6MjguNjE0WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--c61db27f59815e4754188c23a833eb3aab497f05"}, :args=>[]}
+[ActiveJob] ↳ app/controllers/password_resets_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 17ms (ActiveRecord: 0.4ms | Allocations: 7501)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [cfc9adc8-6f07-4fe6-8062-fd8c5dedfc32]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [cfc9adc8-6f07-4fe6-8062-fd8c5dedfc32] Performing ActionMailer::MailDeliveryJob (Job ID: cfc9adc8-6f07-4fe6-8062-fd8c5dedfc32) from Async(default) enqueued at 2024-12-05T20:33:28.616427000Z with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fae4719cf88 @uri=#<URI::GID gid://virusscanner/User/11>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjA6NDg6MjguNjE0WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--c61db27f59815e4754188c23a833eb3aab497f05"}, :args=>[]}
+Started GET "/" for 127.0.0.1 at 2024-12-05 21:33:28 +0100
+[ActiveJob] [ActionMailer::MailDeliveryJob] [cfc9adc8-6f07-4fe6-8062-fd8c5dedfc32]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [cfc9adc8-6f07-4fe6-8062-fd8c5dedfc32]   Rendering password_mailer/password_reset.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [cfc9adc8-6f07-4fe6-8062-fd8c5dedfc32]   Rendered password_mailer/password_reset.html.erb within layouts/mailer (Duration: 1.0ms | Allocations: 913)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [cfc9adc8-6f07-4fe6-8062-fd8c5dedfc32]   Rendered layout layouts/mailer.html.erb (Duration: 1.7ms | Allocations: 1010)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [cfc9adc8-6f07-4fe6-8062-fd8c5dedfc32] PasswordMailer#password_reset: processed outbound mail in 8.9ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [cfc9adc8-6f07-4fe6-8062-fd8c5dedfc32] Error performing ActionMailer::MailDeliveryJob (Job ID: cfc9adc8-6f07-4fe6-8062-fd8c5dedfc32) from Async(default) in 18.02ms: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= link:to "Reset your password", edit_password_reset_url(token: params[:token]) %>
+):
+/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/views/password_mailer/password_reset.html.erb:1: syntax error, unexpected tLABEL
+...; @output_buffer.append=( link:to "Reset your password", edi...
+...                          ^~~~~
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:474:in `module_eval'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:474:in `compile'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:409:in `block (2 levels) in compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:208:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:545:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:408:in `block in compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:400:in `synchronize'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:400:in `compile!'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:250:in `block in render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:208:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:549:in `instrument_render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/template.rb:249:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:66:in `block (2 levels) in render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:76:in `block in render_with_layout'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:75:in `render_with_layout'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/template_renderer.rb:11:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/renderer.rb:63:in `render_template_to_object'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:135:in `block in _render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/base.rb:291:in `in_rendering_context'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:134:in `_render_template'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:121:in `render_to_body'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/rendering.rb:27:in `render'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1004:in `block in collect_responses_from_templates'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `each'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `each'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `map'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:1001:in `collect_responses_from_templates'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:979:in `collect_responses'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:887:in `mail'
+/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/mailers/password_mailer.rb:3:in `password_reset'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/base.rb:224:in `process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/lib/action_text/rendering.rb:23:in `with_renderer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/callbacks.rb:258:in `process_action'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionpack-7.1.3.4/lib/abstract_controller/base.rb:160:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:29:in `block in process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:21:in `handle_exceptions'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/rescuable.rb:28:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/action_view/rendering.rb:40:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:658:in `block in process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/base.rb:657:in `process'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:142:in `block in processed_mailer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:140:in `tap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/parameterized.rb:140:in `processed_mailer'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/message_delivery.rb:124:in `deliver_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailer-7.1.3.4/lib/action_mailer/mail_delivery_job.rb:28:in `perform'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:69:in `block in _perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/i18n-1.14.5/lib/i18n.rb:351:in `with_locale'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:68:in `_perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:32:in `_perform_job'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:52:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:26:in `block in perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-7.1.3.4/lib/active_record/railties/job_runtime.rb:13:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:40:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:39:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-7.1.3.4/lib/active_record/railties/job_runtime.rb:11:in `instrument'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/instrumentation.rb:26:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:18:in `block in perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `block in tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:39:in `tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `tagged'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/broadcast_logger.rb:240:in `method_missing'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:25:in `tag_logger'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/logging.rb:18:in `perform_now'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:30:in `block in execute'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/railtie.rb:67:in `block (4 levels) in <class:Railtie>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/reloader.rb:77:in `block in wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/reloader.rb:74:in `wrap'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/railtie.rb:66:in `block (3 levels) in <class:Railtie>'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/execution.rb:28:in `execute'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activejob-7.1.3.4/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `loop'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 529)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 4.2ms | Allocations: 1921)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 11313)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.1ms | Allocations: 11542)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-05 21:34:16 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1228)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 11.5ms | Allocations: 4073)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 14937)
+Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 1.7ms | Allocations: 15916)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2024-12-05 21:34:17 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2520)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 7.3ms | Allocations: 1931)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 13380)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.1ms | Allocations: 13745)
+
+
+Started GET "/password_reset/new" for 127.0.0.1 at 2024-12-05 21:34:21 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1511)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 6.6ms | Allocations: 1927)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 12119)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.1ms | Allocations: 12483)
+
+
+Started POST "/password_reset" for 127.0.0.1 at 2024-12-05 21:34:23 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone8@gmail.com", "commit"=>"Reset Your Passsword"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 60aef9b9-c960-4726-8113-aa6d64aeb55b) to Async(default) with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fae4638be08 @uri=#<URI::GID gid://virusscanner/User/11>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjA6NDk6MjMuNjg3WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--68837ae95495db0dc26ff7e679720ab367dcde51"}, :args=>[]}
+[ActiveJob] ↳ app/controllers/password_resets_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.7ms | Allocations: 7482)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-05 21:34:23 +0100
+[ActiveJob] [ActionMailer::MailDeliveryJob] [60aef9b9-c960-4726-8113-aa6d64aeb55b]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [60aef9b9-c960-4726-8113-aa6d64aeb55b] Performing ActionMailer::MailDeliveryJob (Job ID: 60aef9b9-c960-4726-8113-aa6d64aeb55b) from Async(default) enqueued at 2024-12-05T20:34:23.688372000Z with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fae4dc52738 @uri=#<URI::GID gid://virusscanner/User/11>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjA6NDk6MjMuNjg3WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--68837ae95495db0dc26ff7e679720ab367dcde51"}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [60aef9b9-c960-4726-8113-aa6d64aeb55b]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [60aef9b9-c960-4726-8113-aa6d64aeb55b]   Rendering password_mailer/password_reset.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [60aef9b9-c960-4726-8113-aa6d64aeb55b]   Rendered password_mailer/password_reset.html.erb within layouts/mailer (Duration: 0.9ms | Allocations: 184)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [60aef9b9-c960-4726-8113-aa6d64aeb55b]   Rendered layout layouts/mailer.html.erb (Duration: 2.1ms | Allocations: 453)
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+[ActiveJob] [ActionMailer::MailDeliveryJob] [60aef9b9-c960-4726-8113-aa6d64aeb55b] PasswordMailer#password_reset: processed outbound mail in 20.2ms
+  Rendered main/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 537)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [60aef9b9-c960-4726-8113-aa6d64aeb55b] Delivered mail 67520e4fb8f38_16dd6c0c52b5@MacBook-Air-di-Alessandro-6.local.mail (43.2ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [60aef9b9-c960-4726-8113-aa6d64aeb55b] Date: Thu, 05 Dec 2024 21:34:23 +0100
+From: from@example.com
+To: alexmaone8@gmail.com
+Message-ID: <67520e4fb8f38_16dd6c0c52b5@MacBook-Air-di-Alessandro-6.local.mail>
+Subject: Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <a href="http://localhost:3000/password_reset/edit?token=eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjA6NDk6MjMuNjg3WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0%3D--68837ae95495db0dc26ff7e679720ab367dcde51">Reset your password</a>
+  </body>
+</html>
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [60aef9b9-c960-4726-8113-aa6d64aeb55b] Performed ActionMailer::MailDeliveryJob (Job ID: 60aef9b9-c960-4726-8113-aa6d64aeb55b) from Async(default) in 72.46ms
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 5.4ms | Allocations: 1925)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 58.1ms | Allocations: 19317)
+Completed 200 OK in 60ms (Views: 59.2ms | ActiveRecord: 0.1ms | Allocations: 20133)
+
+
+Started GET "/password_reset/edit?token=[FILTERED]" for ::1 at 2024-12-05 21:36:10 +0100
+Started GET "/password_reset/edit?token=[FILTERED]" for ::1 at 2024-12-05 21:36:12 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1925)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1996)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2278)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <h1>Reset Your Password</h1>
+    2: 
+    3: <%= form_with model: @user, url: password_reset_path(token: params[:token]) do |form| %>
+    4:     <% if form.object.errors.any? %>
+    5:         <% form.object.errors.full_messages.each do |message| %>
+    6:             <div><%= message %></div>
+    7:         <% end %>
+  
+app/views/password_resets/edit.html.erb:4
+app/views/password_resets/edit.html.erb:3
+Started GET "/password_reset/edit?token=[FILTERED]" for ::1 at 2024-12-05 21:47:26 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:32:in `set_user_by_token'
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1166)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 7.8ms | Allocations: 2716)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 13510)
+Completed 200 OK in 65ms (Views: 44.8ms | ActiveRecord: 2.0ms | Allocations: 19004)
+
+
+Started GET "/assets/tailwind.debug-ea9728a0544063702e4bab5a448de06f78e425912cc6eaa149003243eaa52568.css" for ::1 at 2024-12-05 21:47:26 +0100
+Started GET "/assets/inter-font.debug-f597296dc1329645f66710581acb6700189fa1192e7c28a724e64795ba30f3fe.css" for ::1 at 2024-12-05 21:47:26 +0100
+Started GET "/assets/application.debug-f9969018c752ba6449ff02522c991bc0f6f9b6b07fb803a282bce266725493c9.css" for ::1 at 2024-12-05 21:47:26 +0100
+Started GET "/session/new" for ::1 at 2024-12-05 21:47:32 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2546)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 4.2ms | Allocations: 1927)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 13154)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.1ms | Allocations: 13518)
+
+
+Started GET "/password_reset/new" for ::1 at 2024-12-05 21:47:34 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1596)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 9.7ms | Allocations: 1927)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 12204)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.1ms | Allocations: 12499)
+
+
+Started POST "/password_reset" for ::1 at 2024-12-05 21:47:37 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone8@gmail.com", "commit"=>"Reset Your Passsword"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:8:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: c54b3638-32ed-4577-b22d-2b90d0482db0) to Async(default) with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fae4daef0a8 @uri=#<URI::GID gid://virusscanner/User/11>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjE6MDI6MzcuNjI5WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--4da3dc3e58dc46188abe8bb88ddb8427b64db8c4"}, :args=>[]}
+[ActiveJob] ↳ app/controllers/password_resets_controller.rb:12:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.2ms | Allocations: 5139)
+
+
+Started GET "/" for ::1 at 2024-12-05 21:47:37 +0100
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c54b3638-32ed-4577-b22d-2b90d0482db0]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c54b3638-32ed-4577-b22d-2b90d0482db0] Performing ActionMailer::MailDeliveryJob (Job ID: c54b3638-32ed-4577-b22d-2b90d0482db0) from Async(default) enqueued at 2024-12-05T20:47:37.630704000Z with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fae4e92e5b0 @uri=#<URI::GID gid://virusscanner/User/11>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjE6MDI6MzcuNjI5WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0=--4da3dc3e58dc46188abe8bb88ddb8427b64db8c4"}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c54b3638-32ed-4577-b22d-2b90d0482db0]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c54b3638-32ed-4577-b22d-2b90d0482db0]   Rendering password_mailer/password_reset.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c54b3638-32ed-4577-b22d-2b90d0482db0]   Rendered password_mailer/password_reset.html.erb within layouts/mailer (Duration: 0.9ms | Allocations: 168)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c54b3638-32ed-4577-b22d-2b90d0482db0]   Rendered layout layouts/mailer.html.erb (Duration: 2.0ms | Allocations: 409)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c54b3638-32ed-4577-b22d-2b90d0482db0] PasswordMailer#password_reset: processed outbound mail in 8.0ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c54b3638-32ed-4577-b22d-2b90d0482db0] Delivered mail 67521169a3431_16dd6c0c534f@MacBook-Air-di-Alessandro-6.local.mail (2.7ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c54b3638-32ed-4577-b22d-2b90d0482db0] Date: Thu, 05 Dec 2024 21:47:37 +0100
+From: from@example.com
+To: alexmaone8@gmail.com
+Message-ID: <67521169a3431_16dd6c0c534f@MacBook-Air-di-Alessandro-6.local.mail>
+Subject: Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <a href="http://localhost:3000/password_reset/edit?token=eyJfcmFpbHMiOnsiZGF0YSI6WzExLCJOOUJtd3kvR2l1Il0sImV4cCI6IjIwMjQtMTItMDVUMjE6MDI6MzcuNjI5WiIsInB1ciI6IlVzZXJcbnBhc3N3b3JkX3Jlc2V0XG45MDAifX0%3D--4da3dc3e58dc46188abe8bb88ddb8427b64db8c4">Reset your password</a>
+  </body>
+</html>
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c54b3638-32ed-4577-b22d-2b90d0482db0] Performed ActionMailer::MailDeliveryJob (Job ID: c54b3638-32ed-4577-b22d-2b90d0482db0) from Async(default) in 18.23ms
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1258)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 3.8ms | Allocations: 1925)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 11866)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.1ms | Allocations: 12230)
+
+
+Started GET "/password_reset/edit?token=[FILTERED]" for ::1 at 2024-12-05 21:48:15 +0100
+Started GET "/password_reset/edit?token=[FILTERED]" for ::1 at 2024-12-05 21:48:16 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:32:in `set_user_by_token'
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (Duration: 7.0ms | Allocations: 730)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 4.3ms | Allocations: 1920)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 11326)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.2ms | Allocations: 12158)
+
+
+Started PATCH "/password_reset?token=[FILTERED]" for ::1 at 2024-12-05 21:48:29 +0100
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Reset Your Password", "token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:32:in `set_user_by_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/password_resets_controller.rb:22:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:22:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "[FILTERED]"], ["updated_at", "2024-12-05 20:48:30.210507"], ["id", 11]]
+  ↳ app/controllers/password_resets_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/password_resets_controller.rb:22:in `update'
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 297ms (ActiveRecord: 3.4ms | Allocations: 4906)
+
+
+Started GET "/session/new" for ::1 at 2024-12-05 21:48:30 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2331)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 1925)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 12986)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.1ms | Allocations: 13215)
+
+
+Started POST "/session" for ::1 at 2024-12-05 21:48:39 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone8@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 293ms (ActiveRecord: 0.1ms | Allocations: 926)
+
+
+Started GET "/" for ::1 at 2024-12-05 21:48:40 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 532)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 4.7ms | Allocations: 1315)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 10611)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.1ms | Allocations: 10839)
+
+
+Started GET "/password/edit" for ::1 at 2024-12-05 21:48:45 +0100
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 914)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 784)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 10517)
+Completed 200 OK in 28ms (Views: 23.4ms | ActiveRecord: 0.1ms | Allocations: 11562)
+
+

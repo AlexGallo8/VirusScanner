@@ -308,6 +308,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   json (~> 2.6, >= 2.6.3)
+  jwt (~> 2.8)
   net-http
   puma (>= 5.0)
   pycall

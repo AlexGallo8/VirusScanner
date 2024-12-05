@@ -84,3 +84,314 @@
     });
   });
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Funzione per aggiungere form di login e signup locali
+  function injectLocalAuthForms() {
+    const observeClerkModal = () => {
+      const clerkModal = document.querySelector('.cl-rootBox');
+      
+      if (clerkModal) {
+        // Controlla se abbiamo già iniettato i form
+        if (document.getElementById('local-auth-container')) return;
+
+        // Trova il contenitore dei metodi di login/signup di Clerk
+        const clerkSignInMethods = clerkModal.querySelector('.cl-signIn-start, .cl-signUp-start');
+        
+        if (clerkSignInMethods) {
+          // Crea un contenitore per i nostri form di autenticazione locali
+          const localAuthContainer = document.createElement('div');
+          localAuthContainer.id = 'local-auth-container';
+          localAuthContainer.innerHTML = `
+            <div class="custom-local-auth-divider">
+              <div class="divider-line"></div>
+              <span class="divider-text">Or continue with local auth</span>
+              <div class="divider-line"></div>
+            </div>
+            
+            <!-- Form di Login Locale -->
+            <form id="local-login-form" class="custom-local-auth-form ${window.clerkAuthMode === 'signin' ? '' : 'hidden'}">
+              <div class="form-group">
+                <label for="local-login-email">Email</label>
+                <input 
+                  type="email" 
+                  id="local-login-email" 
+                  name="email" 
+                  required 
+                  class="clerk-input"
+                >
+              </div>
+              
+              <div class="form-group">
+                <label for="local-login-password">Password</label>
+                <input 
+                  type="password" 
+                  id="local-login-password" 
+                  name="password" 
+                  required 
+                  class="clerk-input"
+                >
+              </div>
+              
+              <button 
+                type="submit" 
+                class="clerk-local-auth-button"
+              >
+                Sign In
+              </button>
+            </form>
+
+            <!-- Form di Signup Locale -->
+            <form id="local-signup-form" class="custom-local-auth-form ${window.clerkAuthMode === 'signup' ? '' : 'hidden'}">
+              <div class="form-group">
+                <label for="local-signup-email">Email</label>
+                <input 
+                  type="email" 
+                  id="local-signup-email" 
+                  name="email" 
+                  required 
+                  class="clerk-input"
+                >
+              </div>
+              
+              <div class="form-group">
+                <label for="local-signup-password">Password</label>
+                <input 
+                  type="password" 
+                  id="local-signup-password" 
+                  name="password" 
+                  required 
+                  class="clerk-input"
+                >
+              </div>
+              
+              <div class="form-group">
+                <label for="local-signup-confirm-password">Confirm Password</label>
+                <input 
+                  type="password" 
+                  id="local-signup-confirm-password" 
+                  name="confirm_password" 
+                  required 
+                  class="clerk-input"
+                >
+              </div>
+              
+              <button 
+                type="submit" 
+                class="clerk-local-auth-button"
+              >
+                Sign Up
+              </button>
+            </form>
+          `;
+
+          // Inserisci il contenitore dopo i metodi di login/signup di Clerk
+          clerkSignInMethods.after(localAuthContainer);
+
+          // Gestore per il submit del form di login
+          const localLoginForm = document.getElementById('local-login-form');
+          localLoginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('local-login-email').value;
+            const password = document.getElementById('local-login-password').value;
+
+            try {
+              const response = await fetch('/local_login', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({ email, password })
+              });
+
+              if (response.ok) {
+                const data = await response.json();
+                // Usa il token per il login tramite Clerk
+                Clerk.client.session.create({
+                  token: data.clerk_token,
+                  options: {
+                    // Opzioni aggiuntive se necessario
+                  }
+                });
+              } else {
+                const errorData = await response.json();
+                showLocalAuthError(localLoginForm, errorData.message || 'Login failed');
+              }
+            } catch (error) {
+              console.error('Login error:', error);
+              showLocalAuthError(localLoginForm, 'An error occurred during login');
+            }
+          });
+
+          // Gestore per il submit del form di signup
+          const localSignupForm = document.getElementById('local-signup-form');
+          localSignupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('local-signup-email').value;
+            const password = document.getElementById('local-signup-password').value;
+            const confirmPassword = document.getElementById('local-signup-confirm-password').value;
+
+            // Verifica corrispondenza password
+            if (password !== confirmPassword) {
+              showLocalAuthError(localSignupForm, 'Passwords do not match');
+              return;
+            }
+
+            try {
+              const response = await fetch('/local_signup', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({ email, password })
+              });
+
+              if (response.ok) {
+                const data = await response.json();
+                // Usa il token per il login tramite Clerk
+                Clerk.client.session.create({
+                  token: data.clerk_token,
+                  options: {
+                    // Opzioni aggiuntive se necessario
+                  }
+                });
+              } else {
+                const errorData = await response.json();
+                showLocalAuthError(localSignupForm, errorData.message || 'Signup failed');
+              }
+            } catch (error) {
+              console.error('Signup error:', error);
+              showLocalAuthError(localSignupForm, 'An error occurred during signup');
+            }
+          });
+
+          // Funzione per mostrare errori nel form
+          function showLocalAuthError(form, message) {
+            // Rimuovi eventuali errori precedenti
+            const existingError = form.querySelector('.local-auth-error');
+            if (existingError) existingError.remove();
+
+            // Crea e aggiungi nuovo messaggio di errore
+            const errorContainer = document.createElement('div');
+            errorContainer.className = 'local-auth-error';
+            errorContainer.textContent = message;
+            form.prepend(errorContainer);
+          }
+        }
+      } else {
+        // Se il modale non è ancora caricato, riprova dopo un breve intervallo
+        setTimeout(observeClerkModal, 100);
+      }
+    };
+
+    // Avvia l'osservazione
+    observeClerkModal();
+  }
+
+  // Sovrascrivi i metodi openSignIn e openSignUp di Clerk
+  const originalOpenSignIn = Clerk.openSignIn;
+  Clerk.openSignIn = function(...args) {
+    // Imposta la modalità di autenticazione
+    window.clerkAuthMode = 'signin';
+    
+    // Chiama il metodo originale
+    originalOpenSignIn.apply(this, args);
+    
+    // Inietta i form locali
+    setTimeout(injectLocalAuthForms, 100);
+  };
+
+  const originalOpenSignUp = Clerk.openSignUp;
+  Clerk.openSignUp = function(...args) {
+    // Imposta la modalità di autenticazione
+    window.clerkAuthMode = 'signup';
+    
+    // Chiama il metodo originale
+    originalOpenSignUp.apply(this, args);
+    
+    // Inietta i form locali
+    setTimeout(injectLocalAuthForms, 100);
+  };
+});
+</script>
+
+<style>
+/* Stili per integrare i form di autenticazione locali nel modale di Clerk */
+#local-auth-container {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.custom-local-auth-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.divider-text {
+  margin: 0 10px;
+  color: #888;
+  font-size: 0.8em;
+}
+
+.custom-local-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.custom-local-auth-form.hidden {
+  display: none;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.clerk-input {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.clerk-local-auth-button {
+  padding: 10px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.clerk-local-auth-button:hover {
+  background-color: #333;
+}
+
+.local-auth-error {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+</style>

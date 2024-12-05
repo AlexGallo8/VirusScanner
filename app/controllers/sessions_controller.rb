@@ -1,18 +1,47 @@
 # app/controllers/sessions_controller.rb
 class SessionsController < ApplicationController
-  def create
-    # Verifica se l'utente ha inviato un token di login
-    # (Ad esempio, questo potrebbe arrivare da una richiesta con il token JWT)
-    clerk_user = Clerk::SDK::User.login(params[:token])
+  skip_before_action :verify_authenticity_token, only: [:local_login, :local_signup]
 
-    # Se il login ha successo, imposta l'ID dell'utente nella sessione
-    session[:user_id] = clerk_user.id
+  def local_login
+    # Trova l'utente per email
+    user = User.find_by(email: params[:email])
 
-    # Redirect alla dashboard
-    redirect_to dashboard_path
-  rescue Clerk::Errors::Unauthorized => e
-    # Se c'è un errore di autenticazione, reindirizza al login
-    redirect_to login_path, alert: 'Autenticazione fallita.'
+    # Verifica la password
+    if user && user.authenticate(params[:password])
+      # Genera un token JWT per Clerk
+      clerk_token = generate_clerk_token(user)
+
+      render json: { 
+        message: 'Login successful', 
+        clerk_token: clerk_token 
+      }, status: :ok
+    else
+      render json: { 
+        message: 'Invalid email or password' 
+      }, status: :unauthorized
+    end
+  end
+
+  def local_signup
+    # Crea un nuovo utente
+    user = User.new(
+      email: params[:email],
+      password: params[:password]
+    )
+
+    if user.save
+      # Genera un token JWT per Clerk
+      clerk_token = generate_clerk_token(user)
+
+      render json: { 
+        message: 'Signup successful', 
+        clerk_token: clerk_token 
+      }, status: :created
+    else
+      render json: { 
+        message: user.errors.full_messages.join(', ') 
+      }, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -22,9 +51,19 @@ class SessionsController < ApplicationController
     redirect_to root_path, notice: 'Logged out successfully'
   end
 
-  # def destroy
-  #   # Logout: rimuovi l'ID dell'utente dalla sessione
-  #   session.delete(:user_id)
-  #   redirect_to login_path
-  # end
+  private
+
+  def generate_clerk_token(user)
+    # Genera un token JWT personalizzato per Clerk
+    # IMPORTANTE: Usa una libreria come 'jwt' per generare il token
+    # Questo è solo un esempio molto semplificato
+    payload = {
+      sub: user.id,
+      email: user.email,
+      exp: 1.hour.from_now.to_i
+    }
+
+    # Genera il token usando la chiave segreta di Clerk
+    JWT.encode(payload, ENV['CLERK_SECRET_KEY'], 'HS256')
+  end
 end

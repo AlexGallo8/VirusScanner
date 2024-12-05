@@ -8,23 +8,9 @@ Rails.application.routes.draw do
   #delete "sign_out", to: "sessions#destroy", as: :sign_out
   get "/about",to: "about#index", as: :about
   
-  #------------- old login method -------------#
-
-  #get "sign_up", to: "registrations#new", as: :sign_up
-  #post "sign_up", to: "registrations#create"
-  
-  #get "sign_in", to: "sessions#new", as: :sign_in
-  #post "sign_in", to: "sessions#create"
-
-  #get '/auth/auth0/callback' => 'auth0#callback'
-  #get '/auth/failure' => 'auth0#failure'
-  #get '/auth/logout' => 'auth0#logout'
-
-  #------------- end -------------#
-
-  # get 'login', to: 'sessions#new'
-  # post 'login', to: 'sessions#create'
-  # delete 'logout', to: 'sessions#destroy'
+  post '/local_login', to: 'sessions#local_login'
+  post '/local_signup', to: 'sessions#local_signup'
+  delete '/logout', to: 'sessions#destroy'
 
   get 'dashboard', to: 'dashboard#index'
 

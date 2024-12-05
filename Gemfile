@@ -90,3 +90,5 @@ gem 'clerk'
 # gem 'net-http' -> già presente
 gem 'faraday', '~> 2.7.12'
 gem 'faraday-net_http', '~> 2.0'
+
+gem "jwt", "~> 2.8"

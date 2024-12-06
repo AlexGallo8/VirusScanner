@@ -37,7 +37,7 @@
         <div class="hidden lg:flex items-center space-x-4 login-buttons">
           <% if user_signed_in? %>
             <%= link_to "Edit Password", edit_password_path %>
-            <%= button_to "Log out", session_path, method: :delete %>
+            <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
           <% else %>
             <%= link_to "Sign Up", new_registration_path %>
             <%= link_to "Log in", new_session_path %>

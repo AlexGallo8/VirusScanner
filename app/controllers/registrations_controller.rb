@@ -1,10 +1,6 @@
 class RegistrationsController < ApplicationController
   def new
     @user = User.new
-    respond_to do |format|
-      format.html
-      format.turbo_stream
-    end
   end
   
   def create
@@ -13,7 +9,7 @@ class RegistrationsController < ApplicationController
       login @user
       redirect_to root_path, notice: "Successfully created account!"
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
   

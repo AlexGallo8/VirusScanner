@@ -12,7 +12,7 @@
     <%= clerk_script_tag %>
     <%# <%= javascript_importmap_tags %>
 
-    <script type="text/javascript">
+    <%# <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
       if (window.Clerk) {
         window.Clerk.load()
@@ -40,7 +40,7 @@
           });
         }
       });
-    </script>
+    </script> %>
   
   </head>
   
@@ -50,9 +50,8 @@
     <%= notice %>
     <%= flash[:alert] %>
     <%= yield %>
-    <%= render partial: "shared/footer"%>
-
     <%= turbo_frame_tag "modal" %>
+    <%= render partial: "shared/footer"%>
 
   </body>
 

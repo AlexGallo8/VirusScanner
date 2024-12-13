@@ -61290,3 +61290,1165 @@ Processing by RegistrationsController#new as HTML
 Completed 200 OK in 89ms (Views: 68.5ms | ActiveRecord: 0.1ms | Allocations: 14709)
 
 
+Started GET "/registration/new" for ::1 at 2024-12-13 13:36:34 +0100
+Processing by RegistrationsController#new as HTML
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 3097)
+
+
+  
+NoMethodError (undefined method `empty?' for true:TrueClass):
+  
+rack (3.1.3) lib/rack/etag.rb:62:in `block in digest_body'
+rack (3.1.3) lib/rack/etag.rb:61:in `each'
+rack (3.1.3) lib/rack/etag.rb:61:in `digest_body'
+rack (3.1.3) lib/rack/etag.rb:33:in `call'
+rack (3.1.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-12-13 13:36:37 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1224)
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 19.2ms | Allocations: 2962)
+  Rendered shared/_footer.html.erb (Duration: 1.9ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 57.9ms | Allocations: 13861)
+Completed 200 OK in 67ms (Views: 57.9ms | ActiveRecord: 5.9ms | Allocations: 14787)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 13:36:39 +0100
+Processing by RegistrationsController#new as HTML
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 103)
+
+
+  
+NoMethodError (undefined method `empty?' for true:TrueClass):
+  
+rack (3.1.3) lib/rack/etag.rb:62:in `block in digest_body'
+rack (3.1.3) lib/rack/etag.rb:61:in `each'
+rack (3.1.3) lib/rack/etag.rb:61:in `digest_body'
+rack (3.1.3) lib/rack/etag.rb:33:in `call'
+rack (3.1.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/registration/new" for ::1 at 2024-12-13 15:06:53 +0100
+Processing by RegistrationsController#new as HTML
+Completed 200 OK in 19ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 3136)
+
+
+  
+NoMethodError (undefined method `empty?' for true:TrueClass):
+  
+rack (3.1.3) lib/rack/etag.rb:62:in `block in digest_body'
+rack (3.1.3) lib/rack/etag.rb:61:in `each'
+rack (3.1.3) lib/rack/etag.rb:61:in `digest_body'
+rack (3.1.3) lib/rack/etag.rb:33:in `call'
+rack (3.1.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-12-13 15:08:37 +0100
+Started GET "/" for ::1 at 2024-12-13 15:08:40 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 36.1ms | Allocations: 4087)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 128.5ms | Allocations: 14986)
+Completed 200 OK in 145ms (Views: 134.4ms | ActiveRecord: 6.3ms | Allocations: 15965)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 15:08:42 +0100
+Processing by RegistrationsController#new as HTML
+Completed 406 Not Acceptable in 18ms (ActiveRecord: 0.5ms | Allocations: 2826)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/registrations_controller.rb:4:in `new'
+Started GET "/" for ::1 at 2024-12-13 15:35:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-12-13 15:35:20 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 33.9ms | Allocations: 3274)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 106.7ms | Allocations: 16420)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 488.6ms | Allocations: 61316)
+Completed 200 OK in 544ms (Views: 500.2ms | ActiveRecord: 4.2ms | Allocations: 67327)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 15:35:22 +0100
+Processing by RegistrationsController#new as HTML
+Completed 406 Not Acceptable in 126ms (ActiveRecord: 1.2ms | Allocations: 85846)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/registrations_controller.rb:4:in `new'
+Started GET "/" for ::1 at 2024-12-13 15:41:40 +0100
+Started GET "/" for ::1 at 2024-12-13 15:41:42 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1224)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 24.3ms | Allocations: 3803)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 70.3ms | Allocations: 14704)
+Completed 200 OK in 80ms (Views: 73.1ms | ActiveRecord: 4.0ms | Allocations: 15688)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 15:41:44 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 5.9ms | Allocations: 1451)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1742)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 1827)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 4452)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: user), url: registration_path, data: { turbo: true } do |form| %>
+    <% if form.object.errors.any? %>
+        <div class="bg-red-50 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+            <% form.object.errors.full_messages.each do |message| %>
+                <p><%= message %></p>
+            <% end %>
+        </div>
+    <% end %>
+
+    <div class="mb-4">
+        <%= form.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.email_field :email, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="mb-4">
+        <%= form.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="mb-6">
+        <%= form.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="flex items-center justify-between">
+        <%= form.submit "Sign Up", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
+<% end %>
+):
+1:    <%= form_with(model: user), url: registration_path, data: { turbo: true } do |form| %>
+2:        <% if form.object.errors.any? %>
+3:            <div class="bg-red-50 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+4:                <% form.object.errors.full_messages.each do |message| %>
+5:                    <p><%= message %></p>
+6:                <% end %>
+7:            </div>
+8:        <% end %>
+9:    
+10:        <div class="mb-4">
+11:            <%= form.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
+12:            <%= form.email_field :email, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+13:        </div>
+14:    
+15:        <div class="mb-4">
+16:            <%= form.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %>
+17:            <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+18:        </div>
+19:    
+20:        <div class="mb-6">
+21:            <%= form.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
+22:            <%= form.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+23:        </div>
+24:    
+25:        <div class="flex items-center justify-between">
+26:            <%= form.submit "Sign Up", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+27:        </div>
+28:    <% end %>
+  
+app/views/registrations/_form.html.erb:1: syntax error, unexpected tLABEL
+app/views/registrations/_form.html.erb:1: syntax error, unexpected `do', expecting `end'
+app/views/registrations/_form.html.erb:30: syntax error, unexpected `end', expecting end-of-input
+app/views/registrations/new.html.erb:4
+Started GET "/" for ::1 at 2024-12-13 15:43:48 +0100
+Started GET "/" for ::1 at 2024-12-13 15:43:49 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1224)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 22.9ms | Allocations: 4090)
+  Rendered shared/_footer.html.erb (Duration: 1.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 74.0ms | Allocations: 14990)
+Completed 200 OK in 84ms (Views: 76.8ms | ActiveRecord: 5.2ms | Allocations: 15965)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 15:43:51 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 39.8ms | Allocations: 2268)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 44.0ms | Allocations: 2545)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 9.0ms | Allocations: 1937)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 78.1ms | Allocations: 13192)
+Completed 200 OK in 88ms (Views: 79.3ms | ActiveRecord: 0.7ms | Allocations: 15957)
+
+
+Started POST "/registration" for ::1 at 2024-12-13 15:43:58 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 8.9ms | Allocations: 3098)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 3168)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 16.7ms | Allocations: 1928)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 61.2ms | Allocations: 13798)
+Completed 200 OK in 86ms (Views: 64.9ms | ActiveRecord: 2.8ms | Allocations: 17533)
+
+
+Started GET "/" for ::1 at 2024-12-13 15:45:35 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 18.7ms | Allocations: 4081)
+  Rendered shared/_footer.html.erb (Duration: 1.3ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 52.1ms | Allocations: 14723)
+Completed 200 OK in 58ms (Views: 51.7ms | ActiveRecord: 3.7ms | Allocations: 15700)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 15:45:37 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 8.6ms | Allocations: 1294)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 1571)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 10.1ms | Allocations: 1935)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 102.3ms | Allocations: 12214)
+Completed 200 OK in 126ms (Views: 105.3ms | ActiveRecord: 1.2ms | Allocations: 14933)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 15:49:24 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 40.9ms | Allocations: 1298)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 44.6ms | Allocations: 1575)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 24.4ms | Allocations: 2749)
+  Rendered shared/_footer.html.erb (Duration: 3.0ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 152.1ms | Allocations: 13999)
+Completed 200 OK in 224ms (Views: 162.3ms | ActiveRecord: 11.2ms | Allocations: 18661)
+
+
+Started GET "/" for ::1 at 2024-12-13 16:01:44 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1224)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 18.1ms | Allocations: 3786)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 52.4ms | Allocations: 14425)
+Completed 200 OK in 63ms (Views: 56.3ms | ActiveRecord: 2.3ms | Allocations: 15402)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 16:01:46 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1145)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 1222)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.0ms | Allocations: 3817)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="max-w-md mx-auto my-10">
+  <h1 class="text-gray-800 font-semibold text-xl mb-4">Sign up</h1>
+
+  <%= render 'form', user: @user %>
+
+  <%= link_to 'Back', root_path %>
+</div>
+
+<%= turbo_frame_tag "modal" do %>
+<div class="fixed z-10 inset-0 overflow-y-auto" aria-labelldby="modal-title" role="dialog" aria-modal="true">
+    <div>
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-x1 transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+            <h1 class="text-gray-800 font-semibold text-xl mb-4">Sign up</h1>
+            <%= render 'form', user: @user %>
+        </div>
+    </div>
+</div>
+):
+1:    <div class="max-w-md mx-auto my-10">
+2:      <h1 class="text-gray-800 font-semibold text-xl mb-4">Sign up</h1>
+3:    
+4:      <%= render 'form', user: @user %>
+5:    
+6:      <%= link_to 'Back', root_path %>
+7:    </div>
+8:    
+9:    <%= turbo_frame_tag "modal" do %>
+10:    <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelldby="modal-title" role="dialog" aria-modal="true">
+11:        <div>
+12:            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+13:            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+14:            <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-x1 transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+15:                <h1 class="text-gray-800 font-semibold text-xl mb-4">Sign up</h1>
+16:                <%= render 'form', user: @user %>
+17:            </div>
+18:        </div>
+19:    </div>
+  
+app/views/registrations/new.html.erb:21: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for ::1 at 2024-12-13 16:02:39 +0100
+Started GET "/" for ::1 at 2024-12-13 16:02:40 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1224)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 15.7ms | Allocations: 4079)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 14974)
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 2.7ms | Allocations: 15948)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 16:02:42 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 11.8ms | Allocations: 1295)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 31.1ms | Allocations: 1617)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 85.5ms | Allocations: 1934)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 143.1ms | Allocations: 12259)
+Completed 200 OK in 156ms (Views: 150.5ms | ActiveRecord: 0.4ms | Allocations: 15016)
+
+
+Started GET "/" for ::1 at 2024-12-13 16:26:53 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 521)
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 15.1ms | Allocations: 2204)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 57.3ms | Allocations: 11566)
+Completed 200 OK in 63ms (Views: 49.5ms | ActiveRecord: 9.8ms | Allocations: 11795)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 16:28:44 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 8.7ms | Allocations: 876)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 962)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 5.4ms | Allocations: 1929)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 93.9ms | Allocations: 11593)
+Completed 200 OK in 98ms (Views: 95.3ms | ActiveRecord: 0.1ms | Allocations: 11836)
+
+
+Started GET "/session/new" for ::1 at 2024-12-13 16:28:46 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2537)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 8.2ms | Allocations: 1940)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 13185)
+Completed 200 OK in 44ms (Views: 40.8ms | ActiveRecord: 0.1ms | Allocations: 13548)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 16:28:47 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 3.7ms | Allocations: 877)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 963)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 6.9ms | Allocations: 1929)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 11594)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.1ms | Allocations: 11838)
+
+
+Started GET "/session/new" for ::1 at 2024-12-13 16:28:50 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2297)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 8.5ms | Allocations: 1930)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 12929)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.1ms | Allocations: 13158)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 16:28:52 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 14.9ms | Allocations: 876)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 17.8ms | Allocations: 962)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 8.3ms | Allocations: 1929)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | Allocations: 11593)
+Completed 200 OK in 60ms (Views: 55.2ms | ActiveRecord: 0.2ms | Allocations: 11836)
+
+
+Started GET "/session/new" for ::1 at 2024-12-13 16:28:55 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2297)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 23.3ms | Allocations: 1930)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 116.5ms | Allocations: 12932)
+Completed 200 OK in 122ms (Views: 118.0ms | ActiveRecord: 2.7ms | Allocations: 13160)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 16:28:57 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 2.4ms | Allocations: 876)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 962)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 7.1ms | Allocations: 1929)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 11594)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.1ms | Allocations: 11837)
+
+
+Started GET "/" for ::1 at 2024-12-13 16:32:37 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1226)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 29.0ms | Allocations: 4083)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 79.2ms | Allocations: 14980)
+Completed 200 OK in 87ms (Views: 80.0ms | ActiveRecord: 3.5ms | Allocations: 15958)
+
+
+Started GET "/session/new" for ::1 at 2024-12-13 16:32:48 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 7.6ms | Allocations: 2868)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 3189)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 16.0ms | Allocations: 1935)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 79.9ms | Allocations: 13833)
+Completed 200 OK in 85ms (Views: 82.3ms | ActiveRecord: 0.2ms | Allocations: 14197)
+
+
+Started GET "/password_reset/new" for ::1 at 2024-12-13 16:32:52 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1514)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 10.7ms | Allocations: 1936)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 40.4ms | Allocations: 12158)
+Completed 200 OK in 45ms (Views: 42.2ms | ActiveRecord: 0.2ms | Allocations: 12587)
+
+
+Started GET "/session/new" for ::1 at 2024-12-13 16:32:56 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 4.2ms | Allocations: 2637)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2723)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 14.5ms | Allocations: 1929)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 13354)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.1ms | Allocations: 13584)
+
+
+Started GET "/password_reset/new" for ::1 at 2024-12-13 16:34:52 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1537)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 23.0ms | Allocations: 4084)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 54.7ms | Allocations: 15156)
+Completed 200 OK in 65ms (Views: 57.2ms | ActiveRecord: 2.8ms | Allocations: 16195)
+
+
+Started GET "/password_reset/new" for ::1 at 2024-12-13 16:35:39 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1536)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 18.5ms | Allocations: 4083)
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 42.0ms | Allocations: 15290)
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 3.1ms | Allocations: 16332)
+
+
+Started GET "/password_reset/new" for ::1 at 2024-12-13 16:35:47 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1535)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 16.4ms | Allocations: 4077)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 49.0ms | Allocations: 15026)
+Completed 200 OK in 54ms (Views: 48.5ms | ActiveRecord: 3.7ms | Allocations: 16064)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 16:38:11 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 4.5ms | Allocations: 1296)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1620)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 8.7ms | Allocations: 2749)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 14040)
+Completed 200 OK in 64ms (Views: 48.1ms | ActiveRecord: 4.5ms | Allocations: 18762)
+
+
+Started GET "/session/new" for ::1 at 2024-12-13 16:38:14 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 3.7ms | Allocations: 2866)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 3186)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 8.2ms | Allocations: 1935)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 47.2ms | Allocations: 13831)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.2ms | Allocations: 14195)
+
+
+Started POST "/session" for ::1 at 2024-12-13 16:38:23 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone8@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 7.8ms | Allocations: 2487)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2573)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 21.9ms | Allocations: 1928)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 94.4ms | Allocations: 13194)
+Completed 422 Unprocessable Content in 779ms (Views: 95.5ms | ActiveRecord: 1.5ms | Allocations: 14332)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-13 16:38:28 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 4.4ms | Allocations: 886)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 972)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 6.3ms | Allocations: 1929)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 11605)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.1ms | Allocations: 11848)
+
+
+Started POST "/registration" for ::1 at 2024-12-13 16:38:39 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alexmaone6@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone6@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 8.3ms | Allocations: 1655)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1742)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 7.3ms | Allocations: 1928)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 43.3ms | Allocations: 12373)
+Completed 200 OK in 613ms (Views: 44.2ms | ActiveRecord: 2.5ms | Allocations: 15526)
+
+
+Started POST "/registration" for ::1 at 2024-12-13 16:38:43 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alexmaone10@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone10@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 4.8ms | Allocations: 1593)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1679)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 5.5ms | Allocations: 1928)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 12522)
+Completed 200 OK in 37ms (Views: 28.9ms | ActiveRecord: 2.4ms | Allocations: 15323)
+
+
+Started POST "/registration" for ::1 at 2024-12-13 16:38:51 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alexmaone10@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone10@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "clerk_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "alexmaone10@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-12-13 15:38:51.484351"], ["updated_at", "2024-12-13 15:38:51.484351"], ["clerk_id", nil]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 377ms (ActiveRecord: 3.0ms | Allocations: 4014)
+
+
+Started GET "/" for ::1 at 2024-12-13 16:38:51 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1236)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 4.8ms | Allocations: 2105)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 12095)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.2ms | Allocations: 12458)
+
+
+Started GET "/password/edit" for ::1 at 2024-12-13 16:38:53 +0100
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 915)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 788)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 10571)
+Completed 200 OK in 43ms (Views: 29.4ms | ActiveRecord: 0.2ms | Allocations: 11617)
+
+
+Started GET "/password/edit" for ::1 at 2024-12-13 16:42:12 +0100
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1368)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 5.8ms | Allocations: 7465)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="text-gray-800 font-semibold text-xl mb-4">Update Password</h1>
+
+<%= form_with model: current_user, url: password_path do |form| %>
+    <% if form.object.errors.any? %>
+        <% form.object.errors.full_messages.each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    <% end %>
+
+    <div class="mb-4">
+        <%= fform.label :password_challenge, "Current Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.password_field :password_challenge, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+    
+    <div class="mb-4">
+        <%= fform.label :password, "New Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+    
+    <div class="mb-4">
+        <%= fform.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="flex items-center justify-between">
+        <%= form.submit "Update Password", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
+
+<%end%>
+):
+1:    <h1 class="text-gray-800 font-semibold text-xl mb-4">Update Password</h1>
+2:    
+3:    <%= form_with model: current_user, url: password_path do |form| %>
+4:        <% if form.object.errors.any? %>
+5:            <% form.object.errors.full_messages.each do |message| %>
+6:                <div><%= message %></div>
+7:            <% end %>
+8:        <% end %>
+9:    
+10:        <div class="mb-4">
+11:            <%= fform.label :password_challenge, "Current Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+12:            <%= form.password_field :password_challenge, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+13:        </div>
+14:        
+15:        <div class="mb-4">
+16:            <%= fform.label :password, "New Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+17:            <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+18:        </div>
+19:        
+20:        <div class="mb-4">
+21:            <%= fform.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
+22:            <%= form.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+23:        </div>
+24:    
+25:        <div class="flex items-center justify-between">
+26:            <%= form.submit "Update Password", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+27:        </div>
+28:    
+29:    <%end%>
+  
+app/views/passwords/edit.html.erb:11: syntax error, unexpected `class', expecting ')'
+app/views/passwords/edit.html.erb:16: syntax error, unexpected `class', expecting ')'
+Started GET "/password/edit" for ::1 at 2024-12-13 16:42:32 +0100
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1282)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1364)
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 24.7ms | Allocations: 7442)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="text-gray-800 font-semibold text-xl mb-4">Update Password</h1>
+
+<%= form_with model: current_user, url: password_path do |form| %>
+    <% if form.object.errors.any? %>
+        <% form.object.errors.full_messages.each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    <% end %>
+
+    <div class="mb-4">
+        <%= form.label :password_challenge, "Current Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.password_field :password_challenge, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+    
+    <div class="mb-4">
+        <%= fform.label :password, "New Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+    
+    <div class="mb-4">
+        <%= fform.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="flex items-center justify-between">
+        <%= form.submit "Update Password", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
+
+<%end%>
+):
+1:    <h1 class="text-gray-800 font-semibold text-xl mb-4">Update Password</h1>
+2:    
+3:    <%= form_with model: current_user, url: password_path do |form| %>
+4:        <% if form.object.errors.any? %>
+5:            <% form.object.errors.full_messages.each do |message| %>
+6:                <div><%= message %></div>
+7:            <% end %>
+8:        <% end %>
+9:    
+10:        <div class="mb-4">
+11:            <%= form.label :password_challenge, "Current Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+12:            <%= form.password_field :password_challenge, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+13:        </div>
+14:        
+15:        <div class="mb-4">
+16:            <%= fform.label :password, "New Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+17:            <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+18:        </div>
+19:        
+20:        <div class="mb-4">
+21:            <%= fform.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
+22:            <%= form.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+23:        </div>
+24:    
+25:        <div class="flex items-center justify-between">
+26:            <%= form.submit "Update Password", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+27:        </div>
+28:    
+29:    <%end%>
+  
+app/views/passwords/edit.html.erb:11: syntax error, unexpected `class', expecting ')'
+app/views/passwords/edit.html.erb:16: syntax error, unexpected `class', expecting ')'
+Started GET "/password/edit" for ::1 at 2024-12-13 16:42:50 +0100
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1280)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1362)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.6ms | Allocations: 7440)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="text-gray-800 font-semibold text-xl mb-4">Update Password</h1>
+
+<%= form_with model: current_user, url: password_path do |form| %>
+    <% if form.object.errors.any? %>
+        <% form.object.errors.full_messages.each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    <% end %>
+
+    <div class="mb-4">
+        <%= form.label :password_challenge, "Current Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.password_field :password_challenge, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+    
+    <div class="mb-4">
+        <%= form.label :password, "New Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+    
+    <div class="mb-4">
+        <%= form.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="flex items-center justify-between">
+        <%= form.submit "Update Password", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
+
+<%end%>
+):
+1:    <h1 class="text-gray-800 font-semibold text-xl mb-4">Update Password</h1>
+2:    
+3:    <%= form_with model: current_user, url: password_path do |form| %>
+4:        <% if form.object.errors.any? %>
+5:            <% form.object.errors.full_messages.each do |message| %>
+6:                <div><%= message %></div>
+7:            <% end %>
+8:        <% end %>
+9:    
+10:        <div class="mb-4">
+11:            <%= form.label :password_challenge, "Current Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+12:            <%= form.password_field :password_challenge, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+13:        </div>
+14:        
+15:        <div class="mb-4">
+16:            <%= form.label :password, "New Password" class: "block text-gray-700 text-sm font-bold mb-2" %>
+17:            <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+18:        </div>
+19:        
+20:        <div class="mb-4">
+21:            <%= form.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
+22:            <%= form.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+23:        </div>
+24:    
+25:        <div class="flex items-center justify-between">
+26:            <%= form.submit "Update Password", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+27:        </div>
+28:    
+29:    <%end%>
+  
+app/views/passwords/edit.html.erb:11: syntax error, unexpected `class', expecting ')'
+app/views/passwords/edit.html.erb:16: syntax error, unexpected `class', expecting ')'
+Started GET "/password/edit" for ::1 at 2024-12-13 16:44:34 +0100
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 958)
+  Rendered shared/_navbar.html.erb (Duration: 4.8ms | Allocations: 1460)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 41.3ms | Allocations: 12093)
+Completed 200 OK in 74ms (Views: 46.2ms | ActiveRecord: 7.9ms | Allocations: 18164)
+
+
+Started GET "/" for ::1 at 2024-12-13 16:44:42 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 1224)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 8.6ms | Allocations: 1320)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 111.0ms | Allocations: 11252)
+Completed 200 OK in 130ms (Views: 123.5ms | ActiveRecord: 0.2ms | Allocations: 11616)
+
+

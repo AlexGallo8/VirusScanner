@@ -1,4 +1,4 @@
-<%= form_with(model: user, url: session_path, data: { turbo_frame: "_top" }) do |form| %>
+<%= form_with(model: user, id:"session_form", url: session_path, data: { turbo_frame: "_top" }) do |form| %>
 
     <div class="mb-4">
         <%= form.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>

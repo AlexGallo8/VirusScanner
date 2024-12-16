@@ -9,7 +9,15 @@ class RegistrationsController < ApplicationController
       login @user
       redirect_to root_path, notice: "Successfully created account!"
     else
-      render :new
+      render(
+        turbo_stream.create(
+          "registration_form",
+          partial: "registrations/form",
+          locals: {
+            user: @user
+          }
+        )
+      )
     end
   end
   

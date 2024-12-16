@@ -1,4 +1,4 @@
-<%= form_with(model: user, url: registration_path, data: { turbo_frame: "_top" }) do |form| %>
+<%= form_with(model: user, id:"registration_form", url: registration_path, data: { turbo_frame: "_top" }) do |form| %>
     <% if form.object.errors.any? %>
         <div class="bg-red-50 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
             <% form.object.errors.full_messages.each do |message| %>
@@ -27,3 +27,87 @@
     </div>
     
 <% end %>
+
+<div
+    data-controller="modal"
+    id="modal-wrapper"
+    class="hidden relative z-10"
+    aria-labelledby="modal-title"
+    role="dialog"
+    aria-modal="true"
+>
+    <div class="hidden" id="modal-trigger" data-action="click->modal#showModal"></div>
+
+    <div
+        id="modal-backdrop"
+        class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        data-transition-enter="ease-out duration-300"
+        data-transition-enter-start="opacity-0"
+        data-transition-enter-end="opacity-100"
+        data-transition-leave="ease-in duration-200"
+        data-transition-leave-start="opacity-100"
+        data-transition-leave-end="opacity-0"
+    ></div>
+
+    <div class="fixed z-10 inset-0 overflow-y-auto">
+        <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+            <div
+                id="modal-panel"
+                class="hidden relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-xl sm:w-full sm:p-6"
+                data-transition-enter="ease-out duration-300"
+                data-transition-enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                data-transition-enter-end="opacity-100 translate-y-0 sm:scale-100"
+                data-transition-leave="ease-in duration-200"
+                data-transition-leave-start="opacity-100 translate-y-0 sm:scale-100"
+                data-transition-leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            >
+                <div>
+                    <div>
+                        <h3 class="text-md leading-6 font-medium text-gray-900 text-center mb-4" id="modal-tittle">Log in or Sign up</h3>
+                        
+                        <%# Linea di divisione %>
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                                <div class="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div class="relative flex justify-center">
+                                <span class="px-2 bg-white text-sm text-gray-500"> Continue </span>
+                            </div>
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <div class="pt-4">
+                            <h4 class="text-2xl leading-6 text-gray-900 mt-2 font-medium">Welcome to VirusScanner</h4>
+                            <div class="mt-6 border border-gray-300 rounded-md px-3 py-2 shadow-sm focus-within:ring-1 focus-within:ring-black focus-within:border-black">
+                                <label for="email" class="block text-xs dont-medium text-gray-900">Email</label>
+                                <input type="text" name="email" id="email" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="youremail@gmail.com">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="my-5 sm:my-6">
+                    <button type="button" class="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sign up</button>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div>
+                        <span class="px-2 bg-white text-sm text-gray-500"> or </span>
+                    </div>
+                </div>
+                
+                <div class="mt-5 sm:mt-6">
+                    <button type="button" class="w-full inline-flex justify-center items-center px-6 py-3 border border-black shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <img crossorigin="anonymous" srcset="https://img.clerk.com/static/github.svg?width=80 1x,https://img.clerk.com/static/github.svg?width=160 2x" src="https://img.clerk.com/static/github.svg?width=160" class="cl-socialButtonsProviderIcon cl-providerIcon cl-socialButtonsProviderIcon__github cl-providerIcon__github cl-internal-2gzuzc" alt="Sign in with GitHub">
+                        Continue with GitHub
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

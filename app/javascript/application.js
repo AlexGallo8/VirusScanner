@@ -1,5 +1,5 @@
 import "@hotwired/turbo-rails"
-import "controllers"
+import "./controllers"
 import './clerk_events'
 
 document.addEventListener("turbo:load", () => {

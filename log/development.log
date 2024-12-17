@@ -63792,3 +63792,69 @@ Completed 200 OK in 116ms (Views: 112.2ms | ActiveRecord: 0.1ms | Allocations: 3
 Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for 127.0.0.1 at 2024-12-17 17:16:46 +0100
 Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for 127.0.0.1 at 2024-12-17 17:16:46 +0100
 Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for 127.0.0.1 at 2024-12-17 17:16:46 +0100
+Started GET "/" for 127.0.0.1 at 2024-12-17 17:27:36 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 1146)
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 2.1ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 61.8ms | Allocations: 4281)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 207.7ms | Allocations: 37142)
+Completed 200 OK in 220ms (Views: 196.9ms | ActiveRecord: 17.7ms | Allocations: 38143)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for 127.0.0.1 at 2024-12-17 17:27:37 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for 127.0.0.1 at 2024-12-17 17:27:37 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for 127.0.0.1 at 2024-12-17 17:27:37 +0100
+Started GET "/" for 127.0.0.1 at 2024-12-17 17:28:19 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1224)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 2.6ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 32.5ms | Allocations: 4560)
+  Rendered shared/_footer.html.erb (Duration: 2.0ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 129.9ms | Allocations: 37494)
+Completed 200 OK in 350ms (Views: 337.2ms | ActiveRecord: 9.9ms | Allocations: 38490)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for 127.0.0.1 at 2024-12-17 17:28:20 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for 127.0.0.1 at 2024-12-17 17:28:20 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for 127.0.0.1 at 2024-12-17 17:28:20 +0100
+Started GET "/" for ::1 at 2024-12-17 17:28:32 +0100
+Started GET "/" for ::1 at 2024-12-17 17:28:34 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 528)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 8.2ms | Allocations: 1950)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 10085)
+Completed 200 OK in 674ms (Views: 671.5ms | ActiveRecord: 0.1ms | Allocations: 10336)
+
+
+Started GET "/assets/tailwind.debug-ea9728a0544063702e4bab5a448de06f78e425912cc6eaa149003243eaa52568.css" for ::1 at 2024-12-17 17:28:35 +0100
+Started GET "/assets/inter-font.debug-f597296dc1329645f66710581acb6700189fa1192e7c28a724e64795ba30f3fe.css" for ::1 at 2024-12-17 17:28:35 +0100
+Started GET "/assets/application.debug-f9969018c752ba6449ff02522c991bc0f6f9b6b07fb803a282bce266725493c9.css" for ::1 at 2024-12-17 17:28:35 +0100
+Started GET "/assets/controllers/application-e4c7ee308cb4799d5e76a7c66ee9db1a94214df711f321456aee419bd782188a.js" for ::1 at 2024-12-17 17:28:35 +0100
+Started GET "/assets/controllers/index-a364c8ecc7294d0adda9f3c1e950ca5fd821336c6281e1a3d7039d8611b48371.js" for ::1 at 2024-12-17 17:28:35 +0100
+Started GET "/assets/controllers/modal_controller-63adcd17e8aa386cdec21a4c99f37673e487cc3b0aad15c6e6d40ad67b312585.js" for ::1 at 2024-12-17 17:28:35 +0100
+Started GET "/assets/controllers/navbar_controller-d5398ae2407422677ea132bd82c38b1a4415eff9f357f7f15bbc1e7b25b3a1a6.js" for ::1 at 2024-12-17 17:28:35 +0100
+Started GET "/assets/el-transition-ea3c9b45578809c199f6725e011d96e3f37f5311744d1da6b1b16c889ad9e73b.js" for ::1 at 2024-12-17 17:28:36 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-17 17:28:36 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-17 17:28:36 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-17 17:28:36 +0100

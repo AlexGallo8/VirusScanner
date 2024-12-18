@@ -63858,3 +63858,316 @@ Started GET "/assets/el-transition-ea3c9b45578809c199f6725e011d96e3f37f5311744d1
 Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-17 17:28:36 +0100
 Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-17 17:28:36 +0100
 Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-17 17:28:36 +0100
+Started GET "/about" for ::1 at 2024-12-17 17:32:29 +0100
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 122)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 11.6ms | Allocations: 1971)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 46.6ms | Allocations: 9842)
+Completed 200 OK in 2235ms (Views: 2228.5ms | ActiveRecord: 0.2ms | Allocations: 10233)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-17 17:32:32 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-17 17:32:32 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-17 17:32:32 +0100
+Started GET "/" for ::1 at 2024-12-17 17:32:41 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 521)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 30.4ms | Allocations: 1947)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 65.1ms | Allocations: 10067)
+Completed 200 OK in 79ms (Views: 77.9ms | ActiveRecord: 0.1ms | Allocations: 10317)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-17 17:32:41 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-17 17:32:41 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-17 17:32:41 +0100
+Started GET "/about" for ::1 at 2024-12-17 17:32:45 +0100
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 5.2ms | Allocations: 1962)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | Allocations: 9709)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.1ms | Allocations: 9958)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-17 17:32:46 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-17 17:32:46 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-17 17:32:46 +0100
+Started GET "/" for ::1 at 2024-12-17 17:32:50 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 520)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 7.4ms | Allocations: 1947)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 10080)
+Completed 200 OK in 95ms (Views: 92.4ms | ActiveRecord: 0.1ms | Allocations: 10330)
+
+
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-17 17:32:51 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-17 17:32:51 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-17 17:32:51 +0100
+Started GET "/" for ::1 at 2024-12-17 17:58:25 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 29.5ms | Allocations: 1224)
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.8ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 96.6ms | Allocations: 4641)
+  Rendered shared/_footer.html.erb (Duration: 1.4ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 314.5ms | Allocations: 37796)
+Completed 200 OK in 353ms (Views: 333.0ms | ActiveRecord: 11.7ms | Allocations: 38796)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-17 17:58:27 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-17 17:58:27 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-17 17:58:27 +0100
+Started GET "/" for ::1 at 2024-12-17 18:01:58 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1226)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.1ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 48.0ms | Allocations: 4924)
+  Rendered shared/_footer.html.erb (Duration: 3.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 168.7ms | Allocations: 41020)
+Completed 200 OK in 623ms (Views: 616.1ms | ActiveRecord: 3.5ms | Allocations: 42021)
+
+
+Started GET "/assets/controllers/navbar_controller-25b8e1823a9d0adbb05cc7522edb4c0985c3ae482ec6d124b1cea61482bae346.js" for ::1 at 2024-12-17 18:01:59 +0100
+Started GET "/" for ::1 at 2024-12-17 18:02:19 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 528)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.2ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 7.8ms | Allocations: 1952)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 147.7ms | Allocations: 35855)
+Completed 200 OK in 151ms (Views: 148.9ms | ActiveRecord: 0.1ms | Allocations: 36106)
+
+
+Started GET "/assets/controllers/navbar_controller-bc3db94dbcd614b1f2ffb0bd80947707218830f6b43fbb5846f42674d6cabbed.js" for ::1 at 2024-12-17 18:02:19 +0100
+Started GET "/" for ::1 at 2024-12-17 18:06:49 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1224)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.0ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 32.2ms | Allocations: 4917)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 178.2ms | Allocations: 37817)
+Completed 200 OK in 194ms (Views: 184.9ms | ActiveRecord: 5.2ms | Allocations: 38816)
+
+
+Started GET "/script.js" for ::1 at 2024-12-17 18:06:50 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/script.js"):
+  
+Started GET "/" for ::1 at 2024-12-17 18:09:33 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 528)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.2ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 10.2ms | Allocations: 1952)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 80.3ms | Allocations: 33765)
+Completed 200 OK in 1900ms (Views: 1898.8ms | ActiveRecord: 0.1ms | Allocations: 34025)
+
+
+Started GET "/script.js" for ::1 at 2024-12-17 18:09:35 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/script.js"):
+  
+Started GET "/" for ::1 at 2024-12-17 18:12:30 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1224)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.8ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 39.2ms | Allocations: 4925)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 420.9ms | Allocations: 47377)
+Completed 200 OK in 432ms (Views: 421.3ms | ActiveRecord: 6.6ms | Allocations: 48376)
+
+
+Started GET "/assets/application.debug-a7dd7a6a97989983aa4abab6dd96007f7b62fcbf2f1200b770210f8bab4eaab1.js" for ::1 at 2024-12-17 18:12:31 +0100
+Started GET "/script.js" for ::1 at 2024-12-17 18:12:31 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/script.js"):
+  
+Started GET "/" for ::1 at 2024-12-17 18:12:42 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1224)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.7ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 38.7ms | Allocations: 4923)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 96.0ms | Allocations: 16476)
+Completed 200 OK in 129ms (Views: 108.2ms | ActiveRecord: 5.9ms | Allocations: 17479)
+
+
+Started GET "/script.js" for ::1 at 2024-12-17 18:12:43 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/script.js"):
+  
+Started GET "/" for ::1 at 2024-12-17 18:14:32 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 528)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.2ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 12.1ms | Allocations: 1952)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 433.8ms | Allocations: 89385)
+Completed 200 OK in 436ms (Views: 435.4ms | ActiveRecord: 0.2ms | Allocations: 89636)
+
+
+Started GET "/assets/application.debug-ccb6c8e8fdbb0e47c9aef7e2d6c7b66a0edcbd61a2229c5cbe3f94cb5c43690f.js" for ::1 at 2024-12-17 18:14:32 +0100
+Started GET "/script.js" for ::1 at 2024-12-17 18:14:32 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/script.js"):
+  
+Started GET "/" for ::1 at 2024-12-17 18:23:07 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 1224)
+  Rendered layout layouts/application.html.erb (Duration: 200.9ms | Allocations: 13177)
+Completed 500 Internal Server Error in 215ms (ActiveRecord: 0.0ms | Allocations: 14173)
+
+
+  
+ActionView::Template::Error (undefined method `javascript_pack_tag' for #<ActionView::Base:0x00000000037398>
+Did you mean?  javascript_path
+               javascript_tag):
+    11:     
+    12:     <%# <%= clerk_script_tag %>
+    13:     <script src="script.js"></script>
+    14:     <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+    15:     <%# <%= javascript_include_tag 'application' %>
+    16:     <%# <%= javascript_importmap_tags %>
+    17: 
+  
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2024-12-17 18:24:42 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 526)
+  Rendered layout layouts/application.html.erb (Duration: 111.7ms | Allocations: 11994)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.0ms | Allocations: 12238)
+
+
+  
+ActionView::Template::Error (undefined method `javascript_pack_tag' for #<ActionView::Base:0x000000000376e0>
+Did you mean?  javascript_path
+               javascript_tag):
+    11:     
+    12:     <%# <%= clerk_script_tag %>
+    13:     <script src="script.js"></script>
+    14:     <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+    15:     <%# <%= javascript_include_tag 'application' %>
+    16:     <%# <%= javascript_importmap_tags %>
+    17: 
+  
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2024-12-17 18:25:02 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1226)
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.1ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 43.5ms | Allocations: 4636)
+  Rendered shared/_footer.html.erb (Duration: 2.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 472.1ms | Allocations: 84714)
+Completed 200 OK in 478ms (Views: 464.6ms | ActiveRecord: 10.8ms | Allocations: 85715)
+
+
+Started GET "/script.js" for ::1 at 2024-12-17 18:25:03 +0100
+Started GET "/assets/controllers/script-2725d60848eb40b466b4f2b0e52c5dbcd1c992819458fb274d550c93c3ec7222.js" for ::1 at 2024-12-17 18:25:03 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/script.js"):
+  
+Started GET "/" for ::1 at 2024-12-18 16:53:20 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 25.1ms | Allocations: 1226)
+  [1m[36mUser Load (21.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.5ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 53.9ms | Allocations: 4682)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 339.1ms | Allocations: 84776)
+Completed 200 OK in 353ms (Views: 312.6ms | ActiveRecord: 34.5ms | Allocations: 85778)
+
+
+Started GET "/assets/script-d715baada96bbe26522b7a101974b9496bb64894e55fbb699e0679a63552f99f.js" for ::1 at 2024-12-18 16:53:21 +0100

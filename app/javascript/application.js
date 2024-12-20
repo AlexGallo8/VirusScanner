@@ -1,3 +1,6 @@
+import "@hotwired/turbo-rails"
+import "./controllers"
+
 import { Application } from "@hotwired/stimulus"
 import { definitionsFromContext } from "@hotwired/stimulus-loading"
 

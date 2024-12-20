@@ -11,8 +11,9 @@
     
     <%# <%= clerk_script_tag %>
     <%# <script src="script.js"></script> %>
-    <%# <%= javascript_include_tag 'application' %>
     <%= javascript_importmap_tags %>
+    <%# <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
 
     <%# <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
@@ -48,6 +49,7 @@
   
   <body>
 
+    <%= turbo_frame_tag "remote_modal" %>
     <%= render partial: "shared/navbar"%>
     <%= notice %>
     <%= flash[:alert] %>

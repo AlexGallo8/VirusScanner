@@ -64171,3 +64171,2706 @@ Completed 200 OK in 353ms (Views: 312.6ms | ActiveRecord: 34.5ms | Allocations: 
 
 
 Started GET "/assets/script-d715baada96bbe26522b7a101974b9496bb64894e55fbb699e0679a63552f99f.js" for ::1 at 2024-12-18 16:53:21 +0100
+Started GET "/" for 127.0.0.1 at 2024-12-19 15:10:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-12-19 15:10:39 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 38.6ms | Allocations: 3274)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 2.7ms | Allocations: 368)
+  Rendered shared/_navbar.html.erb (Duration: 204.5ms | Allocations: 17317)
+  Rendered shared/_footer.html.erb (Duration: 1.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 850.3ms | Allocations: 96837)
+Completed 200 OK in 919ms (Views: 863.4ms | ActiveRecord: 7.1ms | Allocations: 102870)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-19 15:25:58 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 1224)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 104.8ms | Allocations: 7379)
+  Rendered layout layouts/application.html.erb (Duration: 234.4ms | Allocations: 43556)
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 11.8ms | Allocations: 44549)
+
+
+  
+ActionView::Template::Error (Missing partial registration/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/turbo-rails-2.0.5/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailbox-7.1.3.4/app/views"
+
+Did you mean?  registrations/form
+               sessions/form
+               scans/form
+               shared/footer
+               active_storage/blobs/blob
+               action_text/attachables/remote_image):
+    179:   </div>
+    180: </nav>
+    181: 
+    182: <%= render "registration/form"%>
+    183: 
+    184: <script>
+    185:   document.addEventListener('DOMContentLoaded', () => {
+  
+app/views/shared/_navbar.html.erb:182
+app/views/layouts/application.html.erb:51
+Started GET "/" for 127.0.0.1 at 2024-12-19 15:26:14 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1224)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 44.4ms | Allocations: 6934)
+  Rendered layout layouts/application.html.erb (Duration: 171.0ms | Allocations: 43389)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 8.5ms | Allocations: 44376)
+
+
+  
+ActionView::Template::Error (Missing partial registration/_modal with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/turbo-rails-2.0.5/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailbox-7.1.3.4/app/views"
+
+Did you mean?  registrations/form
+               shared/modal
+               sessions/form
+               active_storage/blobs/blob
+               scans/scan
+               scans/form):
+    179:   </div>
+    180: </nav>
+    181: 
+    182: <%= render "registration/modal"%>
+    183: 
+    184: <script>
+    185:   document.addEventListener('DOMContentLoaded', () => {
+  
+app/views/shared/_navbar.html.erb:182
+app/views/layouts/application.html.erb:51
+Started GET "/" for 127.0.0.1 at 2024-12-19 15:26:20 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 523)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 15.8ms | Allocations: 4412)
+  Rendered layout layouts/application.html.erb (Duration: 44.9ms | Allocations: 12565)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.1ms | Allocations: 12810)
+
+
+  
+ActionView::Template::Error (Missing partial registration/_modal with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/turbo-rails-2.0.5/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailbox-7.1.3.4/app/views"
+
+Did you mean?  registrations/form
+               shared/modal
+               sessions/form
+               active_storage/blobs/blob
+               scans/scan
+               scans/form):
+    179:   </div>
+    180: </nav>
+    181: 
+    182: <%= render "registration/modal"%>
+    183: 
+    184: <script>
+    185:   document.addEventListener('DOMContentLoaded', () => {
+  
+app/views/shared/_navbar.html.erb:182
+app/views/layouts/application.html.erb:51
+Started GET "/" for 127.0.0.1 at 2024-12-19 15:26:26 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1226)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 29.5ms | Allocations: 6933)
+  Rendered layout layouts/application.html.erb (Duration: 87.0ms | Allocations: 43387)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 3.9ms | Allocations: 44375)
+
+
+  
+ActionView::Template::Error (Missing partial registration/__modal with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/turbo-rails-2.0.5/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/views"
+  * "/Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailbox-7.1.3.4/app/views"
+
+Did you mean?  registrations/form
+               shared/modal
+               sessions/form
+               action_text/attachables/remote_image
+               scans/form
+               active_storage/blobs/blob):
+    179:   </div>
+    180: </nav>
+    181: 
+    182: <%= render "registration/_modal"%>
+    183: 
+    184: <script>
+    185:   document.addEventListener('DOMContentLoaded', () => {
+  
+app/views/shared/_navbar.html.erb:182
+app/views/layouts/application.html.erb:51
+Started GET "/" for 127.0.0.1 at 2024-12-19 15:26:35 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1224)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.9ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 21.3ms | Allocations: 4976)
+  Rendered shared/_footer.html.erb (Duration: 1.4ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 100.8ms | Allocations: 41679)
+Completed 200 OK in 106ms (Views: 100.3ms | ActiveRecord: 4.2ms | Allocations: 42674)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-12-19 15:27:36 +0100
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Scansiona"}
+Redirected to http://127.0.0.1:3000/virus_total
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 413)
+
+
+Started GET "/virus_total" for 127.0.0.1 at 2024-12-19 15:27:36 +0100
+Processing by VirusTotalController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/index.html.erb within layouts/application
+  Rendered virus_total/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1161)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.7ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 48.4ms | Allocations: 4965)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 111.7ms | Allocations: 41388)
+Completed 200 OK in 118ms (Views: 109.7ms | ActiveRecord: 4.9ms | Allocations: 42378)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-12-19 15:27:55 +0100
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007fa7e48fc2d8 @tempfile=#<Tempfile:/var/folders/52/5sc1svsn4kb74k2zmcj4p1jr0000gn/T/RackMultipart20241219-26240-1er0itx.jpg>, @content_type="image/jpeg", @original_filename="Azzurra.jpg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"Azzurra.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Scansiona"}
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-12-19 15:28:14 +0100
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://auth0.com/docs/api/authentication#introduction", "commit"=>"Scansiona"}
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-12-19 15:28:17 +0100
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://auth0.com/docs/api/authentication#introduction", "commit"=>"Scansiona"}
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for 127.0.0.1 at 2024-12-19 15:28:27 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for 127.0.0.1 at 2024-12-19 15:28:27 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for 127.0.0.1 at 2024-12-19 15:28:28 +0100
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 8.8ms | Allocations: 742)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 5.5ms | Allocations: 1982)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 65.0ms | Allocations: 10436)
+Completed 200 OK in 15932ms (Views: 70.7ms | ActiveRecord: 0.2ms | Allocations: 23370)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 1.8ms | Allocations: 67)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 8.6ms | Allocations: 1974)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 68.0ms | Allocations: 9641)
+Completed 200 OK in 15703ms (Views: 70.8ms | ActiveRecord: 0.2ms | Allocations: 31795)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for 127.0.0.1 at 2024-12-19 15:28:33 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for 127.0.0.1 at 2024-12-19 15:28:33 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for 127.0.0.1 at 2024-12-19 15:28:33 +0100
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 2.4ms | Allocations: 517)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 4.7ms | Allocations: 1972)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 69.9ms | Allocations: 10089)
+Completed 200 OK in 61341ms (Views: 77.3ms | ActiveRecord: 0.1ms | Allocations: 64259)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2024-12-19 15:29:58 +0100
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://auth0.com/docs/api/authentication#introduction", "commit"=>"Scansiona"}
+Started GET "/" for 127.0.0.1 at 2024-12-19 15:29:59 +0100
+  Rendering layout layouts/application.html.erb
+  Rendering virus_total/scan.html.erb within layouts/application
+  Rendered virus_total/scan.html.erb within layouts/application (Duration: 16.2ms | Allocations: 1184)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.7ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 27.1ms | Allocations: 5031)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 194.3ms | Allocations: 41698)
+Completed 200 OK in 16100ms (Views: 200.1ms | ActiveRecord: 6.1ms | Allocations: 46019)
+
+
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1224)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.9ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 21.3ms | Allocations: 5026)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 92.9ms | Allocations: 41624)
+Completed 200 OK in 100ms (Views: 91.1ms | ActiveRecord: 5.6ms | Allocations: 42620)
+
+
+Started GET "/" for ::1 at 2024-12-19 15:30:28 +0100
+Started GET "/" for ::1 at 2024-12-19 15:30:30 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 537)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 10.6ms | Allocations: 2002)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 10250)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.2ms | Allocations: 10501)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-19 15:30:31 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 22.5ms | Allocations: 2576)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 26.8ms | Allocations: 2899)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 7.3ms | Allocations: 2005)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 58.0ms | Allocations: 12614)
+Completed 200 OK in 210ms (Views: 64.3ms | ActiveRecord: 0.4ms | Allocations: 98376)
+
+
+Started GET "/" for ::1 at 2024-12-19 15:31:33 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 1226)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 37.6ms | Allocations: 8271)
+  Rendered layout layouts/application.html.erb (Duration: 147.3ms | Allocations: 44725)
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 4.3ms | Allocations: 45713)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<ActionView::Base:0x00000000036bc8>
+Did you mean?  super):
+    41:             <%= link_to "Edit Password", edit_password_path %>
+    42:             <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
+    43:           <% else %>
+    44:             <%= link_to "Sign Up", new_registration_path(user, format: :turbo_stream) %>
+    45:             <%# <%= link_to "Log in", new_session_path %>
+    46:             <%# <a
+    47:               href="#"
+  
+app/views/shared/_navbar.html.erb:44
+app/views/layouts/application.html.erb:51
+Started GET "/" for ::1 at 2024-12-19 15:31:50 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1226)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 6.3ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 32.7ms | Allocations: 5034)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 112.8ms | Allocations: 41736)
+Completed 200 OK in 119ms (Views: 111.6ms | ActiveRecord: 5.7ms | Allocations: 42735)
+
+
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-19 15:31:52 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+Completed 406 Not Acceptable in 22ms (ActiveRecord: 0.6ms | Allocations: 3201)
+
+
+  
+ActionController::UnknownFormat (RegistrationsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/vnd.turbo-stream.html"]
+request.variant: []):
+  
+actionpack (7.1.3.4) lib/action_controller/metal/implicit_render.rb:44:in `default_render'
+actionpack (7.1.3.4) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.3.4) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.3.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:206:in `signed_out'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:178:in `call'
+rack (3.1.3) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.3) lib/rack/etag.rb:29:in `call'
+rack (3.1.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-19 15:32:40 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+Completed 406 Not Acceptable in 28ms (ActiveRecord: 9.3ms | Allocations: 4689)
+
+
+  
+ActionController::UnknownFormat (RegistrationsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/vnd.turbo-stream.html"]
+request.variant: []):
+  
+actionpack (7.1.3.4) lib/action_controller/metal/implicit_render.rb:44:in `default_render'
+actionpack (7.1.3.4) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.3.4) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.3.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:206:in `signed_out'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:178:in `call'
+rack (3.1.3) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.3) lib/rack/etag.rb:29:in `call'
+rack (3.1.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-12-19 15:32:45 +0100
+Started GET "/" for ::1 at 2024-12-19 15:32:46 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1224)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_navbar.html.erb (Duration: 28.5ms | Allocations: 6931)
+  Rendered layout layouts/application.html.erb (Duration: 125.0ms | Allocations: 43381)
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 0.4ms | Allocations: 44185)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<ActionView::Base:0x00000000041988>
+Did you mean?  super):
+    41:             <%= link_to "Edit Password", edit_password_path %>
+    42:             <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
+    43:           <% else %>
+    44:             <%= link_to "Sign Up", new_registration_path( user ) %>
+    45:             <%# <%= link_to "Log in", new_session_path %>
+    46:             <%# <a
+    47:               href="#"
+  
+app/views/shared/_navbar.html.erb:44
+app/views/layouts/application.html.erb:51
+Started GET "/" for ::1 at 2024-12-19 15:32:59 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1224)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.0ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 32.6ms | Allocations: 5009)
+  Rendered shared/_footer.html.erb (Duration: 4.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 106.9ms | Allocations: 41709)
+Completed 200 OK in 112ms (Views: 105.3ms | ActiveRecord: 4.5ms | Allocations: 42704)
+
+
+Started GET "/registration/new" for ::1 at 2024-12-19 15:33:01 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 20.3ms | Allocations: 1601)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 44.2ms | Allocations: 1921)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 6.8ms | Allocations: 1992)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 103.8ms | Allocations: 11520)
+Completed 200 OK in 161ms (Views: 114.2ms | ActiveRecord: 0.8ms | Allocations: 14316)
+
+
+Started GET "/" for ::1 at 2024-12-19 15:40:18 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1228)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.2ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 29.8ms | Allocations: 4725)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 505.2ms | Allocations: 85714)
+Completed 200 OK in 511ms (Views: 505.5ms | ActiveRecord: 3.1ms | Allocations: 86709)
+
+
+Started GET "/assets/controllers/turbo_controller-a2706f0587a4d66a3607681142a790a73226c61bfff8a916c41fa31411c707c0.js" for ::1 at 2024-12-19 15:40:19 +0100
+Started GET "/assets/controllers/index-249eb620ccb99b8e00418b7296f1849a7f4030eed09b8b6f975fc35230e7085b.js" for ::1 at 2024-12-19 15:40:19 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:40:25 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:40:25 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:40:25 +0100
+Started GET "/" for ::1 at 2024-12-19 15:43:08 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 528)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 21.5ms | Allocations: 2002)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 259.4ms | Allocations: 37260)
+Completed 200 OK in 266ms (Views: 264.3ms | ActiveRecord: 0.1ms | Allocations: 37508)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:43:08 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:43:08 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:43:08 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 15:43:13 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 5.6ms | Allocations: 1601)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1925)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 5.7ms | Allocations: 1997)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 11611)
+Completed 200 OK in 44ms (Views: 37.0ms | ActiveRecord: 0.1ms | Allocations: 14212)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:43:13 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:43:13 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:43:13 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:43:18 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:43:18 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:43:18 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:43:19 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:43:19 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:43:19 +0100
+Started GET "/" for ::1 at 2024-12-19 15:45:50 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 521)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.2ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 30.4ms | Allocations: 1994)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 144.8ms | Allocations: 10095)
+Completed 200 OK in 154ms (Views: 147.6ms | ActiveRecord: 1.5ms | Allocations: 10342)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:45:50 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:45:50 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:45:50 +0100
+Started GET "/" for ::1 at 2024-12-19 15:46:45 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 520)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 5.2ms | Allocations: 1998)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 170.0ms | Allocations: 37395)
+Completed 200 OK in 174ms (Views: 171.2ms | ActiveRecord: 0.1ms | Allocations: 37641)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:46:45 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:46:45 +0100
+Started GET "/assets/controllers/turbo_controller-89f2a997554a99778beeeff6cd593deaefe0a613678359ee621af5d0aa5b6650.js" for ::1 at 2024-12-19 15:46:46 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:46:46 +0100
+Started GET "/" for ::1 at 2024-12-19 15:47:40 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 520)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 5.5ms | Allocations: 1998)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 136.3ms | Allocations: 37321)
+Completed 200 OK in 138ms (Views: 136.8ms | ActiveRecord: 0.1ms | Allocations: 37567)
+
+
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:47:40 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:47:40 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:47:40 +0100
+Started GET "/assets/controllers/turbo_controller-fd941a6790266e539b3e40ecf8065fe2a9ac4af8ede522bcd7996e3b3a9c65f8.js" for ::1 at 2024-12-19 15:47:40 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 15:47:44 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 5.2ms | Allocations: 880)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 967)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 14.9ms | Allocations: 1993)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 220.6ms | Allocations: 10641)
+Completed 200 OK in 230ms (Views: 227.0ms | ActiveRecord: 0.1ms | Allocations: 10903)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:47:44 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:47:44 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:47:44 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 15:47:45 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 2.1ms | Allocations: 880)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 966)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 4.9ms | Allocations: 1993)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 10540)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.1ms | Allocations: 10801)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:47:45 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:47:45 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:47:45 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 15:48:02 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 2.7ms | Allocations: 880)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 966)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 15.6ms | Allocations: 1993)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 57.2ms | Allocations: 10630)
+Completed 200 OK in 65ms (Views: 58.3ms | ActiveRecord: 0.4ms | Allocations: 10891)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:48:03 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:48:03 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:48:03 +0100
+Started GET "/" for ::1 at 2024-12-19 15:50:17 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 520)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 8.0ms | Allocations: 1998)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 108.8ms | Allocations: 34090)
+Completed 200 OK in 112ms (Views: 109.4ms | ActiveRecord: 0.1ms | Allocations: 34336)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:50:17 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:50:17 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:50:17 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 15:50:20 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 4.2ms | Allocations: 880)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 966)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 14.7ms | Allocations: 1997)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 10646)
+Completed 200 OK in 42ms (Views: 40.6ms | ActiveRecord: 0.1ms | Allocations: 10908)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:50:21 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:50:21 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:50:21 +0100
+Started GET "/" for ::1 at 2024-12-19 15:50:24 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 520)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 5.3ms | Allocations: 1998)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 10097)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.1ms | Allocations: 10343)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:50:24 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:50:24 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:50:24 +0100
+Started GET "/" for ::1 at 2024-12-19 15:50:33 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 520)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.2ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 14.6ms | Allocations: 1994)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 113.1ms | Allocations: 34678)
+Completed 200 OK in 115ms (Views: 114.0ms | ActiveRecord: 0.1ms | Allocations: 34925)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:50:33 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:50:33 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:50:33 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 15:50:35 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 6.1ms | Allocations: 880)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 966)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 6.4ms | Allocations: 1993)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 10630)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.1ms | Allocations: 10891)
+
+
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:50:36 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:50:36 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:50:36 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 15:52:44 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 3.3ms | Allocations: 880)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 966)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 15.5ms | Allocations: 1997)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 105.3ms | Allocations: 34487)
+Completed 200 OK in 108ms (Views: 106.4ms | ActiveRecord: 0.1ms | Allocations: 34749)
+
+
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:52:44 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:52:44 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:52:44 +0100
+Started GET "/" for ::1 at 2024-12-19 15:59:15 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1228)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.9ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 48.7ms | Allocations: 4734)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 324.2ms | Allocations: 38252)
+Completed 200 OK in 334ms (Views: 323.8ms | ActiveRecord: 4.8ms | Allocations: 39248)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:59:16 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:59:16 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:59:16 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 15:59:44 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 13.7ms | Allocations: 1601)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 18.0ms | Allocations: 1921)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 11.8ms | Allocations: 2001)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 87.1ms | Allocations: 11508)
+Completed 200 OK in 109ms (Views: 91.6ms | ActiveRecord: 0.1ms | Allocations: 14109)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 15:59:45 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 15:59:45 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 15:59:45 +0100
+Started GET "/" for ::1 at 2024-12-19 16:01:00 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1226)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 2.8ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 36.7ms | Allocations: 5026)
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 155.6ms | Allocations: 41274)
+Completed 200 OK in 172ms (Views: 158.9ms | ActiveRecord: 8.1ms | Allocations: 42269)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:01:01 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:01:01 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:01:01 +0100
+Started GET "/assets/controllers/turbo_controller-94da8ac31cfb4778242eda4a021c12f9ca6cdd734a5f8242d0254eb198fb2a10.js" for ::1 at 2024-12-19 16:01:01 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 16:01:02 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 5.3ms | Allocations: 1601)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1921)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 8.0ms | Allocations: 2001)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 11508)
+Completed 200 OK in 50ms (Views: 39.2ms | ActiveRecord: 1.1ms | Allocations: 14327)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:01:03 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:01:03 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:01:03 +0100
+Started GET "/" for ::1 at 2024-12-19 16:10:46 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1226)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 1748)
+  Rendered layout layouts/application.html.erb (Duration: 85.9ms | Allocations: 37345)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.0ms | Allocations: 38394)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+  .animate-slide-down { animation: slideDown 0.5s ease-out; }
+</style>
+
+<%= javascript_import_module_tag "script" %>
+
+<nav data-controller="navbar" class="bg-white shadow-md">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <%= link_to root_path, class: "flex items-center" do %>
+        <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+      <% end %>
+
+      <button class="lg:hidden" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+      <div class="hidden lg:flex items-center space-x-4">
+        <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+        <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+        
+        <div class="hidden lg:flex items-center space-x-4 login-buttons">
+          <% if user_signed_in? %>
+            <%= link_to "Edit Password", edit_password_path %>
+            <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
+          <% else %>
+            <%= link_to "Sign Up", new_registration_path, data { controller: "turbo", turbo_stream: "true" } %>
+            <%# <%= link_to "Log in", new_session_path %>
+            <%# <a
+              href="#"
+              id="modal-button"
+              data-navbar-target="userAuthLink"
+              class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+            >
+              Sign Up
+            </a> %>
+            
+            <%# <a href="#" data-header-target="userAuthLink" data-action="click->modal#showModal" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Log In</a> %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:hidden">
+      <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+        <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        
+        <% if current_user.present? %>
+          <div class="px-3 py-2">
+            <div id="mobile-user-button" data-clerk-component="userButton"></div>
+          </div>
+        <% else %>
+          <button 
+            onclick="Clerk.openSignIn()" 
+            class="block w-full px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800"
+          >
+            Sign in
+          </button>
+          <button 
+            onclick="Clerk.openSignUp()" 
+            class="block w-full px-3 py-2 rounded-md text-base font-medium bg-gray-200 text-black hover:bg-gray-300"
+          >
+            Sign up
+          </button>
+        <% end %>
+      </div>    
+    </div>
+
+    <div
+        data-controller="modal"
+        data-modal-target="wrapper"
+        id="modal-wrapper"
+        class="fixed inset-0 z-50 hidden"
+    >
+        <div
+            data-modal-target="backdrop"
+            id="modal-backdrop" 
+            class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden"
+        ></div>
+
+        <div
+            data-modal-target="panel"
+            id="modal-panel"
+            class="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-xl sm:w-full sm:p-6 hidden"
+        >
+            <button 
+                data-modal-target="closeButton"
+                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                        Log in or Sign up
+                    </h3>
+                    
+                    <div class="mt-4">
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                                <div class="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div class="relative flex justify-center">
+                                <span class="px-2 bg-white text-sm text-gray-500">Continue</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <div class="mt-1">
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    id="email" 
+                                    class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" 
+                                    placeholder="you@example.com"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <button 
+                                type="button" 
+                                class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
+                            >
+                                Sign up
+                            </button>
+                        </div>
+
+                        <div class="mt-6 relative">
+                            <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                                <div class="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div class="relative flex justify-center">
+                                <span class="px-2 bg-white text-sm text-gray-500">or</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <button 
+                                type="button" 
+                                class="w-full inline-flex justify-center items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                            >
+                                <img 
+                                    src="https://img.clerk.com/static/github.svg" 
+                                    alt="GitHub" 
+                                    class="h-5 w-5 mr-2"
+                                >
+                                Continue with GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</nav>
+
+<%= render "shared/modal"%>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('animate-slide-down');
+    });
+  });
+
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   const modalButton = document.getElementById('modal-button');
+  //   const modalWrapper = document.getElementById('modal-wrapper');
+  //   const modalBackdrop = document.getElementById('modal-backdrop');
+  //   const modalPanel = document.getElementById('modal-panel');
+
+  //   modalButton.addEventListener('click', () => {
+  //     modalWrapper.classList.toggle('hidden');
+  //     modalBackdrop.classList.toggle('hidden');
+  //     modalPanel.classList.toggle('hidden');
+  //   });
+  // });
+</script>
+):
+1:    <style>
+2:      @keyframes fadeIn {
+3:        from { opacity: 0; }
+4:        to { opacity: 1; }
+5:      }
+6:      @keyframes slideDown {
+7:        from {
+8:          transform: translateY(-20px);
+9:          opacity: 0;
+10:        }
+11:        to {
+12:          transform: translateY(0);
+13:          opacity: 1;
+14:        }
+15:      }
+16:      .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+17:      .animate-slide-down { animation: slideDown 0.5s ease-out; }
+18:    </style>
+19:    
+20:    <%= javascript_import_module_tag "script" %>
+21:    
+22:    <nav data-controller="navbar" class="bg-white shadow-md">
+23:      <div class="container mx-auto px-4 py-3">
+24:        <div class="flex justify-between items-center">
+25:          <%= link_to root_path, class: "flex items-center" do %>
+26:            <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+27:          <% end %>
+28:    
+29:          <button class="lg:hidden" id="mobile-menu-button">
+30:            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+31:              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+32:            </svg>
+33:          </button>
+34:    
+35:          <div class="hidden lg:flex items-center space-x-4">
+36:            <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+37:            <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+38:            
+39:            <div class="hidden lg:flex items-center space-x-4 login-buttons">
+40:              <% if user_signed_in? %>
+41:                <%= link_to "Edit Password", edit_password_path %>
+42:                <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
+43:              <% else %>
+44:                <%= link_to "Sign Up", new_registration_path, data { controller: "turbo", turbo_stream: "true" } %>
+45:                <%# <%= link_to "Log in", new_session_path %>
+46:                <%# <a
+47:                  href="#"
+48:                  id="modal-button"
+49:                  data-navbar-target="userAuthLink"
+50:                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+51:                >
+52:                  Sign Up
+53:                </a> %>
+54:                
+55:                <%# <a href="#" data-header-target="userAuthLink" data-action="click->modal#showModal" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Log In</a> %>
+56:              <% end %>
+57:            </div>
+58:          </div>
+59:        </div>
+60:    
+61:        <div class="lg:hidden">
+62:          <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+63:            <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+64:            <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+65:            
+66:            <% if current_user.present? %>
+67:              <div class="px-3 py-2">
+68:                <div id="mobile-user-button" data-clerk-component="userButton"></div>
+69:              </div>
+70:            <% else %>
+71:              <button 
+72:                onclick="Clerk.openSignIn()" 
+73:                class="block w-full px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800"
+74:              >
+75:                Sign in
+76:              </button>
+77:              <button 
+78:                onclick="Clerk.openSignUp()" 
+79:                class="block w-full px-3 py-2 rounded-md text-base font-medium bg-gray-200 text-black hover:bg-gray-300"
+80:              >
+81:                Sign up
+82:              </button>
+83:            <% end %>
+84:          </div>    
+85:        </div>
+86:    
+87:        <div
+88:            data-controller="modal"
+89:            data-modal-target="wrapper"
+90:            id="modal-wrapper"
+91:            class="fixed inset-0 z-50 hidden"
+92:        >
+93:            <div
+94:                data-modal-target="backdrop"
+95:                id="modal-backdrop" 
+96:                class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden"
+97:            ></div>
+98:    
+99:            <div
+100:                data-modal-target="panel"
+101:                id="modal-panel"
+102:                class="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-xl sm:w-full sm:p-6 hidden"
+103:            >
+104:                <button 
+105:                    data-modal-target="closeButton"
+106:                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+107:                >
+108:                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+109:                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+110:                    </svg>
+111:                </button>
+112:    
+113:                <div class="sm:flex sm:items-start">
+114:                    <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
+115:                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+116:                            Log in or Sign up
+117:                        </h3>
+118:                        
+119:                        <div class="mt-4">
+120:                            <div class="relative">
+121:                                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+122:                                    <div class="w-full border-t border-gray-300"></div>
+123:                                </div>
+124:                                <div class="relative flex justify-center">
+125:                                    <span class="px-2 bg-white text-sm text-gray-500">Continue</span>
+126:                                </div>
+127:                            </div>
+128:    
+129:                            <div class="mt-6">
+130:                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+131:                                <div class="mt-1">
+132:                                    <input 
+133:                                        type="email" 
+134:                                        name="email" 
+135:                                        id="email" 
+136:                                        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" 
+137:                                        placeholder="you@example.com"
+138:                                    >
+139:                                </div>
+140:                            </div>
+141:    
+142:                            <div class="mt-6">
+143:                                <button 
+144:                                    type="button" 
+145:                                    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
+146:                                >
+147:                                    Sign up
+148:                                </button>
+149:                            </div>
+150:    
+151:                            <div class="mt-6 relative">
+152:                                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+153:                                    <div class="w-full border-t border-gray-300"></div>
+154:                                </div>
+155:                                <div class="relative flex justify-center">
+156:                                    <span class="px-2 bg-white text-sm text-gray-500">or</span>
+157:                                </div>
+158:                            </div>
+159:    
+160:                            <div class="mt-6">
+161:                                <button 
+162:                                    type="button" 
+163:                                    class="w-full inline-flex justify-center items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+164:                                >
+165:                                    <img 
+166:                                        src="https://img.clerk.com/static/github.svg" 
+167:                                        alt="GitHub" 
+168:                                        class="h-5 w-5 mr-2"
+169:                                    >
+170:                                    Continue with GitHub
+171:                                </button>
+172:                            </div>
+173:                        </div>
+174:                    </div>
+175:                </div>
+176:            </div>
+177:        </div>
+178:    
+179:      </div>
+180:    </nav>
+181:    
+182:    <%= render "shared/modal"%>
+183:    
+184:    <script>
+185:      document.addEventListener('DOMContentLoaded', () => {
+186:        const mobileMenuButton = document.getElementById('mobile-menu-button');
+187:        const mobileMenu = document.getElementById('mobile-menu');
+188:    
+189:        mobileMenuButton.addEventListener('click', () => {
+190:          mobileMenu.classList.toggle('hidden');
+191:          mobileMenu.classList.toggle('animate-slide-down');
+192:        });
+193:      });
+194:    
+195:      // document.addEventListener('DOMContentLoaded', () => {
+196:      //   const modalButton = document.getElementById('modal-button');
+197:      //   const modalWrapper = document.getElementById('modal-wrapper');
+198:      //   const modalBackdrop = document.getElementById('modal-backdrop');
+199:      //   const modalPanel = document.getElementById('modal-panel');
+200:    
+201:      //   modalButton.addEventListener('click', () => {
+202:      //     modalWrapper.classList.toggle('hidden');
+203:      //     modalBackdrop.classList.toggle('hidden');
+204:      //     modalPanel.classList.toggle('hidden');
+205:      //   });
+206:      // });
+207:    </script>
+  
+app/views/shared/_navbar.html.erb:44: syntax error, unexpected ':', expecting '}'
+app/views/shared/_navbar.html.erb:44: syntax error, unexpected ',', expecting ')'
+app/views/shared/_navbar.html.erb:44: syntax error, unexpected '}', expecting ')'
+app/views/shared/_navbar.html.erb:56: syntax error, unexpected `end', expecting ')'
+app/views/shared/_navbar.html.erb:209: syntax error, unexpected `end', expecting ')'
+app/views/layouts/application.html.erb:51
+Started GET "/" for ::1 at 2024-12-19 16:11:23 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1224)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.9ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 24.9ms | Allocations: 4735)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 85.9ms | Allocations: 38260)
+Completed 200 OK in 93ms (Views: 81.8ms | ActiveRecord: 7.7ms | Allocations: 39252)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:11:23 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:11:23 +0100
+Started GET "/assets/controllers/turbo_controller-2afa8c8cafddc258d8e342fd8e4515aab9baa755222f0a2f05ffd5ac398969f8.js" for ::1 at 2024-12-19 16:11:23 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:11:24 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 16:11:26 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 13.7ms | Allocations: 1601)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 1921)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 6.9ms | Allocations: 2005)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 55.4ms | Allocations: 11615)
+Completed 200 OK in 73ms (Views: 60.1ms | ActiveRecord: 0.2ms | Allocations: 14261)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:11:26 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:11:26 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:11:26 +0100
+Started GET "/" for ::1 at 2024-12-19 16:12:27 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1228)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.1ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 48.4ms | Allocations: 5051)
+  Rendered shared/_footer.html.erb (Duration: 3.4ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 167.3ms | Allocations: 38572)
+Completed 200 OK in 175ms (Views: 166.0ms | ActiveRecord: 5.9ms | Allocations: 39568)
+
+
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:12:28 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:12:28 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:12:28 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 16:12:31 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 31.7ms | Allocations: 1601)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 40.5ms | Allocations: 1921)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 6.3ms | Allocations: 2005)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 64.9ms | Allocations: 11512)
+Completed 200 OK in 124ms (Views: 70.4ms | ActiveRecord: 2.8ms | Allocations: 14314)
+
+
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:12:32 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:12:32 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:12:32 +0100
+Started GET "/" for ::1 at 2024-12-19 16:12:33 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 33.8ms | Allocations: 521)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 9.1ms | Allocations: 2006)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 62.8ms | Allocations: 10126)
+Completed 200 OK in 65ms (Views: 63.4ms | ActiveRecord: 0.1ms | Allocations: 10374)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:12:34 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:12:34 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:12:34 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 16:12:48 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 6.7ms | Allocations: 880)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 967)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 10.7ms | Allocations: 2005)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | Allocations: 10644)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.2ms | Allocations: 10906)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:12:49 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:12:49 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:12:49 +0100
+Started GET "/" for ::1 at 2024-12-19 16:19:27 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 44.2ms | Allocations: 1226)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.0ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 35.9ms | Allocations: 4754)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 299.8ms | Allocations: 38279)
+Completed 200 OK in 356ms (Views: 304.5ms | ActiveRecord: 7.3ms | Allocations: 39275)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:19:28 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:19:28 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:19:28 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 16:19:29 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 13.9ms | Allocations: 1601)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 1947)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 21.5ms | Allocations: 2009)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 100.2ms | Allocations: 11624)
+Completed 200 OK in 133ms (Views: 105.8ms | ActiveRecord: 0.2ms | Allocations: 14251)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:19:30 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:19:30 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:19:30 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 16:19:32 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 3.8ms | Allocations: 880)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 966)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 5.3ms | Allocations: 2005)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 10586)
+Completed 200 OK in 66ms (Views: 64.5ms | ActiveRecord: 0.1ms | Allocations: 10849)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:19:32 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:19:32 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:19:32 +0100
+Started GET "/registration/new" for ::1 at 2024-12-19 16:19:33 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 3.2ms | Allocations: 880)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 966)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered shared/_navbar.html.erb (Duration: 15.3ms | Allocations: 2001)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 47.8ms | Allocations: 10572)
+Completed 200 OK in 75ms (Views: 73.1ms | ActiveRecord: 1.2ms | Allocations: 10833)
+
+
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:19:34 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:19:34 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:19:34 +0100
+Started GET "/" for ::1 at 2024-12-19 16:21:13 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1226)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.8ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 68.5ms | Allocations: 5073)
+  Rendered shared/_footer.html.erb (Duration: 17.3ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 157.7ms | Allocations: 38587)
+Completed 200 OK in 169ms (Views: 156.8ms | ActiveRecord: 7.4ms | Allocations: 39583)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:21:14 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:21:14 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:21:14 +0100
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-19 16:21:18 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/new.turbo_stream.erb (Duration: 1.8ms | Allocations: 1065)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.5ms | Allocations: 4071)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= turbo_stream.replace "remote_modal" %>
+    <%= render partial: "registrations/form_modal", locals: { user: @user } %>
+<% end %>
+):
+1:    <%= turbo_stream.replace "remote_modal" %>
+2:        <%= render partial: "registrations/form_modal", locals: { user: @user } %>
+3:    <% end %>
+  
+app/views/registrations/new.turbo_stream.erb:5: syntax error, unexpected `end', expecting end-of-input
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-19 16:22:02 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 4.5ms | Allocations: 1603)
+  Rendered registrations/_form_modal.html.erb (Duration: 12.2ms | Allocations: 1851)
+  Rendered registrations/new.turbo_stream.erb (Duration: 24.4ms | Allocations: 2649)
+Completed 200 OK in 54ms (Views: 27.9ms | ActiveRecord: 4.5ms | Allocations: 7557)
+
+
+Started GET "/" for ::1 at 2024-12-19 16:22:16 +0100
+Started GET "/" for ::1 at 2024-12-19 16:22:18 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1223)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 2.4ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 26.9ms | Allocations: 3737)
+  Rendered shared/_footer.html.erb (Duration: 2.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 130.5ms | Allocations: 37297)
+Completed 200 OK in 138ms (Views: 133.0ms | ActiveRecord: 0.3ms | Allocations: 37742)
+
+
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:22:18 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:22:18 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:22:18 +0100
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-19 16:22:20 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 2.5ms | Allocations: 888)
+  Rendered registrations/_form_modal.html.erb (Duration: 2.9ms | Allocations: 944)
+  Rendered registrations/new.turbo_stream.erb (Duration: 3.4ms | Allocations: 1056)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 1353)
+
+
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:22:22 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:22:22 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:22:22 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-19 16:22:23 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-19 16:22:23 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-19 16:22:23 +0100
+Started GET "/" for ::1 at 2024-12-20 09:25:12 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 30.4ms | Allocations: 3275)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.1ms | Allocations: 368)
+  Rendered shared/_navbar.html.erb (Duration: 116.1ms | Allocations: 17334)
+  Rendered shared/_footer.html.erb (Duration: 5.3ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 722.4ms | Allocations: 104590)
+Completed 200 OK in 796ms (Views: 733.4ms | ActiveRecord: 7.5ms | Allocations: 110615)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-20 09:25:14 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-20 09:25:14 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-20 09:25:14 +0100
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 09:25:31 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/new.turbo_stream.erb (Duration: 17.0ms | Allocations: 1799)
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 0.8ms | Allocations: 87812)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= turbo_stream.replace "remote_modal" %>
+    <%= render partial: "registrations/form_modal", locals: { user: @user } %>
+<% end %>
+):
+1:    <%= turbo_stream.replace "remote_modal" %>
+2:        <%= render partial: "registrations/form_modal", locals: { user: @user } %>
+3:    <% end %>
+  
+app/views/registrations/new.turbo_stream.erb:5: syntax error, unexpected `end', expecting end-of-input
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 09:26:57 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/new.turbo_stream.erb (Duration: 1.6ms | Allocations: 1064)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 8.2ms | Allocations: 5977)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= turbo_stream.replace "remote_modal" %>
+<%= render partial: "registrations/form_modal", locals: { user: @user } %>
+<% end %>
+):
+1:    <%= turbo_stream.replace "remote_modal" %>
+2:    <%= render partial: "registrations/form_modal", locals: { user: @user } %>
+3:    <% end %>
+  
+app/views/registrations/new.turbo_stream.erb:5: syntax error, unexpected `end', expecting end-of-input
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 09:27:06 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 25.6ms | Allocations: 2577)
+  Rendered registrations/_form_modal.html.erb (Duration: 32.9ms | Allocations: 2959)
+  Rendered registrations/new.turbo_stream.erb (Duration: 41.1ms | Allocations: 3739)
+Completed 200 OK in 67ms (Views: 46.5ms | ActiveRecord: 6.2ms | Allocations: 8633)
+
+
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 10:17:13 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 4.1ms | Allocations: 1602)
+  Rendered registrations/_form_modal.html.erb (Duration: 7.4ms | Allocations: 1997)
+  Rendered registrations/new.turbo_stream.erb (Duration: 12.3ms | Allocations: 2335)
+Completed 200 OK in 38ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 6531)
+
+
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 10:40:58 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 7.6ms | Allocations: 1602)
+  Rendered registrations/_form_modal.html.erb (Duration: 13.5ms | Allocations: 1991)
+  Rendered registrations/new.turbo_stream.erb (Duration: 18.7ms | Allocations: 2353)
+Completed 200 OK in 50ms (Views: 22.2ms | ActiveRecord: 0.0ms | Allocations: 6552)
+
+
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 10:41:46 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 3.7ms | Allocations: 880)
+  Rendered registrations/_form_modal.html.erb (Duration: 4.3ms | Allocations: 977)
+  Rendered registrations/new.turbo_stream.erb (Duration: 5.5ms | Allocations: 1090)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 1412)
+
+
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 10:41:53 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 2.7ms | Allocations: 880)
+  Rendered registrations/_form_modal.html.erb (Duration: 3.3ms | Allocations: 976)
+  Rendered registrations/new.turbo_stream.erb (Duration: 3.8ms | Allocations: 1088)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 1409)
+
+
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 10:41:59 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 5.6ms | Allocations: 880)
+  Rendered registrations/_form_modal.html.erb (Duration: 6.3ms | Allocations: 976)
+  Rendered registrations/new.turbo_stream.erb (Duration: 7.0ms | Allocations: 1088)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 1409)
+
+
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 10:42:10 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 2.1ms | Allocations: 880)
+  Rendered registrations/_form_modal.html.erb (Duration: 2.6ms | Allocations: 976)
+  Rendered registrations/new.turbo_stream.erb (Duration: 3.1ms | Allocations: 1088)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1409)
+
+
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 10:42:12 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 5.6ms | Allocations: 880)
+  Rendered registrations/_form_modal.html.erb (Duration: 6.7ms | Allocations: 976)
+  Rendered registrations/new.turbo_stream.erb (Duration: 7.3ms | Allocations: 1088)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 1407)
+
+
+Started GET "/" for ::1 at 2024-12-20 10:42:17 +0100
+Started GET "/" for ::1 at 2024-12-20 10:42:18 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1223)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.8ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 26.7ms | Allocations: 3959)
+  Rendered shared/_footer.html.erb (Duration: 3.4ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 311.3ms | Allocations: 91487)
+Completed 200 OK in 316ms (Views: 308.7ms | ActiveRecord: 5.2ms | Allocations: 91938)
+
+
+Started GET "/assets/controllers/index-59eaa28bdf43713ad7e0cb2511a50867d9dd33891742379057a3767fd9f02051.js" for ::1 at 2024-12-20 10:42:19 +0100
+Started GET "/assets/controllers/modal_controller-e520f1867a6a37d99a25f84da25ca7eb407432128bb94f8cccb1bcf1e4cd7964.js" for ::1 at 2024-12-20 10:42:19 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for ::1 at 2024-12-20 10:42:19 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for ::1 at 2024-12-20 10:42:19 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for ::1 at 2024-12-20 10:42:19 +0100
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 10:42:20 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 6.0ms | Allocations: 887)
+  Rendered registrations/_form_modal.html.erb (Duration: 6.7ms | Allocations: 984)
+  Rendered registrations/new.turbo_stream.erb (Duration: 9.6ms | Allocations: 1097)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 1418)
+
+
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 10:47:03 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 6.0ms | Allocations: 1602)
+  Rendered registrations/_form_modal.html.erb (Duration: 9.4ms | Allocations: 1991)
+  Rendered registrations/new.turbo_stream.erb (Duration: 13.8ms | Allocations: 2352)
+Completed 200 OK in 45ms (Views: 18.4ms | ActiveRecord: 4.5ms | Allocations: 7271)
+
+
+Started GET "/registration/new.turbo_stream" for ::1 at 2024-12-20 10:49:09 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 8.2ms | Allocations: 1602)
+  Rendered registrations/_form_modal.html.erb (Duration: 13.9ms | Allocations: 1991)
+  Rendered registrations/new.turbo_stream.erb (Duration: 17.1ms | Allocations: 2352)
+Completed 200 OK in 46ms (Views: 27.1ms | ActiveRecord: 4.0ms | Allocations: 7233)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-20 10:49:59 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-12-20 10:50:01 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 35.2ms | Allocations: 3274)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.0ms | Allocations: 368)
+  Rendered shared/_navbar.html.erb (Duration: 87.1ms | Allocations: 17354)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 544.7ms | Allocations: 92185)
+Completed 200 OK in 712ms (Views: 603.7ms | ActiveRecord: 3.7ms | Allocations: 98218)
+
+
+Started GET "/assets/tailwind.debug-ea9728a0544063702e4bab5a448de06f78e425912cc6eaa149003243eaa52568.css" for 127.0.0.1 at 2024-12-20 10:50:02 +0100
+Started GET "/assets/inter-font.debug-f597296dc1329645f66710581acb6700189fa1192e7c28a724e64795ba30f3fe.css" for 127.0.0.1 at 2024-12-20 10:50:02 +0100
+Started GET "/assets/application.debug-f9969018c752ba6449ff02522c991bc0f6f9b6b07fb803a282bce266725493c9.css" for 127.0.0.1 at 2024-12-20 10:50:02 +0100
+Started GET "/assets/el-transition-ea3c9b45578809c199f6725e011d96e3f37f5311744d1da6b1b16c889ad9e73b.js" for 127.0.0.1 at 2024-12-20 10:50:02 +0100
+Started GET "/assets/controllers/application-e4c7ee308cb4799d5e76a7c66ee9db1a94214df711f321456aee419bd782188a.js" for 127.0.0.1 at 2024-12-20 10:50:02 +0100
+Started GET "/assets/controllers/modal_controller-e520f1867a6a37d99a25f84da25ca7eb407432128bb94f8cccb1bcf1e4cd7964.js" for 127.0.0.1 at 2024-12-20 10:50:02 +0100
+Started GET "/assets/controllers/index-59eaa28bdf43713ad7e0cb2511a50867d9dd33891742379057a3767fd9f02051.js" for 127.0.0.1 at 2024-12-20 10:50:02 +0100
+Started GET "/assets/controllers/turbo_controller-2afa8c8cafddc258d8e342fd8e4515aab9baa755222f0a2f05ffd5ac398969f8.js" for 127.0.0.1 at 2024-12-20 10:50:02 +0100
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 10:50:04 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 36.8ms | Allocations: 2576)
+  Rendered registrations/_form_modal.html.erb (Duration: 41.8ms | Allocations: 2972)
+  Rendered registrations/new.turbo_stream.erb (Duration: 51.6ms | Allocations: 3777)
+Completed 200 OK in 145ms (Views: 58.0ms | ActiveRecord: 0.5ms | Allocations: 89817)
+
+
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 10:50:46 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 3.0ms | Allocations: 880)
+  Rendered registrations/_form_modal.html.erb (Duration: 4.6ms | Allocations: 977)
+  Rendered registrations/new.turbo_stream.erb (Duration: 5.4ms | Allocations: 1090)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 1423)
+
+
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 10:55:36 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendered registrations/_form.html.erb (Duration: 5.7ms | Allocations: 1602)
+  Rendered registrations/_form_modal.html.erb (Duration: 10.3ms | Allocations: 1992)
+Completed 200 OK in 49ms (Views: 0.1ms | ActiveRecord: 7.0ms | Allocations: 6589)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-20 11:13:31 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-12-20 11:13:33 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 43.6ms | Allocations: 3274)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.0ms | Allocations: 368)
+  Rendered shared/_navbar.html.erb (Duration: 113.6ms | Allocations: 17372)
+  Rendered shared/_footer.html.erb (Duration: 3.3ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 665.6ms | Allocations: 92210)
+Completed 200 OK in 744ms (Views: 680.7ms | ActiveRecord: 4.1ms | Allocations: 98242)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for 127.0.0.1 at 2024-12-20 11:13:35 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for 127.0.0.1 at 2024-12-20 11:13:35 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for 127.0.0.1 at 2024-12-20 11:13:35 +0100
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 11:13:36 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendered registrations/_form.html.erb (Duration: 27.3ms | Allocations: 2576)
+  Rendered registrations/_form_modal.html.erb (Duration: 34.1ms | Allocations: 2886)
+Completed 200 OK in 143ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 89050)
+
+
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 11:16:48 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 8.2ms | Allocations: 1603)
+  Rendered registrations/_form_modal.html.erb (Duration: 11.5ms | Allocations: 1910)
+  Rendered registrations/new.turbo_stream.erb (Duration: 14.6ms | Allocations: 2319)
+Completed 200 OK in 46ms (Views: 20.2ms | ActiveRecord: 7.1ms | Allocations: 7225)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-20 11:16:53 +0100
+Started GET "/" for 127.0.0.1 at 2024-12-20 11:16:54 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1223)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  Rendered shared/_navbar.html.erb (Duration: 12.2ms | Allocations: 2492)
+  Rendered layout layouts/application.html.erb (Duration: 152.6ms | Allocations: 41252)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.0ms | Allocations: 41762)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+  .animate-slide-down { animation: slideDown 0.5s ease-out; }
+</style>
+
+<%= javascript_import_module_tag "script" %>
+
+<nav data-controller="navbar" class="bg-white shadow-md">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <%= link_to root_path, class: "flex items-center" do %>
+        <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+      <% end %>
+
+      <button class="lg:hidden" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+      <div class="hidden lg:flex items-center space-x-4">
+        <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+        <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+        
+        <div class="hidden lg:flex items-center space-x-4 login-buttons">
+          <% if user_signed_in? %>
+            <%= link_to "Edit Password", edit_password_path %>
+            <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
+          <% else %>
+            <%= link_to "Sign Up",
+              new_registration_path( format: :turbo_stream ),
+              # "data-controller": "turbo",
+              # "data_action": "click->turbo#click",
+              # "data_turbo_stream": "true"
+              data: { 
+                turbo_frame: "remote_modal"
+                turbo: true,
+                action: "click->turbo#click",
+                turbo_stream: true 
+              }
+            %>
+            <%# <%= link_to "Log in", new_session_path %>
+            <%# <a
+              href="#"
+              id="modal-button"
+              data-navbar-target="userAuthLink"
+              class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+            >
+              Sign Up
+            </a> %>
+            
+            <%# <a href="#" data-header-target="userAuthLink" data-action="click->modal#showModal" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Log In</a> %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:hidden">
+      <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+        <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        
+        <% if current_user.present? %>
+          <div class="px-3 py-2">
+            <div id="mobile-user-button" data-clerk-component="userButton"></div>
+          </div>
+        <% else %>
+          <button 
+            onclick="Clerk.openSignIn()" 
+            class="block w-full px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800"
+          >
+            Sign in
+          </button>
+          <button 
+            onclick="Clerk.openSignUp()" 
+            class="block w-full px-3 py-2 rounded-md text-base font-medium bg-gray-200 text-black hover:bg-gray-300"
+          >
+            Sign up
+          </button>
+        <% end %>
+      </div>    
+    </div>
+
+    <div
+        data-controller="modal"
+        data-modal-target="wrapper"
+        id="modal-wrapper"
+        class="fixed inset-0 z-50 hidden"
+    >
+        <div
+            data-modal-target="backdrop"
+            id="modal-backdrop" 
+            class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden"
+        ></div>
+
+        <div
+            data-modal-target="panel"
+            id="modal-panel"
+            class="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-xl sm:w-full sm:p-6 hidden"
+        >
+            <button 
+                data-modal-target="closeButton"
+                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                        Log in or Sign up
+                    </h3>
+                    
+                    <div class="mt-4">
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                                <div class="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div class="relative flex justify-center">
+                                <span class="px-2 bg-white text-sm text-gray-500">Continue</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <div class="mt-1">
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    id="email" 
+                                    class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" 
+                                    placeholder="you@example.com"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <button 
+                                type="button" 
+                                class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
+                            >
+                                Sign up
+                            </button>
+                        </div>
+
+                        <div class="mt-6 relative">
+                            <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                                <div class="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div class="relative flex justify-center">
+                                <span class="px-2 bg-white text-sm text-gray-500">or</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <button 
+                                type="button" 
+                                class="w-full inline-flex justify-center items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                            >
+                                <img 
+                                    src="https://img.clerk.com/static/github.svg" 
+                                    alt="GitHub" 
+                                    class="h-5 w-5 mr-2"
+                                >
+                                Continue with GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</nav>
+
+<%= render "shared/modal"%>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('animate-slide-down');
+    });
+  });
+
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   const modalButton = document.getElementById('modal-button');
+  //   const modalWrapper = document.getElementById('modal-wrapper');
+  //   const modalBackdrop = document.getElementById('modal-backdrop');
+  //   const modalPanel = document.getElementById('modal-panel');
+
+  //   modalButton.addEventListener('click', () => {
+  //     modalWrapper.classList.toggle('hidden');
+  //     modalBackdrop.classList.toggle('hidden');
+  //     modalPanel.classList.toggle('hidden');
+  //   });
+  // });
+</script>
+):
+1:    <style>
+2:      @keyframes fadeIn {
+3:        from { opacity: 0; }
+4:        to { opacity: 1; }
+5:      }
+6:      @keyframes slideDown {
+7:        from {
+8:          transform: translateY(-20px);
+9:          opacity: 0;
+10:        }
+11:        to {
+12:          transform: translateY(0);
+13:          opacity: 1;
+14:        }
+15:      }
+16:      .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+17:      .animate-slide-down { animation: slideDown 0.5s ease-out; }
+18:    </style>
+19:    
+20:    <%= javascript_import_module_tag "script" %>
+21:    
+22:    <nav data-controller="navbar" class="bg-white shadow-md">
+23:      <div class="container mx-auto px-4 py-3">
+24:        <div class="flex justify-between items-center">
+25:          <%= link_to root_path, class: "flex items-center" do %>
+26:            <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+27:          <% end %>
+28:    
+29:          <button class="lg:hidden" id="mobile-menu-button">
+30:            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+31:              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+32:            </svg>
+33:          </button>
+34:    
+35:          <div class="hidden lg:flex items-center space-x-4">
+36:            <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+37:            <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+38:            
+39:            <div class="hidden lg:flex items-center space-x-4 login-buttons">
+40:              <% if user_signed_in? %>
+41:                <%= link_to "Edit Password", edit_password_path %>
+42:                <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
+43:              <% else %>
+44:                <%= link_to "Sign Up",
+45:                  new_registration_path( format: :turbo_stream ),
+46:                  # "data-controller": "turbo",
+47:                  # "data_action": "click->turbo#click",
+48:                  # "data_turbo_stream": "true"
+49:                  data: { 
+50:                    turbo_frame: "remote_modal"
+51:                    turbo: true,
+52:                    action: "click->turbo#click",
+53:                    turbo_stream: true 
+54:                  }
+55:                %>
+56:                <%# <%= link_to "Log in", new_session_path %>
+57:                <%# <a
+58:                  href="#"
+59:                  id="modal-button"
+60:                  data-navbar-target="userAuthLink"
+61:                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+62:                >
+63:                  Sign Up
+64:                </a> %>
+65:                
+66:                <%# <a href="#" data-header-target="userAuthLink" data-action="click->modal#showModal" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Log In</a> %>
+67:              <% end %>
+68:            </div>
+69:          </div>
+70:        </div>
+71:    
+72:        <div class="lg:hidden">
+73:          <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+74:            <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+75:            <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+76:            
+77:            <% if current_user.present? %>
+78:              <div class="px-3 py-2">
+79:                <div id="mobile-user-button" data-clerk-component="userButton"></div>
+80:              </div>
+81:            <% else %>
+82:              <button 
+83:                onclick="Clerk.openSignIn()" 
+84:                class="block w-full px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800"
+85:              >
+86:                Sign in
+87:              </button>
+88:              <button 
+89:                onclick="Clerk.openSignUp()" 
+90:                class="block w-full px-3 py-2 rounded-md text-base font-medium bg-gray-200 text-black hover:bg-gray-300"
+91:              >
+92:                Sign up
+93:              </button>
+94:            <% end %>
+95:          </div>    
+96:        </div>
+97:    
+98:        <div
+99:            data-controller="modal"
+100:            data-modal-target="wrapper"
+101:            id="modal-wrapper"
+102:            class="fixed inset-0 z-50 hidden"
+103:        >
+104:            <div
+105:                data-modal-target="backdrop"
+106:                id="modal-backdrop" 
+107:                class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden"
+108:            ></div>
+109:    
+110:            <div
+111:                data-modal-target="panel"
+112:                id="modal-panel"
+113:                class="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-xl sm:w-full sm:p-6 hidden"
+114:            >
+115:                <button 
+116:                    data-modal-target="closeButton"
+117:                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+118:                >
+119:                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+120:                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+121:                    </svg>
+122:                </button>
+123:    
+124:                <div class="sm:flex sm:items-start">
+125:                    <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
+126:                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+127:                            Log in or Sign up
+128:                        </h3>
+129:                        
+130:                        <div class="mt-4">
+131:                            <div class="relative">
+132:                                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+133:                                    <div class="w-full border-t border-gray-300"></div>
+134:                                </div>
+135:                                <div class="relative flex justify-center">
+136:                                    <span class="px-2 bg-white text-sm text-gray-500">Continue</span>
+137:                                </div>
+138:                            </div>
+139:    
+140:                            <div class="mt-6">
+141:                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+142:                                <div class="mt-1">
+143:                                    <input 
+144:                                        type="email" 
+145:                                        name="email" 
+146:                                        id="email" 
+147:                                        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" 
+148:                                        placeholder="you@example.com"
+149:                                    >
+150:                                </div>
+151:                            </div>
+152:    
+153:                            <div class="mt-6">
+154:                                <button 
+155:                                    type="button" 
+156:                                    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
+157:                                >
+158:                                    Sign up
+159:                                </button>
+160:                            </div>
+161:    
+162:                            <div class="mt-6 relative">
+163:                                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+164:                                    <div class="w-full border-t border-gray-300"></div>
+165:                                </div>
+166:                                <div class="relative flex justify-center">
+167:                                    <span class="px-2 bg-white text-sm text-gray-500">or</span>
+168:                                </div>
+169:                            </div>
+170:    
+171:                            <div class="mt-6">
+172:                                <button 
+173:                                    type="button" 
+174:                                    class="w-full inline-flex justify-center items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+175:                                >
+176:                                    <img 
+177:                                        src="https://img.clerk.com/static/github.svg" 
+178:                                        alt="GitHub" 
+179:                                        class="h-5 w-5 mr-2"
+180:                                    >
+181:                                    Continue with GitHub
+182:                                </button>
+183:                            </div>
+184:                        </div>
+185:                    </div>
+186:                </div>
+187:            </div>
+188:        </div>
+189:    
+190:      </div>
+191:    </nav>
+192:    
+193:    <%= render "shared/modal"%>
+194:    
+195:    <script>
+196:      document.addEventListener('DOMContentLoaded', () => {
+197:        const mobileMenuButton = document.getElementById('mobile-menu-button');
+198:        const mobileMenu = document.getElementById('mobile-menu');
+199:    
+200:        mobileMenuButton.addEventListener('click', () => {
+201:          mobileMenu.classList.toggle('hidden');
+202:          mobileMenu.classList.toggle('animate-slide-down');
+203:        });
+204:      });
+205:    
+206:      // document.addEventListener('DOMContentLoaded', () => {
+207:      //   const modalButton = document.getElementById('modal-button');
+208:      //   const modalWrapper = document.getElementById('modal-wrapper');
+209:      //   const modalBackdrop = document.getElementById('modal-backdrop');
+210:      //   const modalPanel = document.getElementById('modal-panel');
+211:    
+212:      //   modalButton.addEventListener('click', () => {
+213:      //     modalWrapper.classList.toggle('hidden');
+214:      //     modalBackdrop.classList.toggle('hidden');
+215:      //     modalPanel.classList.toggle('hidden');
+216:      //   });
+217:      // });
+218:    </script>
+  
+app/views/shared/_navbar.html.erb:51: syntax error, unexpected local variable or method, expecting '}'
+app/views/shared/_navbar.html.erb:51: Can't assign to true
+app/views/shared/_navbar.html.erb:52: syntax error, unexpected ',', expecting ')'
+app/views/shared/_navbar.html.erb:67: syntax error, unexpected `end', expecting ')'
+app/views/shared/_navbar.html.erb:220: syntax error, unexpected `end', expecting ')'
+app/views/layouts/application.html.erb:52
+Started GET "/" for 127.0.0.1 at 2024-12-20 11:17:26 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1226)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.8ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 27.3ms | Allocations: 5118)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 131.4ms | Allocations: 44094)
+Completed 200 OK in 141ms (Views: 134.1ms | ActiveRecord: 3.7ms | Allocations: 45096)
+
+
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for 127.0.0.1 at 2024-12-20 11:17:27 +0100
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for 127.0.0.1 at 2024-12-20 11:17:27 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for 127.0.0.1 at 2024-12-20 11:17:27 +0100
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 11:17:30 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 8.5ms | Allocations: 1602)
+  Rendered registrations/_form_modal.html.erb (Duration: 13.8ms | Allocations: 1909)
+  Rendered registrations/new.turbo_stream.erb (Duration: 20.7ms | Allocations: 2315)
+Completed 200 OK in 38ms (Views: 23.9ms | ActiveRecord: 2.2ms | Allocations: 5363)
+
+
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 11:25:58 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 5.9ms | Allocations: 1603)
+  Rendered registrations/_form_modal.html.erb (Duration: 9.2ms | Allocations: 1906)
+  Rendered registrations/new.turbo_stream.erb (Duration: 12.7ms | Allocations: 2266)
+Completed 200 OK in 33ms (Views: 19.5ms | ActiveRecord: 0.0ms | Allocations: 6461)
+
+
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 11:26:45 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 4.2ms | Allocations: 881)
+  Rendered registrations/_form_modal.html.erb (Duration: 4.8ms | Allocations: 941)
+  Rendered registrations/new.turbo_stream.erb (Duration: 5.2ms | Allocations: 1053)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 1380)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2024-12-20 11:27:29 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/1"):
+  
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 11:28:04 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 3.9ms | Allocations: 1603)
+  Rendered registrations/_form_modal.html.erb (Duration: 7.1ms | Allocations: 1906)
+  Rendered registrations/new.turbo_stream.erb (Duration: 11.4ms | Allocations: 2266)
+Completed 200 OK in 35ms (Views: 15.4ms | ActiveRecord: 3.8ms | Allocations: 7175)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2024-12-20 11:28:09 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/1"):
+  
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 11:28:46 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 3.4ms | Allocations: 819)
+  Rendered registrations/_form_modal.html.erb (Duration: 3.7ms | Allocations: 879)
+  Rendered registrations/new.turbo_stream.erb (Duration: 4.3ms | Allocations: 991)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 1316)
+
+
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 11:30:54 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 12.4ms | Allocations: 1603)
+  Rendered registrations/_form_modal.html.erb (Duration: 15.3ms | Allocations: 1906)
+  Rendered registrations/new.turbo_stream.erb (Duration: 18.8ms | Allocations: 2266)
+Completed 200 OK in 53ms (Views: 25.2ms | ActiveRecord: 4.1ms | Allocations: 7145)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-20 11:30:57 +0100
+Started GET "/" for 127.0.0.1 at 2024-12-20 11:30:58 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1227)
+  Rendered layout layouts/application.html.erb (Duration: 210.8ms | Allocations: 19655)
+Completed 500 Internal Server Error in 217ms (ActiveRecord: 0.0ms | Allocations: 20093)
+
+
+  
+ActionView::Template::Error (couldn't find file 'script' with type 'application/javascript'
+Checked in these paths: 
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/builds
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/config
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/images
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/javascript
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/tailwindcss-rails-2.0.31-x86_64-darwin/app/assets/fonts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/tailwindcss-rails-2.0.31-x86_64-darwin/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/stimulus-rails-1.3.3/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/turbo-rails-2.0.5/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-7.1.3.4/app/assets/stylesheets
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actioncable-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activestorage-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/app/assets/javascripts
+  /Users/alessandromaone/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionview-7.1.3.4/lib/assets/compiled
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/assets/fonts
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/app/javascript
+  /Users/alessandromaone/Desktop/VirusScanner/virusscanner/vendor/javascript):
+    13:     <%# <script src="script.js"></script> %>
+    14:     <%# <%= javascript_include_tag 'application' %>
+    15:     <%# <%= javascript_importmap_tags %>
+    16:     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    17: 
+    18: 
+    19:     <%# <script type="text/javascript">
+  
+app/views/layouts/application.html.erb:16
+Started GET "/" for 127.0.0.1 at 2024-12-20 11:32:50 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1226)
+Importmap skipped missing path: script.js
+Importmap skipped missing path: script.js
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 0.7ms | Allocations: 366)
+  Rendered shared/_navbar.html.erb (Duration: 28.3ms | Allocations: 5109)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 109.5ms | Allocations: 43943)
+Completed 200 OK in 121ms (Views: 104.0ms | ActiveRecord: 10.5ms | Allocations: 44942)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for 127.0.0.1 at 2024-12-20 11:32:51 +0100
+Started GET "/assets/inter-font.css-ad849159a9c223c917731cc6dc822801bd0c3f158a729b066d971dc4e88561ad.map" for 127.0.0.1 at 2024-12-20 11:32:51 +0100
+Started GET "/assets/application.css-2f59d2712ba30b361ec92b18a05d1f737ecc8352dffea112375127639afcb0cb.map" for 127.0.0.1 at 2024-12-20 11:32:51 +0100
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 11:32:53 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 5.3ms | Allocations: 1602)
+  Rendered registrations/_form_modal.html.erb (Duration: 8.5ms | Allocations: 1905)
+  Rendered registrations/new.turbo_stream.erb (Duration: 11.3ms | Allocations: 2265)
+Completed 200 OK in 26ms (Views: 16.2ms | ActiveRecord: 0.4ms | Allocations: 5299)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-20 11:42:22 +0100
+Started GET "/" for 127.0.0.1 at 2024-12-20 11:42:25 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 20.7ms | Allocations: 458)
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered shared/_modal.erb (Duration: 1.6ms | Allocations: 9)
+  Rendered shared/_navbar.html.erb (Duration: 52.1ms | Allocations: 2331)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 245.5ms | Allocations: 10445)
+Completed 200 OK in 258ms (Views: 240.4ms | ActiveRecord: 10.2ms | Allocations: 10695)
+
+
+Started GET "/assets/tailwind.debug-ea9728a0544063702e4bab5a448de06f78e425912cc6eaa149003243eaa52568.css" for 127.0.0.1 at 2024-12-20 11:42:25 +0100
+Started GET "/assets/inter-font.debug-f597296dc1329645f66710581acb6700189fa1192e7c28a724e64795ba30f3fe.css" for 127.0.0.1 at 2024-12-20 11:42:26 +0100
+Started GET "/assets/application.debug-f9969018c752ba6449ff02522c991bc0f6f9b6b07fb803a282bce266725493c9.css" for 127.0.0.1 at 2024-12-20 11:42:26 +0100
+Started GET "/assets/controllers/application-e4c7ee308cb4799d5e76a7c66ee9db1a94214df711f321456aee419bd782188a.js" for 127.0.0.1 at 2024-12-20 11:42:26 +0100
+Started GET "/assets/controllers/index-59eaa28bdf43713ad7e0cb2511a50867d9dd33891742379057a3767fd9f02051.js" for 127.0.0.1 at 2024-12-20 11:42:26 +0100
+Started GET "/assets/controllers/modal_controller-e520f1867a6a37d99a25f84da25ca7eb407432128bb94f8cccb1bcf1e4cd7964.js" for 127.0.0.1 at 2024-12-20 11:42:26 +0100
+Started GET "/assets/controllers/turbo_controller-2afa8c8cafddc258d8e342fd8e4515aab9baa755222f0a2f05ffd5ac398969f8.js" for 127.0.0.1 at 2024-12-20 11:42:26 +0100
+Started GET "/assets/controllers/hello_controller" for 127.0.0.1 at 2024-12-20 11:42:26 +0100
+Started GET "/assets/controllers/modal_controller" for 127.0.0.1 at 2024-12-20 11:42:26 +0100
+Started GET "/assets/controllers/application" for 127.0.0.1 at 2024-12-20 11:42:26 +0100
+Started GET "/assets/controllers/turbo_controller" for 127.0.0.1 at 2024-12-20 11:42:26 +0100
+Started GET "/assets/el-transition-ea3c9b45578809c199f6725e011d96e3f37f5311744d1da6b1b16c889ad9e73b.js" for 127.0.0.1 at 2024-12-20 11:42:26 +0100
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 11:42:29 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 8.4ms | Allocations: 881)
+  Rendered registrations/_form_modal.html.erb (Duration: 8.8ms | Allocations: 941)
+  Rendered registrations/new.turbo_stream.erb (Duration: 10.3ms | Allocations: 1053)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 1378)
+
+
+Started GET "/registration/new.turbo_stream" for 127.0.0.1 at 2024-12-20 11:42:57 +0100
+Processing by RegistrationsController#new as TURBO_STREAM
+  Rendering registrations/new.turbo_stream.erb
+  Rendered registrations/_form.html.erb (Duration: 6.4ms | Allocations: 881)
+  Rendered registrations/_form_modal.html.erb (Duration: 6.8ms | Allocations: 941)
+  Rendered registrations/new.turbo_stream.erb (Duration: 7.7ms | Allocations: 1052)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 1376)
+
+

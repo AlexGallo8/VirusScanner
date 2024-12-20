@@ -41,16 +41,27 @@
             <%= link_to "Edit Password", edit_password_path %>
             <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
           <% else %>
-            <%# <%= link_to "Sign Up", new_registration_path, data: { turbo_frame: "modal" } %>
+            <%= link_to "Sign Up",
+              new_registration_path( format: :turbo_stream ),
+              # "data-controller": "turbo",
+              # "data_action": "click->turbo#click",
+              # "data_turbo_stream": "true"
+              data: { 
+                turbo_frame: "remote_modal",
+                turbo: true,
+                action: "click->turbo#click",
+                turbo_stream: true 
+              }
+            %>
             <%# <%= link_to "Log in", new_session_path %>
-            <a
+            <%# <a
               href="#"
               id="modal-button"
               data-navbar-target="userAuthLink"
               class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
             >
               Sign Up
-            </a>
+            </a> %>
             
             <%# <a href="#" data-header-target="userAuthLink" data-action="click->modal#showModal" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Log In</a> %>
           <% end %>

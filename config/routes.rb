@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "/about",to: "about#index", as: :about
   get 'dashboard', to: 'dashboard#index'
   
-  resource :registration
+  resource :registration, defaults: { format: :html }
   resource :session
   resource :password_reset
   resource :password

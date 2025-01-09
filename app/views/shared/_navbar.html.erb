@@ -15,6 +15,53 @@
   }
   .animate-fade-in { animation: fadeIn 0.5s ease-out; }
   .animate-slide-down { animation: slideDown 0.5s ease-out; }
+
+
+  .modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  z-index: 1001;
+  max-width: 500px;
+  width: 90%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
 </style>
 
 <nav class="bg-white shadow-md">
@@ -29,17 +76,18 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
+      
 
-      <div class="hidden lg:flex items-center space-x-4">
+      <div class=" lg:flex items-center space-x-4">
         <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
         <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
         
-        <div class="hidden lg:flex items-center space-x-4 login-buttons">
+        <div class=" lg:flex items-center space-x-4 login-buttons">
           <% if user_signed_in? %>
             <%= link_to "Edit Password", edit_password_path %>
             <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
           <% else %>
-            <%= link_to "Sign Up", new_registration_path, data: { turbo_frame: "modal" } %>
+            <button id="open-registration-modal" class="nav-button">Sign up</button>
             <%= link_to "Log in", new_session_path %>
           <% end %>
         </div>
@@ -74,6 +122,15 @@
   </div>
 </nav>
 
+<div id="registration-modal" class="modal-container hidden">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <button id="close-registration-modal" class="close-button">&times;</button>
+    <%= render "registrations/form", user: User.new %>
+  </div>
+</div>
+
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -84,4 +141,38 @@
       mobileMenu.classList.toggle('animate-slide-down');
     });
   });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('registration-modal');
+  const openButton = document.getElementById('open-registration-modal');
+  const closeButton = document.getElementById('close-registration-modal');
+  const backdrop = document.querySelector('.modal-backdrop');
+
+  function openModal() {
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Previene lo scroll della pagina
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+
+  openButton.addEventListener('click', openModal);
+  closeButton.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
+  // Gestisce la chiusura con il tasto ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  // Previene la chiusura quando si clicca sul contenuto del modal
+  document.querySelector('.modal-content').addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+});
 </script>

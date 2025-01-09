@@ -62452,3 +62452,600 @@ Processing by MainController#index as HTML
 Completed 200 OK in 130ms (Views: 123.5ms | ActiveRecord: 0.2ms | Allocations: 11616)
 
 
+Started GET "/" for 127.0.0.1 at 2025-01-09 17:42:05 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 22.5ms | Allocations: 3275)
+  Rendered shared/_navbar.html.erb (Duration: 7.3ms | Allocations: 2760)
+  Rendered layout layouts/application.html.erb (Duration: 467.2ms | Allocations: 51425)
+Completed 500 Internal Server Error in 538ms (ActiveRecord: 0.0ms | Allocations: 57448)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%# <style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+  .animate-slide-down { animation: slideDown 0.5s ease-out; }
+</style>
+
+<nav class="bg-white shadow-md">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <%= link_to root_path, class: "flex items-center" do %>
+        <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+      <% end %>
+
+      <button class="lg:hidden" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+      <div class="hidden lg:flex items-center space-x-4">
+        <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+        <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+        
+        <div class="hidden lg:flex items-center space-x-4 login-buttons">
+          <% if user_signed_in? %>
+            <%= link_to "Edit Password", edit_password_path %>
+            <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
+          <% else %>
+            <%= link_to "Sign Up", new_registration_path, data: { turbo_frame: "modal" } %>
+            <%= link_to "Log in", new_session_path %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:hidden">
+      <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+        <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        
+        <% if current_user.present? %>
+          <div class="px-3 py-2">
+            <div id="mobile-user-button" data-clerk-component="userButton"></div>
+          </div>
+        <% else %>
+          <button 
+            onclick="Clerk.openSignIn()" 
+            class="block w-full px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800"
+          >
+            Sign in
+          </button>
+          <button 
+            onclick="Clerk.openSignUp()" 
+            class="block w-full px-3 py-2 rounded-md text-base font-medium bg-gray-200 text-black hover:bg-gray-300"
+          >
+            Sign up
+          </button>
+        <% end %>
+      </div>    
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('animate-slide-down');
+    });
+  });
+</script> %>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+  .animate-slide-down { animation: slideDown 0.5s ease-out; }
+
+
+  .modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  z-index: 1001;
+  max-width: 500px;
+  width: 90%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+</style>
+
+<nav class="bg-white shadow-md">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <%= link_to root_path, class: "flex items-center" do %>
+        <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+      <% end %>
+
+      <button class="lg:hidden" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      
+
+      <div class=" lg:flex items-center space-x-4">
+        <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+        <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+        
+        <div class=" lg:flex items-center space-x-4 login-buttons">
+          <% if user_signed_in? %>
+            <%= link_to "Edit Password", edit_password_path %>
+            <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
+          <% else %>
+            <button id="open-registration-modal" class="nav-button">Sign up</button>
+            <%= link_to "Log in", new_session_path %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:hidden">
+      <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+        <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+        
+        <% if current_user.present? %>
+          <div class="px-3 py-2">
+            <div id="mobile-user-button" data-clerk-component="userButton"></div>
+          </div>
+        <% else %>
+          <button 
+            onclick="Clerk.openSignIn()" 
+            class="block w-full px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800"
+          >
+            Sign in
+          </button>
+          <button 
+            onclick="Clerk.openSignUp()" 
+            class="block w-full px-3 py-2 rounded-md text-base font-medium bg-gray-200 text-black hover:bg-gray-300"
+          >
+            Sign up
+          </button>
+        <% end %>
+      </div>    
+    </div>
+  </div>
+</nav>
+
+<div id="registration-modal" class="modal-container hidden">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <button id="close-registration-modal" class="close-button">&times;</button>
+    <%= render "registrations/form", user: User.new %>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('animate-slide-down');
+    });
+  });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('registration-modal');
+  const openButton = document.getElementById('open-registration-modal');
+  const closeButton = document.getElementById('close-registration-modal');
+  const backdrop = document.querySelector('.modal-backdrop');
+
+  function openModal() {
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Previene lo scroll della pagina
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+
+  openButton.addEventListener('click', openModal);
+  closeButton.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
+  // Gestisce la chiusura con il tasto ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  // Previene la chiusura quando si clicca sul contenuto del modal
+  document.querySelector('.modal-content').addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+});
+</script>
+):
+1:    <%# <style>
+2:      @keyframes fadeIn {
+3:        from { opacity: 0; }
+4:        to { opacity: 1; }
+5:      }
+6:      @keyframes slideDown {
+7:        from {
+8:          transform: translateY(-20px);
+9:          opacity: 0;
+10:        }
+11:        to {
+12:          transform: translateY(0);
+13:          opacity: 1;
+14:        }
+15:      }
+16:      .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+17:      .animate-slide-down { animation: slideDown 0.5s ease-out; }
+18:    </style>
+19:    
+20:    <nav class="bg-white shadow-md">
+21:      <div class="container mx-auto px-4 py-3">
+22:        <div class="flex justify-between items-center">
+23:          <%= link_to root_path, class: "flex items-center" do %>
+24:            <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+25:          <% end %>
+26:    
+27:          <button class="lg:hidden" id="mobile-menu-button">
+28:            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+29:              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+30:            </svg>
+31:          </button>
+32:    
+33:          <div class="hidden lg:flex items-center space-x-4">
+34:            <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+35:            <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+36:            
+37:            <div class="hidden lg:flex items-center space-x-4 login-buttons">
+38:              <% if user_signed_in? %>
+39:                <%= link_to "Edit Password", edit_password_path %>
+40:                <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
+41:              <% else %>
+42:                <%= link_to "Sign Up", new_registration_path, data: { turbo_frame: "modal" } %>
+43:                <%= link_to "Log in", new_session_path %>
+44:              <% end %>
+45:            </div>
+46:          </div>
+47:        </div>
+48:    
+49:        <div class="lg:hidden">
+50:          <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+51:            <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+52:            <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+53:            
+54:            <% if current_user.present? %>
+55:              <div class="px-3 py-2">
+56:                <div id="mobile-user-button" data-clerk-component="userButton"></div>
+57:              </div>
+58:            <% else %>
+59:              <button 
+60:                onclick="Clerk.openSignIn()" 
+61:                class="block w-full px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800"
+62:              >
+63:                Sign in
+64:              </button>
+65:              <button 
+66:                onclick="Clerk.openSignUp()" 
+67:                class="block w-full px-3 py-2 rounded-md text-base font-medium bg-gray-200 text-black hover:bg-gray-300"
+68:              >
+69:                Sign up
+70:              </button>
+71:            <% end %>
+72:          </div>    
+73:        </div>
+74:      </div>
+75:    </nav>
+76:    
+77:    <script>
+78:      document.addEventListener('DOMContentLoaded', () => {
+79:        const mobileMenuButton = document.getElementById('mobile-menu-button');
+80:        const mobileMenu = document.getElementById('mobile-menu');
+81:    
+82:        mobileMenuButton.addEventListener('click', () => {
+83:          mobileMenu.classList.toggle('hidden');
+84:          mobileMenu.classList.toggle('animate-slide-down');
+85:        });
+86:      });
+87:    </script> %>
+88:    
+89:    <style>
+90:      @keyframes fadeIn {
+91:        from { opacity: 0; }
+92:        to { opacity: 1; }
+93:      }
+94:      @keyframes slideDown {
+95:        from {
+96:          transform: translateY(-20px);
+97:          opacity: 0;
+98:        }
+99:        to {
+100:          transform: translateY(0);
+101:          opacity: 1;
+102:        }
+103:      }
+104:      .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+105:      .animate-slide-down { animation: slideDown 0.5s ease-out; }
+106:    
+107:    
+108:      .modal-container {
+109:      position: fixed;
+110:      top: 0;
+111:      left: 0;
+112:      width: 100%;
+113:      height: 100%;
+114:      display: flex;
+115:      justify-content: center;
+116:      align-items: center;
+117:      z-index: 1000;
+118:    }
+119:    
+120:    .modal-backdrop {
+121:      position: absolute;
+122:      top: 0;
+123:      left: 0;
+124:      width: 100%;
+125:      height: 100%;
+126:      background: rgba(0, 0, 0, 0.5);
+127:      backdrop-filter: blur(5px);
+128:    }
+129:    
+130:    .modal-content {
+131:      position: relative;
+132:      background: white;
+133:      padding: 2rem;
+134:      border-radius: 8px;
+135:      z-index: 1001;
+136:      max-width: 500px;
+137:      width: 90%;
+138:    }
+139:    
+140:    .close-button {
+141:      position: absolute;
+142:      top: 10px;
+143:      right: 10px;
+144:      border: none;
+145:      background: none;
+146:      font-size: 1.5rem;
+147:      cursor: pointer;
+148:    }
+149:    
+150:    .hidden {
+151:      display: none !important;
+152:    }
+153:    </style>
+154:    
+155:    <nav class="bg-white shadow-md">
+156:      <div class="container mx-auto px-4 py-3">
+157:        <div class="flex justify-between items-center">
+158:          <%= link_to root_path, class: "flex items-center" do %>
+159:            <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+160:          <% end %>
+161:    
+162:          <button class="lg:hidden" id="mobile-menu-button">
+163:            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+164:              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+165:            </svg>
+166:          </button>
+167:          
+168:    
+169:          <div class=" lg:flex items-center space-x-4">
+170:            <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+171:            <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+172:            
+173:            <div class=" lg:flex items-center space-x-4 login-buttons">
+174:              <% if user_signed_in? %>
+175:                <%= link_to "Edit Password", edit_password_path %>
+176:                <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
+177:              <% else %>
+178:                <button id="open-registration-modal" class="nav-button">Sign up</button>
+179:                <%= link_to "Log in", new_session_path %>
+180:              <% end %>
+181:            </div>
+182:          </div>
+183:        </div>
+184:    
+185:        <div class="lg:hidden">
+186:          <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+187:            <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+188:            <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+189:            
+190:            <% if current_user.present? %>
+191:              <div class="px-3 py-2">
+192:                <div id="mobile-user-button" data-clerk-component="userButton"></div>
+193:              </div>
+194:            <% else %>
+195:              <button 
+196:                onclick="Clerk.openSignIn()" 
+197:                class="block w-full px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800"
+198:              >
+199:                Sign in
+200:              </button>
+201:              <button 
+202:                onclick="Clerk.openSignUp()" 
+203:                class="block w-full px-3 py-2 rounded-md text-base font-medium bg-gray-200 text-black hover:bg-gray-300"
+204:              >
+205:                Sign up
+206:              </button>
+207:            <% end %>
+208:          </div>    
+209:        </div>
+210:      </div>
+211:    </nav>
+212:    
+213:    <div id="registration-modal" class="modal-container hidden">
+214:      <div class="modal-backdrop"></div>
+215:      <div class="modal-content">
+216:        <button id="close-registration-modal" class="close-button">&times;</button>
+217:        <%= render "registrations/form", user: User.new %>
+218:      </div>
+219:    </div>
+220:    
+221:    
+222:    <script>
+223:      document.addEventListener('DOMContentLoaded', () => {
+224:        const mobileMenuButton = document.getElementById('mobile-menu-button');
+225:        const mobileMenu = document.getElementById('mobile-menu');
+226:    
+227:        mobileMenuButton.addEventListener('click', () => {
+228:          mobileMenu.classList.toggle('hidden');
+229:          mobileMenu.classList.toggle('animate-slide-down');
+230:        });
+231:      });
+232:    
+233:    
+234:      document.addEventListener('DOMContentLoaded', function() {
+235:      const modal = document.getElementById('registration-modal');
+236:      const openButton = document.getElementById('open-registration-modal');
+237:      const closeButton = document.getElementById('close-registration-modal');
+238:      const backdrop = document.querySelector('.modal-backdrop');
+239:    
+240:      function openModal() {
+241:        modal.classList.remove('hidden');
+242:        document.body.style.overflow = 'hidden'; // Previene lo scroll della pagina
+243:      }
+244:    
+245:      function closeModal() {
+246:        modal.classList.add('hidden');
+247:        document.body.style.overflow = 'auto';
+248:      }
+249:    
+250:      openButton.addEventListener('click', openModal);
+251:      closeButton.addEventListener('click', closeModal);
+252:      backdrop.addEventListener('click', closeModal);
+253:    
+254:      // Gestisce la chiusura con il tasto ESC
+255:      document.addEventListener('keydown', function(e) {
+256:        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+257:          closeModal();
+258:        }
+259:      });
+260:    
+261:      // Previene la chiusura quando si clicca sul contenuto del modal
+262:      document.querySelector('.modal-content').addEventListener('click', function(e) {
+263:        e.stopPropagation();
+264:      });
+265:    });
+266:    </script>
+  
+app/views/shared/_navbar.html.erb:268: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:49
+Started GET "/" for 127.0.0.1 at 2025-01-09 17:43:25 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 24.2ms | Allocations: 2403)
+  Rendered shared/_navbar.html.erb (Duration: 180.1ms | Allocations: 104697)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 206.2ms | Allocations: 115482)
+Completed 200 OK in 216ms (Views: 201.4ms | ActiveRecord: 9.1ms | Allocations: 116469)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2025-01-09 17:43:42 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 7.0ms | Allocations: 2885)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 3208)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 1.8ms | Allocations: 727)
+  Rendered shared/_navbar.html.erb (Duration: 16.7ms | Allocations: 2718)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 49.5ms | Allocations: 14773)
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 0.2ms | Allocations: 15142)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-09 17:43:47 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 521)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 1.6ms | Allocations: 727)
+  Rendered shared/_navbar.html.erb (Duration: 7.4ms | Allocations: 2710)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 11933)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.1ms | Allocations: 12167)
+
+

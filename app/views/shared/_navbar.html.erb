@@ -1,178 +1,191 @@
 <style>
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  @keyframes slideDown {
-    from {
-      transform: translateY(-20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  .animate-fade-in { animation: fadeIn 0.5s ease-out; }
-  .animate-slide-down { animation: slideDown 0.5s ease-out; }
+ @keyframes fadeIn {
+   from { opacity: 0; }
+   to { opacity: 1; }
+ }
+ @keyframes slideDown {
+   from {
+     transform: translateY(-20px);
+     opacity: 0;
+   }
+   to {
+     transform: translateY(0);
+     opacity: 1;
+   }
+ }
+ .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+ .animate-slide-down { animation: slideDown 0.5s ease-out; }
 
+ .modal-container {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+ }
 
-  .modal-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
+ .modal-backdrop {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   backdrop-filter: blur(5px);
+ }
 
-.modal-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-}
+ .modal-content {
+   position: relative;
+   background: white;
+   padding: 2rem;
+   border-radius: 8px;
+   z-index: 1001;
+   max-width: 500px;
+   width: 90%;
+ }
 
-.modal-content {
-  position: relative;
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  z-index: 1001;
-  max-width: 500px;
-  width: 90%;
-}
+ .close-button {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   border: none;
+   background: none;
+   font-size: 1.5rem;
+   cursor: pointer;
+ }
 
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: none;
-  background: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.hidden {
-  display: none !important;
-}
+ .hidden {
+   display: none !important;
+ }
 </style>
 
 <nav class="bg-white shadow-md">
-  <div class="container mx-auto px-4 py-3">
-    <div class="flex justify-between items-center">
-      <%= link_to root_path, class: "flex items-center" do %>
-        <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
-      <% end %>
+ <div class="container mx-auto px-4 py-3">
+   <div class="flex justify-between items-center">
+     <%= link_to root_path, class: "flex items-center" do %>
+       <%= image_tag("logo_vs.png", class: "w-16 h-auto") %>
+     <% end %>
 
-      <button class="lg:hidden" id="mobile-menu-button">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-      
+     <button class="lg:hidden" id="mobile-menu-button">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+       </svg>
+     </button>
 
-      <div class=" lg:flex items-center space-x-4">
-        <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
-        <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
-        
-        <div class=" lg:flex items-center space-x-4 login-buttons">
-          <% if user_signed_in? %>
-            <%= link_to "Edit Password", edit_password_path %>
-            <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
-          <% else %>
-            <button id="open-registration-modal" class="nav-button">Sign up</button>
-            <%= link_to "Log in", new_session_path %>
-          <% end %>
-        </div>
-      </div>
-    </div>
+     <div class=" lg:flex items-center space-x-4">
+       <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
+       <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
+       
+       <div class=" lg:flex items-center space-x-4 login-buttons">
+         <% if user_signed_in? %>
+           <%= link_to "Edit Password", edit_password_path %>
+           <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
+         <% else %>
+           <button id="open-registration-modal" class="nav-button">Sign up</button>
+           <button id="open-session-modal" class="nav-button">Log in</button>
+         <% end %>
+       </div>
+     </div>
+   </div>
 
-    <div class="lg:hidden">
-      <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
-        <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
-        <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
-        
-        <% if current_user.present? %>
-          <div class="px-3 py-2">
-            <div id="mobile-user-button" data-clerk-component="userButton"></div>
-          </div>
-        <% else %>
-          <button 
-            onclick="Clerk.openSignIn()" 
-            class="block w-full px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800"
-          >
-            Sign in
-          </button>
-          <button 
-            onclick="Clerk.openSignUp()" 
-            class="block w-full px-3 py-2 rounded-md text-base font-medium bg-gray-200 text-black hover:bg-gray-300"
-          >
-            Sign up
-          </button>
-        <% end %>
-      </div>    
-    </div>
-  </div>
+   <div class="lg:hidden">
+     <div class="hidden pt-2 pb-3 space-y-1" id="mobile-menu">
+       <%= link_to "Home", root_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+       <%= link_to "About", about_path, class: "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" %>
+       
+       <% if current_user.present? %>
+         <div class="px-3 py-2">
+           <div id="mobile-user-button" data-clerk-component="userButton"></div>
+         </div>
+       <% else %>
+         <button 
+           onclick="Clerk.openSignIn()" 
+           class="block w-full px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800"
+         >
+           Sign in
+         </button>
+         <button 
+           onclick="Clerk.openSignUp()" 
+           class="block w-full px-3 py-2 rounded-md text-base font-medium bg-gray-200 text-black hover:bg-gray-300"
+         >
+           Sign up
+         </button>
+       <% end %>
+     </div>    
+   </div>
+ </div>
 </nav>
 
 <div id="registration-modal" class="modal-container hidden">
-  <div class="modal-backdrop"></div>
-  <div class="modal-content">
-    <button id="close-registration-modal" class="close-button">&times;</button>
-    <%= render "registrations/form", user: User.new %>
-  </div>
+ <div class="modal-backdrop"></div>
+ <div class="modal-content">
+   <button id="close-registration-modal" class="close-button">&times;</button>
+   <%= render "registrations/form", user: User.new %>
+ </div>
 </div>
 
+<div id="session-modal" class="modal-container hidden">
+ <div class="modal-backdrop"></div>
+ <div class="modal-content">
+   <button id="close-session-modal" class="close-button">&times;</button>
+   <%= render "sessions/form", user: @user %>
+ </div>
+</div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+document.addEventListener('DOMContentLoaded', () => {
+ const mobileMenuButton = document.getElementById('mobile-menu-button');
+ const mobileMenu = document.getElementById('mobile-menu');
 
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      mobileMenu.classList.toggle('animate-slide-down');
-    });
-  });
+ mobileMenuButton.addEventListener('click', () => {
+   mobileMenu.classList.toggle('hidden');
+   mobileMenu.classList.toggle('animate-slide-down');
+ });
+});
 
+document.addEventListener('DOMContentLoaded', () => {
+ // Gestori per entrambi i pulsanti modali
+ ['registration', 'session'].forEach(modalType => {
+   const modal = document.getElementById(`${modalType}-modal`);
+   const openButton = document.getElementById(`open-${modalType}-modal`);
+   const closeButton = document.getElementById(`close-${modalType}-modal`);
+   const backdrop = modal.querySelector('.modal-backdrop');
 
-  document.addEventListener('DOMContentLoaded', function() {
-  const modal = document.getElementById('registration-modal');
-  const openButton = document.getElementById('open-registration-modal');
-  const closeButton = document.getElementById('close-registration-modal');
-  const backdrop = document.querySelector('.modal-backdrop');
+   function openModal() {
+     modal.classList.remove('hidden');
+     document.body.style.overflow = 'hidden';
+   }
 
-  function openModal() {
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden'; // Previene lo scroll della pagina
-  }
+   function closeModal() {
+     modal.classList.add('hidden');
+     document.body.style.overflow = 'auto';
+   }
 
-  function closeModal() {
-    modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  }
+   openButton.addEventListener('click', openModal);
+   closeButton.addEventListener('click', closeModal);
+   backdrop.addEventListener('click', closeModal);
 
-  openButton.addEventListener('click', openModal);
-  closeButton.addEventListener('click', closeModal);
-  backdrop.addEventListener('click', closeModal);
+   // Previene la chiusura quando si clicca sul contenuto del modal
+   modal.querySelector('.modal-content').addEventListener('click', e => {
+     e.stopPropagation();
+   });
+ });
 
-  // Gestisce la chiusura con il tasto ESC
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-      closeModal();
-    }
-  });
-
-  // Previene la chiusura quando si clicca sul contenuto del modal
-  document.querySelector('.modal-content').addEventListener('click', function(e) {
-    e.stopPropagation();
-  });
+ // Gestisce la chiusura con il tasto ESC per entrambi i modali
+ document.addEventListener('keydown', e => {
+   if (e.key === 'Escape') {
+     ['registration', 'session'].forEach(modalType => {
+       const modal = document.getElementById(`${modalType}-modal`);
+       if (!modal.classList.contains('hidden')) {
+         modal.classList.add('hidden');
+         document.body.style.overflow = 'auto';
+       }
+     });
+   }
+ });
 });
 </script>

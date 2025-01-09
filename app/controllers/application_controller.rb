@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
   
+  protect_from_forgery with: :exception
+  skip_before_action :verify_authenticity_token, if: :auth0_callback?
+
   private
+
+  def auth0_callback?
+    controller_name == 'auth0' && action_name == 'callback'
+  end
 
   def authenticate_user!
     redirect_to root_path, alert: "You must be loggrf in to do that." unless user_signed_in?

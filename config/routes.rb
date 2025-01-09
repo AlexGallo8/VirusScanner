@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   resource :password_reset
   resource :password
 
+  resource :dashboard
+
+  get '/auth/auth0/callback', to: 'auth0#callback'
+  get '/auth/failure', to: 'auht0#failure'
+  get '/auth/logout', to: 'auht0#logout'
+
   root to: "main#index"
 
   

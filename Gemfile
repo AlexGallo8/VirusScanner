@@ -78,9 +78,9 @@ end
 
 gem "tailwindcss-rails", "~> 2.0"
 
-# gem 'omniauth'
-# gem 'omniauth-auth0', '~> 3.0'
-# gem 'omniauth-rails_csrf_protection', '~> 1.0' # prevents forged authentication requests
+gem 'omniauth'
+gem 'omniauth-auth0', '~> 3.0'
+gem 'omniauth-rails_csrf_protection', '~> 1.0' # prevents forged authentication requests
 
 # Clerk Ruby SDK
 gem 'clerk-sdk-ruby', '~> 3.0.0', require: "clerk"

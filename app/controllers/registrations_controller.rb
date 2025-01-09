@@ -1,4 +1,6 @@
 class RegistrationsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]
+
   def new
     @user = User.new
   end
@@ -8,16 +10,16 @@ class RegistrationsController < ApplicationController
     if @user.save
       login @user
       redirect_to root_path, notice: "Successfully created account!"
-    else
-      render(
-        turbo_stream.create(
-          "registration_form",
-          partial: "registrations/form",
-          locals: {
-            user: @user
-          }
-        )
-      )
+    # else
+    #   render(
+    #     turbo_stream.create(
+    #       "registration_form",
+    #       partial: "registrations/form",
+    #       locals: {
+    #         user: @user
+    #       }
+    #     )
+    #   )
     end
   end
   

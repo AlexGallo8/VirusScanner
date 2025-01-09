@@ -1,30 +1,32 @@
 class Auth0Controller < ApplicationController
   def callback
-    # OmniAuth stores the information returned from Auth0 and the IdP in request.env['omniauth.auth'].
-    # In this code, you will pull the raw_info supplied from the id_token and assign it to the session.
-    # Refer to https://github.com/auth0/omniauth-auth0/blob/master/EXAMPLES.md#example-of-the-resulting-authentication-hash for complete information on 'omniauth.auth' contents.
     auth_info = request.env['omniauth.auth']
-    session[:userinfo] = auth_info['extra']['raw_info']
-
-    # Redirect to the URL you want after successful auth
-    redirect_to root_path, notice: 'Successfully logged in!'
+    user = User.find_or_create_by(email: auth_info['info']['email']) do |u|
+      u.name = auth_info['info']['name']
+      u.provider = auth_info['provider'] 
+      u.uid = auth_info['uid']
+      u.password = SecureRandom.hex(10)
+    end
+    
+    login(user)
+    redirect_to root_path
   end
-
+ 
   def failure
-    redirect_to root_path, alert: 'Authentication failed.'
+    redirect_to root_path, alert: 'Autenticazione fallita'
   end
-
+ 
   def logout
-    reset_session
-    redirect_to logout_url, allow_other_host: true
+    session[:userinfo] = nil
+    url = URI::HTTPS.build(
+      host: Rails.application.credentials.auth0[:domain],
+      path: '/v2/logout',
+      query: {
+        returnTo: root_url,
+        client_id: Rails.application.credentials.auth0[:client_id]
+      }.to_query
+    ).to_s
+ 
+    redirect_to url, allow_other_host: true, status: :see_other
   end
-
-  def logout_url
-    request_params = {
-      returnTo: root_url,
-      client_id: AUTH0_CONFIG['auth0_client_id']
-    }
-
-    URI::HTTPS.build(host: AUTH0_CONFIG['auth0_domain'], path: '/v2/logout', query: request_params.to_query).to_s
-  end
-end
+ end

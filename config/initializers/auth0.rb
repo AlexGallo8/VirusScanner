@@ -6,7 +6,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     Rails.application.credentials.auth0[:domain],
     callback_path: '/auth/auth0/callback',
     authorize_params: {
-        scope: 'openid profile'
+        redirect_uri: 'http://localhost:3000/auth/auth0/callback',
+        scope: 'openid profile email'
     }
   )
 end

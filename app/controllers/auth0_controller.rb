@@ -2,10 +2,9 @@ class Auth0Controller < ApplicationController
   def callback
     auth_info = request.env['omniauth.auth']
     user = User.find_or_create_by(email: auth_info['info']['email']) do |u|
-      u.name = auth_info['info']['name']
       u.provider = auth_info['provider'] 
       u.uid = auth_info['uid']
-      u.password = SecureRandom.hex(10)
+      u.password_digest = SecureRandom.hex(10)
     end
     
     login(user)

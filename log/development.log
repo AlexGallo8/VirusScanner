@@ -64820,3 +64820,455 @@ NoMethodError (undefined method `name=' for #<User:0x00007fa1ddf30a80>):
   
 app/controllers/auth0_controller.rb:5:in `block in callback'
 app/controllers/auth0_controller.rb:4:in `callback'
+Started GET "/" for 127.0.0.1 at 2025-01-10 11:26:48 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+Faraday::ConnectionFailed (Connection reset by peer - SSL_connect):
+  
+Started GET "/" for 127.0.0.1 at 2025-01-10 11:27:46 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-01-10 11:27:52 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 27.2ms | Allocations: 3290)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 22.8ms | Allocations: 2686)
+  Rendered sessions/_form.html.erb (Duration: 3.2ms | Allocations: 2757)
+  Rendered shared/_navbar.html.erb (Duration: 185.7ms | Allocations: 107760)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 747.8ms | Allocations: 169458)
+Completed 200 OK in 803ms (Views: 754.4ms | ActiveRecord: 10.5ms | Allocations: 175476)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-10 11:50:06 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-10 11:50:16 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1239)
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 7.9ms | Allocations: 1702)
+  Rendered sessions/_form.html.erb (Duration: 3.0ms | Allocations: 2836)
+  Rendered shared/_navbar.html.erb (Duration: 58.0ms | Allocations: 11099)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 102.6ms | Allocations: 21880)
+Completed 200 OK in 113ms (Views: 97.8ms | ActiveRecord: 9.4ms | Allocations: 22914)
+
+
+Started POST "/auth/auth0" for 127.0.0.1 at 2025-01-10 11:50:21 +0100
+Started GET "/auth/auth0/callback?code=0HFov1Y0RosW8WtXUpKSwCTSnJQwKSwxBrN8uxHv8D10Z&state=8faf93709e11a67545fe0dd55619e562a95c87227841133d" for 127.0.0.1 at 2025-01-10 11:50:22 +0100
+Processing by Auth0Controller#callback as HTML
+  Parameters: {"code"=>"0HFov1Y0RosW8WtXUpKSwCTSnJQwKSwxBrN8uxHv8D10Z", "state"=>"8faf93709e11a67545fe0dd55619e562a95c87227841133d"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 4.4ms | Allocations: 3729)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-10 11:50:24 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 531)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.0ms | Allocations: 1078)
+  Rendered sessions/_form.html.erb (Duration: 1.7ms | Allocations: 2607)
+  Rendered shared/_navbar.html.erb (Duration: 8.2ms | Allocations: 5697)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 14932)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.1ms | Allocations: 15162)
+
+
+Started POST "/registration" for 127.0.0.1 at 2025-01-10 11:50:28 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 24ms (ActiveRecord: 2.2ms | Allocations: 3300)
+
+
+Started POST "/registration" for 127.0.0.1 at 2025-01-10 11:50:33 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 12ms (ActiveRecord: 2.4ms | Allocations: 2584)
+
+
+Started POST "/registration" for 127.0.0.1 at 2025-01-10 11:50:34 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 5ms (ActiveRecord: 1.3ms | Allocations: 2572)
+
+
+Started POST "/auth/auth0" for 127.0.0.1 at 2025-01-10 11:50:35 +0100
+Started GET "/auth/auth0/callback?code=6SCtlFkflJDgSHRzblM5Oz0ib9isbtejhSxPSZveSWByI&state=d9a8509436a256306f4a4df83a4b5afc5fc42a9948059055" for 127.0.0.1 at 2025-01-10 11:50:36 +0100
+Processing by Auth0Controller#callback as HTML
+  Parameters: {"code"=>"6SCtlFkflJDgSHRzblM5Oz0ib9isbtejhSxPSZveSWByI", "state"=>"d9a8509436a256306f4a4df83a4b5afc5fc42a9948059055"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+  [1m[36mUser Exists? (3.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 3.8ms | Allocations: 3226)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-10 11:50:37 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 521)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 4.9ms | Allocations: 1077)
+  Rendered sessions/_form.html.erb (Duration: 22.6ms | Allocations: 2605)
+  Rendered shared/_navbar.html.erb (Duration: 34.3ms | Allocations: 5694)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 53.3ms | Allocations: 14923)
+Completed 200 OK in 55ms (Views: 53.9ms | ActiveRecord: 0.1ms | Allocations: 15153)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-10 11:51:07 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1226)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 7.6ms | Allocations: 1702)
+  Rendered sessions/_form.html.erb (Duration: 3.5ms | Allocations: 2836)
+  Rendered shared/_navbar.html.erb (Duration: 36.6ms | Allocations: 11575)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 61.4ms | Allocations: 22343)
+Completed 200 OK in 67ms (Views: 57.9ms | ActiveRecord: 7.1ms | Allocations: 23372)
+
+
+Started POST "/auth/auth0" for 127.0.0.1 at 2025-01-10 11:51:10 +0100
+Started GET "/auth/auth0/callback?code=kfCKCOdufvCnsZ4u2Kb1ut8D-l7AVBbSCVuCICm-fK1qb&state=2589f02d66a933eeac96bc803f7debd2659aefa701021990" for 127.0.0.1 at 2025-01-10 11:51:10 +0100
+Processing by Auth0Controller#callback as HTML
+  Parameters: {"code"=>"kfCKCOdufvCnsZ4u2Kb1ut8D-l7AVBbSCVuCICm-fK1qb", "state"=>"2589f02d66a933eeac96bc803f7debd2659aefa701021990"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms | Allocations: 3628)
+
+
+  
+NoMethodError (undefined method `provider=' for #<User:0x00007f8867211ac8>):
+  
+app/controllers/auth0_controller.rb:6:in `block in callback'
+app/controllers/auth0_controller.rb:4:in `callback'
+Started GET "/" for 127.0.0.1 at 2025-01-10 11:52:05 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1239)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 9.4ms | Allocations: 1681)
+  Rendered sessions/_form.html.erb (Duration: 3.3ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 46.3ms | Allocations: 11579)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 75.3ms | Allocations: 22479)
+Completed 200 OK in 83ms (Views: 75.7ms | ActiveRecord: 4.2ms | Allocations: 23507)
+
+
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-10 11:52:07 +0100
+Started GET "/auth/auth0/callback?connection=github&error=invalid_request&error_description=the%20connection%20is%20not%20enabled&state=3ec1ddeccb147822506d8a66ea4a6a3772fedb6690af32b2" for 127.0.0.1 at 2025-01-10 11:52:11 +0100
+  
+OmniAuth::Strategies::OAuth2::CallbackError (invalid_request | the connection is not enabled):
+  
+omniauth (2.1.2) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (2.1.2) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (2.1.2) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:545:in `fail!'
+omniauth-oauth2 (1.8.0) lib/omniauth/strategies/oauth2.rb:89:in `callback_phase'
+omniauth-auth0 (3.1.1) lib/omniauth/strategies/auth0.rb:125:in `callback_phase'
+omniauth (2.1.2) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.2) lib/omniauth/builder.rb:44:in `call'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:206:in `signed_out'
+clerk-sdk-ruby (3.0.0) lib/clerk/rack_middleware_v2.rb:183:in `call'
+rack (3.1.3) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.3) lib/rack/etag.rb:29:in `call'
+rack (3.1.3) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.3) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.3) lib/rack/method_override.rb:28:in `call'
+rack (3.1.3) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.3) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-10 12:16:04 +0100
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-10 12:16:24 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:27:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:27:10 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 3294)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 23.7ms | Allocations: 2663)
+  Rendered sessions/_form.html.erb (Duration: 2.6ms | Allocations: 2757)
+  Rendered shared/_navbar.html.erb (Duration: 156.0ms | Allocations: 107735)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 588.6ms | Allocations: 168905)
+Completed 200 OK in 656ms (Views: 606.1ms | ActiveRecord: 3.3ms | Allocations: 174923)
+
+
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-10 12:27:13 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:32:52 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:32:54 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 23.4ms | Allocations: 3294)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 20.9ms | Allocations: 2661)
+  Rendered sessions/_form.html.erb (Duration: 2.6ms | Allocations: 2757)
+  Rendered shared/_navbar.html.erb (Duration: 147.6ms | Allocations: 107799)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 620.5ms | Allocations: 152695)
+Completed 200 OK in 682ms (Views: 640.1ms | ActiveRecord: 3.5ms | Allocations: 158713)
+
+
+Started GET "/assets/tailwind.debug-ea9728a0544063702e4bab5a448de06f78e425912cc6eaa149003243eaa52568.css" for 127.0.0.1 at 2025-01-10 12:32:55 +0100
+Started GET "/assets/inter-font.debug-f597296dc1329645f66710581acb6700189fa1192e7c28a724e64795ba30f3fe.css" for 127.0.0.1 at 2025-01-10 12:32:55 +0100
+Started GET "/assets/application.debug-138a2d4ef6c813082be2434162e120db2d45aca50201727f73ff1de3132f966f.css" for 127.0.0.1 at 2025-01-10 12:32:55 +0100
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-10 12:32:59 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:36:43 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:36:45 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 549)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.6ms | Allocations: 1060)
+  Rendered sessions/_form.html.erb (Duration: 1.7ms | Allocations: 2611)
+  Rendered shared/_navbar.html.erb (Duration: 11.7ms | Allocations: 5702)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | Allocations: 15213)
+Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.2ms | Allocations: 15448)
+
+
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-10 12:37:28 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:41:19 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:41:21 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 541)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 7.0ms | Allocations: 1059)
+  Rendered sessions/_form.html.erb (Duration: 1.9ms | Allocations: 2608)
+  Rendered shared/_navbar.html.erb (Duration: 22.5ms | Allocations: 5676)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 85.8ms | Allocations: 14915)
+Completed 200 OK in 92ms (Views: 90.3ms | ActiveRecord: 0.2ms | Allocations: 15145)
+
+
+Started GET "/assets/inter-font.debug-f597296dc1329645f66710581acb6700189fa1192e7c28a724e64795ba30f3fe.css" for 127.0.0.1 at 2025-01-10 12:41:21 +0100
+Started GET "/assets/application.debug-138a2d4ef6c813082be2434162e120db2d45aca50201727f73ff1de3132f966f.css" for 127.0.0.1 at 2025-01-10 12:41:21 +0100
+Started GET "/assets/tailwind.debug-ea9728a0544063702e4bab5a448de06f78e425912cc6eaa149003243eaa52568.css" for 127.0.0.1 at 2025-01-10 12:41:21 +0100
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-10 12:41:24 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:43:47 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:43:49 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 458)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 6.0ms | Allocations: 1059)
+  Rendered sessions/_form.html.erb (Duration: 4.6ms | Allocations: 2607)
+  Rendered shared/_navbar.html.erb (Duration: 21.8ms | Allocations: 5675)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 91.1ms | Allocations: 14831)
+Completed 200 OK in 102ms (Views: 91.9ms | ActiveRecord: 0.1ms | Allocations: 15060)
+
+
+Started GET "/assets/tailwind.debug-ea9728a0544063702e4bab5a448de06f78e425912cc6eaa149003243eaa52568.css" for 127.0.0.1 at 2025-01-10 12:43:49 +0100
+Started GET "/assets/inter-font.debug-f597296dc1329645f66710581acb6700189fa1192e7c28a724e64795ba30f3fe.css" for 127.0.0.1 at 2025-01-10 12:43:49 +0100
+Started GET "/assets/application.debug-138a2d4ef6c813082be2434162e120db2d45aca50201727f73ff1de3132f966f.css" for 127.0.0.1 at 2025-01-10 12:43:49 +0100
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-10 12:43:53 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:49:42 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:49:44 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 40.3ms | Allocations: 3296)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 25.3ms | Allocations: 2661)
+  Rendered sessions/_form.html.erb (Duration: 31.6ms | Allocations: 2757)
+  Rendered shared/_navbar.html.erb (Duration: 291.5ms | Allocations: 107799)
+  Rendered shared/_footer.html.erb (Duration: 3.9ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 742.9ms | Allocations: 152697)
+Completed 200 OK in 815ms (Views: 758.1ms | ActiveRecord: 9.6ms | Allocations: 158716)
+
+
+Started GET "/assets/tailwind.debug-ea9728a0544063702e4bab5a448de06f78e425912cc6eaa149003243eaa52568.css" for 127.0.0.1 at 2025-01-10 12:49:45 +0100
+Started GET "/assets/inter-font.debug-f597296dc1329645f66710581acb6700189fa1192e7c28a724e64795ba30f3fe.css" for 127.0.0.1 at 2025-01-10 12:49:45 +0100
+Started GET "/assets/application.debug-138a2d4ef6c813082be2434162e120db2d45aca50201727f73ff1de3132f966f.css" for 127.0.0.1 at 2025-01-10 12:49:45 +0100
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-10 12:49:48 +0100
+Started GET "/auth/auth0/callback?code=5GRfhlZLwbf9XTQROb486j7D9t62kCOtHqFLwvuv5bRo2&state=648cd84ce7b27bbb952bbc6e52872cb511ad68669ac607ef" for 127.0.0.1 at 2025-01-10 12:50:17 +0100
+Started GET "/auth/auth0/callback?code=5GRfhlZLwbf9XTQROb486j7D9t62kCOtHqFLwvuv5bRo2&state=648cd84ce7b27bbb952bbc6e52872cb511ad68669ac607ef" for 127.0.0.1 at 2025-01-10 12:50:18 +0100
+Processing by Auth0Controller#callback as HTML
+  Parameters: {"code"=>"5GRfhlZLwbf9XTQROb486j7D9t62kCOtHqFLwvuv5bRo2", "state"=>"648cd84ce7b27bbb952bbc6e52872cb511ad68669ac607ef"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms | Allocations: 1341)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:50:19 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 532)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 7.1ms | Allocations: 1060)
+  Rendered sessions/_form.html.erb (Duration: 1.7ms | Allocations: 2454)
+  Rendered shared/_navbar.html.erb (Duration: 21.9ms | Allocations: 5811)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 15305)
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 1.2ms | Allocations: 15538)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 50]]
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Started GET "/password/edit" for 127.0.0.1 at 2025-01-10 12:57:51 +0100
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 9.1ms | Allocations: 965)
+  Rendered registrations/_form.html.erb (Duration: 12.1ms | Allocations: 1060)
+  Rendered sessions/_form.html.erb (Duration: 2.5ms | Allocations: 2546)
+  Rendered shared/_navbar.html.erb (Duration: 20.3ms | Allocations: 4506)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 114.9ms | Allocations: 14175)
+Completed 200 OK in 129ms (Views: 117.3ms | ActiveRecord: 2.6ms | Allocations: 15521)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-10 12:59:38 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1225)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 5.4ms | Allocations: 1676)
+  Rendered sessions/_form.html.erb (Duration: 4.5ms | Allocations: 2742)
+  Rendered shared/_navbar.html.erb (Duration: 38.0ms | Allocations: 11668)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 64.8ms | Allocations: 22327)
+Completed 200 OK in 71ms (Views: 65.0ms | ActiveRecord: 3.3ms | Allocations: 23357)
+
+

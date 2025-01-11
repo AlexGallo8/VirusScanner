@@ -10,16 +10,6 @@ class RegistrationsController < ApplicationController
     if @user.save
       login @user
       redirect_to root_path, notice: "Successfully created account!"
-    # else
-    #   render(
-    #     turbo_stream.create(
-    #       "registration_form",
-    #       partial: "registrations/form",
-    #       locals: {
-    #         user: @user
-    #       }
-    #     )
-    #   )
     end
   end
   

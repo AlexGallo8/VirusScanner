@@ -66401,3 +66401,1370 @@ Processing by MainController#index as HTML
 Completed 200 OK in 103ms (Views: 97.5ms | ActiveRecord: 1.4ms | Allocations: 23117)
 
 
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-11 19:20:51 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/auth0/callback?code=Mk9otHQ_-9esOs-Mv4uhV74RggBu7XppYvsI6dY-H6XWV&state=76f41a8bad17d1d7b0cfe65eed46b6e51d8a378627c568b4" for 127.0.0.1 at 2025-01-11 19:20:54 +0100
+Processing by Auth0Controller#callback as HTML
+  Parameters: {"code"=>"Mk9otHQ_-9esOs-Mv4uhV74RggBu7XppYvsI6dY-H6XWV", "state"=>"76f41a8bad17d1d7b0cfe65eed46b6e51d8a378627c568b4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+Redirected to http://localhost:3000/
+Completed 302 Found in 140ms (ActiveRecord: 8.4ms | Allocations: 114084)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:20:56 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1312)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 16.7ms | Allocations: 2663)
+  Rendered sessions/_form.html.erb (Duration: 2.8ms | Allocations: 2764)
+  Rendered shared/_navbar.html.erb (Duration: 34.9ms | Allocations: 8922)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 368.1ms | Allocations: 51833)
+Completed 200 OK in 420ms (Views: 386.4ms | ActiveRecord: 1.2ms | Allocations: 56328)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 50]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Started DELETE "/session" for 127.0.0.1 at 2025-01-11 19:22:42 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 867)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:22:42 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 538)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.9ms | Allocations: 984)
+  Rendered sessions/_form.html.erb (Duration: 1.4ms | Allocations: 2608)
+  Rendered shared/_navbar.html.erb (Duration: 34.9ms | Allocations: 5641)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 56.0ms | Allocations: 14885)
+Completed 200 OK in 58ms (Views: 56.7ms | ActiveRecord: 0.2ms | Allocations: 15117)
+
+
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-11 19:22:44 +0100
+Started GET "/auth/auth0/callback?code=jJPKwcY81vLxf7JavVXdLSVd1QOgjKw6zgM1GWnO3S7sf&state=882454a54761b329a6f4668e1e19c885fe1792d4e1236246" for 127.0.0.1 at 2025-01-11 19:22:51 +0100
+Started GET "/auth/auth0/callback?code=jJPKwcY81vLxf7JavVXdLSVd1QOgjKw6zgM1GWnO3S7sf&state=882454a54761b329a6f4668e1e19c885fe1792d4e1236246" for 127.0.0.1 at 2025-01-11 19:22:53 +0100
+Processing by Auth0Controller#callback as HTML
+  Parameters: {"code"=>"jJPKwcY81vLxf7JavVXdLSVd1QOgjKw6zgM1GWnO3S7sf", "state"=>"882454a54761b329a6f4668e1e19c885fe1792d4e1236246"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms | Allocations: 771)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:22:54 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 522)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.2ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 1.8ms | Allocations: 2609)
+  Rendered shared/_navbar.html.erb (Duration: 7.6ms | Allocations: 5032)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 14391)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.1ms | Allocations: 14620)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 50]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (4.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "scans"[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "scans" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "file_name" varchar, "file_type" varchar, "hashcode" varchar, "file_size" integer, "upload_date" datetime(6), "vote_up" integer DEFAULT 0, "vote_down" integer DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "scan_result" json, "file_data" text)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "auth_provider" varchar, "auth0_uid" varchar)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_auth0_uid" ON "users" ("auth0_uid")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250111145213)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241129100916),
+(20241115132500),
+(20240627100314),
+(20240625091148),
+(20240619181904);[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-01-11 18:25:12.254226', '2025-01-11 18:25:12.254230') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'edcfbba16bcf2db2abee311cd09b76cb49ffa6f3', '2025-01-11 18:25:12.257489', '2025-01-11 18:25:12.257493') RETURNING "key"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "scans"[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "scans" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "file_name" varchar, "file_type" varchar, "hashcode" varchar, "file_size" integer, "upload_date" datetime(6), "vote_up" integer DEFAULT 0, "vote_down" integer DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "scan_result" json, "file_data" text)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "auth_provider" varchar, "auth0_uid" varchar)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_auth0_uid" ON "users" ("auth0_uid")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250111145213)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241129100916),
+(20241115132500),
+(20240627100314),
+(20240625091148),
+(20240619181904);[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-01-11 18:25:12.280563', '2025-01-11 18:25:12.280567') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-01-11 18:25:12.282929' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'edcfbba16bcf2db2abee311cd09b76cb49ffa6f3', '2025-01-11 18:25:12.284809', '2025-01-11 18:25:12.284813') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started DELETE "/session" for 127.0.0.1 at 2025-01-11 19:25:41 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 833)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:25:41 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 529)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 3.0ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 3.5ms | Allocations: 2607)
+  Rendered shared/_navbar.html.erb (Duration: 11.8ms | Allocations: 5603)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 14873)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.1ms | Allocations: 15102)
+
+
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-11 19:25:43 +0100
+Started GET "/auth/auth0/callback?code=AFyh8oNnBnVPJ6Mv5V83zEhrrMX6-nvbW_rgpidTjdulK&state=36e9dd58c6c19dbd1dd347ad302169da82a71c8fd460e44a" for 127.0.0.1 at 2025-01-11 19:25:46 +0100
+Processing by Auth0Controller#callback as HTML
+  Parameters: {"code"=>"AFyh8oNnBnVPJ6Mv5V83zEhrrMX6-nvbW_rgpidTjdulK", "state"=>"36e9dd58c6c19dbd1dd347ad302169da82a71c8fd460e44a"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:4:in `callback'
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms | Allocations: 778)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:25:48 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 522)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 5.3ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 16.8ms | Allocations: 2608)
+  Rendered shared/_navbar.html.erb (Duration: 32.0ms | Allocations: 5027)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 59.6ms | Allocations: 14333)
+Completed 200 OK in 62ms (Views: 60.4ms | ActiveRecord: 0.1ms | Allocations: 14564)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started DELETE "/session" for 127.0.0.1 at 2025-01-11 19:37:00 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+Redirected to http://localhost:3000/
+Completed 302 Found in 53ms (ActiveRecord: 3.5ms | Allocations: 2773)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:37:01 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1236)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 5.5ms | Allocations: 1684)
+  Rendered sessions/_form.html.erb (Duration: 3.2ms | Allocations: 2836)
+  Rendered shared/_navbar.html.erb (Duration: 30.1ms | Allocations: 10238)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 77.1ms | Allocations: 20893)
+Completed 200 OK in 93ms (Views: 89.2ms | ActiveRecord: 0.2ms | Allocations: 21876)
+
+
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-11 19:37:15 +0100
+Started GET "/auth/auth0/callback?code=z8m4F2pF60-hsIZy4YBF-sXFsJVr0LuBQQhyj5GEgglhr&state=059f8f0a37208815e5b58d50a2184b9a463ba517d99091ff" for 127.0.0.1 at 2025-01-11 19:37:25 +0100
+Started GET "/auth/auth0/callback?code=z8m4F2pF60-hsIZy4YBF-sXFsJVr0LuBQQhyj5GEgglhr&state=059f8f0a37208815e5b58d50a2184b9a463ba517d99091ff" for 127.0.0.1 at 2025-01-11 19:37:28 +0100
+Processing by Auth0Controller#callback as HTML
+  Parameters: {"code"=>"z8m4F2pF60-hsIZy4YBF-sXFsJVr0LuBQQhyj5GEgglhr", "state"=>"059f8f0a37208815e5b58d50a2184b9a463ba517d99091ff"}
+Auth Info: #<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1736707049 id_token="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlgteTJBLXR2TGh6UWhmcmxKbndCbiJ9.eyJuaWNrbmFtZSI6IkFsZXhHYWxsbzgiLCJuYW1lIjoiYWxleG1hb25lOEBnbWFpbC5jb20iLCJwaWN0dXJlIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzExNzEwMDk4Nz92PTQiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wMS0xMVQxODozNzoyNS40NjNaIiwiZW1haWwiOiJhbGV4bWFvbmU4QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczovL2Rldi1hMDgxdTJxb3R1cTFkODMxLnVzLmF1dGgwLmNvbS8iLCJhdWQiOiJQWDJHTzJ5d0R0Q01zQVRxSTFrQ3M1NUVKU0l1TDlBNCIsImlhdCI6MTczNjYyMDY0OSwiZXhwIjoxNzM2NjU2NjQ5LCJzdWIiOiJnaXRodWJ8MTE3MTAwOTg3Iiwic2lkIjoiSXh2STY3bFcyMVhSVjk2TkZfX2E4RENkRzBqb21uX3YiLCJub25jZSI6IjY1OWQ5ZWMyNGIwMWY3Y2Q5YzBjMjgyMGNmZGE1NmUxIn0.QnROYWcU1aDjzQtLogjGDGdec1gg6QmaUDFRqK0VtXfMXmu91XxA53rc-V8RfBYzB4CxB5FGDenAtORzdmRP_C8VdZPVk5HAOKnoCv-9GdCYGOTM998VEap3fZQBGNurxtP2miiRAQQzyeX4CHhciRQSKhUL6SYwgA3x6rOh-4LNVRTrmmJXdsde-XBnMezt3Bk4HmwUy085T60DqUUf6LO9TcrGxKRgh5W318fIyXssIJQYjA0p6G-2hvPHg_NPbKdlSJb2Ko9ENeZgeaCdQOZmjavHNkOHWrMO4AAETvoNOKBwntC-3UK4RzlUaBJ295M7g2cQx3RgKhJiKtxVRg" refresh_token=nil token="eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly9kZXYtYTA4MXUycW90dXExZDgzMS51cy5hdXRoMC5jb20vIn0..ggXhY3dGHPVIsy_0.25uZWIqCXgjcYrBNPXKCGCKp5mirgPEoul3eJCfvOHQoK5-syFhdRwdntsnp_UkG_i1RCmk4MAw2Ql2CE_UBS9j6rQt4VWWv0Do2KgtmnLZxwDzYGhSqmjY6-UGRo85o-njJieAkFCIFEeyYD2gTs96LPaloz76Y1AuPAsOMxeibgndGq4M67q_4BNpKjnbZW1M_k4L728kE7YQHiXtH5l10I5JBcbgt5aQ9J5txeopG3dgsuVbKOZVK7NNyCwkrJI0RbEAdZPZgHtBMDH22znJvaH7qY4g_A88Uw6gL37j28GUzQEGfYeWuyBFsBC4v79RFMQ.53zBs7RdeM2UHUZkM1K1cQ" token_type="Bearer"> extra=#<OmniAuth::AuthHash raw_info=#<OmniAuth::AuthHash aud="PX2GO2ywDtCMsATqI1kCs55EJSIuL9A4" email="alexmaone8@gmail.com" email_verified=true exp=1736656649 iat=1736620649 iss="https://dev-a081u2qotuq1d831.us.auth0.com/" name="alexmaone8@gmail.com" nickname="AlexGallo8" nonce="659d9ec24b01f7cd9c0c2820cfda56e1" picture="https://avatars.githubusercontent.com/u/117100987?v=4" sid="IxvI67lW21XRV96NF__a8DCdG0jomn_v" sub="github|117100987" updated_at="2025-01-11T18:37:25.463Z">> info=#<OmniAuth::AuthHash::InfoHash email="alexmaone8@gmail.com" image="https://avatars.githubusercontent.com/u/117100987?v=4" name="alexmaone8@gmail.com" nickname="AlexGallo8"> provider="auth0" uid="github|117100987">
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:6:in `callback'
+Creating new user...
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/auth0_controller.rb:6:in `callback'
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:6:in `callback'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."auth0_uid" = ? LIMIT ?[0m  [["auth0_uid", "github|117100987"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:6:in `callback'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "alexmaone8@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-01-11 18:37:30.820549"], ["updated_at", "2025-01-11 18:37:30.820549"], ["auth_provider", "auth0"], ["auth0_uid", "github|117100987"]]
+  ↳ app/controllers/auth0_controller.rb:6:in `callback'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/auth0_controller.rb:6:in `callback'
+User saved successfully: #<User id: 1, email: "alexmaone8@gmail.com", password_digest: [FILTERED], created_at: "2025-01-11 18:37:30.820549000 +0000", updated_at: "2025-01-11 18:37:30.820549000 +0000", auth_provider: "auth0", auth0_uid: "github|117100987">
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 4.9ms | Allocations: 5671)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:37:30 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 530)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 3.9ms | Allocations: 984)
+  Rendered sessions/_form.html.erb (Duration: 4.9ms | Allocations: 2606)
+  Rendered shared/_navbar.html.erb (Duration: 26.6ms | Allocations: 5041)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 55.2ms | Allocations: 14275)
+Completed 200 OK in 56ms (Views: 55.6ms | ActiveRecord: 0.1ms | Allocations: 14505)
+
+
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started DELETE "/session" for 127.0.0.1 at 2025-01-11 19:40:41 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms | Allocations: 835)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:40:42 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 529)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.2ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 2.2ms | Allocations: 2608)
+  Rendered shared/_navbar.html.erb (Duration: 12.3ms | Allocations: 5605)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 15092)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.1ms | Allocations: 15323)
+
+
+Started POST "/registration" for 127.0.0.1 at 2025-01-11 19:41:21 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"sefunge@godo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sefunge@godo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "sefunge@godo.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-01-11 18:41:22.219747"], ["updated_at", "2025-01-11 18:41:22.219747"], ["auth_provider", nil], ["auth0_uid", nil]]
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:10:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 289ms (ActiveRecord: 3.5ms | Allocations: 3483)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:41:22 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 530)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.1ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 2.0ms | Allocations: 2606)
+  Rendered shared/_navbar.html.erb (Duration: 9.2ms | Allocations: 5028)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | Allocations: 14358)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.1ms | Allocations: 14587)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started DELETE "/session" for 127.0.0.1 at 2025-01-11 19:46:09 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+Redirected to http://localhost:3000/
+Completed 302 Found in 52ms (ActiveRecord: 3.8ms | Allocations: 5683)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:46:10 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1234)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 10.0ms | Allocations: 1682)
+  Rendered sessions/_form.html.erb (Duration: 4.5ms | Allocations: 2836)
+  Rendered shared/_navbar.html.erb (Duration: 29.7ms | Allocations: 7757)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 76.7ms | Allocations: 18647)
+Completed 200 OK in 87ms (Views: 82.9ms | ActiveRecord: 0.2ms | Allocations: 19629)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "scans"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "scans" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "file_name" varchar, "file_type" varchar, "hashcode" varchar, "file_size" integer, "upload_date" datetime(6), "vote_up" integer DEFAULT 0, "vote_down" integer DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "scan_result" json, "file_data" text)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "auth_provider" varchar, "auth0_uid" varchar)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_auth0_uid" ON "users" ("auth0_uid")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250111145213)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241129100916),
+(20241115132500),
+(20240627100314),
+(20240625091148),
+(20240619181904);[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (17.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-01-11 18:46:25.861922', '2025-01-11 18:46:25.861926') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'edcfbba16bcf2db2abee311cd09b76cb49ffa6f3', '2025-01-11 18:46:25.865344', '2025-01-11 18:46:25.865347') RETURNING "key"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "scans"[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "scans" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "file_name" varchar, "file_type" varchar, "hashcode" varchar, "file_size" integer, "upload_date" datetime(6), "vote_up" integer DEFAULT 0, "vote_down" integer DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "scan_result" json, "file_data" text)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "auth_provider" varchar, "auth0_uid" varchar)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_auth0_uid" ON "users" ("auth0_uid")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250111145213)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241129100916),
+(20241115132500),
+(20240627100314),
+(20240625091148),
+(20240619181904);[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-01-11 18:46:25.895177', '2025-01-11 18:46:25.895181') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-01-11 18:46:25.897277' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'edcfbba16bcf2db2abee311cd09b76cb49ffa6f3', '2025-01-11 18:46:25.899328', '2025-01-11 18:46:25.899334') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/registration" for 127.0.0.1 at 2025-01-11 19:47:19 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alexmaone8@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "alexmaone8@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-01-11 18:47:20.042629"], ["updated_at", "2025-01-11 18:47:20.042629"], ["auth_provider", "local"], ["auth0_uid", nil]]
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 451ms (ActiveRecord: 8.2ms | Allocations: 119642)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:47:20 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1322)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 17.2ms | Allocations: 2656)
+  Rendered sessions/_form.html.erb (Duration: 2.9ms | Allocations: 2764)
+  Rendered shared/_navbar.html.erb (Duration: 33.8ms | Allocations: 8945)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 393.2ms | Allocations: 51867)
+Completed 200 OK in 443ms (Views: 419.6ms | ActiveRecord: 0.3ms | Allocations: 56408)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started DELETE "/session" for 127.0.0.1 at 2025-01-11 19:47:31 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:47:31 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 537)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.5ms | Allocations: 984)
+  Rendered sessions/_form.html.erb (Duration: 2.2ms | Allocations: 2607)
+  Rendered shared/_navbar.html.erb (Duration: 13.1ms | Allocations: 5646)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 14889)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.3ms | Allocations: 15120)
+
+
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-11 19:47:34 +0100
+Started GET "/auth/auth0/callback?code=5QCJzO_2Uq6Cf4yj7SFEfIUxG9A-ZgISBfEZvjuArSO6y&state=1c33da44c1094ea361fd7c82d1e91dec39737023d8875fd3" for 127.0.0.1 at 2025-01-11 19:47:41 +0100
+Started GET "/auth/auth0/callback?code=5QCJzO_2Uq6Cf4yj7SFEfIUxG9A-ZgISBfEZvjuArSO6y&state=1c33da44c1094ea361fd7c82d1e91dec39737023d8875fd3" for 127.0.0.1 at 2025-01-11 19:47:42 +0100
+Processing by Auth0Controller#callback as HTML
+  Parameters: {"code"=>"5QCJzO_2Uq6Cf4yj7SFEfIUxG9A-ZgISBfEZvjuArSO6y", "state"=>"1c33da44c1094ea361fd7c82d1e91dec39737023d8875fd3"}
+Auth Info: #<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1736707663 id_token="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlgteTJBLXR2TGh6UWhmcmxKbndCbiJ9.eyJuaWNrbmFtZSI6IkFsZXhHYWxsbzgiLCJuYW1lIjoiYWxleG1hb25lOEBnbWFpbC5jb20iLCJwaWN0dXJlIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzExNzEwMDk4Nz92PTQiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wMS0xMVQxODo0Nzo0MC45NzFaIiwiZW1haWwiOiJhbGV4bWFvbmU4QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczovL2Rldi1hMDgxdTJxb3R1cTFkODMxLnVzLmF1dGgwLmNvbS8iLCJhdWQiOiJQWDJHTzJ5d0R0Q01zQVRxSTFrQ3M1NUVKU0l1TDlBNCIsImlhdCI6MTczNjYyMTI2MywiZXhwIjoxNzM2NjU3MjYzLCJzdWIiOiJnaXRodWJ8MTE3MTAwOTg3Iiwic2lkIjoiSXh2STY3bFcyMVhSVjk2TkZfX2E4RENkRzBqb21uX3YiLCJub25jZSI6ImIxMjJjZWNjNjhkNjQ1YmZjNjE5YWM5NjJlMDBkMWUzIn0.Y0WygTmbfsZom_0RPd07vnidPdaTlIPSN2AG_ESR6Ss2phKSrmOrWxPw5z2iojU1lxs0EF4XBBbfKtElTz68s9UHMtU5vPdCMvJc3p-P6ZuVfhRfCoARBdWbyQqgoWqV0YkqZokTrLwS-q8BosXW5NhLy403ODeTPNTZ-rrbRo-j1ZmO3VXKKXBDX6W_0v6WLGHeWyuUllkgum_eg0Hm7hOc4bY9bGiL6h1cFo6rP8xYQMSIdAgdxEbtOc5d7w3O30Gfdul21u3VLwCJbIFl4hpqvAN85R5CCqoZEjqutZ9HwAql_HsFfganLNlaAVyMwFrDzCwrKm9Q0eLmeVOmaA" refresh_token=nil token="eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly9kZXYtYTA4MXUycW90dXExZDgzMS51cy5hdXRoMC5jb20vIn0..sHhzfZHl2jFP45Wy.D0V2TLigjuPwhoHRjdpCJ1anWuTVCMjT5P5nlCzgjmOMJaXhFCMYyXiyErCEo6Y5ivaqJahXBiS1k6HEnnhFaSLKHcQ9Oe4j9cbcEUQP1tVLrC7_xt5bF2jYW0s5_KHGdrYQ7jZ2wPLrGjjPWfnrQ6F7qhtR5FkeCtXhazmvGhEyVuxlA3BFRN2ii4W0NqIuHUCOzjNStxg74dIoEaDx4xbqn2VloPg0EeiBtiCynW_fQPoS24qZc_88xkU7dWvSiv3R1yw4XmmXSQlpV1NHtbM3rnEy2oGgLrHR17x1Jjp_ui9xORMhEXHkqdYIcfhjtuPbeA.gN3yIYxcQ3_qRKM9otydWA" token_type="Bearer"> extra=#<OmniAuth::AuthHash raw_info=#<OmniAuth::AuthHash aud="PX2GO2ywDtCMsATqI1kCs55EJSIuL9A4" email="alexmaone8@gmail.com" email_verified=true exp=1736657263 iat=1736621263 iss="https://dev-a081u2qotuq1d831.us.auth0.com/" name="alexmaone8@gmail.com" nickname="AlexGallo8" nonce="b122cecc68d645bfc619ac962e00d1e3" picture="https://avatars.githubusercontent.com/u/117100987?v=4" sid="IxvI67lW21XRV96NF__a8DCdG0jomn_v" sub="github|117100987" updated_at="2025-01-11T18:47:40.971Z">> info=#<OmniAuth::AuthHash::InfoHash email="alexmaone8@gmail.com" image="https://avatars.githubusercontent.com/u/117100987?v=4" name="alexmaone8@gmail.com" nickname="AlexGallo8"> provider="auth0" uid="github|117100987">
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:6:in `callback'
+User saved successfully: #<User id: 1, email: "alexmaone8@gmail.com", password_digest: [FILTERED], created_at: "2025-01-11 18:47:20.042629000 +0000", updated_at: "2025-01-11 18:47:20.042629000 +0000", auth_provider: "local", auth0_uid: nil>
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms | Allocations: 1012)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-11 19:47:43 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 522)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 1.9ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 1.4ms | Allocations: 2608)
+  Rendered shared/_navbar.html.erb (Duration: 8.5ms | Allocations: 5032)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 14510)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.1ms | Allocations: 14740)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started DELETE "/session" for 127.0.0.1 at 2025-01-12 11:49:29 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+Redirected to http://localhost:3000/
+Completed 302 Found in 158ms (ActiveRecord: 2.1ms | Allocations: 116526)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 11:49:30 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1315)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 23.1ms | Allocations: 2665)
+  Rendered sessions/_form.html.erb (Duration: 6.1ms | Allocations: 2858)
+  Rendered shared/_navbar.html.erb (Duration: 45.7ms | Allocations: 8825)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 405.3ms | Allocations: 51740)
+Completed 200 OK in 449ms (Views: 422.0ms | ActiveRecord: 0.2ms | Allocations: 56230)
+
+
+Started GET "/password_reset/new" for 127.0.0.1 at 2025-01-12 11:49:47 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1557)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.3ms | Allocations: 984)
+  Rendered sessions/_form.html.erb (Duration: 2.3ms | Allocations: 2487)
+  Rendered shared/_navbar.html.erb (Duration: 25.6ms | Allocations: 5499)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 50.3ms | Allocations: 15760)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 0.1ms | Allocations: 16208)
+
+
+Started POST "/password_reset" for 127.0.0.1 at 2025-01-12 11:49:54 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone8@gmail.com", "commit"=>"Reset Your Password"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:8:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 90154d6b-9d4c-4250-a610-c13a7214c35e) to Async(default) with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fd95db97970 @uri=#<URI::GID gid://virusscanner/User/1>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzEsIjY1dS9aZkQ5Lk8iXSwiZXhwIjoiMjAyNS0wMS0xMlQxMTowNDo1NS4xMTBaIiwicHVyIjoiVXNlclxucGFzc3dvcmRfcmVzZXRcbjkwMCJ9fQ==--0b1371331730ac38222bac9db0111e9dad849dbc"}, :args=>[]}
+[ActiveJob] ↳ app/controllers/password_resets_controller.rb:12:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 194ms (ActiveRecord: 0.3ms | Allocations: 49253)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 11:49:55 +0100
+[ActiveJob] [ActionMailer::MailDeliveryJob] [90154d6b-9d4c-4250-a610-c13a7214c35e]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [90154d6b-9d4c-4250-a610-c13a7214c35e] Performing ActionMailer::MailDeliveryJob (Job ID: 90154d6b-9d4c-4250-a610-c13a7214c35e) from Async(default) enqueued at 2025-01-12T10:49:55.114861000Z with arguments: "PasswordMailer", "password_reset", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fd959473580 @uri=#<URI::GID gid://virusscanner/User/1>>, :token=>"eyJfcmFpbHMiOnsiZGF0YSI6WzEsIjY1dS9aZkQ5Lk8iXSwiZXhwIjoiMjAyNS0wMS0xMlQxMTowNDo1NS4xMTBaIiwicHVyIjoiVXNlclxucGFzc3dvcmRfcmVzZXRcbjkwMCJ9fQ==--0b1371331730ac38222bac9db0111e9dad849dbc"}, :args=>[]}
+Processing by MainController#index as HTML
+[ActiveJob] [ActionMailer::MailDeliveryJob] [90154d6b-9d4c-4250-a610-c13a7214c35e]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [90154d6b-9d4c-4250-a610-c13a7214c35e]   Rendering password_mailer/password_reset.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [90154d6b-9d4c-4250-a610-c13a7214c35e]   Rendered password_mailer/password_reset.html.erb within layouts/mailer (Duration: 0.9ms | Allocations: 180)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 537)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [90154d6b-9d4c-4250-a610-c13a7214c35e]   Rendered layout layouts/mailer.html.erb (Duration: 4.8ms | Allocations: 1169)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [90154d6b-9d4c-4250-a610-c13a7214c35e] PasswordMailer#password_reset: processed outbound mail in 38.4ms
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.2ms | Allocations: 984)
+  Rendered sessions/_form.html.erb (Duration: 1.7ms | Allocations: 2608)
+  Rendered shared/_navbar.html.erb (Duration: 11.8ms | Allocations: 9247)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 52.5ms | Allocations: 24265)
+Completed 200 OK in 56ms (Views: 52.4ms | ActiveRecord: 1.3ms | Allocations: 24858)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [90154d6b-9d4c-4250-a610-c13a7214c35e] Delivered mail 67839e532eb1d_2a8471ac667e9@AirdiAlssandro6.station.mail (39.2ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [90154d6b-9d4c-4250-a610-c13a7214c35e] Date: Sun, 12 Jan 2025 11:49:55 +0100
+From: from@example.com
+To: alexmaone8@gmail.com
+Message-ID: <67839e532eb1d_2a8471ac667e9@AirdiAlssandro6.station.mail>
+Subject: Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <a href="http://localhost:3000/password_reset/edit?token=eyJfcmFpbHMiOnsiZGF0YSI6WzEsIjY1dS9aZkQ5Lk8iXSwiZXhwIjoiMjAyNS0wMS0xMlQxMTowNDo1NS4xMTBaIiwicHVyIjoiVXNlclxucGFzc3dvcmRfcmVzZXRcbjkwMCJ9fQ%3D%3D--0b1371331730ac38222bac9db0111e9dad849dbc">Reset your password</a>
+  </body>
+</html>
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [90154d6b-9d4c-4250-a610-c13a7214c35e] Performed ActionMailer::MailDeliveryJob (Job ID: 90154d6b-9d4c-4250-a610-c13a7214c35e) from Async(default) in 90.29ms
+Started GET "/password_reset/edit?token=[FILTERED]" for 127.0.0.1 at 2025-01-12 11:50:49 +0100
+Started GET "/password_reset/edit?token=[FILTERED]" for 127.0.0.1 at 2025-01-12 11:50:51 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:32:in `set_user_by_token'
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1085)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.0ms | Allocations: 984)
+  Rendered sessions/_form.html.erb (Duration: 1.2ms | Allocations: 570)
+  Rendered shared/_navbar.html.erb (Duration: 12.8ms | Allocations: 3571)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 13363)
+Completed 200 OK in 51ms (Views: 44.0ms | ActiveRecord: 0.3ms | Allocations: 14285)
+
+
+Started PATCH "/password_reset?token=[FILTERED]" for 127.0.0.1 at 2025-01-12 11:50:59 +0100
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Reset Your Password", "token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:32:in `set_user_by_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/password_resets_controller.rb:22:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:22:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "[FILTERED]"], ["updated_at", "2025-01-12 10:51:00.225313"], ["id", 1]]
+  ↳ app/controllers/password_resets_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/password_resets_controller.rb:22:in `update'
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 296ms (ActiveRecord: 2.4ms | Allocations: 4968)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2025-01-12 11:51:00 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 1.9ms | Allocations: 2693)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2954)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 4.0ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 3.7ms | Allocations: 2484)
+  Rendered shared/_navbar.html.erb (Duration: 14.1ms | Allocations: 5483)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 17142)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.1ms | Allocations: 17504)
+
+
+Started POST "/session" for 127.0.0.1 at 2025-01-12 11:51:13 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone8@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 285ms (ActiveRecord: 0.1ms | Allocations: 902)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 11:51:13 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 531)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 1.6ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 2.5ms | Allocations: 2607)
+  Rendered shared/_navbar.html.erb (Duration: 7.8ms | Allocations: 5029)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 14260)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.1ms | Allocations: 14490)
+
+
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started DELETE "/session" for 127.0.0.1 at 2025-01-12 11:51:30 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 834)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 11:51:30 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 529)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.2ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 2.1ms | Allocations: 2607)
+  Rendered shared/_navbar.html.erb (Duration: 9.9ms | Allocations: 5600)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 14829)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.1ms | Allocations: 15058)
+
+
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-12 11:51:33 +0100
+Started GET "/auth/auth0/callback?code=ESGYWD-Vmxefqghl0Ae45Ckl54x2E2gs6Dp3wV_q95yUZ&state=fedffff5540d5e29d4f065b8d50c2df6868c1d2d114d1319" for 127.0.0.1 at 2025-01-12 11:51:37 +0100
+Processing by Auth0Controller#callback as HTML
+  Parameters: {"code"=>"ESGYWD-Vmxefqghl0Ae45Ckl54x2E2gs6Dp3wV_q95yUZ", "state"=>"fedffff5540d5e29d4f065b8d50c2df6868c1d2d114d1319"}
+Auth Info: #<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1736765498 id_token="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlgteTJBLXR2TGh6UWhmcmxKbndCbiJ9.eyJuaWNrbmFtZSI6IkFsZXhHYWxsbzgiLCJuYW1lIjoiYWxleG1hb25lOEBnbWFpbC5jb20iLCJwaWN0dXJlIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzExNzEwMDk4Nz92PTQiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wMS0xMlQxMDo1MTozNy43MTdaIiwiZW1haWwiOiJhbGV4bWFvbmU4QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczovL2Rldi1hMDgxdTJxb3R1cTFkODMxLnVzLmF1dGgwLmNvbS8iLCJhdWQiOiJQWDJHTzJ5d0R0Q01zQVRxSTFrQ3M1NUVKU0l1TDlBNCIsImlhdCI6MTczNjY3OTA5OCwiZXhwIjoxNzM2NzE1MDk4LCJzdWIiOiJnaXRodWJ8MTE3MTAwOTg3Iiwic2lkIjoiSXh2STY3bFcyMVhSVjk2TkZfX2E4RENkRzBqb21uX3YiLCJub25jZSI6IjVjYzIyZTZlNTYwZmEyOGI3YWZjYjU2YmUzZDc2NTI0In0.o2WRlJIQstFzWatqHSvJBOIrkC8ZtRGo4wDFr12kljJF2ksIRlXZ1kZ97UIgOG-tz9QAWtsBp1UqKeKI7yWOIB1dPkAeQIzrSZk5LZ1Fv8qowhfYh2j3RmAvZc_lLDwyfAC65C6XX7mDG2jlFnAHlEB26xHv-Wbffgu6cxWAXJa_bq05Bi-WqUSK3xO8PT5HjpESiF_-vZvdVNOffUwGpgjALBf-Ky2OwSNXWEEbSPVhqEhFn9PbKMqf3u6L6FIiafJKGx3rMLyOyQgI87ORGwUka9ddWH-Ci3C1u7nKwM_WA9vf8ChOTJas-_9de0Iuz3AIHanjFouOv-nfTTLyew" refresh_token=nil token="eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly9kZXYtYTA4MXUycW90dXExZDgzMS51cy5hdXRoMC5jb20vIn0..kRvRsvR2sSL4Ssg0.xzzCWrLOGE50drnSagsOgCwvG_9sjxQpJLrrViR3ltD1eUTPg9c8jr8wyzVgYnQ4TTSxzkhinAbOuPd0tM_PVEQ9M0_qMVAWfk-4nqzNRlNqzqru-NfRRug7xaP5jPqAwIH72XslcYHBjl6v8n4Y1SfAw-W-vG96LmHdBbfneK5aSmmIUdrtOMwsFd0rmmagHd2qX_UyfoSKZoMLZSYOfymAJOAiZTssZE-WvohWZ6xwMhxvSQ1hiHjbnygtpONPgAA-Y3s_y8gurpisXs4uZNXC6rlSMfGE1evv8Z1rAiljUkLtALxqyujVuG1RWKsdUZXf4A.Ocr29o4R4nPZdfae3c64sA" token_type="Bearer"> extra=#<OmniAuth::AuthHash raw_info=#<OmniAuth::AuthHash aud="PX2GO2ywDtCMsATqI1kCs55EJSIuL9A4" email="alexmaone8@gmail.com" email_verified=true exp=1736715098 iat=1736679098 iss="https://dev-a081u2qotuq1d831.us.auth0.com/" name="alexmaone8@gmail.com" nickname="AlexGallo8" nonce="5cc22e6e560fa28b7afcb56be3d76524" picture="https://avatars.githubusercontent.com/u/117100987?v=4" sid="IxvI67lW21XRV96NF__a8DCdG0jomn_v" sub="github|117100987" updated_at="2025-01-12T10:51:37.717Z">> info=#<OmniAuth::AuthHash::InfoHash email="alexmaone8@gmail.com" image="https://avatars.githubusercontent.com/u/117100987?v=4" name="alexmaone8@gmail.com" nickname="AlexGallo8"> provider="auth0" uid="github|117100987">
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:11:in `callback'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth0_uid" = ? LIMIT ?[0m  [["auth0_uid", "github|117100987"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:12:in `callback'
+Merging local user with Auth0: #<User id: 1, email: "alexmaone8@gmail.com", password_digest: [FILTERED], created_at: "2025-01-11 18:47:20.042629000 +0000", updated_at: "2025-01-12 10:51:00.225313000 +0000", auth_provider: "local", auth0_uid: nil>
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/auth0_controller.rb:23:in `callback'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:23:in `callback'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."auth0_uid" = ? AND "users"."id" != ? LIMIT ?[0m  [["auth0_uid", "github|117100987"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:23:in `callback'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "auth_provider" = ?, "auth0_uid" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2025-01-12 10:51:38.627399"], ["auth_provider", "auth0"], ["auth0_uid", "github|117100987"], ["id", 1]]
+  ↳ app/controllers/auth0_controller.rb:23:in `callback'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/auth0_controller.rb:23:in `callback'
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 2.6ms | Allocations: 4970)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 11:51:38 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 522)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.0ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 2.0ms | Allocations: 2606)
+  Rendered shared/_navbar.html.erb (Duration: 7.6ms | Allocations: 5030)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 14508)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.1ms | Allocations: 14739)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started DELETE "/session" for 127.0.0.1 at 2025-01-12 11:53:40 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.1ms | Allocations: 835)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 11:53:40 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 530)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.1ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 2.3ms | Allocations: 2607)
+  Rendered shared/_navbar.html.erb (Duration: 12.9ms | Allocations: 5600)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | Allocations: 14830)
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.2ms | Allocations: 15059)
+
+
+Started POST "/auth/auth0?connection=github" for 127.0.0.1 at 2025-01-12 11:53:42 +0100
+Started GET "/auth/auth0/callback?code=pO7jDDwM6FEq8mPLVBTTZYjTEjWMD7ptRgDwBnLVxsy4Y&state=414c3896fede3fa270b9089367139ecee66293177fc6e93d" for 127.0.0.1 at 2025-01-12 11:53:45 +0100
+Processing by Auth0Controller#callback as HTML
+  Parameters: {"code"=>"pO7jDDwM6FEq8mPLVBTTZYjTEjWMD7ptRgDwBnLVxsy4Y", "state"=>"414c3896fede3fa270b9089367139ecee66293177fc6e93d"}
+Auth Info: #<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1736765625 id_token="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlgteTJBLXR2TGh6UWhmcmxKbndCbiJ9.eyJuaWNrbmFtZSI6IkFsZXhHYWxsbzgiLCJuYW1lIjoiYWxleG1hb25lOEBnbWFpbC5jb20iLCJwaWN0dXJlIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzExNzEwMDk4Nz92PTQiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wMS0xMlQxMDo1Mzo0NS42NzRaIiwiZW1haWwiOiJhbGV4bWFvbmU4QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczovL2Rldi1hMDgxdTJxb3R1cTFkODMxLnVzLmF1dGgwLmNvbS8iLCJhdWQiOiJQWDJHTzJ5d0R0Q01zQVRxSTFrQ3M1NUVKU0l1TDlBNCIsImlhdCI6MTczNjY3OTIyNiwiZXhwIjoxNzM2NzE1MjI2LCJzdWIiOiJnaXRodWJ8MTE3MTAwOTg3Iiwic2lkIjoiSXh2STY3bFcyMVhSVjk2TkZfX2E4RENkRzBqb21uX3YiLCJub25jZSI6IjM5YjhiNDU2NDFkM2MxOTg3N2M0YzM0NDY1NDVmZDgyIn0.wERNWztISwnXb3Hn1Ol6qCTqm3uhidoBRCo7D2z-pggCNwT-hU69_QfNvCSL3ovQ775e7BRsz-Rf84mflscwt8yAq425XiFYrxSWgJyWH-s9jTTzm7sI7Qjs1LQaxdgL9PaM61yogQ7raMhsuaa6LzqXnHEaXjEfJ4P3EXFfzpu64OWa4uizOsAiM520w9kkGrAoy23m9K_PmZKHbrlNxx278HuUqGjclDJWX6HTYiMiTUZ9JSOYSUn0XDqC1gQHsCexzHPfyiUne1JUqAxL3HNWBMcyrgtrJW_EmkZoY4VSY70gJIjxY3BXCKd8GEgq4hNYE8-3nRjhhzL-1xE6lg" refresh_token=nil token="eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly9kZXYtYTA4MXUycW90dXExZDgzMS51cy5hdXRoMC5jb20vIn0..Vh3uzZR_RgeJWtuC.vElxOEGgSDxeqJeM27lnJUwx_fD6vFERP1QJrAR-e46TM9U0ds84lpcFS1XFTVtB3j8NN8b2X7h3BY3mBW_NzYD4JqlpcdfrZVky9TZJEHT1uUxadOLMOFpLijxt1Co8JUXo3T96MFYBzfwa33Oecg0nJgezqw5Gs3DdJtUkx14tgtN4iabW8PghSoVsGrhgr7QuFYriu2DApO8x5CRAHpKHXglu5-Qal974uJel-RzXEb5i-Yj_Nf2IBDMZItd3ZQAnfEHFYuJEs4Gu_KtSLYkAo8uxo7wdD8JwrIUa_XP_QYjt2tCMdA_NbkGpSCtm6Gc0Cg.iCzcJK934K-J1UOcAfP6LA" token_type="Bearer"> extra=#<OmniAuth::AuthHash raw_info=#<OmniAuth::AuthHash aud="PX2GO2ywDtCMsATqI1kCs55EJSIuL9A4" email="alexmaone8@gmail.com" email_verified=true exp=1736715226 iat=1736679226 iss="https://dev-a081u2qotuq1d831.us.auth0.com/" name="alexmaone8@gmail.com" nickname="AlexGallo8" nonce="39b8b45641d3c19877c4c3446545fd82" picture="https://avatars.githubusercontent.com/u/117100987?v=4" sid="IxvI67lW21XRV96NF__a8DCdG0jomn_v" sub="github|117100987" updated_at="2025-01-12T10:53:45.674Z">> info=#<OmniAuth::AuthHash::InfoHash email="alexmaone8@gmail.com" image="https://avatars.githubusercontent.com/u/117100987?v=4" name="alexmaone8@gmail.com" nickname="AlexGallo8"> provider="auth0" uid="github|117100987">
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:11:in `callback'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth0_uid" = ? LIMIT ?[0m  [["auth0_uid", "github|117100987"], ["LIMIT", 1]]
+  ↳ app/controllers/auth0_controller.rb:12:in `callback'
+Auth0 user found: #<User id: 1, email: "alexmaone8@gmail.com", password_digest: [FILTERED], created_at: "2025-01-11 18:47:20.042629000 +0000", updated_at: "2025-01-12 10:51:38.627399000 +0000", auth_provider: "auth0", auth0_uid: "github|117100987">
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 1338)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 11:53:48 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 522)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 4.7ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 1.9ms | Allocations: 2608)
+  Rendered shared/_navbar.html.erb (Duration: 18.0ms | Allocations: 5032)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 14509)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.1ms | Allocations: 14740)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2025-01-12 11:54:20 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 835)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 11:54:20 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 530)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 6.6ms | Allocations: 983)
+  Rendered sessions/_form.html.erb (Duration: 3.2ms | Allocations: 2607)
+  Rendered shared/_navbar.html.erb (Duration: 19.4ms | Allocations: 5600)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 58.9ms | Allocations: 14833)
+Completed 200 OK in 61ms (Views: 59.9ms | ActiveRecord: 0.1ms | Allocations: 15062)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:10:10 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1228)
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 38.1ms | Allocations: 1718)
+  Rendered sessions/_form.html.erb (Duration: 5.3ms | Allocations: 2839)
+  Rendered shared/_navbar.html.erb (Duration: 197.7ms | Allocations: 11535)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 242.1ms | Allocations: 22172)
+Completed 200 OK in 252ms (Views: 241.9ms | ActiveRecord: 6.2ms | Allocations: 23201)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:12:23 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 6.0ms | Allocations: 1701)
+  Rendered sessions/_form.html.erb (Duration: 6.5ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 49.0ms | Allocations: 12002)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 90.6ms | Allocations: 22905)
+Completed 200 OK in 102ms (Views: 89.6ms | ActiveRecord: 5.8ms | Allocations: 23935)
+
+
+Started POST "/registration" for 127.0.0.1 at 2025-01-12 12:12:34 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 9.0ms | Allocations: 3511)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3771)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.1ms | Allocations: 986)
+  Rendered sessions/_form.html.erb (Duration: 4.2ms | Allocations: 1853)
+  Rendered shared/_navbar.html.erb (Duration: 14.0ms | Allocations: 4852)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 17396)
+Completed 422 Unprocessable Content in 58ms (Views: 46.5ms | ActiveRecord: 1.9ms | Allocations: 20532)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:14:07 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1228)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 4.2ms | Allocations: 1699)
+  Rendered sessions/_form.html.erb (Duration: 2.8ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 33.7ms | Allocations: 12000)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 62.4ms | Allocations: 22895)
+Completed 200 OK in 75ms (Views: 70.4ms | ActiveRecord: 2.4ms | Allocations: 23925)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:15:36 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 5.9ms | Allocations: 1699)
+  Rendered sessions/_form.html.erb (Duration: 10.2ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 57.2ms | Allocations: 11979)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 112.1ms | Allocations: 22870)
+Completed 200 OK in 123ms (Views: 115.2ms | ActiveRecord: 3.0ms | Allocations: 23900)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:17:17 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1228)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 6.3ms | Allocations: 1698)
+  Rendered sessions/_form.html.erb (Duration: 2.8ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 41.6ms | Allocations: 12001)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 72.0ms | Allocations: 22897)
+Completed 200 OK in 79ms (Views: 73.5ms | ActiveRecord: 2.5ms | Allocations: 23928)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:17:30 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 5.2ms | Allocations: 1698)
+  Rendered sessions/_form.html.erb (Duration: 2.9ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 35.8ms | Allocations: 11978)
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 57.4ms | Allocations: 22782)
+Completed 200 OK in 64ms (Views: 59.4ms | ActiveRecord: 1.9ms | Allocations: 23809)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:17:43 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 3.4ms | Allocations: 1698)
+  Rendered sessions/_form.html.erb (Duration: 2.5ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 24.4ms | Allocations: 12001)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 54.5ms | Allocations: 22894)
+Completed 200 OK in 59ms (Views: 54.6ms | ActiveRecord: 2.5ms | Allocations: 23924)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:17:53 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1224)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 3.0ms | Allocations: 1697)
+  Rendered sessions/_form.html.erb (Duration: 2.1ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 21.8ms | Allocations: 11977)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 22868)
+Completed 200 OK in 44ms (Views: 39.7ms | ActiveRecord: 2.4ms | Allocations: 23898)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:21:45 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 5.6ms | Allocations: 1700)
+  Rendered sessions/_form.html.erb (Duration: 2.7ms | Allocations: 2836)
+  Rendered shared/_navbar.html.erb (Duration: 49.8ms | Allocations: 11973)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 76.3ms | Allocations: 22606)
+Completed 200 OK in 83ms (Views: 75.5ms | ActiveRecord: 4.6ms | Allocations: 23631)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:24:42 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 8.5ms | Allocations: 1700)
+  Rendered sessions/_form.html.erb (Duration: 4.1ms | Allocations: 2836)
+  Rendered shared/_navbar.html.erb (Duration: 61.4ms | Allocations: 11973)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 112.4ms | Allocations: 22607)
+Completed 200 OK in 125ms (Views: 114.1ms | ActiveRecord: 4.0ms | Allocations: 23632)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:25:02 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1224)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 8.7ms | Allocations: 1697)
+  Rendered sessions/_form.html.erb (Duration: 12.0ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 166.6ms | Allocations: 11977)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 195.9ms | Allocations: 22781)
+Completed 200 OK in 203ms (Views: 196.5ms | ActiveRecord: 3.9ms | Allocations: 23807)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:25:40 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 18.7ms | Allocations: 1224)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 36.3ms | Allocations: 1698)
+  Rendered sessions/_form.html.erb (Duration: 3.8ms | Allocations: 2839)
+  Rendered shared/_navbar.html.erb (Duration: 85.2ms | Allocations: 11974)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 153.2ms | Allocations: 22607)
+Completed 200 OK in 160ms (Views: 154.3ms | ActiveRecord: 3.2ms | Allocations: 23633)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:26:08 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1224)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 7.8ms | Allocations: 1698)
+  Rendered sessions/_form.html.erb (Duration: 6.9ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 54.9ms | Allocations: 11997)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 93.4ms | Allocations: 22769)
+Completed 200 OK in 101ms (Views: 94.7ms | ActiveRecord: 3.9ms | Allocations: 23798)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:26:36 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1224)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 5.9ms | Allocations: 1698)
+  Rendered sessions/_form.html.erb (Duration: 4.3ms | Allocations: 2836)
+  Rendered shared/_navbar.html.erb (Duration: 50.6ms | Allocations: 11971)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 95.9ms | Allocations: 22604)
+Completed 200 OK in 104ms (Views: 97.0ms | ActiveRecord: 3.8ms | Allocations: 23632)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:26:53 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1224)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 8.8ms | Allocations: 1698)
+  Rendered sessions/_form.html.erb (Duration: 5.9ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 52.5ms | Allocations: 11976)
+  Rendered shared/_footer.html.erb (Duration: 1.3ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 101.3ms | Allocations: 22728)
+Completed 200 OK in 112ms (Views: 105.0ms | ActiveRecord: 5.2ms | Allocations: 23757)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:27:14 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 3.2ms | Allocations: 1697)
+  Rendered sessions/_form.html.erb (Duration: 2.8ms | Allocations: 2836)
+  Rendered shared/_navbar.html.erb (Duration: 36.4ms | Allocations: 11976)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 63.0ms | Allocations: 22863)
+Completed 200 OK in 69ms (Views: 64.0ms | ActiveRecord: 3.3ms | Allocations: 23889)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:30:21 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 4.8ms | Allocations: 1702)
+  Rendered sessions/_form.html.erb (Duration: 3.1ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 42.4ms | Allocations: 11999)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 76.6ms | Allocations: 22645)
+Completed 200 OK in 83ms (Views: 78.1ms | ActiveRecord: 1.9ms | Allocations: 23671)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:31:11 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1224)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 5.5ms | Allocations: 1699)
+  Rendered sessions/_form.html.erb (Duration: 3.0ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 43.6ms | Allocations: 11979)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 71.3ms | Allocations: 22843)
+Completed 200 OK in 80ms (Views: 72.4ms | ActiveRecord: 2.4ms | Allocations: 23873)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:32:08 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 4.0ms | Allocations: 1698)
+  Rendered sessions/_form.html.erb (Duration: 2.5ms | Allocations: 2836)
+  Rendered shared/_navbar.html.erb (Duration: 31.3ms | Allocations: 11971)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 59.3ms | Allocations: 22604)
+Completed 200 OK in 66ms (Views: 61.0ms | ActiveRecord: 2.0ms | Allocations: 23629)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:32:19 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 4.4ms | Allocations: 1698)
+  Rendered sessions/_form.html.erb (Duration: 2.4ms | Allocations: 2837)
+  Rendered shared/_navbar.html.erb (Duration: 28.5ms | Allocations: 11976)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 47.5ms | Allocations: 22728)
+Completed 200 OK in 52ms (Views: 48.7ms | ActiveRecord: 1.9ms | Allocations: 23757)
+
+
+Started POST "/registration" for 127.0.0.1 at 2025-01-12 12:32:47 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 7.1ms | Allocations: 4085)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 4405)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.1ms | Allocations: 989)
+  Rendered sessions/_form.html.erb (Duration: 3.2ms | Allocations: 2142)
+  Rendered shared/_navbar.html.erb (Duration: 13.2ms | Allocations: 6404)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 36.6ms | Allocations: 20353)
+Completed 422 Unprocessable Content in 58ms (Views: 40.9ms | ActiveRecord: 3.3ms | Allocations: 28203)
+
+
+Started POST "/registration" for 127.0.0.1 at 2025-01-12 12:33:51 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 5.2ms | Allocations: 3365)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 3452)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 1.8ms | Allocations: 986)
+  Rendered sessions/_form.html.erb (Duration: 2.3ms | Allocations: 1853)
+  Rendered shared/_navbar.html.erb (Duration: 11.6ms | Allocations: 4852)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 39.7ms | Allocations: 17034)
+Completed 422 Unprocessable Content in 50ms (Views: 40.5ms | ActiveRecord: 1.7ms | Allocations: 19699)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for 127.0.0.1 at 2025-01-12 12:34:11 +0100
+Started GET "/assets/application.css-582373819e1a8bb6e3a3fdd83e05d77d7ad1ecfcebd1079494662d424c70a3b0.map" for 127.0.0.1 at 2025-01-12 12:34:11 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:35:14 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1223)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 3.6ms | Allocations: 988)
+  Rendered sessions/_form.html.erb (Duration: 1.7ms | Allocations: 2548)
+  Rendered shared/_navbar.html.erb (Duration: 12.2ms | Allocations: 5553)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 78.3ms | Allocations: 15622)
+Completed 200 OK in 83ms (Views: 80.1ms | ActiveRecord: 0.1ms | Allocations: 16038)
+
+
+Started GET "/assets/tailwind.css-900dc34591abb3932acb4f6163242825c6c82efc7cacbd667bb3c5d86379ec73.map" for 127.0.0.1 at 2025-01-12 12:35:15 +0100
+Started GET "/assets/application.css-582373819e1a8bb6e3a3fdd83e05d77d7ad1ecfcebd1079494662d424c70a3b0.map" for 127.0.0.1 at 2025-01-12 12:35:15 +0100
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:40:01 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1228)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 8.2ms | Allocations: 1697)
+  Rendered sessions/_form.html.erb (Duration: 37.2ms | Allocations: 3156)
+  Rendered shared/_navbar.html.erb (Duration: 105.1ms | Allocations: 12333)
+  Rendered layout layouts/application.html.erb (Duration: 170.7ms | Allocations: 22916)
+Completed 500 Internal Server Error in 182ms (ActiveRecord: 6.1ms | Allocations: 23938)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+     7: 
+     8:         <%= form_with(model: user, id:"session_form", url: session_path, data: { turbo_frame: "_top" }, class: "mt-8 space-y-6 bg-white p-8 rounded-2xl shadow-xl") do |form| %>
+     9:             
+    10:             <% if form.object.errors.any? %>
+    11:                 <div class="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded" role="alert">
+    12:                     <% form.object.errors.full_messages.each do |message| %>
+    13:                         <p class="text-sm font-medium"><%= message %></p>
+  
+app/views/sessions/_form.html.erb:10
+app/views/sessions/_form.html.erb:8
+app/views/shared/_navbar.html.erb:135
+app/views/layouts/application.html.erb:49
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:40:18 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1228)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 4.6ms | Allocations: 1697)
+  Rendered sessions/_form.html.erb (Duration: 4.9ms | Allocations: 3371)
+  Rendered shared/_navbar.html.erb (Duration: 38.7ms | Allocations: 12569)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 63.4ms | Allocations: 23464)
+Completed 200 OK in 69ms (Views: 63.0ms | ActiveRecord: 3.1ms | Allocations: 24494)
+
+
+Started POST "/session" for 127.0.0.1 at 2025-01-12 12:40:28 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 2.6ms | Allocations: 2735)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2993)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.6ms | Allocations: 987)
+  Rendered sessions/_form.html.erb (Duration: 4.9ms | Allocations: 2743)
+  Rendered shared/_navbar.html.erb (Duration: 14.3ms | Allocations: 5744)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 17431)
+Completed 422 Unprocessable Content in 42ms (Views: 40.1ms | ActiveRecord: 0.1ms | Allocations: 17995)
+
+
+Started POST "/session" for 127.0.0.1 at 2025-01-12 12:40:45 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"alexmaone8@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alexmaone8@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 281ms (ActiveRecord: 0.2ms | Allocations: 1031)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:40:46 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 532)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.2ms | Allocations: 987)
+  Rendered sessions/_form.html.erb (Duration: 3.0ms | Allocations: 2710)
+  Rendered shared/_navbar.html.erb (Duration: 12.1ms | Allocations: 5984)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 48.9ms | Allocations: 15216)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.1ms | Allocations: 15446)
+
+
+Started POST "/virus_total/scan" for 127.0.0.1 at 2025-01-12 12:41:07 +0100
+Processing by VirusTotalController#scan as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"ggg", "commit"=>"Scansiona"}
+Completed 500 Internal Server Error in 724ms (ActiveRecord: 0.0ms | Allocations: 1734)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/virus_total_controller.rb:67:in `submit_url'
+app/controllers/virus_total_controller.rb:48:in `scan_url'
+app/controllers/virus_total_controller.rb:20:in `scan'
+Started DELETE "/session" for 127.0.0.1 at 2025-01-12 12:41:27 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 834)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-12 12:41:27 +0100
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 529)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user_from_session'
+  Rendered registrations/_form.html.erb (Duration: 2.6ms | Allocations: 987)
+  Rendered sessions/_form.html.erb (Duration: 5.8ms | Allocations: 2866)
+  Rendered shared/_navbar.html.erb (Duration: 15.7ms | Allocations: 5863)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 15092)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.1ms | Allocations: 15321)
+
+

@@ -7,9 +7,13 @@ class RegistrationsController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    @user.auth_provider = 'local'
+    
     if @user.save
       login @user
       redirect_to root_path, notice: "Successfully created account!"
+    else
+      render :new, status: :unprocessable_entity
     end
   end
   

@@ -83,6 +83,7 @@
        <div class=" lg:flex items-center space-x-4 login-buttons">
          <% if user_signed_in? %>
            <%= link_to "Edit Password", edit_password_path %>
+           <%= link_to "Tutti i Commenti", comments_path %>
            <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
          <% else %>
            <button id="open-registration-modal" class="nav-button">Sign up</button>

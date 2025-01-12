@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     # has_many :scans
+    has_many :comments, dependent: :destroy
     has_secure_password
   
     validates :email,

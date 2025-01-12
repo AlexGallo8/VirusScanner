@@ -1,0 +1,34 @@
+<div class="comments-container">
+  <h1>Tutti i Commenti</h1>
+
+  <%= link_to 'Nuovo Commento', new_comment_path, class: 'button' %>
+
+  <div class="comments-list">
+    <% @comments.each do |comment| %>
+      <div class="comment-card">
+        <div class="comment-header">
+          <span class="author">
+            <%= comment.user.email %> <%# o comment.user.nome se hai un campo nome %>
+          </span>
+          <span class="date">
+            <%= l comment.created_at, format: :long %>
+          </span>
+        </div>
+
+        <div class="comment-content">
+          <%= comment.content %>
+        </div>
+
+        <div class="comment-actions">
+          <% if comment.user == current_user %>
+            <%= link_to 'Modifica', edit_comment_path(comment), class: 'edit-link' %>
+            <%= form_with(model: comment, method: :delete, class: 'delete-form') do %>
+                <%= submit_tag 'Elimina', data: { confirm: 'Sei sicuro?' }, class: 'delete-button' %>
+            <% end %>
+
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

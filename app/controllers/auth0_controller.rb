@@ -21,6 +21,14 @@ class Auth0Controller < ApplicationController
         # Fonde l'account locale con quello Auth0
         Rails.logger.debug "Merging local user with Auth0: #{local_user.inspect}"
         local_user.update(auth0_uid: auth0_uid, auth_provider: 'auth0')
+        if auth_info['provider'] == 'google_oauth2'
+          google_credentials = auth_info['credentials']
+          local_user.update!(
+            google_token: google_credentials['token'],
+            google_refresh_token: google_credentials['refresh_token'],
+            google_token_expires_at: Time.at(google_credentials['expires_at'])
+          )
+        end
         
         # Aggiungere update delle scans, commenti e voti associati all'utente
         
@@ -44,9 +52,17 @@ class Auth0Controller < ApplicationController
         auth_provider: 'auth0',
         password_digest: SecureRandom.hex(10) # Genera una password casuale
       )
-
+      
       if user.persisted?
         Rails.logger.debug "New user created successfully: #{user.inspect}"
+        if auth_info['provider'] == 'google_oauth2'
+          google_credentials = auth_info['credentials']
+          user.update!(
+            google_token: google_credentials['token'],
+            google_refresh_token: google_credentials['refresh_token'],
+            google_token_expires_at: Time.at(google_credentials['expires_at'])
+          )
+        end
         login(user)
       else
         Rails.logger.error "Failed to save new user: #{user.errors.full_messages}"

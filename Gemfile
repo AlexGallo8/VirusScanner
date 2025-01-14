@@ -92,3 +92,7 @@ gem 'faraday', '~> 2.7.12'
 gem 'faraday-net_http', '~> 2.0'
 
 gem "jwt", "~> 2.8"
+
+# gem 'google-api-client'
+# gem 'google-apis-drive_v3'
+# gem 'omniauth-google_oauth2'

@@ -49,6 +49,6 @@ class PreferencesController < ApplicationController
   end
 
   def profile_params
-    params.require(:user).permit(:username, :avatar)
+    params.require(:user).permit(:username)
   end
 end

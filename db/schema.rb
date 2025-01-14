@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_01_14_112352) do
+ActiveRecord::Schema[7.1].define(version: 2025_01_14_205644) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "user_id", null: false
@@ -47,7 +47,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_14_112352) do
     t.string "google_token"
     t.string "google_refresh_token"
     t.datetime "google_token_expires_at"
+    t.string "username"
     t.index ["auth0_uid"], name: "index_users_on_auth0_uid", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "comments", "users"

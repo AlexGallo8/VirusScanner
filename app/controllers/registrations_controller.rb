@@ -8,6 +8,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.auth_provider = 'local'
+    @user.username = @user.email.split('@').first
     
     if @user.save
       login @user

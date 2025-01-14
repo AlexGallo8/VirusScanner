@@ -6,6 +6,7 @@ class Auth0Controller < ApplicationController
     # Estrai i dati principali
     auth0_uid = auth_info['uid']
     email = auth_info['info']['email']
+    username = auth_info['info']['nickname']
 
     # Trova utenti con email o UID corrispondente
     local_user = User.find_by(email: email)
@@ -20,7 +21,7 @@ class Auth0Controller < ApplicationController
       if local_user.auth0_uid.nil?
         # Fonde l'account locale con quello Auth0
         Rails.logger.debug "Merging local user with Auth0: #{local_user.inspect}"
-        local_user.update(auth0_uid: auth0_uid, auth_provider: 'auth0')
+        local_user.update(auth0_uid: auth0_uid, auth_provider: 'auth0', username: username)
         if auth_info['provider'] == 'google_oauth2'
           google_credentials = auth_info['credentials']
           local_user.update!(
@@ -48,6 +49,7 @@ class Auth0Controller < ApplicationController
       Rails.logger.debug "Creating new Auth0 user..."
       user = User.create(
         email: email,
+        username: username,
         auth0_uid: auth0_uid,
         auth_provider: 'auth0',
         password_digest: SecureRandom.hex(10) # Genera una password casuale

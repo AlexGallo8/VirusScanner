@@ -27,6 +27,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :user_signed_in?
 
+  def user_signed_in_with_google?
+    user_signed_in? && Current.user.auth0_uid&.start_with?("google-oauth2")
+  end
+  helper_method :user_signed_in_with_google?
+
   def login(user)
     Current.user = user
     reset_session

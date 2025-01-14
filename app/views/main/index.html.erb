@@ -21,7 +21,18 @@
             </div>
           </label>
         </div>
-        <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+        <% if user_signed_in_with_google? %>
+          <div class="flex flex-row justify-center items-center gap-4">
+            <%= submit_tag "Scan", class: "btn btn-primary mt-4 button-scan" %>
+            <%= button_tag "Upload from Drive", 
+              type: "button",
+              onclick: "openDrivePicker()",
+              class: "btn btn-primary mt-4 button-scan"
+            %>
+          </div>
+        <% else %>
+          <%= submit_tag "Scan", class: "btn btn-primary mt-4 button" %>
+        <% end %>
         <div id="file-info" class="hidden text-center mb-4">
           <p class="text-gray-800">File: <span id="file-name"></span></p>
           <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
@@ -37,7 +48,7 @@
     <label class="cursor-pointer py-4 w-full">
     <%= text_field_tag :url, nil, placeholder: "Enter URL here", class:"w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" %>
     </label>
-    <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
+    <%= submit_tag "Scan", class: "btn btn-primary mt-4 button" %>
     <% end %>
     </div>
 </div>

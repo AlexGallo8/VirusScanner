@@ -9,39 +9,9 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
     
-    <%= clerk_script_tag %>
-    <%# <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'scripts', 'data-turbo-track': 'reload' %>
+    <%# <%= javascript_include_tag 'scripts' %>
 
-    <%# <script type="text/javascript">
-      document.addEventListener('DOMContentLoaded', function() {
-      if (window.Clerk) {
-        window.Clerk.load()
-          .then(() => {
-            // User button per desktop
-            const desktopUserButtonEl = document.getElementById('user-button');
-            if (desktopUserButtonEl) {
-              window.Clerk.mountUserButton(desktopUserButtonEl, {
-                afterSignOutUrl: '/',
-                userProfileUrl: '/profile'
-              });
-            }
-
-            // User button per mobile
-            const mobileUserButtonEl = document.getElementById('mobile-user-button');
-            if (mobileUserButtonEl) {
-              window.Clerk.mountUserButton(mobileUserButtonEl, {
-                afterSignOutUrl: '/',
-                userProfileUrl: '/profile'
-              });
-            }
-          })
-          .catch(error => {
-            console.error('Error loading Clerk:', error);
-          });
-        }
-      });
-    </script> %>
-  
   </head>
   
   <body>
@@ -50,7 +20,7 @@
     <%= notice %>
     <%= flash[:alert] %>
     <%= yield %>
-    <%= turbo_frame_tag "modal" %>
+    <%# <%= turbo_frame_tag "modal" %>
     <%= render partial: "shared/footer"%>
 
   </body>

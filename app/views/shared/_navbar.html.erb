@@ -1,68 +1,3 @@
-<style>
- @keyframes fadeIn {
-   from { opacity: 0; }
-   to { opacity: 1; }
- }
- @keyframes slideDown {
-   from {
-     transform: translateY(-20px);
-     opacity: 0;
-   }
-   to {
-     transform: translateY(0);
-     opacity: 1;
-   }
- }
- .animate-fade-in { animation: fadeIn 0.5s ease-out; }
- .animate-slide-down { animation: slideDown 0.5s ease-out; }
-
- .modal-container {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   z-index: 1000;
- }
-
- .modal-backdrop {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: rgba(0, 0, 0, 0.5);
-   backdrop-filter: blur(5px);
- }
-
- .modal-content {
-   position: relative;
-   background: white;
-   padding: 2rem;
-   border-radius: 8px;
-   z-index: 1001;
-   max-width: 500px;
-   width: 90%;
- }
-
- .close-button {
-   position: absolute;
-   top: 10px;
-   right: 10px;
-   border: none;
-   background: none;
-   font-size: 1.5rem;
-   cursor: pointer;
- }
-
- .hidden {
-   display: none !important;
- }
-</style>
-
 <nav class="bg-white shadow-md">
  <div class="container mx-auto px-4 py-3">
    <div class="flex justify-between items-center">
@@ -81,14 +16,28 @@
        <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
        
        <div class=" lg:flex items-center space-x-4 login-buttons">
-         <% if user_signed_in? %>
-           <%= link_to "Edit Password", edit_password_path %>
-           <%= link_to "Tutti i Commenti", comments_path %>
-           <%= button_to "Log out", session_path, method: :delete, style: 'background-color: #bbbb; color: white; border-radius: 5px;' %>
-         <% else %>
-           <button id="open-registration-modal" class="nav-button">Sign up</button>
-           <button id="open-session-modal" class="nav-button">Log in</button>
-         <% end %>
+        <% if user_signed_in? %>
+
+          <div class="relative">
+            <button id="user-menu-button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              Menu
+            </button>
+            
+            <div id="user-dropdown" class="hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+              <%= link_to "Tutti i Commenti", comments_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" %>
+              
+              <%= link_to "Edit Password", edit_password_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" %>
+              
+              <%= button_to "Log out", session_path, 
+                  method: :delete, 
+                  class: "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" %>
+            </div>
+          </div>
+
+        <% else %>
+          <button id="open-registration-modal" class="nav-button">Sign up</button>
+          <button id="open-session-modal" class="nav-button">Log in</button>
+        <% end %>
        </div>
      </div>
    </div>
@@ -103,18 +52,7 @@
            <div id="mobile-user-button" data-clerk-component="userButton"></div>
          </div>
        <% else %>
-         <button 
-           onclick="Clerk.openSignIn()" 
-           class="block w-full px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800"
-         >
-           Sign in
-         </button>
-         <button 
-           onclick="Clerk.openSignUp()" 
-           class="block w-full px-3 py-2 rounded-md text-base font-medium bg-gray-200 text-black hover:bg-gray-300"
-         >
-           Sign up
-         </button>
+         
        <% end %>
      </div>    
    </div>
@@ -136,57 +74,3 @@
    <%= render "sessions/form", user: @user %>
  </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
- const mobileMenuButton = document.getElementById('mobile-menu-button');
- const mobileMenu = document.getElementById('mobile-menu');
-
- mobileMenuButton.addEventListener('click', () => {
-   mobileMenu.classList.toggle('hidden');
-   mobileMenu.classList.toggle('animate-slide-down');
- });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
- // Gestori per entrambi i pulsanti modali
- ['registration', 'session'].forEach(modalType => {
-   const modal = document.getElementById(`${modalType}-modal`);
-   const openButton = document.getElementById(`open-${modalType}-modal`);
-   const closeButton = document.getElementById(`close-${modalType}-modal`);
-   const backdrop = modal.querySelector('.modal-backdrop');
-
-   function openModal() {
-     modal.classList.remove('hidden');
-     document.body.style.overflow = 'hidden';
-   }
-
-   function closeModal() {
-     modal.classList.add('hidden');
-     document.body.style.overflow = 'auto';
-   }
-
-   openButton.addEventListener('click', openModal);
-   closeButton.addEventListener('click', closeModal);
-   backdrop.addEventListener('click', closeModal);
-
-   // Previene la chiusura quando si clicca sul contenuto del modal
-   modal.querySelector('.modal-content').addEventListener('click', e => {
-     e.stopPropagation();
-   });
- });
-
- // Gestisce la chiusura con il tasto ESC per entrambi i modali
- document.addEventListener('keydown', e => {
-   if (e.key === 'Escape') {
-     ['registration', 'session'].forEach(modalType => {
-       const modal = document.getElementById(`${modalType}-modal`);
-       if (!modal.classList.contains('hidden')) {
-         modal.classList.add('hidden');
-         document.body.style.overflow = 'auto';
-       }
-     });
-   }
- });
-});
-</script>

@@ -21,10 +21,14 @@
 
         <div class="comment-actions">
           <% if comment.user == current_user %>
+            
             <%= link_to 'Modifica', edit_comment_path(comment), class: 'edit-link' %>
-            <%= form_with(model: comment, method: :delete, class: 'delete-form') do %>
-                <%= submit_tag 'Elimina', data: { confirm: 'Sei sicuro?' }, class: 'delete-button' %>
-            <% end %>
+            <%= button_to 'Elimina', 
+              comment_path(comment), 
+              method: :delete,
+              form: { data: { confirm: 'Sei sicuro?' } }, # Non funziona
+              class: 'delete-link'
+            %>
 
           <% end %>
         </div>

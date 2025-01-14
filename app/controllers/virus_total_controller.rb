@@ -24,6 +24,43 @@ class VirusTotalController < ApplicationController
     end
   end
 
+  # FUNZIONI PROVA UPLOAD VIA DRIVE
+  # def pick_from_drive
+  #   client = Google::Apis::DriveV3::DriveService.new
+  #   client.authorization = current_user.google_token
+
+  #   @files = client.list_files(
+  #     q: "mimeType != 'application/vnd.google-apps.folder'",
+  #     fields: 'files(id, name, mimeType)',
+  #     page_size: 50
+  #   )
+    
+  #   render partial: 'drive_picker'
+  # end
+
+  # def download_from_drive
+  #   file_id = params[:file_id]
+    
+  #   client = Google::Apis::DriveV3::DriveService.new
+  #   client.authorization = current_user.google_token
+    
+  #   file = client.get_file(file_id, download_dest: StringIO.new)
+    
+  #   # Create a temporary file
+  #   temp_file = Tempfile.new([params[:file_name], File.extname(params[:file_name])])
+  #   temp_file.binmode
+  #   temp_file.write(file.string)
+  #   temp_file.rewind
+    
+  #   # Process the file with your existing virus scan logic
+  #   scan_result = scan_file(temp_file)
+    
+  #   temp_file.close
+  #   temp_file.unlink
+    
+  #   render json: scan_result
+  # end
+
   private
 
   def upload_file(file_path)

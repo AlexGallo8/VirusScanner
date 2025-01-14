@@ -66,5 +66,44 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-  });
+});
   
+// Drive Picker
+function openDrivePicker() {
+  fetch('/virus_total/pick_from_drive', {
+    headers: {
+      'Accept': 'text/html',
+      'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+    }
+  })
+  .then(response => response.text())
+  .then(html => {
+    document.body.insertAdjacentHTML('beforeend', html);
+  });
+}
+
+function selectDriveFile(fileId, fileName) {
+  fetch('/virus_total/download_from_drive', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+    },
+    body: JSON.stringify({ file_id: fileId, file_name: fileName })
+  })
+  .then(response => response.json())
+  .then(result => {
+    // Handle scan result
+    closeDriveModal();
+    updateScanResults(result);
+  });
+}
+
+function closeDriveModal() {
+  document.getElementById('drive-modal').remove();
+}
+
+function updateScanResults(result) {
+  // Update your UI with scan results
+  // This should match your existing scan result display logic
+}

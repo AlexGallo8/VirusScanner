@@ -96,3 +96,4 @@ gem "jwt", "~> 2.8"
 gem 'google-api-client', '~> 0.53.0'
 gem 'googleauth', '~> 1.2.0'
 gem 'omniauth-google-oauth2'
+gem "google-apis-drive_v3", "~> 0.37.0"

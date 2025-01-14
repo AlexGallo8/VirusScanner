@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resource :password_reset
   resource :password
 
+  resource :preferences, only: [:edit, :update]
+
   resource :dashboard
 
   get '/auth/auth0/callback', to: 'auth0#callback'

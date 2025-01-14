@@ -11,9 +11,9 @@
             <span class="author">
               <%= comment.user.email %> <%# o comment.user.nome se hai un campo nome %>
             </span>
-            <span class="scan">
+            <%# <span class="scan">
               <%= comment.scan.file_name %>
-            </span>
+            <%# </span> %>
             <span class="date">
               <%= l comment.created_at, format: :long %>
             </span>

@@ -4,11 +4,13 @@
 
 <div id="scans">
   <% @scans.each do |scan| %>
-    <%= render scan %>
-    <p>
-      <%= link_to "Show this scan", scan %>
-    </p>
+    <% if scan.user == current_user %>
+      <%= render scan %>
+      <p>
+        <%= link_to "Show this scan", scan %>
+      </p>
+    <% end %>
   <% end %>
 </div>
 
-<%= link_to "New scan", new_scan_path %>
+<%# <%= link_to "New scan", new_scan_path %>

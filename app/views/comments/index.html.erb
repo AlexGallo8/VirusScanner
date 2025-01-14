@@ -1,27 +1,30 @@
 <div class="comments-container">
-  <h1>Tutti i Commenti</h1>
+  <h1>Comments History</h1>
 
-  <%= link_to 'Nuovo Commento', new_comment_path, class: 'button' %>
+  <%# <%= link_to 'New Comment', new_comment_path, class: 'button' %>
 
   <div class="comments-list">
     <% @comments.each do |comment| %>
-      <div class="comment-card">
-        <div class="comment-header">
-          <span class="author">
-            <%= comment.user.email %> <%# o comment.user.nome se hai un campo nome %>
-          </span>
-          <span class="date">
-            <%= l comment.created_at, format: :long %>
-          </span>
-        </div>
+      <% if comment.user == current_user %>
+        <div class="comment-card">
+          <div class="comment-header">
+            <span class="author">
+              <%= comment.user.email %> <%# o comment.user.nome se hai un campo nome %>
+            </span>
+            <span class="scan">
+              <%= comment.scan.file_name %>
+            </span>
+            <span class="date">
+              <%= l comment.created_at, format: :long %>
+            </span>
+          </div>
 
-        <div class="comment-content">
-          <%= comment.content %>
-        </div>
+          <div class="comment-content">
+            <%= comment.content %>
+          </div>
 
-        <div class="comment-actions">
-          <% if comment.user == current_user %>
-            
+          <div class="comment-actions">
+              
             <%= link_to 'Modifica', edit_comment_path(comment), class: 'edit-link' %>
             <%= button_to 'Elimina', 
               comment_path(comment), 
@@ -30,9 +33,9 @@
               class: 'delete-link'
             %>
 
-          <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

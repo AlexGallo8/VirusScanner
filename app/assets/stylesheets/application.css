@@ -388,7 +388,6 @@ input {
   position: absolute;
   top: 100%;
   right: 0;
-  transform: translateX(-50%);
   min-width: 240px;  /* Aumentato per dare piÃ¹ spazio */
   margin-top: 0.5rem;
   background-color: #FFFFFF;
@@ -409,11 +408,11 @@ input {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px) translateX(-50%);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) translateX(-50%);
+    transform: translateY(0);
   }
 }
 
@@ -430,7 +429,7 @@ input {
 #user-dropdown .flex.items-center {
   display: flex;
   align-items: center;
-  padding: 1rem 1.5rem; /* Padding aumentato */
+  padding: 0.5rem 1.5rem; /* Padding aumentato */
   margin-bottom: 0.5rem;
 }
 

@@ -11,11 +11,11 @@
        </svg>
      </button>
 
-     <div class=" lg:flex items-center space-x-4">
+     <div class="lg:flex items-center space-x-4">
        <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
        <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
        
-       <div class=" lg:flex items-center space-x-4 login-buttons">
+       <div class="lg:flex items-center space-x-4 login-buttons">
         <% if user_signed_in? %>
 
           <div class="relative">
@@ -30,13 +30,15 @@
                 x-transition:leave="transition ease-in duration-100"
                 x-transition:leave-start="opacity-100 scale-100"
                 x-transition:leave-end="opacity-0 scale-90"
-                class="hidden absolute right-0 z-10 w-56 py-2 mt-2 origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800"
+                class="hidden absolute top-full translate-x-[-90%] z-10 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-800"
             >
               <a href="#" class="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                  <img class="flex-shrink-0 object-cover mx-1 rounded-full w-4 h-4" src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d29tYW4lMjBibHVlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=face&w=500&q=200">
+              <div class="profile-image-container">
+                  <img src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d29tYW4lMjBibHVlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=face&w=500&q=200">
+              </div>
                   <div class="mx-1">
                       <h1 class="text-sm font-semibold text-gray-700 dark:text-gray-200">Jane Doe</h1>
-                      <p class="text-sm text-gray-500 dark:text-gray-400">janedoe@exampl.com</p>
+                      <p class="text-sm text-gray-500 dark:text-gray-400">janedoejanedoejanedoejanedoe@exampl.com</p>
                   </div>
               </a>
 

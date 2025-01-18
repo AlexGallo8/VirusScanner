@@ -10,7 +10,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
     
     <%= javascript_include_tag 'scripts', 'data-turbo-track': 'reload' %>
-    <%# <%= javascript_include_tag 'scripts' %>
 
   </head>
   
@@ -20,7 +19,6 @@
     <%= notice %>
     <%= flash[:alert] %>
     <%= yield %>
-    <%# <%= turbo_frame_tag "modal" %>
     <%= render partial: "shared/footer"%>
 
   </body>

@@ -376,3 +376,103 @@ input {
 .hidden {
   display: none !important;
 }
+
+/* Stili per il container del dropdown */
+.relative {
+  position: relative;
+  display: inline-block;
+}
+
+/* Stili per il dropdown menu */
+#user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  transform: translateX(-50%);
+  min-width: 240px;  /* Aumentato per dare piÃ¹ spazio */
+  margin-top: 0.5rem;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+  padding: 1rem 0; /* Padding verticale aumentato */
+}
+
+/* Assicura che il dropdown rimanga visibile */
+.login-buttons {
+  position: relative;
+  overflow: visible;
+}
+
+/* Animazione per il dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+/* Stili per gli elementi del dropdown */
+#user-dropdown a,
+#user-dropdown button {
+  white-space: nowrap;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1.5rem; /* Padding aumentato */
+}
+
+/* Stili per il contenitore del profilo utente */
+#user-dropdown .flex.items-center {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem; /* Padding aumentato */
+  margin-bottom: 0.5rem;
+}
+
+/* Stili per il contenitore dell'immagine profilo */
+.profile-image-container {
+  width: 40px;  /* Dimensione fissa del container */
+  height: 40px; /* Dimensione fissa del container */
+  border-radius: 50%;
+  overflow: hidden; /* Mantiene l'immagine dentro il cerchio */
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+/* Stili per l'immagine del profilo */
+.profile-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene le proporzioni dell'immagine */
+  object-position: center; /* Centra l'immagine */
+}
+
+/* Stili per il contenitore delle info utente */
+#user-dropdown .mx-1 {
+  flex: 1;
+  padding-left: 0.5rem;
+}
+
+/* Stili per il nome utente */
+#user-dropdown .text-sm.font-semibold {
+  color: #374151;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+/* Stili per l'email */
+#user-dropdown .text-sm.text-gray-500 {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Stili per i separatori */
+#user-dropdown hr {
+  margin: 0.75rem 0;
+  border-color: #e5e7eb;
+}

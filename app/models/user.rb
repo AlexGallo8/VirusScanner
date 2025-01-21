@@ -9,8 +9,8 @@ class User < ApplicationRecord
               format: { with: URI::MailTo::EMAIL_REGEXP, message: "must be a valid email address" }
     normalizes :email, with: ->(email) {email.strip.downcase}
 
-    validates :username, presence: true, uniqueness: true, 
-              length: { minimum: 3, maximum: 30 }
+    validates :username, uniqueness: true
+            #   length: { minimum: 3, maximum: 30 }
             #   format: { with: /\A[a-zA-Z0-9_]+\z/, message: "can only contain letters, numbers, and underscores" }
 
     validates :auth_provider, inclusion: { in: ['local', 'auth0'] }, allow_nil: true

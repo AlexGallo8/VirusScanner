@@ -10,11 +10,20 @@ class RegistrationsController < ApplicationController
     @user.auth_provider = 'local'
     @user.username = @user.email.split('@').first
     
-    if @user.save
-      login @user
-      redirect_to root_path, notice: "Successfully created account!"
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @user.save
+        login @user
+        format.json { render json: { success: true, redirect_to: root_path } }
+        format.html { redirect_to root_path, notice: "Successfully created account!" }
+      else
+        format.json { 
+          render json: { 
+            success: false, 
+            errors: @user.errors.full_messages 
+          }, status: :unprocessable_entity 
+        }
+        format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
   

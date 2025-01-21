@@ -107,3 +107,62 @@ function updateScanResults(result) {
   // Update your UI with scan results
   // This should match your existing scan result display logic
 }
+
+// Add this JavaScript code to handle the form submission
+document.addEventListener('DOMContentLoaded', function() {
+  // Function to handle form submission
+  function handleFormSubmit(formElement) {
+    formElement.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(formElement);
+      
+      fetch(formElement.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Remove any existing error messages
+        const existingErrors = formElement.querySelector('.error-messages');
+        if (existingErrors) {
+          existingErrors.remove();
+        }
+        
+        if (data.success) {
+          // Redirect on success
+          window.location.href = data.redirect_to;
+        } else {
+          // Display errors
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'error-messages bg-red-50 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded';
+          errorDiv.setAttribute('role', 'alert');
+          
+          data.errors.forEach(message => {
+            const p = document.createElement('p');
+            p.className = 'text-sm font-medium';
+            p.textContent = message;
+            errorDiv.appendChild(p);
+          });
+          
+          formElement.insertBefore(errorDiv, formElement.firstChild);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  }
+
+  // Initialize form handlers
+  const forms = ['registration_form', 'session_form'];
+  forms.forEach(formId => {
+    const form = document.getElementById(formId);
+    if (form) {
+      handleFormSubmit(form);
+    }
+  });
+});

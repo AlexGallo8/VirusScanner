@@ -89,17 +89,19 @@
 </nav>
 
 <div id="registration-modal" class="modal-container hidden">
- <div class="modal-backdrop"></div>
- <div class="modal-content">
-   <button id="close-registration-modal" class="close-button">&times;</button>
-   <%= render "registrations/form", user: User.new %>
- </div>
+  <div class="modal-backdrop">
+    <div class="modal-content">
+      <button id="close-registration-modal" class="close-button">&times;</button>
+      <%= render "registrations/form", user: User.new %>
+    </div>
+  </div>
 </div>
 
 <div id="session-modal" class="modal-container hidden">
- <div class="modal-backdrop"></div>
- <div class="modal-content">
-   <button id="close-session-modal" class="close-button">&times;</button>
-   <%= render "sessions/form", user: @user %>
- </div>
+  <div class="modal-backdrop">
+    <div class="modal-content">
+      <button id="close-session-modal" class="close-button">&times;</button>
+      <%= render "sessions/form", user: @user %>
+    </div>
+  </div>
 </div>

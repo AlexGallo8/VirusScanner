@@ -1,4 +1,3 @@
-# app/controllers/virus_total_controller.rb
 class VirusTotalController < ApplicationController
   require 'net/http'
   require 'json'
@@ -11,20 +10,162 @@ class VirusTotalController < ApplicationController
   end
  
   def scan
+    respond_to do |format|
+      format.html do
+        if params[:scan_id].present?
+          # Se c'è un scan_id, mostra i risultati
+          @results = get_analysis_result(params[:scan_id])
+          render :scan
+        else
+          # Altrimenti procedi con una nuova scansione
+          process_scan
+        end
+      end
+      
+      format.json do
+        if params[:check_status].present?
+          # Endpoint per controllare lo stato della scansione
+          @results = get_analysis_result(params[:scan_id])
+          render json: { 
+            status: @results.present? ? 'completed' : 'processing',
+            results: @results
+          }
+        else
+          # Invio iniziale della scansione
+          process_scan
+          render json: { 
+            status: 'processing',
+            scan_id: @scan_id
+          }
+        end
+      end
+    end
+  end
+
+  private
+
+  def process_scan
     if params[:file].present?
-      file_path = params[:file].tempfile.path
-      file_id = upload_file(file_path)
-      sleep(5) until get_analysis_result(file_id).size > 0
-      @results = get_analysis_result(file_id)
+      process_file_scan
     elsif params[:url].present?
-      scan_url
+      process_url_scan
     else
       flash[:alert] = "Per favore, seleziona un file da scansionare o inserisci un URL"
       redirect_to virus_total_path
     end
   end
 
-  # FUNZIONI PROVA UPLOAD VIA DRIVE
+  def process_file_scan
+    file_path = params[:file].tempfile.path
+    @scan_id = upload_file(file_path)
+    
+    # Store scan_id in session for status checking
+    session[:current_scan_id] = @scan_id
+    
+    # If it's a regular form submission, wait for results
+    if request.format.html?
+      wait_for_results
+      render :scan
+    end
+  end
+
+  def process_url_scan
+    url = params[:url]
+    @scan_id = submit_url(url)
+    
+    # Store scan_id in session for status checking
+    session[:current_scan_id] = @scan_id
+    
+    # If it's a regular form submission, wait for results
+    if request.format.html?
+      wait_for_results
+      render :scan
+    end
+  end
+
+  def wait_for_results
+    max_attempts = 30  # Maximum number of attempts
+    attempt = 0
+    
+    while attempt < max_attempts
+      @results = get_analysis_result(@scan_id)
+      break if @results.present? && @results.size > 0
+      sleep 2  # Wait 2 seconds between attempts
+      attempt += 1
+    end
+    
+    if attempt >= max_attempts
+      flash[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
+      redirect_to virus_total_path
+    end
+  end
+
+  def check_scan_status
+    scan_id = session[:current_scan_id]
+    return unless scan_id
+    
+    results = get_analysis_result(scan_id)
+    
+    if results.present? && results.size > 0
+      @results = results
+      session.delete(:current_scan_id)
+      true
+    else
+      false
+    end
+  end
+
+  # Your existing helper methods remain the same
+  def upload_file(file_path)
+    url = URI("#{BASE_URL}/files")
+    
+    request = Net::HTTP::Post.new(url)
+    request["accept"] = 'application/json'
+    request["x-apikey"] = API_KEY
+    
+    form_data = [['file', File.open(file_path)]]
+    request.set_form form_data, 'multipart/form-data'
+    
+    response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
+      http.request(request)
+    end
+    
+    JSON.parse(response.body)['data']['id']
+  end
+
+  def submit_url(url)
+    api_url = URI("#{BASE_URL}/urls")
+    
+    request = Net::HTTP::Post.new(api_url)
+    request["accept"] = 'application/json'
+    request["x-apikey"] = API_KEY
+    request["content-type"] = 'application/x-www-form-urlencoded'
+    request.body = "url=#{URI.encode_www_form_component(url)}"
+    
+    response = Net::HTTP.start(api_url.hostname, api_url.port, use_ssl: true) do |http|
+      http.request(request)
+    end
+    
+    JSON.parse(response.body)['data']['id']
+  end
+
+  def get_analysis_result(file_id)
+    url = URI("#{BASE_URL}/analyses/#{file_id}")
+    
+    request = Net::HTTP::Get.new(url)
+    request["accept"] = 'application/json'
+    request["x-apikey"] = API_KEY
+    
+    response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
+      http.request(request)
+    end
+    
+    JSON.parse(response.body)['data']['attributes']['results']
+  end
+end
+
+
+# FUNZIONI PROVA UPLOAD VIA DRIVE
   # def pick_from_drive
   #   client = Google::Apis::DriveV3::DriveService.new
   #   client.authorization = current_user.google_token
@@ -60,62 +201,3 @@ class VirusTotalController < ApplicationController
     
   #   render json: scan_result
   # end
-
-  private
-
-  def upload_file(file_path)
-    url = URI("#{BASE_URL}/files")
-    
-    request = Net::HTTP::Post.new(url)
-    request["accept"] = 'application/json'
-    request["x-apikey"] = API_KEY
-    
-    form_data = [['file', File.open(file_path)]]
-    request.set_form form_data, 'multipart/form-data'
-    
-    response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
-      http.request(request)
-    end
-    
-    JSON.parse(response.body)['data']['id']
-  end
-
-  def scan_url
-    url = params[:url]
-    url_id = submit_url(url)
-    sleep 15 # Attendi 15 secondi prima di controllare i risultati
-    @results = get_analysis_result(url_id)
-    render :scan
-  end
-
-  def submit_url(url)
-    api_url = URI("#{BASE_URL}/urls")
-    
-    request = Net::HTTP::Post.new(api_url)
-    request["accept"] = 'application/json'
-    request["x-apikey"] = API_KEY
-    request["content-type"] = 'application/x-www-form-urlencoded'
-    request.body = "url=#{URI.encode_www_form_component(url)}"
-    
-    response = Net::HTTP.start(api_url.hostname, api_url.port, use_ssl: true) do |http|
-      http.request(request)
-    end
-    
-    JSON.parse(response.body)['data']['id']
-  end
-
-  def get_analysis_result(file_id)
-    url = URI("#{BASE_URL}/analyses/#{file_id}")
-    
-    request = Net::HTTP::Get.new(url)
-    request["accept"] = 'application/json'
-    request["x-apikey"] = API_KEY
-    
-    response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
-      http.request(request)
-    end
-    
-    JSON.parse(response.body)['data']['attributes']['results']
-  end
-
-end

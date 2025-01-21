@@ -5,19 +5,29 @@
 <% end %>
 
 <div class="container mx-auto px-4 py-8 animate-fade-in">
-  <h1 class="text-4xl font-bold text-center mb-4">Welcome to VirusScanner</h1>
+  <h1 class="text-4xl font-bold text-center mb-4 text-black">Welcome to VirusScanner</h1>
   <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
 
   <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
     <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
-      <h2 class="text-2xl font-bold mb-4">Scan File</h2>
+      <h2 class="text-2xl font-bold mb-4 text-black">Scan File</h2>
       <p class="mb-4">Upload your file to analyze it</p>
       <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
         <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
-           <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
-          <label for="dropzone-file" class="cursor-pointer">
-            <div class="text-center" id="d-area">
+          <%= file_field_tag :file, class: "hidden", id: "fileInput" %>
+          <label for="fileInput" class="cursor-pointer block w-full">
+            <div id="dropText" class="h-32 flex flex-col items-center justify-center">
               <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+            </div>
+            
+            <div id="filePreview" class="hidden h-32 flex flex-col items-center justify-center">
+              <div class="flex flex-col items-center">
+                <svg class="w-6 h-6 mb-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+                <p id="fileName" class="text-gray-800 text-sm font-medium mb-2"></p>
+                <button type="button" id="removeFile" class="text-red-500 hover:text-red-600 text-xs">Remove</button>
+              </div>
             </div>
           </label>
         </div>
@@ -41,7 +51,7 @@
       <% end %>
     </div>
     <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
-    <h2 class="text-2xl font-bold mb-4">Scan URL</h2>
+    <h2 class="text-2xl font-bold mb-4 text-black">Scan URL</h2>
     <p class="mb-4">Enter a URL to analyze it for potential threats</p>
     <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
@@ -54,51 +64,208 @@
 </div>
 
 
-
-
-
 <script>
-document.addEventListener('turbo:load', function() {
+window.onload = function() {
   const dropzone = document.getElementById('dropzone');
-  const fileInput = document.getElementById('dropzone-file');
-  const fileInfo = document.getElementById('file-info');
-  const fileName = document.getElementById('file-name');
-  const dArea = document.getElementById('d-area');
+  const fileInput = document.getElementById('fileInput');
+  const dropText = document.getElementById('dropText');
+  const filePreview = document.getElementById('filePreview');
+  const fileName = document.getElementById('fileName');
+  const removeFile = document.getElementById('removeFile');
 
-  dropzone.addEventListener('dragover', (e) => {
+  // Gestione drag and drop
+  dropzone.addEventListener('dragover', function(e) {
     e.preventDefault();
+    e.stopPropagation();
     dropzone.classList.add('border-blue-500');
   });
 
-  dropzone.addEventListener('dragleave', () => {
-    dropzone.classList.remove('border-blue-500');
-  });
-
-  dropzone.addEventListener('drop', (e) => {
+  dropzone.addEventListener('dragleave', function(e) {
     e.preventDefault();
+    e.stopPropagation();
     dropzone.classList.remove('border-blue-500');
-    if (e.dataTransfer.files.length) {
-      fileInput.files = e.dataTransfer.files;
-      updateFileInfo();
+  });
+
+  dropzone.addEventListener('drop', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dropzone.classList.remove('border-blue-500');
+    
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+      handleFile(files[0]);
+      fileInput.files = files;
     }
   });
 
-  fileInput.addEventListener('change', updateFileInfo);
-
-  function updateFileInfo() {
-    if (fileInput.files.length > 0) {
-      const file = fileInput.files[0];
-      fileName.textContent = file.name.split('.').slice(0, -1).join('.');
-      fileInfo.classList.remove('hidden');
-      dArea.classList.add('hidden');
+  // Gestione selezione file tramite click
+  fileInput.addEventListener('change', function(e) {
+    if (this.files.length > 0) {
+      handleFile(this.files[0]);
     }
+  });
+
+  // Gestione rimozione file
+  removeFile.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    fileInput.value = '';
+    dropText.classList.remove('hidden');
+    filePreview.classList.add('hidden');
+  });
+
+  function handleFile(file) {
+    fileName.textContent = file.name;
+    dropText.classList.add('hidden');
+    filePreview.classList.remove('hidden');
   }
+};
 
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('menu');
 
-  mobileMenuButton.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+document.addEventListener('DOMContentLoaded', function() {
+  const forms = document.querySelectorAll('form[action="/virus_total/scan"]');
+
+  
+  // Aggiungiamo gli stili CSS necessari
+  const style = document.createElement('style');
+  style.textContent = `
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #e5e7eb;
+      border-radius: 9999px;
+      height: 1rem;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: #3b82f6;
+      transition: width 0.3s ease-out;
+      border-radius: 9999px;
+    }
+  `;
+  document.head.appendChild(style);
+
+  forms.forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Create loading screen
+      const loadingScreen = document.createElement('div');
+      loadingScreen.className = 'loading-overlay';
+      loadingScreen.innerHTML = `
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-4">
+          <div class="text-center">
+            <div class="mb-6">
+              <h2 class="text-3xl font-bold text-gray-900 mb-2">Scanning in Progress</h2>
+              <p class="text-gray-600">Please wait while we analyze your submission</p>
+            </div>
+            
+            <div class="progress-bar mb-4">
+              <div class="progress-bar-fill" style="width: 0%" id="progressBar"></div>
+            </div>
+            
+            <div class="text-lg font-semibold text-gray-700">
+              <span id="progressText">0</span>%
+            </div>
+            
+            <div class="mt-6 text-sm text-gray-500" id="statusMessage">
+              Initializing scan...
+            </div>
+          </div>
+        </div>
+      `;
+      
+      document.body.appendChild(loadingScreen);
+
+      const progressBar = document.getElementById('progressBar');
+      const progressText = document.getElementById('progressText');
+      const statusMessage = document.getElementById('statusMessage');
+      let progress = 0;
+
+      const updateProgress = () => {
+        if (progress < 95) {
+          progress += 1;
+          progressBar.style.width = `${progress}%`;
+          progressText.textContent = progress;
+          
+          if (progress < 30) {
+            statusMessage.textContent = "Initializing scan...";
+          } else if (progress < 60) {
+            statusMessage.textContent = "Analyzing content...";
+          } else if (progress < 90) {
+            statusMessage.textContent = "Processing results...";
+          } else {
+            statusMessage.textContent = "Almost done...";
+          }
+        }
+      };
+
+      const progressInterval = setInterval(updateProgress, 150);
+
+      // Create FormData
+      const formData = new FormData(form);
+      
+      try {
+        const response = await fetch('/virus_total/scan', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json',
+            'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+          }
+        });
+        
+        const data = await response.json();
+        
+        while (true) {
+          const statusResponse = await fetch(`/virus_total/scan?check_status=true&scan_id=${data.scan_id}`, {
+            headers: {
+              'Accept': 'application/json',
+              'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+            }
+          });
+          
+          const statusData = await statusResponse.json();
+          
+          if (statusData.status === 'completed') {
+            progress = 100;
+            progressBar.style.width = '100%';
+            progressText.textContent = '100';
+            statusMessage.textContent = 'Scan completed!';
+            
+            await new Promise(resolve => setTimeout(resolve, 500));
+            window.location.href = `/virus_total/scan?scan_id=${data.scan_id}`;
+            break;
+          }
+          
+          await new Promise(resolve => setTimeout(resolve, 2000));
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        statusMessage.textContent = 'An error occurred. Please try again.';
+        statusMessage.classList.add('text-red-500');
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      } finally {
+        clearInterval(progressInterval);
+        loadingScreen.remove();
+      }
+    });
   });
 });
+
 </script>

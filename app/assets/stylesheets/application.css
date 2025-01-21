@@ -477,3 +477,17 @@ input {
   margin: 0.75rem 0;
   border-color: #e5e7eb;
 }
+
+
+
+
+/* stile per loading */
+
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

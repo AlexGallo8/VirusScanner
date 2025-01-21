@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'virus_total', to: 'virus_total#index'
   post 'virus_total/scan', to: 'virus_total#scan'
+  get 'virus_total/scan', to: 'virus_total#scan'
   
 
   resources :scans, only: [:index, :show, :new, :create, :edit, :update, :destroy]

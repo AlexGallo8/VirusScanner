@@ -2,10 +2,11 @@ class VirusTotalController < ApplicationController
   require 'net/http'
   require 'json'
   require 'uri'
+  require 'digest'
 
   API_KEY = '4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6'
   BASE_URL = 'https://www.virustotal.com/api/v3'
-
+  
   def index
   end
  
@@ -13,29 +14,26 @@ class VirusTotalController < ApplicationController
     respond_to do |format|
       format.html do
         if params[:scan_id].present?
-          # Se c'è un scan_id, mostra i risultati
-          @results = get_analysis_result(params[:scan_id])
+          @scan = Scan.find_by(id: params[:scan_id])
+          @results = @scan&.scan_result
           render :scan
         else
-          # Altrimenti procedi con una nuova scansione
           process_scan
         end
       end
       
       format.json do
         if params[:check_status].present?
-          # Endpoint per controllare lo stato della scansione
-          @results = get_analysis_result(params[:scan_id])
+          @scan = Scan.find_by(id: params[:scan_id])
           render json: { 
-            status: @results.present? ? 'completed' : 'processing',
-            results: @results
+            status: @scan&.scan_result.present? ? 'completed' : 'processing',
+            results: @scan&.scan_result
           }
         else
-          # Invio iniziale della scansione
           process_scan
           render json: { 
             status: 'processing',
-            scan_id: @scan_id
+            scan_id: @scan&.id
           }
         end
       end
@@ -56,41 +54,96 @@ class VirusTotalController < ApplicationController
   end
 
   def process_file_scan
-    file_path = params[:file].tempfile.path
-    @scan_id = upload_file(file_path)
+    file = params[:file]
+    file_hash = calculate_file_hash(file.tempfile)
     
-    # Store scan_id in session for status checking
-    session[:current_scan_id] = @scan_id
+    # Check if we already have a scan for this file
+    @scan = Scan.find_by(hashcode: file_hash)
     
-    # If it's a regular form submission, wait for results
-    if request.format.html?
-      wait_for_results
-      render :scan
+    if @scan
+      # Associa l'utente corrente se è loggato e la scansione non ha già un utente
+      if user_signed_in? && @scan.user_id.nil?
+        @scan.update(user_id: current_user.id)
+      end
+      
+      # If scan exists but doesn't have results yet, we need to check status
+      if @scan.scan_result.blank?
+        vt_results = get_analysis_result(@scan.file_data['scan_id'])
+        @scan.update(scan_result: vt_results) if vt_results.present?
+      end
+    else
+      # Create new scan record
+      @scan = create_scan(
+        file_name: file.original_filename,
+        file_type: file.content_type,
+        file_size: file.size,
+        hashcode: file_hash,
+        upload_date: Time.current
+      )
+      
+      # Upload to VirusTotal and store scan_id
+      vt_scan_id = upload_file(file.tempfile.path)
+      @scan.update(file_data: { scan_id: vt_scan_id })
+      
+      # If it's a regular form submission, wait for results
+      if request.format.html?
+        wait_for_results
+      end
     end
+    
+    render :scan if request.format.html?
   end
 
   def process_url_scan
     url = params[:url]
-    @scan_id = submit_url(url)
+    url_hash = Digest::SHA256.hexdigest(url)
     
-    # Store scan_id in session for status checking
-    session[:current_scan_id] = @scan_id
+    # Check if we already have a scan for this URL
+    @scan = Scan.find_by(hashcode: url_hash)
     
-    # If it's a regular form submission, wait for results
-    if request.format.html?
-      wait_for_results
-      render :scan
+    if @scan
+      # Associa l'utente corrente se è loggato e la scansione non ha già un utente
+      if user_signed_in? && @scan.user_id.nil?
+        @scan.update(user_id: current_user.id)
+      end
+      
+      if @scan.scan_result.blank?
+        vt_results = get_analysis_result(@scan.file_data['scan_id'])
+        @scan.update(scan_result: vt_results) if vt_results.present?
+      end
+    else
+      # Create new scan record
+      @scan = create_scan(
+        file_name: url,
+        file_type: 'url',
+        hashcode: url_hash,
+        upload_date: Time.current
+      )
+      
+      # Submit to VirusTotal and store scan_id
+      vt_scan_id = submit_url(url)
+      @scan.update(file_data: { scan_id: vt_scan_id })
+      
+      # If it's a regular form submission, wait for results
+      if request.format.html?
+        wait_for_results
+      end
     end
+    
+    render :scan if request.format.html?
   end
 
   def wait_for_results
-    max_attempts = 30  # Maximum number of attempts
+    max_attempts = 30
     attempt = 0
     
     while attempt < max_attempts
-      @results = get_analysis_result(@scan_id)
-      break if @results.present? && @results.size > 0
-      sleep 2  # Wait 2 seconds between attempts
+      vt_results = get_analysis_result(@scan.file_data['scan_id'])
+      if vt_results.present? && vt_results.size > 0
+        @scan.update(scan_result: vt_results)
+        break
+      end
+      sleep 2
       attempt += 1
     end
     
@@ -100,22 +153,18 @@ class VirusTotalController < ApplicationController
     end
   end
 
-  def check_scan_status
-    scan_id = session[:current_scan_id]
-    return unless scan_id
-    
-    results = get_analysis_result(scan_id)
-    
-    if results.present? && results.size > 0
-      @results = results
-      session.delete(:current_scan_id)
-      true
+  def calculate_file_hash(file)
+    Digest::SHA256.file(file).hexdigest
+  end
+
+  def create_scan(attributes)
+    if user_signed_in?
+      Scan.create!(attributes.merge(user_id: current_user.id))
     else
-      false
+      Scan.create!(attributes)  # user_id will be nil
     end
   end
 
-  # Your existing helper methods remain the same
   def upload_file(file_path)
     url = URI("#{BASE_URL}/files")
     
@@ -163,41 +212,3 @@ class VirusTotalController < ApplicationController
     JSON.parse(response.body)['data']['attributes']['results']
   end
 end
-
-
-# FUNZIONI PROVA UPLOAD VIA DRIVE
-  # def pick_from_drive
-  #   client = Google::Apis::DriveV3::DriveService.new
-  #   client.authorization = current_user.google_token
-
-  #   @files = client.list_files(
-  #     q: "mimeType != 'application/vnd.google-apps.folder'",
-  #     fields: 'files(id, name, mimeType)',
-  #     page_size: 50
-  #   )
-    
-  #   render partial: 'drive_picker'
-  # end
-
-  # def download_from_drive
-  #   file_id = params[:file_id]
-    
-  #   client = Google::Apis::DriveV3::DriveService.new
-  #   client.authorization = current_user.google_token
-    
-  #   file = client.get_file(file_id, download_dest: StringIO.new)
-    
-  #   # Create a temporary file
-  #   temp_file = Tempfile.new([params[:file_name], File.extname(params[:file_name])])
-  #   temp_file.binmode
-  #   temp_file.write(file.string)
-  #   temp_file.rewind
-    
-  #   # Process the file with your existing virus scan logic
-  #   scan_result = scan_file(temp_file)
-    
-  #   temp_file.close
-  #   temp_file.unlink
-    
-  #   render json: scan_result
-  # end

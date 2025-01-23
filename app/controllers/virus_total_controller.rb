@@ -61,6 +61,10 @@ class VirusTotalController < ApplicationController
     @scan = Scan.find_by(hashcode: file_hash)
     
     if @scan
+      if user_signed_in? && !@scan.users.include?(current_user)
+        @scan.users << current_user
+      end
+
       # Associa l'utente corrente se è loggato e la scansione non ha già un utente
       if user_signed_in? && @scan.user_id.nil?
         @scan.update(user_id: current_user.id)
@@ -102,6 +106,11 @@ class VirusTotalController < ApplicationController
     @scan = Scan.find_by(hashcode: url_hash)
     
     if @scan
+      # Aggiungi l'utente corrente alla tabella scan_users se non è già presente
+      if user_signed_in? && !@scan.users.include?(current_user)
+        @scan.users << current_user
+      end
+
       # Associa l'utente corrente se è loggato e la scansione non ha già un utente
       if user_signed_in? && @scan.user_id.nil?
         @scan.update(user_id: current_user.id)

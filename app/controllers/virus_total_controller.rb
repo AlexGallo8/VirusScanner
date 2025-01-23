@@ -4,7 +4,7 @@ class VirusTotalController < ApplicationController
   require 'uri'
   require 'digest'
 
-  API_KEY = '4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6'
+  API_KEY = Rails.application.credentials.virustotal[:api_key]
   BASE_URL = 'https://www.virustotal.com/api/v3'
   
   def index

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_01_14_205644) do
+ActiveRecord::Schema[7.1].define(version: 2025_01_24_185139) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "user_id", null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_14_205644) do
     t.json "scan_result"
     t.text "file_data"
     t.integer "user_id"
+    t.string "vt_id"
     t.index ["user_id"], name: "index_scans_on_user_id"
   end
 

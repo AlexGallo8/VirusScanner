@@ -2,6 +2,7 @@ class VirusTotalController < ApplicationController
   require 'net/http'
   require 'json'
   require 'uri'
+  require 'digest'  # Add this at the top with other requires
 
   API_KEY = '4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6'
   BASE_URL = 'https://www.virustotal.com/api/v3'
@@ -13,42 +14,35 @@ class VirusTotalController < ApplicationController
     respond_to do |format|
       format.html do
         if params[:scan_id].present?
-          # Se c'è un scan_id, mostra i risultati
           @results = get_analysis_result(params[:scan_id])
           render :scan
         else
-          # Altrimenti procedi con una nuova scansione
-          process_scan
+          handle_scan_request
         end
       end
       
       format.json do
-        if params[:check_status].present?
-          # Endpoint per controllare lo stato della scansione
+        if params[:check_status].present? && params[:scan_id].present?
           @results = get_analysis_result(params[:scan_id])
           render json: { 
             status: @results.present? ? 'completed' : 'processing',
-            results: @results
+            results: @results,
+            scan_id: params[:scan_id]
           }
         else
-          # Invio iniziale della scansione
-          process_scan
+          handle_scan_request
           render json: { 
-            status: 'processing',
-            scan_id: @scan_id
+            status: @results.present? ? 'completed' : 'processing',
+            scan_id: @scan_id,
+            results: @results
           }
         end
       end
     end
   end
 
-  private
-
-  def calculate_file_hash(file_path)
-    Digest::SHA256.file(file_path).hexdigest
-  end
-
-  def process_scan
+  # Move this above the private keyword
+  def handle_scan_request
     if params[:file].present?
       process_file_scan
     elsif params[:url].present?
@@ -59,6 +53,13 @@ class VirusTotalController < ApplicationController
     end
   end
 
+  private
+
+  def calculate_file_hash(file_path)
+    Digest::SHA256.file(file_path).hexdigest
+  end
+
+  # Remove the process_scan method since we've replaced it with handle_scan_request
   def process_file_scan
     file_path = params[:file].tempfile.path
     file_hash = calculate_file_hash(file_path)
@@ -71,11 +72,14 @@ class VirusTotalController < ApplicationController
       end
 
       @results = existing_scan.scan_result
-      @scan_id = existing_scan.id.to_s
+      @scan_id = existing_scan.vt_id  # Change this line
+
+      if request.format.html?
+        render :scan
+      end
     else
       @scan_id = upload_file(file_path)
       
-      # Store scan_id in session for status checking
       session[:current_scan_id] = @scan_id
       
       scan = Scan.create(
@@ -85,21 +89,21 @@ class VirusTotalController < ApplicationController
         file_size: File.size(file_path),
         upload_date: Time.current,
         user_id: current_user&.id,
-        # file_data: Base64.encode64(File.read(file_path)),
+        vt_id: @scan_id,  # Add this line
         scan_result: nil
       )
 
       results = wait_for_results
 
-      scan.update(scan_result: results)
-      Rails.logger.info "Scan results for #{scan.file_name}: #{results}"
-      @results = results
-    end
-    
-    # If it's a regular form submission, wait for results
-    if request.format.html?
-      # wait_for_results
-      render :scan
+      if results.present?
+        scan.update(scan_result: results)
+        Rails.logger.info "Scan results for #{scan.file_name}: #{results}"
+        @results = results
+      end
+      
+      if request.format.html?
+        render :scan
+      end
     end
   end
 
@@ -114,11 +118,10 @@ class VirusTotalController < ApplicationController
       end
 
       @results = existing_scan.scan_result
-      @scan_id = existing_scan.id.to_s
+      @scan_id = existing_scan.vt_id  # Change this line
     else
       @scan_id = submit_url(url)
       
-      # Store scan_id in session for status checking
       session[:current_scan_id] = @scan_id
 
       scan = Scan.create(
@@ -127,6 +130,7 @@ class VirusTotalController < ApplicationController
         hashcode: Digest::SHA256.hexdigest(url),
         upload_date: Time.current,
         user_id: current_user&.id,
+        vt_id: @scan_id,  # Add this line
         scan_result: nil
       )
 
@@ -134,12 +138,9 @@ class VirusTotalController < ApplicationController
 
       scan.update(scan_result: results)
       @results = results
-      
     end
     
-    # If it's a regular form submission, wait for results
     if request.format.html?
-      # wait_for_results
       render :scan
     end
   end

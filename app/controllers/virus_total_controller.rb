@@ -44,6 +44,10 @@ class VirusTotalController < ApplicationController
 
   private
 
+  def calculate_file_hash(file_path)
+    Digest::SHA256.file(file_path).hexdigest
+  end
+
   def process_scan
     if params[:file].present?
       process_file_scan
@@ -57,28 +61,85 @@ class VirusTotalController < ApplicationController
 
   def process_file_scan
     file_path = params[:file].tempfile.path
-    @scan_id = upload_file(file_path)
-    
-    # Store scan_id in session for status checking
-    session[:current_scan_id] = @scan_id
+    file_hash = calculate_file_hash(file_path)
+
+    existing_scan = Scan.find_by(hashcode: file_hash)
+
+    if existing_scan
+      if user_signed_in? && existing_scan.user_id.nil?
+        existing_scan.update(user_id: current_user.id)
+      end
+
+      @results = existing_scan.scan_result
+      @scan_id = existing_scan.id.to_s
+    else
+      @scan_id = upload_file(file_path)
+      
+      # Store scan_id in session for status checking
+      session[:current_scan_id] = @scan_id
+      
+      scan = Scan.create(
+        file_name: params[:file].original_filename,
+        file_type: params[:file].content_type,
+        hashcode: file_hash,
+        file_size: File.size(file_path),
+        upload_date: Time.current,
+        user_id: current_user&.id,
+        # file_data: Base64.encode64(File.read(file_path)),
+        scan_result: nil
+      )
+
+      results = wait_for_results
+
+      scan.update(scan_result: results)
+      Rails.logger.info "Scan results for #{scan.file_name}: #{results}"
+      @results = results
+    end
     
     # If it's a regular form submission, wait for results
     if request.format.html?
-      wait_for_results
+      # wait_for_results
       render :scan
     end
   end
 
   def process_url_scan
     url = params[:url]
-    @scan_id = submit_url(url)
     
-    # Store scan_id in session for status checking
-    session[:current_scan_id] = @scan_id
+    existing_scan = Scan.find_by(file_name: url)
+
+    if existing_scan
+      if user_signed_in? && existing_scan.user_id.nil?
+        existing_scan.update(user_id: current_user.id)
+      end
+
+      @results = existing_scan.scan_result
+      @scan_id = existing_scan.id.to_s
+    else
+      @scan_id = submit_url(url)
+      
+      # Store scan_id in session for status checking
+      session[:current_scan_id] = @scan_id
+
+      scan = Scan.create(
+        file_name: url,
+        file_type: 'url',
+        hashcode: Digest::SHA256.hexdigest(url),
+        upload_date: Time.current,
+        user_id: current_user&.id,
+        scan_result: nil
+      )
+
+      results = wait_for_results
+
+      scan.update(scan_result: results)
+      @results = results
+      
+    end
     
     # If it's a regular form submission, wait for results
     if request.format.html?
-      wait_for_results
+      # wait_for_results
       render :scan
     end
   end
@@ -89,7 +150,7 @@ class VirusTotalController < ApplicationController
     
     while attempt < max_attempts
       @results = get_analysis_result(@scan_id)
-      break if @results.present? && @results.size > 0
+      break if @results.present? && @results.any?
       sleep 2  # Wait 2 seconds between attempts
       attempt += 1
     end
@@ -98,6 +159,9 @@ class VirusTotalController < ApplicationController
       flash[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
       redirect_to virus_total_path
     end
+
+    # Questo fa salvare correttamente in scan_result
+    @results
   end
 
   def check_scan_status
@@ -160,7 +224,17 @@ class VirusTotalController < ApplicationController
       http.request(request)
     end
     
-    JSON.parse(response.body)['data']['attributes']['results']
+    results = JSON.parse(response.body)['data']['attributes']['results']
+
+    processed_results = results.transform_values do |vendor_result|
+      {
+        category: vendor_result['category'],
+        result: vendor_result['result']
+
+      }
+    end
+
+    processed_results
   end
 end
 

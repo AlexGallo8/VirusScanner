@@ -2,7 +2,7 @@ class VirusTotalController < ApplicationController
   require 'net/http'
   require 'json'
   require 'uri'
-  require 'digest'  # Add this at the top with other requires
+  require 'digest'
 
   API_KEY = '4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6'
   BASE_URL = 'https://www.virustotal.com/api/v3'
@@ -15,9 +15,16 @@ class VirusTotalController < ApplicationController
       format.html do
         if params[:scan_id].present?
           @results = get_analysis_result(params[:scan_id])
-          render :scan
+          render :scan and return
+        end
+        
+        @scan_id = handle_scan_request
+
+        if @scan_id
+          render:scan
         else
-          handle_scan_request
+          flash[:alert] = "Per favore, seleziona un file da scansionare o inserisci un URL"
+          redirect_to virus_total_path
         end
       end
       
@@ -30,7 +37,7 @@ class VirusTotalController < ApplicationController
             scan_id: params[:scan_id]
           }
         else
-          handle_scan_request
+          @scan_id = handle_scan_request
           render json: { 
             status: @results.present? ? 'completed' : 'processing',
             scan_id: @scan_id,
@@ -41,15 +48,13 @@ class VirusTotalController < ApplicationController
     end
   end
 
-  # Move this above the private keyword
   def handle_scan_request
     if params[:file].present?
       process_file_scan
     elsif params[:url].present?
       process_url_scan
     else
-      flash[:alert] = "Per favore, seleziona un file da scansionare o inserisci un URL"
-      redirect_to virus_total_path
+      return nil
     end
   end
 
@@ -72,11 +77,12 @@ class VirusTotalController < ApplicationController
       end
 
       @results = existing_scan.scan_result
-      @scan_id = existing_scan.vt_id  # Change this line
+      @scan_id = existing_scan.vt_id
+      return @scan_id
 
-      if request.format.html?
-        render :scan
-      end
+      # if request.format.html?
+      #   render :scan
+      # end
     else
       @scan_id = upload_file(file_path)
       
@@ -89,7 +95,7 @@ class VirusTotalController < ApplicationController
         file_size: File.size(file_path),
         upload_date: Time.current,
         user_id: current_user&.id,
-        vt_id: @scan_id,  # Add this line
+        vt_id: @scan_id,
         scan_result: nil
       )
 
@@ -101,9 +107,7 @@ class VirusTotalController < ApplicationController
         @results = results
       end
       
-      if request.format.html?
-        render :scan
-      end
+      return @scan_id
     end
   end
 
@@ -118,7 +122,8 @@ class VirusTotalController < ApplicationController
       end
 
       @results = existing_scan.scan_result
-      @scan_id = existing_scan.vt_id  # Change this line
+      @scan_id = existing_scan.vt_id
+      return @scan_id
     else
       @scan_id = submit_url(url)
       
@@ -130,7 +135,7 @@ class VirusTotalController < ApplicationController
         hashcode: Digest::SHA256.hexdigest(url),
         upload_date: Time.current,
         user_id: current_user&.id,
-        vt_id: @scan_id,  # Add this line
+        vt_id: @scan_id,
         scan_result: nil
       )
 
@@ -138,10 +143,8 @@ class VirusTotalController < ApplicationController
 
       scan.update(scan_result: results)
       @results = results
-    end
-    
-    if request.format.html?
-      render :scan
+
+      return @scan_id
     end
   end
 
@@ -158,7 +161,9 @@ class VirusTotalController < ApplicationController
     
     if attempt >= max_attempts
       flash[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
-      redirect_to virus_total_path
+      @results = nil
+      # Risolvere diversamente: va in conflitto con altri render o redirect_to
+      # redirect_to virus_total_path
     end
 
     # Questo fa salvare correttamente in scan_result

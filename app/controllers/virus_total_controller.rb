@@ -25,12 +25,12 @@ class VirusTotalController < ApplicationController
             Rails.logger.info "Retrieved results from API: #{@results}"
           end
           @scan_id = params[:scan_id]
-          render :scan
+          render :scan and return
         else
           handle_scan_request
           Rails.logger.info "Scan request handled, results: #{@results}"
           Rails.logger.info "Scan ID being used: #{@scan_id}"
-          render :scan
+          render :scan and return
         end
       end
       
@@ -55,7 +55,7 @@ class VirusTotalController < ApplicationController
             status: @results.present? ? 'completed' : 'processing',
             scan_id: @scan_id,
             results: @results
-          }
+          } and return
         end
       end
     end
@@ -69,7 +69,7 @@ class VirusTotalController < ApplicationController
       process_url_scan
     else
       flash[:alert] = "Per favore, seleziona un file da scansionare o inserisci un URL"
-      redirect_to virus_total_path
+      redirect_to virus_total_path and return
     end
   end
 
@@ -110,10 +110,12 @@ class VirusTotalController < ApplicationController
       )
 
       @results = wait_for_results
-
       if @results.present?
         scan.update(scan_result: @results)
         Rails.logger.info "Scan results for #{scan.file_name}: #{@results}"
+      else
+        # Handle the case when no results are found
+        flash.now[:alert] = "Impossibile completare la scansione. Riprova più tardi."
       end
     end
   end
@@ -145,10 +147,13 @@ class VirusTotalController < ApplicationController
         scan_result: nil
       )
 
-      results = wait_for_results
-
-      scan.update(scan_result: results)
-      @results = results
+      @results = wait_for_results
+      if @results.present?
+        scan.update(scan_result: @results)
+      else
+        # Handle the case when no results are found
+        flash.now[:alert] = "Impossibile completare la scansione. Riprova più tardi."
+      end
     end
   end
 
@@ -157,19 +162,19 @@ class VirusTotalController < ApplicationController
     attempt = 0
     
     while attempt < max_attempts
-      @results = get_analysis_result(@scan_id)
-      break if @results.present? && @results.any?
+      current_results = get_analysis_result(@scan_id)
+      if current_results.present? && current_results.any?
+        @results = current_results
+        Rails.logger.info "Results found after #{attempt} attempts: #{@results}"
+        return @results
+      end
+
       sleep 2  # Wait 2 seconds between attempts
       attempt += 1
     end
     
-    if attempt >= max_attempts
-      flash[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
-      redirect_to virus_total_path
-    end
-
-    # Questo fa salvare correttamente in scan_result
-    @results
+    flash.now[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
+    nil
   end
 
   def check_scan_status
@@ -232,49 +237,49 @@ class VirusTotalController < ApplicationController
       http.request(request)
     end
     
-    parsed_response = JSON.parse(response.body)
-    Rails.logger.info "Raw API Response for #{file_id}: #{parsed_response}"
+    # parsed_response = JSON.parse(response.body)
+    # Rails.logger.info "Raw API Response for #{file_id}: #{parsed_response}"
     
-    return nil unless parsed_response['data'] && 
-                     parsed_response['data']['attributes']
+    return nil unless response['data'] && 
+                     response['data']['attributes']
 
-    attributes = parsed_response['data']['attributes']
+    # attributes = parsed_response['data']['attributes']
     
-    {
-      'stats' => attributes['stats'],
-      'results' => attributes['results'].transform_values do |vendor_result|
-        {
-          'category' => vendor_result['category'],
-          'result' => vendor_result['result']
-        }
-      end
-    }
+    # {
+    #   'stats' => attributes['stats'],
+    #   'results' => attributes['results'].transform_values do |vendor_result|
+    #     {
+    #       'category' => vendor_result['category'],
+    #       'result' => vendor_result['result']
+    #     }
+    #   end
+    # }
   end
 
-  def wait_for_results
-    max_attempts = 30
-    attempt = 0
+  # def wait_for_results
+  #   max_attempts = 30
+  #   attempt = 0
     
-    while attempt < max_attempts
-      current_results = get_analysis_result(@scan_id)
+  #   while attempt < max_attempts
+  #     current_results = get_analysis_result(@scan_id)
       
-      if current_results.present? && current_results.any?
-        @results = current_results
-        Rails.logger.info "Results found after #{attempt} attempts: #{@results}"
-        break
-      end
+  #     if current_results.present? && current_results.any?
+  #       @results = current_results
+  #       Rails.logger.info "Results found after #{attempt} attempts: #{@results}"
+  #       break
+  #     end
       
-      sleep 2
-      attempt += 1
-    end
+  #     sleep 2
+  #     attempt += 1
+  #   end
     
-    if attempt >= max_attempts
-      flash[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
-      redirect_to virus_total_path and return
-    end
+  #   if attempt >= max_attempts
+  #     flash[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
+  #     redirect_to virus_total_path and return
+  #   end
 
-    @results
-  end
+  #   @results
+  # end
 end
 
 

@@ -14,18 +14,36 @@ class VirusTotalController < ApplicationController
     respond_to do |format|
       format.html do
         if params[:scan_id].present?
-          @results = get_analysis_result(params[:scan_id])
-          render :scan and return
+          Rails.logger.info "Fetching results for scan_id: #{params[:scan_id]}"
+          # Check if scan exists in database first
+          existing_scan = Scan.find_by(vt_id: params[:scan_id])
+          if existing_scan&.scan_result.present?
+            @results = existing_scan.scan_result
+            Rails.logger.info "Retrieved results from database: #{@results}"
+          else
+            @results = get_analysis_result(params[:scan_id])
+            Rails.logger.info "Retrieved results from API: #{@results}"
+          end
+          @scan_id = params[:scan_id]
+          render :scan
         else
           handle_scan_request
-
+          Rails.logger.info "Scan request handled, results: #{@results}"
+          Rails.logger.info "Scan ID being used: #{@scan_id}"
           render :scan
         end
       end
       
       format.json do
         if params[:check_status].present? && params[:scan_id].present?
-          @results = get_analysis_result(params[:scan_id])
+          # Check database first for existing results
+          existing_scan = Scan.find_by(vt_id: params[:scan_id])
+          @results = if existing_scan&.scan_result.present?
+            existing_scan.scan_result
+          else
+            get_analysis_result(params[:scan_id])
+          end
+          
           render json: { 
             status: @results.present? ? 'completed' : 'processing',
             results: @results,
@@ -87,16 +105,15 @@ class VirusTotalController < ApplicationController
         file_size: File.size(file_path),
         upload_date: Time.current,
         user_id: current_user&.id,
-        vt_id: @scan_id,  # Add this line
+        vt_id: @scan_id,
         scan_result: nil
       )
 
-      results = wait_for_results
+      @results = wait_for_results
 
-      if results.present?
-        scan.update(scan_result: results)
-        Rails.logger.info "Scan results for #{scan.file_name}: #{results}"
-        @results = results
+      if @results.present?
+        scan.update(scan_result: @results)
+        Rails.logger.info "Scan results for #{scan.file_name}: #{@results}"
       end
     end
   end
@@ -215,17 +232,48 @@ class VirusTotalController < ApplicationController
       http.request(request)
     end
     
-    results = JSON.parse(response.body)['data']['attributes']['results']
+    parsed_response = JSON.parse(response.body)
+    Rails.logger.info "Raw API Response for #{file_id}: #{parsed_response}"
+    
+    return nil unless parsed_response['data'] && 
+                     parsed_response['data']['attributes']
 
-    processed_results = results.transform_values do |vendor_result|
-      {
-        category: vendor_result['category'],
-        result: vendor_result['result']
+    attributes = parsed_response['data']['attributes']
+    
+    {
+      'stats' => attributes['stats'],
+      'results' => attributes['results'].transform_values do |vendor_result|
+        {
+          'category' => vendor_result['category'],
+          'result' => vendor_result['result']
+        }
+      end
+    }
+  end
 
-      }
+  def wait_for_results
+    max_attempts = 30
+    attempt = 0
+    
+    while attempt < max_attempts
+      current_results = get_analysis_result(@scan_id)
+      
+      if current_results.present? && current_results.any?
+        @results = current_results
+        Rails.logger.info "Results found after #{attempt} attempts: #{@results}"
+        break
+      end
+      
+      sleep 2
+      attempt += 1
+    end
+    
+    if attempt >= max_attempts
+      flash[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
+      redirect_to virus_total_path and return
     end
 
-    processed_results
+    @results
   end
 end
 

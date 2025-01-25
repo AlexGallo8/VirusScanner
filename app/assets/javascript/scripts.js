@@ -50,24 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Dropdown Menu
-document.addEventListener('DOMContentLoaded', () => {
-    const userMenuButton = document.getElementById('user-menu-button');
-    const userDropdown = document.getElementById('user-dropdown');
-  
-    if (userMenuButton && userDropdown) {
-      userMenuButton.addEventListener('click', () => {
-        userDropdown.classList.toggle('hidden');
-      });
-  
-      document.addEventListener('click', (e) => {
-        if (!userDropdown.contains(e.target) && e.target !== userMenuButton) {
-          userDropdown.classList.add('hidden');
-        }
-      });
-    }
-});
-  
 // Drive Picker
 function openDrivePicker() {
   fetch('/virus_total/pick_from_drive', {

@@ -1,2 +1,13 @@
-# config/initializers/virus_total.rb
-Rails.application.config.virus_total_api_key = '4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6'
+module VirusTotal
+    class << self
+      attr_accessor :api_key, :base_url
+  
+      def configure
+        yield self
+      end
+    end
+  
+    # Configurazioni di default
+    self.base_url = 'https://www.virustotal.com/api/v3'
+    self.api_key = Rails.application.credentials.virustotal[:api_key]
+end

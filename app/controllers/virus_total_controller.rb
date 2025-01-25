@@ -80,9 +80,6 @@ class VirusTotalController < ApplicationController
       @scan_id = existing_scan.vt_id
       return @scan_id
 
-      # if request.format.html?
-      #   render :scan
-      # end
     else
       @scan_id = upload_file(file_path)
       
@@ -99,7 +96,7 @@ class VirusTotalController < ApplicationController
         scan_result: nil
       )
 
-      results = wait_for_results
+      results = wait_for_results # Ci mette troppo quindi @results = nil e non si aggiorna
 
       if results.present?
         scan.update(scan_result: results)
@@ -139,10 +136,13 @@ class VirusTotalController < ApplicationController
         scan_result: nil
       )
 
-      results = wait_for_results
+      results = wait_for_results # Ci mette troppo quindi @results = nil e non si aggiorna
 
-      scan.update(scan_result: results)
-      @results = results
+      if results.present?
+        scan.update(scan_result: results)
+        Rails.logger.info "Scan results for #{scan.file_name}: #{results}"
+        @results = results
+      end
 
       return @scan_id
     end
@@ -154,20 +154,33 @@ class VirusTotalController < ApplicationController
     
     while attempt < max_attempts
       @results = get_analysis_result(@scan_id)
-      break if @results.present? && @results.any?
+
+      if @results.present? && @results.any?
+        scan = Scan.find_by(vt_id: @scan_id)
+        if scan
+          scan.update(scan_result: @results)
+          Rails.logger.info "Scan results for #{scan.file_name}: #{@results}"
+        end
+        
+        return @results
+      end
+      
       sleep 2  # Wait 2 seconds between attempts
       attempt += 1
     end
-    
-    if attempt >= max_attempts
-      flash[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
-      @results = nil
-      # Risolvere diversamente: va in conflitto con altri render o redirect_to
-      # redirect_to virus_total_path
-    end
 
-    # Questo fa salvare correttamente in scan_result
-    @results
+    Rails.logger.warn "No results found for scan ID: #{@scan_id}"
+    nil
+    
+    # if attempt >= max_attempts
+    #   flash[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
+    #   @results = nil
+    #   # Risolvere diversamente: va in conflitto con altri render o redirect_to
+    #   # redirect_to virus_total_path
+    # end
+
+    # # Questo fa salvare correttamente in scan_result
+    # @results
   end
 
   def check_scan_status

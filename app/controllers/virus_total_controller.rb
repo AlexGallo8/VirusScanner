@@ -15,9 +15,11 @@ class VirusTotalController < ApplicationController
       format.html do
         if params[:scan_id].present?
           @results = get_analysis_result(params[:scan_id])
-          render :scan
+          render :scan and return
         else
           handle_scan_request
+
+          render :scan
         end
       end
       
@@ -28,7 +30,7 @@ class VirusTotalController < ApplicationController
             status: @results.present? ? 'completed' : 'processing',
             results: @results,
             scan_id: params[:scan_id]
-          }
+          } and return
         else
           handle_scan_request
           render json: { 
@@ -72,11 +74,7 @@ class VirusTotalController < ApplicationController
       end
 
       @results = existing_scan.scan_result
-      @scan_id = existing_scan.vt_id  # Change this line
-
-      if request.format.html?
-        render :scan
-      end
+      @scan_id = existing_scan.vt_id
     else
       @scan_id = upload_file(file_path)
       
@@ -99,10 +97,6 @@ class VirusTotalController < ApplicationController
         scan.update(scan_result: results)
         Rails.logger.info "Scan results for #{scan.file_name}: #{results}"
         @results = results
-      end
-      
-      if request.format.html?
-        render :scan
       end
     end
   end
@@ -138,10 +132,6 @@ class VirusTotalController < ApplicationController
 
       scan.update(scan_result: results)
       @results = results
-    end
-    
-    if request.format.html?
-      render :scan
     end
   end
 

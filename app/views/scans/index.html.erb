@@ -1,16 +1,65 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold text-gray-800 mb-6">Scan History</h1>
 
-<h1>Scans History</h1>
+  <% if @scans.empty? %>
+    <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4" role="alert">
+      <p class="font-bold">No scan found!</p>
+      <p>It looks like you haven't run any scans yet.</p>
+    </div>
+  <% else %>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <% @scans.each do |scan| %>
+        <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+              <h2 class="text-xl font-semibold text-gray-800 truncate">
+                <%= scan.file_name %>
+              </h2>
+              <span class="text-sm text-gray-500">
+                <%= scan.upload_date.strftime("%d/%m/%Y") %>
+              </span>
+            </div>
 
-<div id="scans">
-  <% @scans.each do |scan| %>
-    <% if scan.user == current_user %>
-      <%= render scan %>
-      <p>
-        <%= link_to "Show this scan", scan %>
+            <div class="grid grid-cols-2 gap-2 mb-4">
+              <div class="bg-gray-100 p-2 rounded text-center">
+                <p class="text-xs text-gray-600">File Type</p>
+                <p class="font-medium"><%= scan.file_type %></p>
+              </div>
+              <div class="bg-gray-100 p-2 rounded text-center">
+                <p class="text-xs text-gray-600">Size</p>
+                <p class="font-medium">
+                  <%= number_to_human_size(scan.file_size) %>
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-4">
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.246-5.942a1 1 0 00-.962-1.22H12V5a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-1.243 2.871L6 10.333z"/>
+                  </svg>
+                  <%= scan.vote_up %>
+                </div>
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-red-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.106-1.79l-.05-.025A4 4 0 0011.057 2H5.64a2 2 0 00-1.962 1.608l-1.246 5.942a1 1 0 00.962 1.22H8V15a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 011.243-2.871L14 9.667z"/>
+                  </svg>
+                  <%= scan.vote_down %>
+                </div>
+              </div>
+
+              <%= link_to "Dettagli", scan, class: "text-blue-600 hover:text-blue-800 font-medium" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="mt-6 text-center">
+      <p class="text-gray-600">
+        Total Scans: <%= @scans.count %>
       </p>
-    <% end %>
+    </div>
   <% end %>
 </div>
-
-<%# <%= link_to "New scan", new_scan_path %>

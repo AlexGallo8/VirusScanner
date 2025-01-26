@@ -3,7 +3,7 @@ class ScansController < ApplicationController
 
   # GET /scans or /scans.json
   def index
-    @scans = Scan.all
+    @scans = current_user.scans.order(upload_date: :desc)
   end
 
   # GET /scans/1 or /scans/1.json

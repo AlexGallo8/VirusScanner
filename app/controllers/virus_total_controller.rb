@@ -87,6 +87,12 @@ class VirusTotalController < ApplicationController
     existing_scan = Scan.find_by(hashcode: file_hash)
 
     if existing_scan
+      
+      # Aggiornamento della join table scan_user
+      if user_signed_in? && !@scan.users.include?(current_user)
+        @scan.users << current_user
+      end
+
       if user_signed_in? && existing_scan.user_id.nil?
         existing_scan.update(user_id: current_user.id)
       end
@@ -126,6 +132,12 @@ class VirusTotalController < ApplicationController
     existing_scan = Scan.find_by(file_name: url)
 
     if existing_scan
+      
+      # Aggiornamento della join table scan_user
+      if user_signed_in? && !@scan.users.include?(current_user)
+        @scan.users << current_user
+      end
+
       if user_signed_in? && existing_scan.user_id.nil?
         existing_scan.update(user_id: current_user.id)
       end

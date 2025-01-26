@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_01_24_185139) do
+ActiveRecord::Schema[7.1].define(version: 2025_01_26_192714) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "user_id", null: false
@@ -19,6 +19,15 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_24_185139) do
     t.integer "scan_id"
     t.index ["scan_id"], name: "index_comments_on_scan_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "scan_users", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "scan_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scan_id"], name: "index_scan_users_on_scan_id"
+    t.index ["user_id"], name: "index_scan_users_on_user_id"
   end
 
   create_table "scans", force: :cascade do |t|
@@ -54,4 +63,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_24_185139) do
   end
 
   add_foreign_key "comments", "users"
+  add_foreign_key "scan_users", "scans"
+  add_foreign_key "scan_users", "users"
 end

@@ -11,7 +11,7 @@
   <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
     <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
       <h2 class="text-2xl font-bold mb-4 text-black">Scan File</h2>
-      <p class="mb-4">Upload your file to analyze it</p>
+      <p class="mb-4 text-center">Upload your file to analyze it</p>
       <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
         <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
           <%= file_field_tag :file, class: "hidden", id: "fileInput" %>
@@ -52,7 +52,7 @@
     </div>
     <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
     <h2 class="text-2xl font-bold mb-4 text-black">Scan URL</h2>
-    <p class="mb-4">Enter a URL to analyze it for potential threats</p>
+    <p class="mb-4 text-center">Enter a URL to analyze it for potential threats</p>
     <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <label class="cursor-pointer py-4 w-full">

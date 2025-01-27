@@ -21,16 +21,14 @@
 
 body {
   background: #FFFFFF;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  
   font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
   font-weight: bold;
   margin: 20px;
-font-size: large;
+  font-size: large;
 }
 
 h2 {

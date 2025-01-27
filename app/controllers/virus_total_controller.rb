@@ -16,11 +16,11 @@ class VirusTotalController < ApplicationController
         Rails.logger.info "Starting HTML format scan with params: #{params.inspect}"
         if params[:scan_id].present?
           Rails.logger.info "Fetching results for scan_id: #{params[:scan_id]}"
-          existing_scan = Scan.find_by(vt_id: params[:scan_id])
+          @scan = Scan.find_by(vt_id: params[:scan_id])
           
-          if existing_scan&.scan_result.present?
+          if @scan&.scan_result.present?
             Rails.logger.info "Found existing scan with results"
-            @results = existing_scan.scan_result
+            @results = @scan.scan_result
           else
             Rails.logger.info "No existing scan found or no results, fetching from API"
             @results = get_analysis_result(params[:scan_id])

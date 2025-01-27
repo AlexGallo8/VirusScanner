@@ -1,84 +1,205 @@
 <!-- app/views/virus_total/scan.html.erb -->
-<div class="container mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold mb-6 text-gray-800">Risultati della Scansione</h1>
+<div class="container mx-auto px-4">
+  <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">Risultati della Scansione</h1>
 
   <% if @results.present? %>
     <% Rails.logger.info "Raw results in view: #{@results.inspect}" %>
     <% 
       stats = @results.values.group_by { |r| r['category'] }.transform_values(&:count)
-      Rails.logger.info "Calculated stats: #{stats.inspect}"
       total = @results.size
       malicious = stats['malicious'].to_i
       undetected = stats['undetected'].to_i
-      clean = undetected  # Consider undetected as clean
-      Rails.logger.info "Totals - Total: #{total}, Malicious: #{malicious}, Undetected: #{undetected}, Clean: #{clean}"
+      clean = undetected
     %>
 
-    <div class="mt-8 bg-white shadow-md rounded-lg p-6">
-      <h2 class="text-2xl font-bold mb-4 text-gray-800">Riepilogo</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-blue-100 rounded-lg p-4">
-          <p class="text-blue-800 font-semibold">Totale motori</p>
-          <p class="text-3xl font-bold text-blue-900"><%= total %></p>
-        </div>
-        <div class="bg-green-100 rounded-lg p-4">
-          <p class="text-green-800 font-semibold">Non rilevato</p>
-          <p class="text-3xl font-bold text-green-900"><%= undetected %> (<%= (undetected.to_f / total * 100).round(2) %>%)</p>
-        </div>
-        <div class="bg-red-100 rounded-lg p-4">
-          <p class="text-red-800 font-semibold">File malevolo</p>
-          <p class="text-3xl font-bold text-red-900"><%= malicious %> (<%= (malicious.to_f / total * 100).round(2) %>%)</p>
-        </div>
-      </div>
 
-      <% threat_level = if malicious > 0
-                         ["Alto", "bg-red-100 text-red-800"]
-                       else
-                         ["Basso", "bg-green-100 text-green-800"]
-                       end %>
-
-      <div class="mt-6">
-        <p class="text-gray-700 font-semibold">Livello di minaccia:</p>
-        <span class="px-3 py-1 inline-flex text-sm font-semibold rounded-full <%= threat_level[1] %>">
-          <%= threat_level[0] %>
+    <!-- File Information Card -->
+  <div class="bg-white shadow-md p-6 rounded-lg transform transition-all duration-300 hover:shadow-lg ">
+    <div class="flex justify-between items-start gap-8">
+      <!-- Left side: Icon, Filename and Upload Date -->
+      <div class="flex flex-col items-center justify-center mx-20">
+        <div class="bg-gray-50 rounded-lg flex justify-center items-center">
+          <% if @scan&.file_name.present? %>
+            <% file_icon_class = case File.extname(@scan.file_name).downcase
+              when '.pdf' then 'fas fa-file-pdf text-red-500'
+              when '.doc', '.docx' then 'fas fa-file-word text-blue-500'
+              when '.xls', '.xlsx' then 'fas fa-file-excel text-green-500'
+              when '.jpg', '.jpeg', '.png', '.gif' then 'fas fa-file-image text-purple-500 '
+              when '.zip', '.rar' then 'fas fa-file-archive text-yellow-500'
+              else 'fas fa-file text-gray-500 p-8' 
+              end %>
+            <i class="<%= file_icon_class %> text-6xl p-8"></i>
+          <% else %>
+            <i class="fas fa-file text-gray-500 text-8xl p-6"></i>
+          <% end %>
+        </div>
+        <h2 class="text-xl font-bold text-gray-800 text-center mt-2 w-full">
+          <%= @scan&.file_name || 'File sconosciuto' %>
+        </h2>
+        <span class="text-sm text-gray-500 mt-1 text-center w-full">
+          Caricato il: <%= l(@scan.upload_date, format: :long) if @scan&.upload_date.present? %>
         </span>
       </div>
-      <div class="mt-8">
-        <%= link_to "Scansiona un altro file", virus_total_path, class: "bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" %>
+
+      <!-- Right side: File Metadata -->
+      <div class="flex-1 bg-gray-50 rounded-lg p-2 hover:bg-gray-100">
+        <div class="space-y-4">
+          <div class="flex items-center gap-4  ">
+            <p class="text-xs text-gray-500 w-24">Dimensione:</p>
+            <i class="fas fa-weight text-gray-400 text-xl mb-2"></i>
+            <p class="text-sm font-medium text-gray-700"><%= number_to_human_size(@scan&.file_size || 0) %></p>
+          </div>
+          
+          <div class="flex items-center gap-4 border-b">
+            <p class="text-xs text-gray-500 w-24">Tipo di file:</p>
+            <i class="fas fa-file-code text-gray-400 text-xl mb-2"></i>
+            <p class="text-sm font-medium text-gray-700"><%= @scan&.file_type || 'Sconosciuto' %></p>
+          </div>
+          
+          <div class="flex items-center gap-4">
+            <p class="text-xs text-gray-500 w-24">Hash del file:</p>
+            <i class="fas fa-fingerprint text-gray-400 text-xl mb-2"></i>
+            <p class="text-sm font-mono text-gray-700 break-all">
+              <%= @scan&.hashcode || 'Non disponibile' %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+    <!-- Summary Cards -->
+    <div class="mt-2 bg-white shadow-md rounded-lg p-4 transform transition-all duration-300 hover:shadow-lg">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-red-100 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
+            <i class="fas fa-virus text-red-500 text-2xl mr-3"></i>
+            <p class="text-red-800 font-semibold">File malevolo</p>
+            <p class="text-2xl font-bold text-red-900">
+              <%= malicious %> (<%= (malicious.to_f / total * 100).round(2) %>%)
+            </p>
+        </div>
+        <div class="bg-green-100 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
+          <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+          <p class="text-green-800 font-semibold">Non rilevato</p>
+          <p class="text-2xl font-bold text-green-900">
+            <%= undetected %> (<%= (undetected.to_f / total * 100).round(2) %>%)
+          </p>
+        </div>
+         <div class="bg-blue-100 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
+            <i class="fas fa-shield-alt text-blue-500 text-2xl mr-3"></i>
+            <p class="text-blue-800 font-semibold">Totale motori</p>
+            <p class="text-2xl font-bold text-blue-900"><%= total %></p>
+        </div>
       </div>
     </div>
 
-    <div class="bg-white shadow-md rounded-lg overflow-hidden mt-10">
-      <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-gray-50">
-          <tr>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Antivirus</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stato</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dettagli</th>
-          </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-          <% @results.sort_by { |k, v| v['category'] == 'malicious' ? 0 : 1 }.each do |engine, result| %>
+    <!-- Detailed Results Table -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden mt-10 transform transition-all duration-300 hover:shadow-lg mx-auto">
+      <div class="p-4 bg-gray-50 border-b border-gray-200">
+        <div class="flex justify-start items-center gap-4">
+          <h3 class="text-lg font-semibold text-gray-800">Risultati Dettagliati</h3>
+          <div class="relative">
+            <input type="text" 
+                   id="searchAntivirus" 
+                   placeholder="Cerca antivirus..." 
+                   class="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200">
+          </div>
+        </div>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
             <tr>
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= engine %></td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm">
-                <% status_class = result['category'] == 'malicious' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800' %>
-                <% status_icon = result['category'] == 'malicious' ? '✗' : '✓' %>
-                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <%= status_class %>">
-                  <%= status_icon %>
-                </span>
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                <%= result['result'].presence || 'Non rilevato' %>
-              </td>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Antivirus</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stato</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dettagli</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Versione</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Metodo</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200" id="antivirusResults">
+            <% 
+              # Group antiviruses by tier
+              major_engines = ['Kaspersky', 'McAfee', 'Symantec', 'BitDefender', 'ESET-NOD32', 'Avast', 'Sophos']
+              @results.sort_by { |k, v| 
+                [
+                  v['category'] == 'malicious' ? 0 : 1,
+                  major_engines.include?(k) ? 0 : 1,
+                  k
+                ]
+              }.each_with_index do |(engine, result), index| 
+            %>
+              <tr class="hover:bg-gray-50 transition-colors duration-200 animate-fade-in antivirusRow" 
+                  style="animation-delay: <%= index * 0.05 %>s"
+                  data-engine="<%= engine.downcase %>">
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center gap-4">
+                    <div class="flex-shrink-0 h-8 w-8 flex items-center justify-center">
+                      <img src="https://www.google.com/s2/favicons?domain=<%= engine.downcase %>.com" 
+                           class="h-4 w-4" 
+                           alt="<%= engine %>"
+                           onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=antivirus.com';">
+                    </div>
+                    <div class="ml-4">
+                      <div class="font-medium text-gray-900 ">
+                        <%= engine %>
+                        <% if major_engines.include?(engine) %>
+                          <span class="ml-2 px-2 py-0.5 text-xs bg-blue-100 text-blue-800 rounded-full">Premium</span>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <% status_class = result['category'] == 'malicious' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800' %>
+                  <% status_icon = result['category'] == 'malicious' ? 'fas fa-virus' : 'fas fa-shield-check' %>
+                  <span class="px-3 py-1 inline-flex items-center text-sm font-semibold rounded-full <%= status_class %>">
+                    <i class="<%= status_icon %> mr-1"></i>
+                    <%= result['category'].capitalize %>
+                  </span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <%= result['result'].presence || 'Non rilevato' %>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <%= result['engine_version'] || 'N/A' %>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <span class="px-2 py-1 text-xs bg-gray-100 rounded-full">
+                    <%= result['method'].capitalize %>
+                  </span>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
+
+    <!-- Action Buttons -->
+    <div class="mt-8 flex justify-center space-x-4">
+      <%= link_to virus_total_path, 
+          class: "bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center" do %>
+        <i class="fas fa-upload mr-2"></i>
+        Scansiona un altro file
+      <% end %>
+      
+      <%= link_to "#", 
+          onclick: "window.print()", 
+          class: "bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center" do %>
+        <i class="fas fa-print mr-2"></i>
+        Stampa Report
+      <% end %>
+    </div>
+
   <% else %>
+    <!-- Loading State -->
     <div class="mt-8 bg-yellow-100 rounded-lg p-6">
-      <p class="text-yellow-800">Caricamento dei risultati in corso...</p>
+      <div class="flex items-center justify-center">
+        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-700 mr-3"></div>
+        <p class="text-yellow-800">Caricamento dei risultati in corso...</p>
+      </div>
     </div>
   <% end %>
 </div>

@@ -13,24 +13,25 @@ class VirusTotalController < ApplicationController
   def scan
     respond_to do |format|
       format.html do
+        Rails.logger.info "Starting HTML format scan with params: #{params.inspect}"
         if params[:scan_id].present?
           Rails.logger.info "Fetching results for scan_id: #{params[:scan_id]}"
-          # Check if scan exists in database first
           existing_scan = Scan.find_by(vt_id: params[:scan_id])
+          
           if existing_scan&.scan_result.present?
+            Rails.logger.info "Found existing scan with results"
             @results = existing_scan.scan_result
-            Rails.logger.info "Retrieved results from database: #{@results}"
           else
+            Rails.logger.info "No existing scan found or no results, fetching from API"
             @results = get_analysis_result(params[:scan_id])
-            Rails.logger.info "Retrieved results from API: #{@results}"
           end
+          
           @scan_id = params[:scan_id]
-          render :scan and return
+          render :scan
         else
+          Rails.logger.info "No scan_id present, handling new scan request"
           handle_scan_request
-          Rails.logger.info "Scan request handled, results: #{@results}"
-          Rails.logger.info "Scan ID being used: #{@scan_id}"
-          render :scan and return
+          render :scan
         end
       end
       
@@ -81,48 +82,49 @@ class VirusTotalController < ApplicationController
 
   # Remove the process_scan method since we've replaced it with handle_scan_request
   def process_file_scan
-    file_path = params[:file].tempfile.path
-    file_hash = calculate_file_hash(file_path)
-
-    existing_scan = Scan.find_by(hashcode: file_hash)
-
-    if existing_scan
-      
-      # Aggiornamento della join table scan_user
-      if user_signed_in? && !@scan.users.include?(current_user)
-        @scan.users << current_user
-      end
-
-      if user_signed_in? && existing_scan.user_id.nil?
-        existing_scan.update(user_id: current_user.id)
-      end
-
-      @results = existing_scan.scan_result
-      @scan_id = existing_scan.vt_id
-    else
-      @scan_id = upload_file(file_path)
-      
-      session[:current_scan_id] = @scan_id
-      
-      scan = Scan.create(
-        file_name: params[:file].original_filename,
-        file_type: params[:file].content_type,
-        hashcode: file_hash,
-        file_size: File.size(file_path),
-        upload_date: Time.current,
-        user_id: current_user&.id,
-        vt_id: @scan_id,
-        scan_result: nil
-      )
-
-      @results = wait_for_results
-      if @results.present?
-        scan.update(scan_result: @results)
-        Rails.logger.info "Scan results for #{scan.file_name}: #{@results}"
+    begin
+      file_path = params[:file].tempfile.path
+      file_hash = calculate_file_hash(file_path)
+    
+      existing_scan = Scan.find_by(hashcode: file_hash)
+    
+      if existing_scan
+        if user_signed_in?
+          # Fix the undefined @scan variable
+          existing_scan.users << current_user unless existing_scan.users.include?(current_user)
+          existing_scan.update(user_id: current_user.id) if existing_scan.user_id.nil?
+        end
+    
+        @results = existing_scan.scan_result
+        @scan_id = existing_scan.vt_id
       else
-        # Handle the case when no results are found
-        flash.now[:alert] = "Impossibile completare la scansione. Riprova più tardi."
+        @scan_id = upload_file(file_path)
+        
+        session[:current_scan_id] = @scan_id
+        
+        scan = Scan.create!(
+          file_name: params[:file].original_filename,
+          file_type: params[:file].content_type,
+          hashcode: file_hash,
+          file_size: File.size(file_path),
+          upload_date: Time.current,
+          user_id: current_user&.id,
+          vt_id: @scan_id,
+          scan_result: nil
+        )
+    
+        @results = wait_for_results
+        if @results.present?
+          scan.update!(scan_result: @results)
+          Rails.logger.info "Scan results for #{scan.file_name}: #{@results}"
+        else
+          flash.now[:alert] = "Impossibile completare la scansione. Riprova più tardi."
+        end
       end
+    rescue StandardError => e
+      Rails.logger.error "Error in process_file_scan: #{e.message}"
+      flash.now[:error] = "Si è verificato un errore durante la scansione del file."
+      @results = nil
     end
   end
 
@@ -249,23 +251,31 @@ class VirusTotalController < ApplicationController
       http.request(request)
     end
     
-    # parsed_response = JSON.parse(response.body)
-    # Rails.logger.info "Raw API Response for #{file_id}: #{parsed_response}"
+    parsed_response = JSON.parse(response.body)
+    Rails.logger.info "Raw API Response for #{file_id}: #{parsed_response}"
     
-    return nil unless response['data'] && 
-                     response['data']['attributes']
+    return nil unless parsed_response['data'] && 
+                     parsed_response['data']['attributes'] &&
+                     parsed_response['data']['attributes']['results']
 
-    # attributes = parsed_response['data']['attributes']
+    results = parsed_response['data']['attributes']['results']
     
-    # {
-    #   'stats' => attributes['stats'],
-    #   'results' => attributes['results'].transform_values do |vendor_result|
-    #     {
-    #       'category' => vendor_result['category'],
-    #       'result' => vendor_result['result']
-    #     }
-    #   end
-    # }
+    # Transform the results into a more manageable format
+    results.transform_values do |vendor_result|
+      {
+        'category' => vendor_result['category'],
+        'result' => vendor_result['result'],
+        'method' => vendor_result['method'],
+        'engine_name' => vendor_result['engine_name'],
+        'engine_version' => vendor_result['engine_version']
+      }
+    end
+  rescue JSON::ParserError => e
+    Rails.logger.error "JSON parsing error: #{e.message}"
+    nil
+  rescue StandardError => e
+    Rails.logger.error "Error in get_analysis_result: #{e.message}"
+    nil
   end
 
   # def wait_for_results

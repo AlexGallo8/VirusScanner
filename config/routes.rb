@@ -7,7 +7,12 @@ Rails.application.routes.draw do
 
   resources :scans, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :comments, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  
+  resources :virus_total do
+  collection do
+    post 'scan'
+    get 'scan'
+  end
+end
   get "/about",to: "about#index", as: :about
   get 'dashboard', to: 'dashboard#index'
   

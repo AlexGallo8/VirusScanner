@@ -1,52 +1,102 @@
-<div class="max-w-2xl mx-auto p-4">
-  <h1 class="text-2xl font-bold mb-6">Account Preferences</h1>
-
-  <%= form_for(current_user, url: preferences_path, html: { class: "space-y-6" }) do |f| %>
-    <% if @user.errors.any? %>
-      <div class="bg-red-50 p-4 rounded-md">
-        <ul class="list-disc pl-5">
-          <% @user.errors.full_messages.each do |message| %>
-            <li class="text-red-700"><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="bg-white p-6 rounded-lg shadow">
-      <h2 class="text-xl font-semibold mb-4">Profile Information</h2>
-      
-      <div class="space-y-4">
-        <div>
-          <%= f.label :username, class: "block text-sm font-medium text-gray-700" %>
-          <%= f.text_field :username, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
-        </div>
-
-      </div>
+<div class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-10">
+      <h1 class="text-3xl font-extrabold text-gray-900 text-center">
+        <i class="fas fa-user-cog mr-2"></i>Account Preferences
+      </h1>
+      <p class="text-center text-gray-600 mt-2">Manage your account settings and security preferences</p>
     </div>
 
-    <div class="bg-white p-6 rounded-lg shadow">
-      <h2 class="text-xl font-semibold mb-4">Change Password</h2>
-      
-      <div class="space-y-4">
-        <div>
-          <%= f.label :current_password, class: "block text-sm font-medium text-gray-700" %>
-          <%= f.password_field :current_password, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+<%= form_for(current_user, url: preferences_path, html: { class: "space-y-6" }) do |f| %>
+  <% if @user.errors.any? %>
+    <div class="bg-red-50 border border-red-400 rounded-md p-4 mb-6 animate-shake">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <i class="fas fa-exclamation-circle text-red-400 text-lg"></i>
         </div>
-
-        <div>
-          <%= f.label :password, "New Password", class: "block text-sm font-medium text-gray-700" %>
-          <%= f.password_field :password, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
-        </div>
-
-        <div>
-          <%= f.label :password_confirmation, "Confirm New Password", class: "block text-sm font-medium text-gray-700" %>
-          <%= f.password_field :password_confirmation, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+        <div class="ml-3">
+          <ul class="list-disc pl-5 space-y-1">
+            <% @user.errors.full_messages.each do |message| %>
+              <li class="text-red-700 text-sm"><%= message %></li>
+            <% end %>
+          </ul>
         </div>
       </div>
-    </div>
-
-    <div class="flex justify-end">
-      <%= f.submit "Update Preferences", class: "px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
     </div>
   <% end %>
+
+  <div class="bg-white shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl">
+    <div class="grid grid-cols-2 gap-8 p-8">
+      <!-- Left Side: Profile Information -->
+      <div class="space-y-6">
+        <div class="flex items-center">
+          <i class="fas fa-id-card text-indigo-600 text-xl mr-2"></i>
+          <h2 class="text-xl font-bold text-gray-900">Profile Information</h2>
+        </div>
+        <p class="text-gray-600">Your profile information is visible to other users</p>
+        <div class="space-y-4">
+          <div class="relative">
+            <%= f.label :username, class: "block text-sm font-medium text-gray-700" %>
+            <div class="mt-1 relative rounded-md shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <i class="fas fa-user text-gray-400"></i>
+              </div>
+              <%= f.text_field :username, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">This is your public display name</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Password Change -->
+      <div class="space-y-6">
+        <div class="flex items-center">
+          <i class="fas fa-lock text-yellow-500 text-xl mr-2"></i>
+          <h2 class="text-xl font-bold text-gray-900">Change Password</h2>
+        </div>
+        <p class="text-gray-600">Ensure your account is secure with a strong password</p>
+        <div class="space-y-4">
+          <div class="relative">
+            <%= f.label :current_password, class: "block text-sm font-medium text-gray-700" %>
+            <div class="mt-1 relative rounded-md shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <i class="fas fa-key text-gray-400"></i>
+              </div>
+              <%= f.password_field :current_password, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+          </div>
+
+          <div class="relative">
+            <%= f.label :password, "New Password", class: "block text-sm font-medium text-gray-700" %>
+            <div class="mt-1 relative rounded-md shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <i class="fas fa-lock text-gray-400"></i>
+              </div>
+              <%= f.password_field :password, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">Password must be at least 8 characters long</p>
+          </div>
+
+          <div class="relative">
+            <%= f.label :password_confirmation, "Confirm New Password", class: "block text-sm font-medium text-gray-700" %>
+            <div class="mt-1 relative rounded-md shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <i class="fas fa-check-circle text-gray-400"></i>
+              </div>
+              <%= f.password_field :password_confirmation, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Bottom: Update Button -->
+    <div class="flex justify-center p-6 border-t border-gray-200">
+      <%= f.submit "Update Preferences", class: "inline-flex items-center justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" do %>
+        <i class="fas fa-save mr-2"></i> Save Changes
+      <% end %>
+    </div>
+  </div>
+<% end %>
+  </div>
 </div>

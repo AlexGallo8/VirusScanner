@@ -1,28 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full bg-gray-50">
   <head>
     <title>Virusscanner</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>    
-    <%= javascript_include_tag "scripts", "data-turbo-track": "reload" %>
-    
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "scripts", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
   </head>
   
-  <body>
+  <body class="h-full">
+    <div class="min-h-screen flex flex-col">
+      <%= render partial: "shared/navbar"%>
+      
+      <main class="flex-grow">
+        <% if notice %>
+          <div id="notice-toast" class="fixed top-30 right-0 bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 rounded shadow-lg transition-opacity duration-500" role="alert">
+            <%= notice %>
+          </div>
 
-    <%= render partial: "shared/navbar"%>
-    <%= notice %>
+          <script>
+            setTimeout(function() {
+              const toast = document.getElementById('notice-toast');
+              toast.style.opacity = '0';
+              setTimeout(function() {
+                toast.remove();
+              }, 500);
+            }, 5000);
+          </script>
+        <% end %>
+
+<% if flash[:alert] %>
+  <div id="alert-toast" class="fixed top-4 right-4 bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded shadow-lg transition-opacity duration-500" role="alert">
     <%= flash[:alert] %>
-    <%= yield %>
-    <%= render partial: "shared/footer"%>
+  </div>
 
+  <script>
+    setTimeout(function() {
+      const toast = document.getElementById('alert-toast');
+      toast.style.opacity = '0';
+      setTimeout(function() {
+        toast.remove();
+      }, 500);
+    }, 5000);
+  </script>
+<% end %>
+
+        <%= yield %>
+      </main>
+
+      <%= render partial: "shared/footer"%>
+    </div>
   </body>
-
 </html>

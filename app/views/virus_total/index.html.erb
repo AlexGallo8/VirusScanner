@@ -1,96 +1,273 @@
-<div class=" card flex justify-center items-center mx-auto ">
-  <h1 class="text-center mb-4">Scansione VirusTotal</h1>
-  <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
-    <label class="cursor-pointer py-4 w-full">
-      <%= file_field_tag :file, class: "hidden", id: "dropzone-file" %>
-      <div id="d-area" class="border-dotted border-2 border-gray-300 rounded-md p-4 text-center">
-        <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+<div class="container mx-auto px-4 py-8 animate-fade-in">
+  <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+      <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
+        <h2 class="text-2xl font-bold mb-4 text-black">Scan File</h2>
+        <p class="mb-4 text-center">Upload your file to analyze it</p>
+        <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+          <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
+            <%= file_field_tag :file, class: "hidden", id: "fileInput" %>
+            <label for="fileInput" class="cursor-pointer block w-full">
+              <div id="dropText" class="h-32 flex flex-col items-center justify-center">
+                <p class="text-gray-500">Drag and drop your file here or click to browse</p>
+              </div>
+              
+              <div id="filePreview" class="hidden h-32 flex flex-col items-center justify-center">
+                <div class="flex flex-col items-center">
+                  <svg class="w-6 h-6 mb-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                  </svg>
+                  <p id="fileName" class="text-gray-800 text-sm font-medium mb-2"></p>
+                  <button type="button" id="removeFile" class="text-red-500 hover:text-red-600 text-xs">Remove</button>
+                </div>
+              </div>
+            </label>
+          </div>
+          <% if user_signed_in_with_google? %>
+            <div class="flex flex-row justify-center items-center gap-4">
+              <%= submit_tag "Scan", class: "btn btn-primary  button-scan" %>
+              <%= button_tag type: "button",
+                  onclick: "openDrivePicker()",
+                  class: "btn btn-primary  button-scan" do %>
+                  <div class="flex items-center justify-center  gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
+                      <path fill="#1e88e5" d="M38.59,39c-0.535,0.93-0.298,1.68-1.195,2.197C36.498,41.715,35.465,42,34.39,42H13.61 c-1.074,0-2.106-0.285-3.004-0.802C9.708,40.681,9.945,39.93,9.41,39l7.67-9h13.84L38.59,39z"></path>
+                      <path fill="#fbc02d" d="M27.463,6.999c1.073-0.002,2.104-0.716,3.001-0.198c0.897,0.519,1.66,1.27,2.197,2.201l10.39,17.996 c0.537,0.93,0.807,1.967,0.808,3.002c0.001,1.037-1.267,2.073-1.806,3.001l-11.127-3.005l-6.924-11.993L27.463,6.999z"></path>
+                      <path fill="#e53935" d="M43.86,30c0,1.04-0.27,2.07-0.81,3l-3.67,6.35c-0.53,0.78-1.21,1.4-1.99,1.85L30.92,30H43.86z"></path>
+                      <path fill="#4caf50" d="M5.947,33.001c-0.538-0.928-1.806-1.964-1.806-3c0.001-1.036,0.27-2.073,0.808-3.004l10.39-17.996 c0.537-0.93,1.3-1.682,2.196-2.2c0.897-0.519,1.929,0.195,3.002,0.197l3.459,11.009l-6.922,11.989L5.947,33.001z"></path>
+                      <path fill="#1565c0" d="M17.08,30l-6.47,11.2c-0.78-0.45-1.46-1.07-1.99-1.85L4.95,33c-0.54-0.93-0.81-1.96-0.81-3H17.08z"></path>
+                      <path fill="#2e7d32" d="M30.46,6.8L24,18L17.53,6.8c0.78-0.45,1.66-0.73,2.6-0.79L27.46,6C28.54,6,29.57,6.28,30.46,6.8z"></path>
+                    </svg>
+                    Upload from Drive
+                  </div>
+              <% end %>
+            </div>
+          <% else %>
+            <%= submit_tag "Scan", class: "btn btn-primary mt-4 button" %>
+          <% end %>
+          <div id="file-info" class="hidden text-center mb-4">
+            <p class="text-gray-800">File: <span id="file-name"></span></p>
+            <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+          </div>
+        </form>
+        <% end %>
       </div>
-      <div id="file-info" class="hidden p-4 text-center">
-        <p class="text-gray-800"><span id="file-name"></span></p>
-        <%= link_to "Remove", virus_total_path, class: "button-red" %>
-      </div>
-    </label>
-    <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
-  <% end %>
-</div>
+      <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
+        <h2 class="text-2xl font-bold mb-4 text-black">Scan URL</h2>
+        <p class="mb-4 text-center">Enter a URL to analyze it for potential threats</p>
+        <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <label class="cursor-pointer py-4 w-full">
+            <%= text_field_tag :url, nil, placeholder: "Enter URL here", class:"w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" %>
+          </label>
+          <%= submit_tag "Scan", class: "btn btn-primary button" %>
+        <% end %>
+    </div>
+  </div>
 
-<div class=" card flex justify-center items-center mx-auto ">
-  <h1 class="text-center mb-4">Scansione VirusTotal</h1>
-  <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
-    <label class="cursor-pointer py-4 w-full">
-      <%= text_field_tag (:url) %>
-    </label>
-    <%= submit_tag "Scansiona", class: "btn btn-primary mt-4 button" %>
-  <% end %>
-</div>
+
+
 <script>
-document.addEventListener('turbo:load', function() {
+window.onload = function() {
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('fileInput');
+  const dropText = document.getElementById('dropText');
+  const filePreview = document.getElementById('filePreview');
+  const fileName = document.getElementById('fileName');
+  const removeFile = document.getElementById('removeFile');
 
-    document.getElementById('dropzone-file').addEventListener('change', function(event) {
-    var fileInfoDiv = document.getElementById('file-info');
-    var dropAreaDiv = document.getElementById('d-area');
-    var fileNameSpan = document.getElementById('file-name');
-
-    if (event.target.files.length > 0) {
-        var file = event.target.files[0];
-        var filename = file.name;
-        var filenameWithoutExtension = filename.split('.').slice(0, -1).join('.');
-        fileNameSpan.textContent = filenameWithoutExtension;
-
-        fileInfoDiv.classList.remove('hidden');
-        dropAreaDiv.classList.add('hidden');
-        }
-    });
-});
-document.addEventListener('DOMContentLoaded', function() {
-  const dropArea = document.getElementById('d-area');
-  const fileInput = document.getElementById('dropzone-file');
-  const fileInfo = document.getElementById('file-info');
-  const fileNameDisplay = document.getElementById('file-name');
-
-  // Prevenire il comportamento di default per gli eventi dragover e drop
-  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-    dropArea.addEventListener(eventName, preventDefaults, false);
-  });
-
-  function preventDefaults(e) {
+  // Gestione drag and drop
+  dropzone.addEventListener('dragover', function(e) {
     e.preventDefault();
     e.stopPropagation();
-  }
-
-  // Evidenziare la dropzone quando un file è trascinato sopra
-  ['dragenter', 'dragover'].forEach(eventName => {
-    dropArea.addEventListener(eventName, highlight, false);
+    dropzone.classList.add('border-blue-500');
   });
 
-  ['dragleave', 'drop'].forEach(eventName => {
-    dropArea.addEventListener(eventName, unhighlight, false);
+  dropzone.addEventListener('dragleave', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dropzone.classList.remove('border-blue-500');
   });
 
-  function highlight(e) {
-    dropArea.classList.add('border-blue-500'); // Cambia il colore del bordo quando si trascina un file sopra
+  dropzone.addEventListener('drop', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dropzone.classList.remove('border-blue-500');
+    
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+      handleFile(files[0]);
+      fileInput.files = files;
+    }
+  });
+
+  // Gestione selezione file tramite click
+  fileInput.addEventListener('change', function(e) {
+    if (this.files.length > 0) {
+      handleFile(this.files[0]);
+    }
+  });
+
+  // Gestione rimozione file
+  removeFile.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    fileInput.value = '';
+    dropText.classList.remove('hidden');
+    filePreview.classList.add('hidden');
+  });
+
+  function handleFile(file) {
+    fileName.textContent = file.name;
+    dropText.classList.add('hidden');
+    filePreview.classList.remove('hidden');
   }
+};
 
-  function unhighlight(e) {
-    dropArea.classList.remove('border-blue-500'); // Ripristina il colore del bordo originale
-  }
 
-  // Gestire il file rilasciato
-  dropArea.addEventListener('drop', handleDrop, false);
+document.addEventListener('DOMContentLoaded', function() {
+  const forms = document.querySelectorAll('form[action="/virus_total/scan"]');
 
-  function handleDrop(e) {
-    const dt = e.dataTransfer;
-    const files = dt.files;
+  
+  // Aggiungiamo gli stili CSS necessari
+  const style = document.createElement('style');
+  style.textContent = `
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
 
-    handleFiles(files);
-  }
+    .progress-bar {
+      width: 100%;
+      background-color: #e5e7eb;
+      border-radius: 9999px;
+      height: 1rem;
+      overflow: hidden;
+    }
 
-  function handleFiles(files) {
-    fileInput.files = files;
-    fileInfo.style.display = 'block';
-    fileNameDisplay.textContent = files[0].name; // Mostra il nome del file caricato
-  }
+    .progress-bar-fill {
+      height: 100%;
+      background-color: #3b82f6;
+      transition: width 0.3s ease-out;
+      border-radius: 9999px;
+    }
+  `;
+  document.head.appendChild(style);
+
+  forms.forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Create loading screen
+      const loadingScreen = document.createElement('div');
+      loadingScreen.className = 'loading-overlay';
+      loadingScreen.innerHTML = `
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-4">
+          <div class="text-center">
+            <div class="mb-6">
+              <h2 class="text-3xl font-bold text-gray-900 mb-2">Scanning in Progress</h2>
+              <p class="text-gray-600">Please wait while we analyze your submission</p>
+            </div>
+            
+            <div class="progress-bar mb-4">
+              <div class="progress-bar-fill" style="width: 0%" id="progressBar"></div>
+            </div>
+            
+            <div class="text-lg font-semibold text-gray-700">
+              <span id="progressText">0</span>%
+            </div>
+            
+            <div class="mt-6 text-sm text-gray-500" id="statusMessage">
+              Initializing scan...
+            </div>
+          </div>
+        </div>
+      `;
+      
+      document.body.appendChild(loadingScreen);
+
+      const progressBar = document.getElementById('progressBar');
+      const progressText = document.getElementById('progressText');
+      const statusMessage = document.getElementById('statusMessage');
+      let progress = 0;
+
+      const updateProgress = () => {
+        if (progress < 95) {
+          progress += 1;
+          progressBar.style.width = `${progress}%`;
+          progressText.textContent = progress;
+          
+          if (progress < 30) {
+            statusMessage.textContent = "Initializing scan...";
+          } else if (progress < 60) {
+            statusMessage.textContent = "Analyzing content...";
+          } else if (progress < 90) {
+            statusMessage.textContent = "Processing results...";
+          } else {
+            statusMessage.textContent = "Almost done...";
+          }
+        }
+      };
+
+      const progressInterval = setInterval(updateProgress, 150);
+
+      // Create FormData
+      const formData = new FormData(form);
+      
+      try {
+        const response = await fetch('/virus_total/scan', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json',
+            'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+          }
+        });
+        
+        const data = await response.json();
+        
+        while (true) {
+          const statusResponse = await fetch(`/virus_total/scan?check_status=true&scan_id=${data.scan_id}`, {
+            headers: {
+              'Accept': 'application/json',
+              'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+            }
+          });
+          
+          const statusData = await statusResponse.json();
+          
+          if (statusData.status === 'completed') {
+            progress = 100;
+            progressBar.style.width = '100%';
+            progressText.textContent = '100';
+            statusMessage.textContent = 'Scan completed!';
+            
+            await new Promise(resolve => setTimeout(resolve, 500));
+            window.location.href = `/virus_total/scan?scan_id=${data.scan_id}`;
+            break;
+          }
+          
+          await new Promise(resolve => setTimeout(resolve, 2000));
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        statusMessage.textContent = 'An error occurred. Please try again.';
+        statusMessage.classList.add('text-red-500');
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      } finally {
+        clearInterval(progressInterval);
+        loadingScreen.remove();
+      }
+    });
+  });
 });
 
 </script>

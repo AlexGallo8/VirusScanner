@@ -89,8 +89,8 @@ class VirusTotalController < ApplicationController
       existing_scan = Scan.find_by(hashcode: file_hash)
     
       if existing_scan
+        
         if user_signed_in?
-          # Fix the undefined @scan variable
           existing_scan.users << current_user unless existing_scan.users.include?(current_user)
           existing_scan.update(user_id: current_user.id) if existing_scan.user_id.nil?
         end
@@ -112,6 +112,10 @@ class VirusTotalController < ApplicationController
           vt_id: @scan_id,
           scan_result: nil
         )
+
+        if user_signed_in?
+          scan.users << current_user unless scan.users.include?(current_user)
+        end
     
         @results = wait_for_results
         if @results.present?
@@ -135,13 +139,9 @@ class VirusTotalController < ApplicationController
 
     if existing_scan
       
-      # Aggiornamento della join table scan_user
-      if user_signed_in? && !@scan.users.include?(current_user)
-        @scan.users << current_user
-      end
-
-      if user_signed_in? && existing_scan.user_id.nil?
-        existing_scan.update(user_id: current_user.id)
+      if user_signed_in?
+        existing_scan.users << current_user unless existing_scan.users.include?(current_user)
+        existing_scan.update(user_id: current_user.id) if existing_scan.user_id.nil?
       end
 
       @results = existing_scan.scan_result
@@ -157,9 +157,13 @@ class VirusTotalController < ApplicationController
         hashcode: Digest::SHA256.hexdigest(url),
         upload_date: Time.current,
         user_id: current_user&.id,
-        vt_id: @scan_id,  # Add this line
+        vt_id: @scan_id,
         scan_result: nil
       )
+
+      if user_signed_in?
+        scan.users << current_user unless scan.users.include?(current_user)
+      end
 
       @results = wait_for_results
       if @results.present?

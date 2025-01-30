@@ -30,7 +30,7 @@ end
   get '/auth/logout', to: 'auht0#logout'
 
   get 'virus_total/pick_from_drive'
-  post 'virus_total/download_from_drive'
+  post 'virus_total/download_from_drive', to: 'virus_total#download_from_drive'
 
   root to: "main#index"
 

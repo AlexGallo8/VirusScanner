@@ -1,4 +1,4 @@
-<div class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12">
+<div class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-4">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-10">
       <h1 class="text-3xl font-extrabold text-gray-900 text-center">
@@ -7,7 +7,7 @@
       <p class="text-center text-gray-600 mt-2">Manage your account settings and security preferences</p>
     </div>
 
-<%= form_for(current_user, url: preferences_path, html: { class: "space-y-6" }) do |f| %>
+<%= form_for(current_user, url: preferences_path, html: { class: "space-y-2 " }) do |f| %>
   <% if @user.errors.any? %>
     <div class="bg-red-50 border border-red-400 rounded-md p-4 mb-6 animate-shake">
       <div class="flex">
@@ -60,7 +60,8 @@
             <%= f.label :current_password, class: "block text-sm font-medium text-gray-700" %>
             <div class="mt-1 relative rounded-md shadow-sm">
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <i class="fas fa-key text-gray-400"></i>
+                <i class="fas fa-key text-gray-400 mr-2"></i>
+                
               </div>
               <%= f.password_field :current_password, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" %>
             </div>

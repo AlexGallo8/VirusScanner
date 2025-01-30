@@ -8,6 +8,10 @@ class VirusTotalController < ApplicationController
   BASE_URL = 'https://www.virustotal.com/api/v3'
 
   def index
+    respond_to do |format|
+      format.html
+      format.json { render json: { status: 'ok' } }
+    end
   end
  
   def scan
@@ -31,13 +35,21 @@ class VirusTotalController < ApplicationController
         else
           Rails.logger.info "No scan_id present, handling new scan request"
           handle_scan_request
-          render :scan
+          render :scan unless performed?
         end
       end
       
       format.json do
         if params[:check_status].present? && params[:scan_id].present?
-          # Check database first for existing results
+          # Don't process if scan_id is undefined or invalid
+          if params[:scan_id] == 'undefined' || params[:scan_id].blank?
+            render json: { 
+              status: 'error',
+              message: 'Invalid scan ID'
+            }, status: :bad_request
+            return
+          end
+
           existing_scan = Scan.find_by(vt_id: params[:scan_id])
           @results = if existing_scan&.scan_result.present?
             existing_scan.scan_result
@@ -49,14 +61,14 @@ class VirusTotalController < ApplicationController
             status: @results.present? ? 'completed' : 'processing',
             results: @results,
             scan_id: params[:scan_id]
-          } and return
+          }
         else
           handle_scan_request
           render json: { 
             status: @results.present? ? 'completed' : 'processing',
             scan_id: @scan_id,
             results: @results
-          } and return
+          } unless performed?
         end
       end
     end
@@ -323,6 +335,59 @@ end
   #   render partial: 'drive_picker'
   # end
 
+  # Add these methods in your controller, before the private section
+  def download_from_drive
+    file_id = params[:drive_file_id]
+    
+    # Get the Google Drive service
+    drive_service = Google::Apis::DriveV3::DriveService.new
+    drive_service.authorization = current_user.google_oauth2_token
+  
+    begin
+      # Get file metadata first
+      file_metadata = drive_service.get_file(file_id, fields: 'name, mimeType, size')
+      
+      # Create a temporary file with proper extension
+      temp_file = Tempfile.new(['drive_file', File.extname(file_metadata.name)])
+      temp_file.binmode
+  
+      # Download the file from Google Drive
+      drive_service.get_file(file_id, download_dest: temp_file)
+      temp_file.rewind
+  
+      # Create the file parameter that matches what process_file_scan expects
+      uploaded_file = ActionDispatch::Http::UploadedFile.new(
+        tempfile: temp_file,
+        original_filename: file_metadata.name,
+        content_type: file_metadata.mime_type,
+        headers: "Content-Disposition: form-data; name=\"file\"; filename=\"#{file_metadata.name}\""
+      )
+  
+      # Set the file parameter
+      params[:file] = uploaded_file
+  
+      # Process the file using the existing scan logic
+      process_file_scan
+  
+      # Make sure we have a scan_id before responding
+      if @scan_id.present?
+        render json: { 
+          status: 'processing',
+          scan_id: @scan_id,
+          file_name: file_metadata.name
+        }
+      else
+        render json: { error: 'Failed to initiate scan' }, status: :unprocessable_entity
+      end
+    ensure
+      # Clean up the temporary file
+      temp_file.close
+      temp_file.unlink if temp_file
+    end
+  rescue Google::Apis::Error => e
+    Rails.logger.error "Google Drive API Error: #{e.message}"
+    render json: { error: 'Failed to download file from Google Drive' }, status: :unprocessable_entity
+  end
   # def download_from_drive
   #   file_id = params[:file_id]
     

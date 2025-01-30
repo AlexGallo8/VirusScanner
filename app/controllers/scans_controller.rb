@@ -10,10 +10,20 @@ class ScansController < ApplicationController
 
   def show
     @scan = Scan.find(params[:id])
-    virus_total_service = VirusTotalService.new('4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6')
-    response = virus_total_service.get_file_report(@scan)
-    @scan.update(scan_result: response)
-    render json: @scan
+  
+    # Only fetch new results if we don't have them already
+    if @scan.scan_result.blank? && @scan.vt_id.present?
+      virus_total_service = VirusTotalService.new('4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6')
+      response = virus_total_service.get_file_report(@scan)
+      @scan.update(scan_result: response)
+    end
+  
+    @results = @scan.scan_result
+  
+    respond_to do |format|
+      format.html # This will render show.html.erb
+      format.json { render json: @scan }
+    end
   end
 
   # GET /scans/new

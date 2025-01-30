@@ -1,19 +1,119 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mx-auto px-4">
+  <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">Risultati della Scansione</h1>
 
-<%= render @scan %>
+  <% if @results.present? %>
+    <% 
+      stats = @results.values.group_by { |r| r['category'] }.transform_values(&:count)
+      total = @results.size
+      malicious = stats['malicious'].to_i
+      undetected = stats['undetected'].to_i
+      clean = undetected
+    %>
 
-<div>
-  <%= link_to "Edit this scan", edit_scan_path(@scan) %> |
-  <%= link_to "Back to scans", scans_path %>
+    <!-- File Information Card -->
+    <div class="bg-white shadow-md p-6 rounded-lg transform transition-all duration-300 hover:shadow-lg">
+      <div class="flex justify-between items-start gap-8">
+        <!-- Left side: Icon, Filename and Upload Date -->
+        <div class="flex flex-col items-center justify-center mx-20">
+          <div class="bg-gray-50 rounded-lg flex justify-center items-center">
+            <% file_icon_class = case File.extname(@scan.file_name).downcase
+              when '.pdf' then 'fas fa-file-pdf text-red-500'
+              when '.doc', '.docx' then 'fas fa-file-word text-blue-500'
+              when '.xls', '.xlsx' then 'fas fa-file-excel text-green-500'
+              when '.jpg', '.jpeg', '.png', '.gif' then 'fas fa-file-image text-purple-500'
+              when '.zip', '.rar' then 'fas fa-file-archive text-yellow-500'
+              else 'fas fa-file text-gray-500 p-8'
+              end %>
+            <i class="<%= file_icon_class %> text-6xl p-8"></i>
+          </div>
+          <h2 class="text-xl font-bold text-gray-800 text-center mt-2 w-full">
+            <%= @scan.file_name %>
+          </h2>
+          <span class="text-sm text-gray-500 mt-1 text-center w-full">
+            Caricato il: <%= l(@scan.upload_date, format: :long) if @scan.upload_date.present? %>
+          </span>
+        </div>
 
-  <%= button_to "Destroy this scan", @scan, method: :delete %>
+        <!-- Right side: File Metadata -->
+        <div class="flex-1 bg-gray-50 rounded-lg p-2 hover:bg-gray-100">
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <p class="text-xs text-gray-500 w-24">Dimensione:</p>
+              <i class="fas fa-weight text-gray-400 text-xl mb-2"></i>
+              <p class="text-sm font-medium text-gray-700"><%= number_to_human_size(@scan.file_size) %></p>
+            </div>
+            
+            <div class="flex items-center gap-4 border-b">
+              <p class="text-xs text-gray-500 w-24">Tipo di file:</p>
+              <i class="fas fa-file-code text-gray-400 text-xl mb-2"></i>
+              <p class="text-sm font-medium text-gray-700"><%= @scan.file_type %></p>
+            </div>
+            
+            <div class="flex items-center gap-4">
+              <p class="text-xs text-gray-500 w-24">Hash del file:</p>
+              <i class="fas fa-fingerprint text-gray-400 text-xl mb-2"></i>
+              <p class="text-sm font-mono text-gray-700 break-all"><%= @scan.hashcode %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="mt-2 bg-white shadow-md rounded-lg p-4 transform transition-all duration-300 hover:shadow-lg">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-red-100 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
+          <i class="fas fa-virus text-red-500 text-2xl mr-3"></i>
+          <p class="text-red-800 font-semibold">File malevolo</p>
+          <p class="text-2xl font-bold text-red-900">
+            <%= malicious %> (<%= (malicious.to_f / total * 100).round(2) %>%)
+          </p>
+        </div>
+        <div class="bg-green-100 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
+          <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+          <p class="text-green-800 font-semibold">Non rilevato</p>
+          <p class="text-2xl font-bold text-green-900">
+            <%= undetected %> (<%= (undetected.to_f / total * 100).round(2) %>%)
+          </p>
+        </div>
+        <div class="bg-blue-100 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
+          <i class="fas fa-shield-alt text-blue-500 text-2xl mr-3"></i>
+          <p class="text-blue-800 font-semibold">Totale motori</p>
+          <p class="text-2xl font-bold text-blue-900"><%= total %></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="mt-2 flex justify-center space-x-4">
+      <%= link_to virus_total_path, 
+          class: "bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center" do %>
+        <i class="fas fa-upload mr-2"></i>
+        Scansiona un altro file
+      <% end %>
+      
+      <%= link_to "#", 
+          onclick: "window.print()", 
+          class: "bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center" do %>
+        <i class="fas fa-print mr-2"></i>
+        Stampa Report
+      <% end %>
+    </div>
+
+    <!-- Detailed Results Table -->
+    <%= render partial: 'shared/scan_results_table', locals: { results: @results } %>
+
+  <% else %>
+    <!-- Loading State -->
+    <div class="mt-8 bg-yellow-100 rounded-lg p-6">
+      <div class="flex items-center justify-center">
+        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-700 mr-3"></div>
+        <p class="text-yellow-800">Caricamento dei risultati in corso...</p>
+      </div>
+    </div>
+  <% end %>
 </div>
 
-
-
-<!-- app/views/scans/show.html.erb -->
-
-<h1>Dettagli Scansione File</h1>
-<p><strong>Nome File:</strong> <%= @scan.filename %></p>
-<p><strong>Risultati Scansione:</strong></p>
-<pre><%= JSON.pretty_generate(@scan.scan_result) %></pre>
+<%= content_for :head do %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<% end %>

@@ -36,9 +36,9 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.all.order(created_at: :desc)
+    @comments = current_user.comments.order(created_at: :desc)
     # oppure se vuoi la paginazione:
-    # @comments = Comment.all.order(created_at: :desc).page(params[:page])
+    # @comments = current_user.comments.order(created_at: :desc).page(params[:page])
   end
 
   def edit

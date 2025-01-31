@@ -24,18 +24,16 @@ class VirusTotalController < ApplicationController
           
           if @scan&.scan_result.present?
             Rails.logger.info "Found existing scan with results"
-            @results = @scan.scan_result
+            redirect_to scan_path(@scan) and return
           else
             Rails.logger.info "No existing scan found or no results, fetching from API"
             @results = get_analysis_result(params[:scan_id])
+            redirect_to scan_path(@scan) if @scan
           end
-          
-          @scan_id = params[:scan_id]
-          render :scan
         else
           Rails.logger.info "No scan_id present, handling new scan request"
           handle_scan_request
-          render :scan unless performed?
+          redirect_to scan_path(@scan) if @scan&.persisted?
         end
       end
       

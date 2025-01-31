@@ -13,9 +13,9 @@ class CommentsController < ApplicationController
   
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to virus_total_scan_path(@scan), notice: 'Commento aggiunto con successo!' }
+        format.html { redirect_to scan_path(@scan), notice: 'Commento aggiunto con successo!' }
         format.json { 
-          html = render_to_string(partial: 'comments/comment', locals: { comment: @comment })
+          html = render_to_string(partial: 'comments/comment', locals: { comment: @comment }, layout: false)
           render json: { 
             status: 'success', 
             message: 'Commento aggiunto con successo!',
@@ -23,8 +23,14 @@ class CommentsController < ApplicationController
           }
         }
       else
-        format.html { redirect_to virus_total_scan_path(@scan), alert: 'Errore nel salvare il commento.' }
-        format.json { render json: { status: 'error', message: 'Errore nel salvare il commento.' } }
+        format.html { redirect_to scan_path(@scan), alert: 'Errore nel salvare il commento.' }
+        format.json { 
+          render json: { 
+            status: 'error', 
+            message: 'Errore nel salvare il commento.' 
+          }, 
+          status: :unprocessable_entity 
+        }
       end
     end
   end
@@ -40,15 +46,16 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to comments_path, notice: 'Commento aggiornato con successo!'
+      redirect_to scan_path(@comment.scan), notice: 'Commento aggiornato con successo!'
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
+    scan = @comment.scan
     @comment.destroy
-    redirect_to comments_path, notice: 'Commento eliminato con successo!'
+    redirect_to scan_path(scan), notice: 'Commento eliminato con successo!'
   end
 
   private

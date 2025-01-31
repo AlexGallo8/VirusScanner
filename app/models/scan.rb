@@ -4,7 +4,7 @@ class Scan < ApplicationRecord
     has_many :users, through: :scan_users
 
 
-    has_many :comments
+    has_many :comments, dependent: :destroy
     attribute :scan_result, :json
 
     validates :hashcode, presence: true, uniqueness: true

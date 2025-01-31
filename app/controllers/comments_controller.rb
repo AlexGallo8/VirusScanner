@@ -7,11 +7,25 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @scan = Scan.find(params[:scan_id])
     @comment = current_user.comments.build(comment_params)
-    if @comment.save
-      redirect_to comments_path, notice: 'Commento creato con successo!'
-    else
-      render :new, status: :unprocessable_entity
+    @comment.scan = @scan
+  
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to virus_total_scan_path(@scan), notice: 'Commento aggiunto con successo!' }
+        format.json { 
+          html = render_to_string(partial: 'comments/comment', locals: { comment: @comment })
+          render json: { 
+            status: 'success', 
+            message: 'Commento aggiunto con successo!',
+            html: html 
+          }
+        }
+      else
+        format.html { redirect_to virus_total_scan_path(@scan), alert: 'Errore nel salvare il commento.' }
+        format.json { render json: { status: 'error', message: 'Errore nel salvare il commento.' } }
+      end
     end
   end
 
@@ -50,7 +64,7 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :scan_id)
   end
 
 end

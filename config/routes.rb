@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   get 'virus_total/scan', to: 'virus_total#scan'
   
 
-  resources :scans, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :comments, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :scans, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    resources :comments, only: [:create]
+  end
+  
+  resources :comments, only: [:index, :edit, :update, :destroy]
+  
   resources :virus_total do
   collection do
     post 'scan'

@@ -3,6 +3,8 @@ class Scan < ApplicationRecord
     has_many :scan_users
     has_many :users, through: :scan_users
 
+    has_many :votes, dependent: :destroy
+    has_many :voting_users, through: :votes, source: :user
 
     has_many :comments, dependent: :destroy
     attribute :scan_result, :json

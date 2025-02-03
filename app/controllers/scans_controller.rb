@@ -1,5 +1,6 @@
 class ScansController < ApplicationController
-  before_action :set_scan, only: %i[ show edit update destroy ]
+  before_action :set_scan, only: %i[ show edit update destroy upvote downvote ]
+  before_action :authenticate_user!, only: [:upvote, :downvote]
 
   # GET /scans or /scans.json
   def index
@@ -85,6 +86,50 @@ class ScansController < ApplicationController
     respond_to do |format|
       format.html { redirect_to scans_url, notice: "Scan was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def upvote
+    vote = @scan.votes.find_or_initialize_by(user: current_user)
+    
+    if vote.new_record? || vote.vote_type != 'up'
+      Vote.transaction do
+        if vote.persisted?
+          @scan.decrement!("vote_#{vote.vote_type}") if vote.vote_type.present?
+        end
+        vote.update!(vote_type: 'up')
+        @scan.increment!(:vote_up)
+      end
+      message = "Voto positivo registrato!"
+    else
+      message = "Hai già votato questo file!"
+    end
+
+    respond_to do |format|
+      format.html { redirect_to @scan, notice: message }
+      format.json { render json: { votes: { up: @scan.vote_up, down: @scan.vote_down } } }
+    end
+  end
+
+  def downvote
+    vote = @scan.votes.find_or_initialize_by(user: current_user)
+    
+    if vote.new_record? || vote.vote_type != 'down'
+      Vote.transaction do
+        if vote.persisted?
+          @scan.decrement!("vote_#{vote.vote_type}") if vote.vote_type.present?
+        end
+        vote.update!(vote_type: 'down')
+        @scan.increment!(:vote_down)
+      end
+      message = "Voto negativo registrato!"
+    else
+      message = "Hai già votato questo file!"
+    end
+
+    respond_to do |format|
+      format.html { redirect_to @scan, notice: message }
+      format.json { render json: { votes: { up: @scan.vote_up, down: @scan.vote_down } } }
     end
   end
 

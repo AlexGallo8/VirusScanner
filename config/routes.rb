@@ -10,13 +10,21 @@ Rails.application.routes.draw do
   end
   
   resources :comments, only: [:index, :edit, :update, :destroy]
+
+  resources :scans do
+    member do
+      post 'upvote'
+      post 'downvote'
+    end
+  end
   
   resources :virus_total do
-  collection do
-    post 'scan'
-    get 'scan'
+    collection do
+      post 'scan'
+      get 'scan'
+    end
   end
-end
+  
   get "/about",to: "about#index", as: :about
   get 'dashboard', to: 'dashboard#index'
   

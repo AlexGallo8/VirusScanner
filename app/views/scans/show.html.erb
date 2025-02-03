@@ -84,6 +84,104 @@
       </div>
     </div>
 
+    <!-- Voting Section -->
+    <div class="mt-4 bg-white shadow-md rounded-lg p-6">
+      <h3 class="text-xl font-bold mb-4 text-gray-800">Valutazione della Community</h3>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <!-- Voting Buttons -->
+        <div class="flex justify-center items-center space-x-12">
+          <% if user_signed_in? %>
+            <%= button_to upvote_scan_path(@scan), method: :post, class: "group" do %>
+              <div class="flex flex-col items-center space-y-2">
+                <div class="bg-green-100 group-hover:bg-green-200 rounded-full p-4 transition-all duration-300">
+                  <i class="fas fa-thumbs-up text-2xl text-green-600"></i>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <span class="text-lg font-semibold text-green-600"><%= @scan.vote_up %></span>
+                  <span class="text-sm text-gray-500">voti positivi</span>
+                </div>
+              </div>
+            <% end %>
+
+            <%= button_to downvote_scan_path(@scan), method: :post, class: "group" do %>
+              <div class="flex flex-col items-center space-y-2">
+                <div class="bg-red-100 group-hover:bg-red-200 rounded-full p-4 transition-all duration-300">
+                  <i class="fas fa-thumbs-down text-2xl text-red-600"></i>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <span class="text-lg font-semibold text-red-600"><%= @scan.vote_down %></span>
+                  <span class="text-sm text-gray-500">voti negativi</span>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        
+        <!-- Chart Container -->
+        <div class="w-64 h-64">
+          <canvas id="votesChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Move Chart.js script to the end of the file, just before the closing </div> -->
+    <%= content_for :head do %>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <% end %>
+
+    <%= javascript_tag do %>
+      window.addEventListener('load', function() {
+        const ctx = document.getElementById('votesChart');
+        if (!ctx) return;
+
+        const upVotes = <%= @scan.vote_up || 0 %>;
+        const downVotes = <%= @scan.vote_down || 0 %>;
+        const totalVotes = upVotes + downVotes;
+
+        new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Voti Positivi', 'Voti Negativi'],
+            datasets: [{
+              data: [upVotes, downVotes],
+              backgroundColor: [
+                'rgba(72, 187, 120, 0.2)',
+                'rgba(245, 101, 101, 0.2)'
+              ],
+              borderColor: [
+                'rgba(72, 187, 120, 1)',
+                'rgba(245, 101, 101, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  font: {
+                    size: 14
+                  }
+                }
+              },
+              tooltip: {
+                callbacks: {
+                  label: function(context) {
+                    const value = context.raw;
+                    const percentage = totalVotes === 0 ? 0 : ((value / totalVotes) * 100).toFixed(1);
+                    return `${context.label}: ${value} (${percentage}%)`;
+                  }
+                }
+              }
+            }
+          }
+        });
+      });
+    <% end %>
+
     <!-- Action Buttons -->
     <div class="mt-2 flex justify-center space-x-4">
       <%= link_to virus_total_path, 
@@ -100,7 +198,7 @@
       <% end %>
     </div>
 
-    <!-- Detailed Results Table with Dropdown -->
+    <!-- Detailed Results Table -->
     <div class="mt-4">
       <button onclick="toggleResultsTable()" 
               class="w-full bg-white border-transparent shadow-md p-4 rounded-lg flex items-center justify-between hover:bg-gray-100 transition-all duration-300">

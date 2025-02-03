@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_01_26_192714) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_03_110021) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "user_id", null: false
@@ -62,7 +62,20 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_26_192714) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "scan_id", null: false
+    t.string "vote_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scan_id"], name: "index_votes_on_scan_id"
+    t.index ["user_id", "scan_id"], name: "index_votes_on_user_id_and_scan_id", unique: true
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
   add_foreign_key "comments", "users"
   add_foreign_key "scan_users", "scans"
   add_foreign_key "scan_users", "users"
+  add_foreign_key "votes", "scans"
+  add_foreign_key "votes", "users"
 end

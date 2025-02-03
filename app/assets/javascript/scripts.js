@@ -148,3 +148,49 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Results Table Toggle
+function toggleResultsTable() {
+  const container = document.getElementById('resultsTableContainer');
+  const icon = document.getElementById('tableToggleIcon');
+  
+  container.classList.toggle('hidden');
+  icon.classList.toggle('rotate-180');
+}
+
+// Comments Form Handler
+document.addEventListener('DOMContentLoaded', () => {
+  const commentForm = document.getElementById('new-comment-form');
+  if (commentForm) {
+    commentForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const form = this;
+      const formData = new FormData(form);
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json',
+          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+        },
+        credentials: 'same-origin'
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          const commentsList = document.getElementById('comments-list');
+          commentsList.insertAdjacentHTML('afterbegin', data.html);
+          document.getElementById('comment-content').value = '';
+        } else {
+          alert(data.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Si è verificato un errore durante il salvataggio del commento.');
+      });
+    });
+  }
+});

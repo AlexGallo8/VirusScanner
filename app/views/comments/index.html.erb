@@ -45,7 +45,7 @@
                       </div>
                       <span class="font-medium text-gray-900">
                         <%= link_to comment.scan.file_name, 
-                            virus_total_scan_path(comment.scan),
+                            scan_path(comment.scan),
                             class: "hover:text-blue-600" %>
                       </span>
                     </div>
@@ -63,18 +63,11 @@
                   </td>
                   <td class="px-6 py-4 text-right">
                     <div class="flex justify-end space-x-2">
-                      <%= link_to edit_comment_path(comment),
-                          class: "inline-flex items-center px-3 py-2 rounded-lg transition-all duration-200 
-                                 bg-blue-50 text-blue-600 hover:bg-blue-100" do %>
-                        <i class="fas fa-edit mr-2"></i>
-                        Modifica
-                      <% end %>
-                      
-                      <%= button_to comment_path(comment), 
+                      <%= link_to comment_path(comment),
                           method: :delete,
-                          form: { data: { turbo_confirm: 'Sei sicuro?' } },
-                          class: "inline-flex items-center px-3 py-2 rounded-lg transition-all duration-200 
-                                 bg-red-50 text-red-600 hover:bg-red-100" do %>
+                          data: { confirm: 'Sei sicuro?' },
+                          class: "inline-flex items-center px-3 py-2 rounded-lg bg-red-100 text-red-600 
+                                 hover:bg-red-100 transition-colors duration-200" do %>
                         <i class="fas fa-trash mr-2"></i>
                         Elimina
                       <% end %>

@@ -100,8 +100,21 @@
       <% end %>
     </div>
 
-    <!-- Detailed Results Table -->
-    <%= render partial: 'shared/scan_results_table', locals: { results: @results } %>
+    <!-- Detailed Results Table with Dropdown -->
+    <div class="mt-4">
+      <button onclick="toggleResultsTable()" 
+              class="w-full bg-white border-transparent shadow-md p-4 rounded-lg flex items-center justify-between hover:bg-gray-100 transition-all duration-300">
+        <span class="text-lg font-semibold text-gray-800 flex items-center">
+          <i class="fas fa-table mr-3 text-blue-500"></i>
+          Risultati Dettagliati
+        </span>
+        <i id="tableToggleIcon" class="fas fa-chevron-down text-gray-600 transition-transform duration-300"></i>
+      </button>
+      
+      <div id="resultsTableContainer" class="hidden mt-2 transition-all duration-300 ease-in-out">
+        <%= render partial: 'shared/scan_results_table', locals: { results: @results } %>
+      </div>
+    </div>
 
     <!-- Comments Section -->
     <div class="mt-8 bg-white/50 backdrop-blur-sm shadow-xl rounded-lg overflow-hidden">
@@ -172,19 +185,13 @@
                   </div>
                   <% if comment.user == current_user %>
                     <div class="flex space-x-2">
-                      <%= link_to edit_comment_path(comment),
-                          class: "inline-flex items-center px-3 py-2 rounded-lg transition-all duration-200 
-                                 bg-blue-50 text-blue-600 hover:bg-blue-100" do %>
-                        <i class="fas fa-edit mr-2"></i>
-                        Modifica
-                      <% end %>
-                      
                       <%= button_to comment_path(comment), 
                           method: :delete,
                           form: { data: { turbo_confirm: 'Sei sicuro?' } },
-                          class: "inline-flex items-center px-3 py-2 rounded-lg transition-all duration-200 
-                                 bg-red-50 text-red-600 hover:bg-red-100" do %>
-                        <i class="fas fa-trash mr-2"></i>
+                          class: "inline-flex items-center px-4 py-2 rounded-lg transition-all duration-200 
+                                 bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 
+                                 hover:border-gray-300 hover:shadow-sm" do %>
+                        <i class="fas fa-trash mr-2 text-gray-500"></i>
                         Elimina
                       <% end %>
                     </div>

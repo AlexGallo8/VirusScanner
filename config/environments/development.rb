@@ -80,19 +80,10 @@ Rails.application.configure do
 
   config.assets.source_maps = true
 
-  config.action_mailer.delivery_method = :smtp
+  # Sostituisci la configurazione del mailer esistente con questa
+  config.action_mailer.delivery_method = :letter_opener_web
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.sendgrid.net',
-    port: 587,
-    domain: 'studenti.uniroma1.it',
-    user_name: 'apikey',
-    password: Rails.application.credentials.dig(:sendgrid, :api_key),
-    authentication: :plain,  # Changed from 'plain' to :plain
-    enable_starttls_auto: true
-  }
-
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 end

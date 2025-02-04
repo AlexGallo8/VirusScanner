@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'maone.1945149@studenti.uniroma1.it'
+  default from: 'no-reply@virusscanner.com'
   layout 'mailer'
 end

@@ -23,7 +23,7 @@ class PasswordResetsController < ApplicationController
     def update
         if @user.update(password_params)
             @user.update(password_reset_token: nil)  # Clear the token after successful reset
-            redirect_to new_session_path, notice: "Your password has been reset successfully. Please login."
+            redirect_to root_path, notice: "Your password has been reset successfully. Please login."
         else
             render :edit
         end

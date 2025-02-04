@@ -118,8 +118,8 @@
         </div>
         
         <!-- Chart Container -->
-        <div class="w-64 h-64">
-          <canvas id="votesChart"></canvas>
+        <div class="w-64 h-64 bg-white/80 backdrop-blur-sm rounded-lg p-4">
+          <canvas id="votesChart" width="400" height="400"></canvas>
         </div>
       </div>
     </div>
@@ -130,14 +130,14 @@
     <% end %>
 
     <%= javascript_tag do %>
-      window.addEventListener('load', function() {
+      document.addEventListener('DOMContentLoaded', function() {
         const ctx = document.getElementById('votesChart');
         if (!ctx) return;
-
+    
         const upVotes = <%= @scan.vote_up || 0 %>;
         const downVotes = <%= @scan.vote_down || 0 %>;
         const totalVotes = upVotes + downVotes;
-
+    
         new Chart(ctx, {
           type: 'pie',
           data: {
@@ -145,14 +145,14 @@
             datasets: [{
               data: [upVotes, downVotes],
               backgroundColor: [
-                'rgba(72, 187, 120, 0.2)',
-                'rgba(245, 101, 101, 0.2)'
+                'rgba(72, 187, 120, 0.5)',  // More opaque green
+                'rgba(245, 101, 101, 0.5)'   // More opaque red
               ],
               borderColor: [
                 'rgba(72, 187, 120, 1)',
                 'rgba(245, 101, 101, 1)'
               ],
-              borderWidth: 1
+              borderWidth: 2
             }]
           },
           options: {
@@ -163,8 +163,10 @@
                 position: 'bottom',
                 labels: {
                   font: {
-                    size: 14
-                  }
+                    size: 14,
+                    family: 'system-ui'
+                  },
+                  padding: 20
                 }
               },
               tooltip: {
@@ -280,7 +282,7 @@
                     <div class="flex space-x-2">
                       <%= button_to comment_path(comment), 
                           method: :delete,
-                          form: { data: { turbo_confirm: 'Sei sicuro?' } },
+                          form: { data: { confirm: 'Sei sicuro di cancellare il commento?' } },
                           class: "inline-flex items-center px-4 py-2 rounded-lg transition-all duration-200 
                                  bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 
                                  hover:border-gray-300 hover:shadow-sm" do %>

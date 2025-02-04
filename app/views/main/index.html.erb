@@ -1,43 +1,82 @@
-<% if @current_user%>
-    Logged in as <%= @current_user.email %>
-
-    <%= button_to "Logout", sign_out_path, class:"button", method: :delete %>
-<% end %>
-
-<div class="container mx-auto px-4 py-8 animate-fade-in">
-  <h1 class="text-4xl font-bold text-center mb-4 text-black">Welcome to VirusScanner</h1>
-  <p class="text-center text-gray-600 mb-8">VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.</p>
-
-  <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in pb-20" id="box1">
-      <h2 class="text-2xl font-bold mb-4 text-black">Scan File</h2>
-      <p class="mb-4 text-center">Upload your file to analyze it</p>
-      <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
-        <div class="border-dashed border-2 border-gray-300 rounded-md p-4 mb-4 transition duration-300 ease-in-out hover:border-blue-500" id="dropzone">
-          <%= file_field_tag :file, class: "hidden", id: "fileInput" %>
-          <label for="fileInput" class="cursor-pointer block w-full">
-            <div id="dropText" class="h-32 flex flex-col items-center justify-center">
-              <p class="text-gray-500">Drag and drop your file here or click to browse</p>
-            </div>
-            
-            <div id="filePreview" class="hidden h-32 flex flex-col items-center justify-center">
-              <div class="flex flex-col items-center">
-                <svg class="w-6 h-6 mb-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                </svg>
-                <p id="fileName" class="text-gray-800 text-sm font-medium mb-2"></p>
-                <button type="button" id="removeFile" class="text-red-500 hover:text-red-600 text-xs">Remove</button>
-              </div>
-            </div>
-          </label>
+<!-- User Status Section -->
+<div class="fixed top-4 right-4 z-50">
+  <% if @current_user %>
+    <div class="bg-white/80 backdrop-blur-sm shadow-lg rounded-full px-6 py-3 flex items-center space-x-4 animate-fade-in">
+      <div class="flex items-center space-x-2">
+        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+          <i class="fas fa-user text-blue-600"></i>
         </div>
-        <% if user_signed_in_with_google? %>
-          <div class="flex flex-row justify-center items-center gap-4">
-            <%= submit_tag "Scan", class: "btn btn-primary button-scan" %>
-            <%= button_tag type: "button",
-                  onclick: "openDrivePicker()",
-                  class: "btn btn-primary  button-scan" do %>
-                  <div class="flex items-center justify-center gap-4">
+        <span class="text-gray-700"><%= @current_user.email %></span>
+      </div>
+      <%= button_to sign_out_path, 
+          method: :delete, 
+          class: "bg-red-100 hover:bg-red-200 text-red-600 px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2" do %>
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
+  <div class="container mx-auto px-4 py-12 animate-fade-in">
+    <!-- Header Section -->
+    <div class="text-center mb-12 space-y-4">
+      <h1 class="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
+        Welcome to VirusScanner
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.
+      </p>
+    </div>
+
+    <!-- Scan Options Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <!-- File Scan Card -->
+      <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 transition duration-300 ease-in-out transform hover:scale-102 hover:shadow-2xl" id="box1">
+        <div class="flex items-center space-x-4 mb-6">
+          <div class="p-3 rounded-xl bg-blue-100">
+            <i class="fas fa-file-upload text-blue-600 text-2xl"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gray-900">Scan File</h2>
+        </div>
+        
+        <%= form_tag(virus_total_scan_path, multipart: true, class: "space-y-6") do %>
+          <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 transition duration-300 hover:border-blue-500 group" id="dropzone">
+            <%= file_field_tag :file, class: "hidden", id: "fileInput" %>
+            <label for="fileInput" class="cursor-pointer block w-full">
+              <div id="dropText" class="h-40 flex flex-col items-center justify-center space-y-4">
+                <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-cloud-upload-alt text-blue-500 text-3xl"></i>
+                </div>
+                <p class="text-gray-500 text-center">
+                  Drag and drop your file here<br>or click to browse
+                </p>
+              </div>
+              
+              <div id="filePreview" class="hidden h-40 flex flex-col items-center justify-center space-y-4">
+                <div class="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center animate-bounce">
+                  <i class="fas fa-file-alt text-green-500 text-3xl"></i>
+                </div>
+                <div class="text-center">
+                  <p id="fileName" class="text-gray-800 font-medium mb-2"></p>
+                  <button type="button" id="removeFile" class="text-red-500 hover:text-red-600 text-sm flex items-center justify-center space-x-1">
+                    <i class="fas fa-times"></i>
+                    <span>Remove</span>
+                  </button>
+                </div>
+              </div>
+            </label>
+          </div>
+
+          <div class="flex justify-center space-x-4">
+            <% if user_signed_in_with_google? %>
+              <%= submit_tag "Scan File", class: "px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
+              
+              <%= button_tag type: "button",
+                    onclick: "openDrivePicker()",
+                    class: "px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2" do %>
+                 <div class="mb-3 flex items-center justify-center gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
                       <path fill="#1e88e5" d="M38.59,39c-0.535,0.93-0.298,1.68-1.195,2.197C36.498,41.715,35.465,42,34.39,42H13.61 c-1.074,0-2.106-0.285-3.004-0.802C9.708,40.681,9.945,39.93,9.41,39l7.67-9h13.84L38.59,39z"></path>
                       <path fill="#fbc02d" d="M27.463,6.999c1.073-0.002,2.104-0.716,3.001-0.198c0.897,0.519,1.66,1.27,2.197,2.201l10.39,17.996 c0.537,0.93,0.807,1.967,0.808,3.002c0.001,1.037-1.267,2.073-1.806,3.001l-11.127-3.005l-6.924-11.993L27.463,6.999z"></path>
@@ -49,29 +88,40 @@
                     Upload from Drive
                   </div>
               <% end %>
+            <% else %>
+              <%= submit_tag "Scan File", class: "px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
+            <% end %>
           </div>
-        <% else %>
-          <%= submit_tag "Scan", class: "btn btn-primary mt-4 button" %>
         <% end %>
-        <div id="file-info" class="hidden text-center mb-4">
-          <p class="text-gray-800">File: <span id="file-name"></span></p>
-          <%= link_to "Remove", root_path, class: "text-red-500 hover:text-red-600" %>
+      </div>
+
+      <!-- URL Scan Card -->
+      <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 transition duration-300 ease-in-out transform hover:scale-102 hover:shadow-2xl" id="box2">
+        <div class="flex items-center space-x-4 mb-6">
+          <div class="p-3 rounded-xl bg-purple-100">
+            <i class="fas fa-link text-purple-600 text-2xl"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gray-900">Scan URL</h2>
         </div>
-      </form>
-      <% end %>
+
+        <%= form_tag(virus_total_scan_path, multipart: true, class: "space-y-6") do %>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i class="fas fa-search text-gray-400"></i>
+            </div>
+            <%= text_field_tag :url, nil, 
+                placeholder: "Enter URL to scan", 
+                class: "w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300" %>
+          </div>
+          <%= submit_tag "Scan URL", class: "w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
+        <% end %>
+      </div>
     </div>
-    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in" id="box2">
-      <h2 class="text-2xl font-bold mb-4 text-black">Scan URL</h2>
-      <p class="mb-4 text-center">Enter a URL to analyze it for potential threats</p>
-      <%= form_tag(virus_total_scan_path, multipart: true, class: "w-full") do %>
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <label class="cursor-pointer py-4 w-full">
-          <%= text_field_tag :url, nil, placeholder: "Enter URL here", class:"w-full border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 mb-4 p-2" %>
-        </label>
-        <%= submit_tag "Scan", class: "btn btn-primary mt-4 button" %>
-      <% end %>
   </div>
 </div>
+
+
 
 
 <script>

@@ -99,5 +99,26 @@
     </div>
   </div>
 <% end %>
+
+    <!-- Delete Account Section -->
+    <div class="mt-8 bg-white shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl">
+      <div class="p-8">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-trash-alt text-red-600 text-xl mr-2"></i>
+          <h2 class="text-xl font-bold text-gray-900">Delete Account</h2>
+        </div>
+        <p class="text-gray-600 mb-6">This action cannot be undone. All your data will be permanently deleted.</p>
+        
+        <%= button_to registration_path(current_user), 
+            method: :delete,
+            form: { 
+              data: { confirm: "Sei sicuro di voler cancellare il tuo account?" }
+            },
+            class: "btn button-red" do %>
+          <i class="fas fa-trash-alt mr-2"></i>
+          <span>Elimina Account</span>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

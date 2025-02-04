@@ -27,6 +27,17 @@ class RegistrationsController < ApplicationController
     end
   end
   
+  def destroy
+    @user = current_user
+    
+    if @user&.destroy
+      logout @user
+      redirect_to root_path, notice: "Il tuo account è stato eliminato con successo."
+    else
+      redirect_to edit_preferences_path, alert: "Non è stato possibile eliminare l'account."
+    end
+  end
+
   private
 
   def user_params

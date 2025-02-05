@@ -6,9 +6,11 @@ class PasswordResetsController < ApplicationController
 
     def create
         if (user = User.find_by(email: params[:email]))
+            token = user.generate_token_for(:password_reset)
+            user.save  # Save to persist the token
             PasswordMailer.with(
                 user: user,
-                token: user.generate_token_for(:password_reset)
+                token: token
             ).password_reset.deliver_later
         end
 
@@ -20,6 +22,7 @@ class PasswordResetsController < ApplicationController
 
     def update
         if @user.update(password_params)
+            @user.update(password_reset_token: nil)  # Clear the token after successful reset
             redirect_to new_session_path, notice: "Your password has been reset successfully. Please login."
         else
             render :edit
@@ -30,11 +33,10 @@ class PasswordResetsController < ApplicationController
 
     def set_user_by_token
         @user = User.find_by_token_for(:password_reset, params[:token])
-        redirect_to new_password_resets_path alert: "Invalid token, please try again." unless @user.present?
+        redirect_to new_password_reset_path, alert: "Invalid token, please try again." unless @user.present?
     end
 
     def password_params
         params.require(:user).permit(:password, :password_confirmation)
     end
-
 end

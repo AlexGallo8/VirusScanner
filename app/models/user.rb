@@ -4,7 +4,18 @@ class User < ApplicationRecord
 
     has_many :comments, dependent: :destroy
     has_secure_password
-  
+    has_secure_token :password_reset_token  # Add this line
+
+    # Replace the generates_token_for with this method
+    def generate_token_for(purpose)
+      send("regenerate_#{purpose}_token")
+      send("#{purpose}_token")
+    end
+
+    def self.find_by_token_for(purpose, token)
+      find_by("#{purpose}_token": token)
+    end
+
     validates :email,
               presence: true,
               uniqueness: true,

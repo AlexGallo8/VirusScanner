@@ -1,24 +1,37 @@
-<h1 class="text-gray-800 font-semibold text-xl mb-4">Reset Your Password</h1>
+<div class="bg-gray-100 flex items-center justify-center rounded-2xl sm:px-6 lg:px-8">
+    <div class="max-w-md w-full">
+        <div class="text-center">
+            <h2 class="mt-6 text-2xl font-extrabold text-gray-900">Imposta Nuova Password</h2>
+            <p class="mt-2 text-sm text-gray-600">Inserisci la tua nuova password</p>
+        </div>
 
-<%= form_with model: @user, url: password_reset_path(token: params[:token]) do |form| %>
-    <% if form.object.errors.any? %>
-        <% form.object.errors.full_messages.each do |message| %>
-            <div><%= message %></div>
+        <%= form_with model: @user, url: password_reset_path(token: params[:token]), class: "mt-2 space-y-1 bg-white p-4 rounded-2xl shadow-xl" do |form| %>
+            <% if form.object.errors.any? %>
+                <div class="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 rounded" role="alert">
+                    <% form.object.errors.full_messages.each do |message| %>
+                        <p class="text-sm font-medium"><%= message %></p>
+                    <% end %>
+                </div>
+            <% end %>
+
+            <div class="space-y-6">
+                <div>
+                    <%= form.label :password, class: "block text-sm font-bold text-gray-700 mb-2" %>
+                    <%= form.password_field :password, 
+                        class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
+                        placeholder: "Nuova password" %>
+                </div>
+
+                <div>
+                    <%= form.label :password_confirmation, class: "block text-sm font-bold text-gray-700 mb-2" %>
+                    <%= form.password_field :password_confirmation, 
+                        class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
+                        placeholder: "Conferma nuova password" %>
+                </div>
+
+                <%= form.submit "Reimposta Password", 
+                    class: "w-full flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-semibold text-gray-700 bg-white hover:bg-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transform transition-all duration-200 hover:-translate-y-0.5" %>
+            </div>
         <% end %>
-    <% end %>
-
-    <div class="mb-6">
-        <%= form.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %>
-        <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
-    
-    <div class="mb-6">
-        <%= form.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
-        <%= form.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
-    </div>
-
-    <div class="flex items-center justify-between">
-        <%= form.submit "Reset Your Password", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
-    </div>
-
-<%end%>
+</div>

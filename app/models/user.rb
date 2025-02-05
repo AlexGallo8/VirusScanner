@@ -4,9 +4,15 @@ class User < ApplicationRecord
 
     has_many :comments, dependent: :destroy
     has_secure_password
-    has_secure_token :password_reset_token  # Add this line
+    validates :password, 
+              format: { 
+                with: /\A(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}\z/,
+                message: "must be at least 8 characters long and include: 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character"
+              },
+              if: -> { password.present? }
 
-    # Replace the generates_token_for with this method
+    has_secure_token :password_reset_token
+
     def generate_token_for(purpose)
       send("regenerate_#{purpose}_token")
       send("#{purpose}_token")

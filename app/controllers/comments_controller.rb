@@ -1,9 +1,14 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:edit, :update, :destroy]
-  before_action :check_user, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:destroy]  # Remove :edit and :update since they're not used
+  before_action :check_user, only: [:destroy]   # Remove :edit and :update since they're not used
 
-  def new
-    @comment = Comment.new
+  def index
+    @sort_column = params[:sort] || 'created_at'
+    @sort_direction = params[:direction] || 'desc'
+
+    @comments = current_user.comments
+                          .joins(:scan)
+                          .order(sort_query)
   end
 
   def create
@@ -35,23 +40,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  def index
-    @comments = current_user.comments.order(created_at: :desc)
-    # oppure se vuoi la paginazione:
-    # @comments = current_user.comments.order(created_at: :desc).page(params[:page])
-  end
-
-  def edit
-  end
-
-  def update
-    if @comment.update(comment_params)
-      redirect_to scan_path(@comment.scan), notice: 'Commento aggiornato con successo!'
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
   def destroy
     scan = @comment.scan
     @comment.destroy
@@ -59,6 +47,17 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def sort_query
+    case @sort_column
+    when 'file_name'
+      Arel.sql("scans.file_name #{@sort_direction}")
+    when 'created_at'
+      { created_at: @sort_direction }
+    else
+      { created_at: :desc }
+    end
+  end
 
   def set_comment
     @comment = Comment.find(params[:id])

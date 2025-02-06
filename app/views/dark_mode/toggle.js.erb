@@ -1,0 +1,17 @@
+document.documentElement.classList.toggle('dark');
+const isDark = document.documentElement.classList.contains('dark');
+
+// Aggiorna il cookie per mantenere la preferenza
+document.cookie = `dark_mode=${isDark}; path=/`;
+
+// Aggiorna le icone
+const moonIcon = document.querySelector('.dark-icon');
+const sunIcon = document.querySelector('.light-icon');
+
+if (isDark) {
+  moonIcon.style.display = 'inline-block';
+  sunIcon.style.display = 'none';
+} else {
+  moonIcon.style.display = 'none';
+  sunIcon.style.display = 'inline-block';
+}

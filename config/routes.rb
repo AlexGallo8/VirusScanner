@@ -50,6 +50,7 @@ Rails.application.routes.draw do
 
   root to: "main#index"
 
+  post 'toggle_dark_mode', to: 'dark_mode#toggle'
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

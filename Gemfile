@@ -92,3 +92,4 @@ gem "rspec-rails", "~> 7.1", :groups => [:development, :test]
 
 gem "factory_bot_rails", "~> 6.2.0", :groups => [:development, :test]
 gem "faker", "~> 3.4", :groups => [:development, :test]
+gem 'sassc-rails'

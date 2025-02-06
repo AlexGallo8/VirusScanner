@@ -1,0 +1,48 @@
+/* line 1, app/assets/stylesheets/dark_mode.scss */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --card-background: #f8f9fa;
+}
+
+/* line 7, app/assets/stylesheets/dark_mode.scss */
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --card-background: #2d2d2d;
+}
+
+/* line 13, app/assets/stylesheets/dark_mode.scss */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* line 19, app/assets/stylesheets/dark_mode.scss */
+.dark-mode-switch {
+  margin-left: 1rem;
+}
+
+/* line 23, app/assets/stylesheets/dark_mode.scss */
+.dark-mode-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* line 30, app/assets/stylesheets/dark_mode.scss */
+.dark-icon {
+  display: none;
+}
+
+/* line 34, app/assets/stylesheets/dark_mode.scss */
+[data-theme="dark"] .dark-icon {
+  display: inline-block;
+}
+
+/* line 38, app/assets/stylesheets/dark_mode.scss */
+[data-theme="dark"] .light-icon {
+  display: none;
+}

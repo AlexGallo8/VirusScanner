@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-full bg-gray-50">
+<html class="<%= cookies[:dark_mode] == 'true' ? 'dark' : '' %>">
   <head>
     <title>Virusscanner</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,9 +10,10 @@
     <%= javascript_include_tag "scripts", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-3.6.0.min.js' %>
   </head>
   
-  <body class="h-full">
+  <body class="h-full bg-white dark:bg-gray-900 transition-colors duration-200">
     <div class="min-h-screen flex flex-col">
       <%= render partial: "shared/navbar"%>
       

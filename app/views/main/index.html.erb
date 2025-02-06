@@ -1,16 +1,16 @@
 <!-- User Status Section -->
 <div class="fixed top-4 right-4 z-50">
   <% if @current_user %>
-    <div class="bg-white/80 backdrop-blur-sm shadow-lg rounded-full px-6 py-3 flex items-center space-x-4 animate-fade-in">
+    <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg rounded-full px-6 py-3 flex items-center space-x-4 animate-fade-in">
       <div class="flex items-center space-x-2">
-        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-          <i class="fas fa-user text-blue-600"></i>
+        <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+          <i class="fas fa-user text-blue-600 dark:text-blue-300"></i>
         </div>
-        <span class="text-gray-700"><%= @current_user.email %></span>
+        <span class="text-gray-700 dark:text-gray-200"><%= @current_user.email %></span>
       </div>
       <%= button_to sign_out_path, 
           method: :delete, 
-          class: "bg-red-100 hover:bg-red-200 text-red-600 px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2" do %>
+          class: "bg-red-100 dark:bg-red-900 hover:bg-red-200 dark:hover:bg-red-800 text-red-600 dark:text-red-300 px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2" do %>
         <i class="fas fa-sign-out-alt"></i>
         <span>Logout</span>
       <% end %>
@@ -18,14 +18,14 @@
   <% end %>
 </div>
 
-<div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
+<div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
   <div class="container mx-auto px-4 py-12 animate-fade-in">
     <!-- Header Section -->
     <div class="text-center mb-12 space-y-4">
-      <h1 class="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
+      <h1 class="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200">
         Welcome to VirusScanner
       </h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
         VirusScanner is a free service that analyzes suspicious files and URLs and facilitates the quick detection of viruses, worms, trojans, and all kinds of malware.
       </p>
     </div>
@@ -33,16 +33,16 @@
     <!-- Scan Options Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
       <!-- File Scan Card -->
-      <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 transition duration-300 ease-in-out transform hover:scale-102 hover:shadow-2xl" id="box1">
+      <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 transition duration-300 ease-in-out transform hover:scale-102 hover:shadow-2xl">
         <div class="flex items-center space-x-4 mb-6">
-          <div class="p-3 rounded-xl bg-blue-100">
-            <i class="fas fa-file-upload text-blue-600 text-2xl"></i>
+          <div class="p-3 rounded-xl bg-blue-100 dark:bg-blue-900">
+            <i class="fas fa-file-upload text-blue-600 dark:text-blue-300 text-2xl"></i>
           </div>
-          <h2 class="text-2xl font-bold text-gray-900">Scan File</h2>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Scan File</h2>
         </div>
         
         <%= form_tag(virus_total_scan_path, multipart: true, class: "space-y-6") do %>
-          <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 transition duration-300 hover:border-blue-500 group" id="dropzone">
+          <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-6 transition duration-300 hover:border-blue-500 dark:hover:border-blue-400 group">
             <%= file_field_tag :file, class: "hidden", id: "fileInput" %>
             <label for="fileInput" class="cursor-pointer block w-full">
               <div id="dropText" class="h-40 flex flex-col items-center justify-center space-y-4">
@@ -71,11 +71,11 @@
 
           <div class="flex justify-center space-x-4">
             <% if user_signed_in_with_google? %>
-              <%= submit_tag "Scan File", class: "px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
+              <%= submit_tag "Scan File", class: "px-6 py-3 bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
               
               <%= button_tag type: "button",
                     onclick: "openDrivePicker()",
-                    class: "px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2" do %>
+                    class: "px-6 py-3 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2" do %>
                  <div class="mb-3 flex items-center justify-center gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
                       <path fill="#1e88e5" d="M38.59,39c-0.535,0.93-0.298,1.68-1.195,2.197C36.498,41.715,35.465,42,34.39,42H13.61 c-1.074,0-2.106-0.285-3.004-0.802C9.708,40.681,9.945,39.93,9.41,39l7.67-9h13.84L38.59,39z"></path>
@@ -89,32 +89,32 @@
                   </div>
               <% end %>
             <% else %>
-              <%= submit_tag "Scan File", class: "px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
+              <%= submit_tag "Scan File", class: "px-6 py-3 bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
             <% end %>
           </div>
         <% end %>
       </div>
 
       <!-- URL Scan Card -->
-      <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 transition duration-300 ease-in-out transform hover:scale-102 hover:shadow-2xl" id="box2">
+      <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 transition duration-300 ease-in-out transform hover:scale-102 hover:shadow-2xl">
         <div class="flex items-center space-x-4 mb-6">
-          <div class="p-3 rounded-xl bg-purple-100">
-            <i class="fas fa-link text-purple-600 text-2xl"></i>
+          <div class="p-3 rounded-xl bg-purple-100 dark:bg-purple-900">
+            <i class="fas fa-link text-purple-600 dark:text-purple-300 text-2xl"></i>
           </div>
-          <h2 class="text-2xl font-bold text-gray-900">Scan URL</h2>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Scan URL</h2>
         </div>
 
         <%= form_tag(virus_total_scan_path, multipart: true, class: "space-y-6") do %>
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <div class="relative">
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <i class="fas fa-search text-gray-400"></i>
+              <i class="fas fa-search text-gray-400 dark:text-gray-500"></i>
             </div>
             <%= text_field_tag :url, nil, 
                 placeholder: "Enter URL to scan", 
-                class: "w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300" %>
+                class: "w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-300" %>
           </div>
-          <%= submit_tag "Scan URL", class: "w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
+          <%= submit_tag "Scan URL", class: "w-full px-6 py-3 bg-purple-600 dark:bg-purple-500 hover:bg-purple-700 dark:hover:bg-purple-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
         <% end %>
       </div>
     </div>

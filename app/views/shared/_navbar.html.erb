@@ -6,6 +6,10 @@
      <% end %>
 
      <div class="lg:flex items-center space-x-4">
+        <div class="flex items-center">
+       <!-- Add this line where you want the switch to appear -->
+          <%= render 'shared/dark_mode_switch' %>
+       </div>
        <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900" %>
        <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900" %>
        

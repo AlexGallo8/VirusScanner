@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+*/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@layer components {
+  .dark-mode-switch {
+    @apply ml-4;
+  }
+
+  .dark-mode-btn {
+    @apply p-2 rounded-full hover:bg-gray-700 text-gray-300 hover:text-white focus:outline-none;
+  }
+
+  .dark-icon {
+    @apply hidden dark:block;
+  }
+
+  .light-icon {
+    @apply block dark:hidden;
+  }
+}
+
+@layer base {
+  :root {
+    --bg-primary: theme('colors.white');
+    --text-primary: theme('colors.gray.900');
+  }
+
+  [data-theme="dark"] {
+    --bg-primary: theme('colors.gray.900');
+    --text-primary: theme('colors.white');
+  }
+}
+
+@layer components {
+  body {
+    @apply transition-colors duration-200;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  [data-theme="dark"] .dark\:bg-gray-800 {
+    @apply bg-gray-800;
+  }
+
+  [data-theme="dark"] .dark\:text-white {
+    @apply text-white;
+  }
+}
+
+@layer base {
+  [data-theme="dark"] {
+    @apply bg-gray-900 text-white;
+  }
+
+  [data-theme="light"] {
+    @apply bg-white text-gray-900;
+  }
+}
+
+@layer components {
+  .dark-mode-switch button {
+    @apply p-2 rounded-full transition-colors duration-200;
+  }
+
+  [data-theme="dark"] .dark-mode-switch button {
+    @apply text-yellow-400 hover:bg-gray-700;
+  }
+
+  [data-theme="light"] .dark-mode-switch button {
+    @apply text-gray-600 hover:bg-gray-200;
+  }
+}
+@layer base {
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  /* Navbar styles */
+  .navbar {
+    @apply bg-white dark:bg-gray-800 transition-colors duration-200;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 transition-colors duration-200;
+  }
+
+  /* Button styles */
+  .btn {
+    @apply bg-blue-500 dark:bg-blue-600 text-white transition-colors duration-200;
+  }
+
+  /* Input styles */
+  .input {
+    @apply bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 transition-colors duration-200;
+  }
+}
+ 

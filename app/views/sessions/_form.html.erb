@@ -5,7 +5,11 @@
             <p class="mt-2 text-sm text-gray-600">accedi alla tua area personale</p>
         </div>
 
-        <%= form_with(model: user, id:"session_form", url: session_path, class: "mt-2 space-y-1 bg-white p-4 rounded-2xl shadow-xl") do |form| %>
+        <%= form_with(model: user, 
+            id: "session_form", 
+            url: session_path, 
+            class: "mt-2 space-y-1 bg-white p-4 rounded-2xl shadow-xl",
+            data: { test_id: 'login-form' }) do |form| %>
 
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 

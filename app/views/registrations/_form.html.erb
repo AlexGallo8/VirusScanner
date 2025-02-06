@@ -5,8 +5,12 @@
             <p class="mt-2 text-sm text-gray-600">registrati per accedere all'area personale</p>
         </div>
 
-        <%= form_with(model: user, id:"registration_form", url: registration_path, class: "mt-2 space-y-1 bg-white p-4 rounded-2xl shadow-xl") do |form| %>
-            
+        <%= form_with(model: user, 
+            id: "registration_form", 
+            url: registration_path, 
+            class: "mt-2 space-y-1 bg-white p-4 rounded-2xl shadow-xl",
+            data: { test_id: 'registration-form' }) do |form| %>
+          
             <% if form.object.errors.any? %>
                 <div class="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 rounded" role="alert">
                     <% form.object.errors.full_messages.each do |message| %>

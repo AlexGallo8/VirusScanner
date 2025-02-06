@@ -1,17 +1,25 @@
-document.documentElement.classList.toggle('dark');
-const isDark = document.documentElement.classList.contains('dark');
+const html = document.documentElement;
+const isDark = <%= @is_dark.to_json %>;
 
-// Aggiorna il cookie per mantenere la preferenza
-document.cookie = `dark_mode=${isDark}; path=/`;
+// Remove any existing class first
+html.classList.remove('dark');
 
-// Aggiorna le icone
+// Then add if needed
+if (isDark) {
+    html.classList.add('dark');
+}
+
+// Update icons
 const moonIcon = document.querySelector('.dark-icon');
 const sunIcon = document.querySelector('.light-icon');
 
-if (isDark) {
-  moonIcon.style.display = 'inline-block';
-  sunIcon.style.display = 'none';
-} else {
-  moonIcon.style.display = 'none';
-  sunIcon.style.display = 'inline-block';
+if (moonIcon && sunIcon) {
+    moonIcon.style.display = isDark ? 'inline-block' : 'none';
+    sunIcon.style.display = isDark ? 'none' : 'inline-block';
 }
+
+// Force style update
+requestAnimationFrame(() => {
+    document.body.style.transition = 'background-color 0.3s ease';
+    document.body.style.backgroundColor = isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)';
+});

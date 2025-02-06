@@ -10,13 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_05_001310) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_06_103331) do
+  create_table "comment_votes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "comment_id", null: false
+    t.string "vote_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_comment_votes_on_comment_id"
+    t.index ["user_id", "comment_id"], name: "index_comment_votes_on_user_id_and_comment_id", unique: true
+    t.index ["user_id"], name: "index_comment_votes_on_user_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "scan_id"
+    t.integer "likes_count", default: 0
+    t.integer "dislikes_count", default: 0
     t.index ["scan_id"], name: "index_comments_on_scan_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -74,6 +87,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_05_001310) do
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "comment_votes", "comments"
+  add_foreign_key "comment_votes", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "scan_users", "scans"
   add_foreign_key "scan_users", "users"

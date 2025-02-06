@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:destroy]  # Remove :edit and :update since they're not used
-  before_action :check_user, only: [:destroy]   # Remove :edit and :update since they're not used
+  before_action :set_comment, only: [:destroy, :vote]  # Add :vote to before_action
+  before_action :check_user, only: [:destroy]
 
   def index
     @sort_column = params[:sort] || 'created_at'
@@ -44,6 +44,31 @@ class CommentsController < ApplicationController
     scan = @comment.scan
     @comment.destroy
     redirect_to scan_path(scan), notice: 'Commento eliminato con successo!'
+  end
+
+  def vote
+    vote_type = params[:vote_type]
+    existing_vote = @comment.comment_votes.find_by(user: current_user)
+  
+    if existing_vote
+      if existing_vote.vote_type == vote_type
+        existing_vote.destroy
+      else
+        # Create a new vote instead of updating the existing one
+        existing_vote.destroy
+        @comment.comment_votes.create(user: current_user, vote_type: vote_type)
+      end
+    else
+      @comment.comment_votes.create(user: current_user, vote_type: vote_type)
+    end
+  
+    @comment.reload  # Add this line to ensure we have fresh data
+  
+    render json: {
+      likes_count: @comment.likes_count,
+      dislikes_count: @comment.dislikes_count,
+      user_vote: @comment.vote_type_by(current_user)
+    }
   end
 
   private

@@ -32,6 +32,9 @@
           <span class="text-sm text-gray-500 mt-1 text-center w-full">
             Caricato il: <%= l(@scan.upload_date, format: :long) if @scan.upload_date.present? %>
           </span>
+          <span class="text-sm text-gray-500 mt-1 text-center w-full">
+            da: <%= @scan.user&.username || "not_logged_user" %>
+          </span>
         </div>
 
         <!-- Right side: File Metadata -->
@@ -264,7 +267,7 @@
         <div class="space-y-4" id="comments-list">
           <% if @scan.comments.any? %>
             <% @scan.comments.order(created_at: :desc).each do |comment| %>
-              <div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+              <div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300" data-comment-id="<%= comment.id %>">
                 <div class="flex justify-between items-start mb-4">
                   <div class="flex items-center space-x-3">
                     <div class="p-2 rounded-full bg-blue-50">
@@ -295,7 +298,79 @@
                 <div class="text-gray-700 pl-12">
                   <%= comment.content %>
                 </div>
-              </div>
+              
+              <% if user_signed_in? %>
+                <!-- Add this JavaScript before the closing </div> -->
+                <%= javascript_tag do %>
+                  function voteComment(commentId, voteType) {
+                    fetch(`/comments/${commentId}/vote`, {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+                      },
+                      body: JSON.stringify({ vote_type: voteType })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                      const commentElement = document.querySelector(`[data-comment-id="${commentId}"]`);
+                      if (!commentElement) return;
+                      // Update like counter
+                      const likeCounter = commentElement.querySelector('.likes-count');
+                      if (likeCounter) likeCounter.textContent = data.likes_count;
+                      // Update dislike counter
+                      const dislikeCounter = commentElement.querySelector('.dislikes-count');
+                      if (dislikeCounter) dislikeCounter.textContent = data.dislikes_count;
+                      // Update button styles
+                      const likeButton = commentElement.querySelector('.vote-btn:first-child');
+                      const dislikeButton = commentElement.querySelector('.vote-btn:last-child');
+                      if (likeButton && dislikeButton) {
+                        likeButton.className = `vote-btn flex items-center space-x-2 px-3 py-1 rounded-full ${
+                          data.user_vote === 'like' ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'
+                        } hover:bg-blue-50 transition-colors duration-200`;
+                        dislikeButton.className = `vote-btn flex items-center space-x-2 px-3 py-1 rounded-full ${
+                          data.user_vote === 'dislike' ? 'bg-red-100 text-red-600' : 'bg-gray-100 text-gray-600'
+                        } hover:bg-red-50 transition-colors duration-200`;
+                      }
+                    })
+                    .catch(error => console.error('Error:', error));
+                  }
+                <% end %>
+                
+                <!-- Update the comment voting buttons section -->
+                <div class="mt-4 pl-12 flex items-center space-x-4">
+                  <% if user_signed_in? && comment.user != current_user %>
+                    <button onclick="voteComment('<%= comment.id %>', 'like')" 
+                            data-comment-id="<%= comment.id %>"
+                            class="vote-btn flex items-center space-x-2 px-3 py-1 rounded-full 
+                                   <%= comment.vote_type_by(current_user) == 'like' ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600' %>
+                                   hover:bg-blue-50 transition-colors duration-200">
+                      <i class="fas fa-thumbs-up"></i>
+                      <span class="likes-count"><%= comment.likes_count %></span>
+                    </button>
+                
+                    <button onclick="voteComment('<%= comment.id %>', 'dislike')"
+                            data-comment-id="<%= comment.id %>"
+                            class="vote-btn flex items-center space-x-2 px-3 py-1 rounded-full
+                                   <%= comment.vote_type_by(current_user) == 'dislike' ? 'bg-red-100 text-red-600' : 'bg-gray-100 text-gray-600' %>
+                                   hover:bg-red-50 transition-colors duration-200">
+                      <i class="fas fa-thumbs-down"></i>
+                      <span class="dislikes-count"><%= comment.dislikes_count %></span>
+                    </button>
+                  <% else %>
+                    <!-- Read-only vote counters -->
+                    <div class="flex items-center space-x-2 px-3 py-1 rounded-full bg-gray-50">
+                      <i class="fas fa-thumbs-up text-gray-400"></i>
+                      <span class="text-gray-600"><%= comment.likes_count %></span>
+                    </div>
+                    <div class="flex items-center space-x-2 px-3 py-1 rounded-full bg-gray-50">
+                      <i class="fas fa-thumbs-down text-gray-400"></i>
+                      <span class="text-gray-600"><%= comment.dislikes_count %></span>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
             <% end %>
           <% else %>
             <div class="text-center py-12 space-y-4">

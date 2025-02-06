@@ -1,5 +1,5 @@
 class Scan < ApplicationRecord
-    belongs_to :users, optional: true
+    belongs_to :user, optional: true  # Changed from :users to :user
     has_many :scan_users
     has_many :users, through: :scan_users
 

@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
   
-  resources :comments, only: [:index, :edit, :update, :destroy]
+  resources :comments, only: [:index, :edit, :update, :destroy] do
+    member do
+      post 'vote'
+    end
+  end
 
   resources :scans do
     member do

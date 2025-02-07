@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'virusscanner@noreply.com'
+  default from: 'noreply@virusscanner.com'
   layout 'mailer'
 end

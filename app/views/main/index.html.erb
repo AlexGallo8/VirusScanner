@@ -71,6 +71,42 @@
             <% end %>
           </div>
         <% end %>
+        
+        <!-- Upload Larger File -->
+        <% if user_signed_in? %>
+          <%= form_tag(virus_total_scan_path, multipart: true, class: "space-y-4") do %>
+            <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-6 transition duration-300 hover:border-blue-500 dark:hover:border-blue-400 group" id="dropzone">
+              <%= file_field_tag :file, class: "hidden", id: "fileInput" %>
+              <label for="fileInput" class="cursor-pointer block w-full">
+                <div id="dropText" class="h-40 flex flex-col items-center justify-center space-y-4">
+                  <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-cloud-upload-alt text-blue-500 text-3xl"></i>
+                  </div>
+                  <p class="text-gray-500 text-center">
+                    Drag and drop your file here<br>or click to browse
+                  </p>
+                </div>
+
+                <div id="filePreview" class="hidden h-40 flex flex-col items-center justify-center space-y-6">
+                  <div class="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center animate-bounce">
+                    <i class="fas fa-file-alt text-green-500 text-3xl"></i>
+                  </div>
+                  <div class="text-center">
+                    <p id="fileName" class="text-gray-800 font-medium mb-2"></p>
+                    <button type="button" id="removeFile" class="text-red-500 hover:text-red-600 text-sm flex items-center justify-center space-x-1">
+                      <i class="fas fa-times"></i>
+                      <span>Remove</span>
+                    </button>
+                  </div>
+                </div>
+              </label>
+            </div>
+
+            <div class="flex justify-center items-center space-x-4">
+                <%= submit_tag "Scan Larger File", class: "px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
 
       <!-- URL Scan Card -->

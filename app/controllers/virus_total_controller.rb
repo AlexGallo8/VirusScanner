@@ -237,6 +237,23 @@ class VirusTotalController < ApplicationController
     
     JSON.parse(response.body)['data']['id']
   end
+  
+  def upload_larger_file(file_path)
+    url = URI("#{BASE_URL}/files/upload_url")
+    
+    request = Net::HTTP::Get.new(url)
+    request["accept"] = 'application/json'
+    request["x-apikey"] = API_KEY
+    
+    form_data = [['file', File.open(file_path)]]
+    request.set_form form_data, 'multipart/form-data'
+    
+    response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
+      http.request(request)
+    end
+    
+    JSON.parse(response.body)['data']['id']
+  end
 
   def submit_url(url)
     api_url = URI("#{BASE_URL}/urls")

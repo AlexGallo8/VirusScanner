@@ -108,8 +108,13 @@ class VirusTotalController < ApplicationController
         @results = existing_scan.scan_result
         @scan_id = existing_scan.vt_id
       else
-        @scan_id = upload_file(file_path)
-        
+        # Use upload_larger_file if upload_type is 'larger'
+        @scan_id = if params[:upload_type] == 'larger'
+                     upload_larger_file(file_path)
+                   else
+                     upload_file(file_path)
+                   end
+      
         session[:current_scan_id] = @scan_id
         
         scan = Scan.create!(
@@ -190,14 +195,30 @@ class VirusTotalController < ApplicationController
     attempt = 0
     
     while attempt < max_attempts
-      current_results = get_analysis_result(@scan_id)
-      if current_results.present? && current_results.any?
-        @results = current_results
-        Rails.logger.info "Results found after #{attempt} attempts: #{@results}"
-        return @results
+      response = get_analysis_result(@scan_id)
+      
+      # Check the analysis status from the full response
+      if response && response['status']
+        case response['status']
+        when 'completed'
+          if response['results'].present? && response['results'].any?
+            @results = response['results']
+            Rails.logger.info "Results found after #{attempt} attempts: #{@results}"
+            return @results
+          end
+        when 'queued', 'in-progress'
+          # File is still being processed, wait and try again
+          sleep 2
+          attempt += 1
+          next
+        else
+          # Unknown status or error
+          Rails.logger.error "Unexpected analysis status: #{response['status']}"
+          break
+        end
       end
 
-      sleep 2  # Wait 2 seconds between attempts
+      sleep 2
       attempt += 1
     end
     
@@ -239,20 +260,47 @@ class VirusTotalController < ApplicationController
   end
   
   def upload_larger_file(file_path)
+    # First, get the upload URL
     url = URI("#{BASE_URL}/files/upload_url")
     
     request = Net::HTTP::Get.new(url)
     request["accept"] = 'application/json'
     request["x-apikey"] = API_KEY
     
-    form_data = [['file', File.open(file_path)]]
-    request.set_form form_data, 'multipart/form-data'
-    
     response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
       http.request(request)
     end
     
-    JSON.parse(response.body)['data']['id']
+    parsed_response = JSON.parse(response.body)
+    Rails.logger.info "Upload URL Response: #{parsed_response}"
+    
+    upload_url = parsed_response['data']
+    upload_uri = URI(upload_url)
+    
+    # Then, upload the file to the provided URL
+    upload_request = Net::HTTP::Post.new(upload_uri)
+    upload_request["accept"] = 'application/json'
+    upload_request["x-apikey"] = API_KEY
+    
+    file = File.open(file_path)
+    form_data = [['file', file]]
+    upload_request.set_form(form_data, 'multipart/form-data')
+    
+    upload_response = Net::HTTP.start(upload_uri.hostname, upload_uri.port, use_ssl: true) do |http|
+      http.request(upload_request)
+    end
+    
+    Rails.logger.info "Upload Response: #{upload_response.body}"
+    
+    # Parse the response and get the analysis ID
+    parsed_upload = JSON.parse(upload_response.body)
+    if parsed_upload && parsed_upload['data'] && parsed_upload['data']['id']
+      parsed_upload['data']['id']
+    else
+      raise "Failed to get analysis ID from response: #{upload_response.body}"
+    end
+  ensure
+    file&.close if defined?(file)
   end
 
   def submit_url(url)
@@ -286,20 +334,24 @@ class VirusTotalController < ApplicationController
     Rails.logger.info "Raw API Response for #{file_id}: #{parsed_response}"
     
     return nil unless parsed_response['data'] && 
-                     parsed_response['data']['attributes'] &&
-                     parsed_response['data']['attributes']['results']
+                     parsed_response['data']['attributes']
 
-    results = parsed_response['data']['attributes']['results']
+    attributes = parsed_response['data']['attributes']
     
-    # Transform the results into a more manageable format
-    results.transform_values do |vendor_result|
-      {
-        'category' => vendor_result['category'],
-        'result' => vendor_result['result'],
-        'method' => vendor_result['method'],
-        'engine_name' => vendor_result['engine_name'],
-        'engine_version' => vendor_result['engine_version']
-      }
+    if attributes['status'] == 'completed' && attributes['results'].present?
+      # Transform the results only when the scan is completed
+      attributes['results'].transform_values do |vendor_result|
+        {
+          'category' => vendor_result['category'],
+          'result' => vendor_result['result'],
+          'method' => vendor_result['method'],
+          'engine_name' => vendor_result['engine_name'],
+          'engine_version' => vendor_result['engine_version']
+        }
+      end
+    else
+      # Return the full attributes for status checking
+      attributes
     end
   rescue JSON::ParserError => e
     Rails.logger.error "JSON parsing error: #{e.message}"

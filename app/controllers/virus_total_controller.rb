@@ -191,13 +191,12 @@ class VirusTotalController < ApplicationController
   end
 
   def wait_for_results
-    max_attempts = 30  # Maximum number of attempts
+    max_attempts = 60  # Aumentato da 30 a 60 tentativi
     attempt = 0
     
     while attempt < max_attempts
       response = get_analysis_result(@scan_id)
       
-      # Check the analysis status from the full response
       if response && response['status']
         case response['status']
         when 'completed'
@@ -206,23 +205,31 @@ class VirusTotalController < ApplicationController
             Rails.logger.info "Results found after #{attempt} attempts: #{@results}"
             return @results
           end
-        when 'queued', 'in-progress'
-          # File is still being processed, wait and try again
-          sleep 2
+        when 'queued'
+          Rails.logger.info "Scan still queued (attempt #{attempt + 1})"
+          sleep 5  # Aumentato da 2 a 5 secondi per file in coda
           attempt += 1
-          next
+        when 'in-progress'
+          Rails.logger.info "Scan in progress (attempt #{attempt + 1})"
+          sleep 3  # Attesa di 3 secondi per file in elaborazione
+          attempt += 1
         else
-          # Unknown status or error
-          Rails.logger.error "Unexpected analysis status: #{response['status']}"
+          Rails.logger.error "Unexpected scan status: #{response['status']}"
           break
         end
+      else
+        Rails.logger.error "Invalid response format or missing status"
+        sleep 3
+        attempt += 1
       end
-
-      sleep 2
-      attempt += 1
     end
     
-    flash.now[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
+    # Salva comunque lo stato corrente anche se non è completato
+    if response && response['status']
+      @scan.update(scan_status: response['status']) if @scan
+    end
+    
+    flash.now[:alert] = "L'analisi sta richiedendo più tempo del previsto. Puoi controllare lo stato della scansione più tardi nella tua dashboard."
     nil
   end
 
@@ -339,52 +346,67 @@ class VirusTotalController < ApplicationController
     attributes = parsed_response['data']['attributes']
     
     if attributes['status'] == 'completed' && attributes['results'].present?
-      # Transform the results only when the scan is completed
-      attributes['results'].transform_values do |vendor_result|
-        {
-          'category' => vendor_result['category'],
-          'result' => vendor_result['result'],
-          'method' => vendor_result['method'],
-          'engine_name' => vendor_result['engine_name'],
-          'engine_version' => vendor_result['engine_version']
-        }
-      end
+      # When completed, return both status and results
+      {
+        'status' => attributes['status'],
+        'results' => attributes['results'].transform_values do |vendor_result|
+          {
+            'category' => vendor_result['category'],
+            'result' => vendor_result['result'],
+            'method' => vendor_result['method'],
+            'engine_name' => vendor_result['engine_name'],
+            'engine_version' => vendor_result['engine_version']
+          }
+        end
+      }
     else
-      # Return the full attributes for status checking
+      # For non-completed states, return the attributes
       attributes
     end
-  rescue JSON::ParserError => e
-    Rails.logger.error "JSON parsing error: #{e.message}"
-    nil
-  rescue StandardError => e
-    Rails.logger.error "Error in get_analysis_result: #{e.message}"
-    nil
   end
 
-  # def wait_for_results
-  #   max_attempts = 30
-  #   attempt = 0
+  def wait_for_results
+    max_attempts = 60
+    attempt = 0
     
-  #   while attempt < max_attempts
-  #     current_results = get_analysis_result(@scan_id)
+    while attempt < max_attempts
+      response = get_analysis_result(@scan_id)
       
-  #     if current_results.present? && current_results.any?
-  #       @results = current_results
-  #       Rails.logger.info "Results found after #{attempt} attempts: #{@results}"
-  #       break
-  #     end
-      
-  #     sleep 2
-  #     attempt += 1
-  #   end
+      if response && response['status']
+        case response['status']
+        when 'completed'
+          if response['results'].present?
+            @results = response['results']
+            Rails.logger.info "Results found after #{attempt} attempts: #{@results}"
+            return @results
+          end
+        when 'queued'
+          Rails.logger.info "Scan still queued (attempt #{attempt + 1})"
+          sleep 5
+          attempt += 1
+        when 'in-progress'
+          Rails.logger.info "Scan in progress (attempt #{attempt + 1})"
+          sleep 3
+          attempt += 1
+        else
+          Rails.logger.error "Unexpected scan status: #{response['status']}"
+          break
+        end
+      else
+        Rails.logger.error "Invalid response format or missing status: #{response.inspect}"
+        sleep 3
+        attempt += 1
+      end
+    end
     
-  #   if attempt >= max_attempts
-  #     flash[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
-  #     redirect_to virus_total_path and return
-  #   end
-
-  #   @results
-  # end
+    # Salva comunque lo stato corrente anche se non è completato
+    if response && response['status']
+      @scan.update(scan_status: response['status']) if @scan
+    end
+    
+    flash.now[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
+    nil
+  end
 end
 
 

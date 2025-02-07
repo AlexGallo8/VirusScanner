@@ -25,7 +25,7 @@ gem "turbo-rails"
 gem "virustotal_api"
 
 # http requests
-gem 'net-http'
+gem 'multipart-post'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"

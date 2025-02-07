@@ -205,9 +205,8 @@ GEM
     msgpack (1.7.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
+    multipart-post (2.4.1)
     mutex_m (0.3.0)
-    net-http (0.4.1)
-      uri
     net-imap (0.3.7)
       date
       net-protocol
@@ -388,7 +387,6 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
-    uri (0.13.0)
     version_gem (1.1.4)
     virustotal_api (0.5.7)
       json (~> 2.3, >= 2.3.1)
@@ -432,7 +430,7 @@ DEPENDENCIES
   json (~> 2.6, >= 2.6.3)
   jwt (~> 2.8)
   letter_opener_web
-  net-http
+  multipart-post
   omniauth
   omniauth-auth0 (~> 3.0)
   omniauth-google-oauth2

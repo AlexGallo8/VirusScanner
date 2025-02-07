@@ -1,8 +1,15 @@
 class DarkModeController < ApplicationController
     def toggle
-        # Explicitly convert to boolean and then back to string
-        @is_dark = cookies[:dark_mode] != "true"
-        cookies[:dark_mode] = @is_dark.to_s
+        # Forza la conversione a boolean e poi di nuovo a stringa
+        current_state = cookies[:dark_mode] == "true"
+        @is_dark = !current_state
+        
+        # Imposta il cookie con un valore esplicito
+        cookies[:dark_mode] = {
+            value: @is_dark.to_s,
+            path: "/",
+            expires: 1.year.from_now
+        }
         
         respond_to do |format|
             format.js { render layout: false }

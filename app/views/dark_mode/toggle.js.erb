@@ -1,25 +1,31 @@
-const html = document.documentElement;
-const isDark = <%= @is_dark.to_json %>;
+(() => {
+    const html = document.documentElement;
+    const isDark = <%= @is_dark.to_json %>;
+    console.log('Current dark mode state:', isDark);
 
-// Remove any existing class first
-html.classList.remove('dark');
+    // Update DOM state
+    html.classList.toggle('dark', isDark);
 
-// Then add if needed
-if (isDark) {
-    html.classList.add('dark');
-}
+    // Update icons
+    document.querySelectorAll('.dark-icon').forEach(icon => {
+        icon.style.cssText = isDark ? 'display: inline-block !important' : 'display: none !important';
+    });
+    
+    document.querySelectorAll('.light-icon').forEach(icon => {
+        icon.style.cssText = isDark ? 'display: none !important' : 'display: inline-block !important';
+    });
 
-// Update icons
-const moonIcon = document.querySelector('.dark-icon');
-const sunIcon = document.querySelector('.light-icon');
+    // Force style update
+    requestAnimationFrame(() => {
+        document.body.style.cssText = `
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: ${isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)'};
+            color: ${isDark ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)'};
+        `;
+    });
 
-if (moonIcon && sunIcon) {
-    moonIcon.style.display = isDark ? 'inline-block' : 'none';
-    sunIcon.style.display = isDark ? 'none' : 'inline-block';
-}
-
-// Force style update
-requestAnimationFrame(() => {
-    document.body.style.transition = 'background-color 0.3s ease';
-    document.body.style.backgroundColor = isDark ? 'rgb(17, 24, 39)' : 'rgb(255, 255, 255)';
-});
+    // Enable all dark mode buttons
+    document.querySelectorAll('.dark-mode-btn').forEach(btn => {
+        btn.disabled = false;
+    });
+})();

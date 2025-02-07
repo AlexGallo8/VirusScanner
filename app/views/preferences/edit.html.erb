@@ -1,10 +1,10 @@
-<div class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-4">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="mb-10">
-      <h1 class="text-3xl font-extrabold text-gray-900 text-center">
+      <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white text-center">
         <i class="fas fa-user-cog mr-2"></i>Account Preferences
       </h1>
-      <p class="text-center text-gray-600 mt-2">Manage your account settings and security preferences</p>
+      <p class="text-center text-gray-600 dark:text-gray-300 mt-2">Manage your account settings and security preferences</p>
     </div>
 
 <%= form_for(current_user, url: preferences_path, html: { class: "space-y-2 " }) do |f| %>
@@ -25,15 +25,15 @@
     </div>
   <% end %>
 
-  <div class="bg-white shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl">
+  <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl">
     <div class="grid grid-cols-2 gap-8 p-8">
       <!-- Left Side: Profile Information -->
       <div class="space-y-6">
         <div class="flex items-center">
           <i class="fas fa-id-card text-indigo-600 text-xl mr-2"></i>
-          <h2 class="text-xl font-bold text-gray-900">Profile Information</h2>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white">Profile Information</h2>
         </div>
-        <p class="text-gray-600">Your profile information is visible to other users</p>
+        <p class="text-gray-600 dark:text-gray-300">Your profile information is visible to other users</p>
         <div class="space-y-4">
           <div class="relative">
             <%= f.label :username, class: "block text-sm font-medium text-gray-700" %>
@@ -41,7 +41,7 @@
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <i class="fas fa-user text-gray-400"></i>
               </div>
-              <%= f.text_field :username, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" %>
+              <%= f.text_field :username, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" %>
             </div>
             <p class="mt-2 text-sm text-gray-500">This is your public display name</p>
           </div>

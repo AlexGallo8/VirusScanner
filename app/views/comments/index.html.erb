@@ -1,13 +1,13 @@
-<div class="max-w-6xl mx-auto p-6">
-  <div class="bg-white/50 backdrop-blur-sm shadow-xl rounded-lg overflow-hidden">
+<div class="max-w-6xl mx-auto p-6 dark:bg-gray-900">
+  <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-xl rounded-lg overflow-hidden">
     <!-- Header -->
-    <div class="border-b border-gray-100 p-6">
+    <div class="border-b border-gray-100 dark:border-gray-700 p-6">
       <div class="flex justify-between items-center">
         <div class="flex items-center space-x-3">
           <div class="p-2 rounded-lg">
-            <i class="fas fa-comments text-blue-600 text-4xl"></i>
+            <i class="fas fa-comments text-blue-600 dark:text-blue-400 text-4xl"></i>
           </div>
-          <h1 class="text-2xl font-bold text-blue-600 bg-clip-text">
+          <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400 bg-clip-text">
             Cronologia Commenti
           </h1>
         </div>
@@ -20,16 +20,16 @@
     <div class="p-6">
       <% if @comments.empty? %>
         <div class="text-center py-16 space-y-4">
-          <i class="fas fa-comment-slash text-gray-400 text-6xl animate-bounce"></i>
-          <h2 class="text-xl font-semibold text-gray-900">Nessun commento</h2>
-          <p class="text-gray-500">Non hai ancora lasciato nessun commento</p>
+          <i class="fas fa-comment-slash text-gray-400 dark:text-gray-500 text-6xl animate-bounce"></i>
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Nessun commento</h2>
+          <p class="text-gray-500 dark:text-gray-400">Non hai ancora lasciato nessun commento</p>
         </div>
       <% else %>
         <div class="overflow-x-auto mx-auto">
           <table class="w-full">
             <thead>
-              <tr class="border-b border-gray-100">
-                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <tr class="border-b border-gray-100 dark:border-gray-700">
+                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   <%= link_to comments_path(sort: 'file_name', direction: (@sort_column == 'file_name' && @sort_direction == 'asc' ? 'desc' : 'asc')),
                       class: "group inline-flex items-center hover:text-blue-600" do %>
                     File
@@ -55,7 +55,7 @@
                 <th class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Azioni</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-gray-100">
+            <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
               <% @comments.each do |comment| %>
                 <tr class="group hover:bg-blue-50/50 transition-all duration-200 ease-in-out hover:scale-[1.01]">
                   <td class="px-6 py-4">

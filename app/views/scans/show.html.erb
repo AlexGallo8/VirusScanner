@@ -1,9 +1,17 @@
-<div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-  <div class="container mx-auto px-4 py-12 animate-fade-in">
-    <h1 class="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200 text-center">Risultati della Scansione</h1>
+<div class="container mx-auto px-4">
+  <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">Risultati della Scansione</h1>
+
+  <% if @results.present? %>
+    <% 
+      stats = @results.values.group_by { |r| r['category'] }.transform_values(&:count)
+      total = @results.size
+      malicious = stats['malicious'].to_i
+      undetected = stats['undetected'].to_i
+      clean = undetected
+    %>
 
     <!-- File Information Card -->
-    <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-md p-6 rounded-lg transform transition-all duration-300 hover:shadow-lg">
+    <div class="bg-white shadow-md p-6 rounded-lg transform transition-all duration-300 hover:shadow-lg">
       <div class="flex justify-between items-start gap-8">
         <!-- Left side: Icon, Filename and Upload Date -->
         <div class="flex flex-col items-center justify-center mx-20">
@@ -18,10 +26,10 @@
               end %>
             <i class="<%= file_icon_class %> text-6xl p-8"></i>
           </div>
-          <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 text-center mt-2 w-full">
+          <h2 class="text-xl font-bold text-gray-800 text-center mt-2 w-full">
             <%= @scan.file_name %>
           </h2>
-          <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 text-center w-full">
+          <span class="text-sm text-gray-500 mt-1 text-center w-full">
             Caricato il: <%= l(@scan.upload_date, format: :long) if @scan.upload_date.present? %>
           </span>
           <span class="text-sm text-gray-500 mt-1 text-center w-full">
@@ -30,7 +38,7 @@
         </div>
 
         <!-- Right side: File Metadata -->
-        <div class="flex-1 bg-gray-50 dark:bg-gray-700 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <div class="flex-1 bg-gray-50 rounded-lg p-2 hover:bg-gray-100">
           <div class="space-y-4">
             <div class="flex items-center gap-4">
               <p class="text-xs text-gray-500 w-24">Dimensione:</p>
@@ -55,19 +63,20 @@
     </div>
 
     <!-- Summary Cards -->
-    <div class="mt-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-md rounded-lg p-4">
+    <div class="mt-2 bg-white shadow-md rounded-lg p-4 transform transition-all duration-300 hover:shadow-lg">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-red-100 dark:bg-red-900/50 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
-          <p class="text-red-800 dark:text-red-200 font-semibold">File malevolo</p>
-          <p class="text-2xl font-bold text-red-900 dark:text-red-100">
-            <%= malicious_count %> (<%= (malicious_count.to_f / total * 100).round(2) %>%)
+        <div class="bg-red-100 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
+          <i class="fas fa-virus text-red-500 text-2xl mr-3"></i>
+          <p class="text-red-800 font-semibold">File malevolo</p>
+          <p class="text-2xl font-bold text-red-900">
+            <%= malicious %> (<%= (malicious.to_f / total * 100).round(2) %>%)
           </p>
         </div>
         <div class="bg-green-100 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
           <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
           <p class="text-green-800 font-semibold">Non rilevato</p>
           <p class="text-2xl font-bold text-green-900">
-            <%= undetected_count %> (<%= (undetected_count.to_f / total * 100).round(2) %>%)
+            <%= undetected %> (<%= (undetected.to_f / total * 100).round(2) %>%)
           </p>
         </div>
         <div class="bg-blue-100 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
@@ -79,8 +88,8 @@
     </div>
 
     <!-- Voting Section -->
-    <div class="mt-4 bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
-      <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">Valutazione della Community</h3>
+    <div class="mt-4 bg-white shadow-md rounded-lg p-6">
+      <h3 class="text-xl font-bold mb-4 text-gray-800">Valutazione della Community</h3>
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
         <!-- Voting Buttons -->
         <div class="flex justify-center items-center space-x-12">
@@ -211,7 +220,7 @@
     </div>
 
     <!-- Comments Section -->
-    <div class="mt-8 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-xl rounded-lg overflow-hidden">
+    <div class="mt-8 bg-white/50 backdrop-blur-sm shadow-xl rounded-lg overflow-hidden">
       <!-- Comments Header -->
       <div class="border-b border-gray-100 p-6">
         <div class="flex justify-between items-center">
@@ -409,6 +418,7 @@
       });
     <% end %>
 
+  <% else %>
     <!-- Loading State -->
     <div class="mt-8 bg-yellow-100 rounded-lg p-6">
       <div class="flex items-center justify-center">
@@ -416,7 +426,7 @@
         <p class="text-yellow-800">Caricamento dei risultati in corso...</p>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
 
 <%= content_for :head do %>

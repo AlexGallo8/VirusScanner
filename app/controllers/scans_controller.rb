@@ -21,8 +21,20 @@ class ScansController < ApplicationController
   
     @results = @scan.scan_result
   
+    # Calculate statistics from scan_result
+    if @results.present? && @results['data'].present? && @results['data']['attributes'].present?
+      stats = @results['data']['attributes']['stats']
+      @malicious_count = stats['malicious'] || 0
+      @undetected_count = stats['undetected'] || 0
+      @total = @results['data']['attributes']['results']&.size || 0
+    else
+      @malicious_count = 0
+      @undetected_count = 0
+      @total = 0
+    end
+  
     respond_to do |format|
-      format.html # This will render show.html.erb
+      format.html
       format.json { render json: @scan }
     end
   end

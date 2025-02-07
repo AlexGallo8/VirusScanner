@@ -308,7 +308,8 @@ window.onload = function() {
     });
 
     function handleLargerFile(file) {
-      fileNameLarger.textContent = file.name;
+      const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
+      fileNameLarger.textContent = `${file.name} (${sizeInMB} MB)`;
       dropTextLarger.classList.add('hidden');
       filePreviewLarger.classList.remove('hidden');
     }
@@ -356,9 +357,17 @@ window.onload = function() {
   });
 
   function handleFile(file) {
-    fileName.textContent = file.name;
+    const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
+    fileName.textContent = `${file.name} (${sizeInMB} MB)`;
     dropText.classList.add('hidden');
     filePreview.classList.remove('hidden');
+  }
+
+  function handleLargerFile(file) {
+    const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
+    fileNameLarger.textContent = `${file.name} (${sizeInMB} MB)`;
+    dropTextLarger.classList.add('hidden');
+    filePreviewLarger.classList.remove('hidden');
   }
 };
 

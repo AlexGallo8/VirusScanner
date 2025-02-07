@@ -99,7 +99,6 @@ class VirusTotalController < ApplicationController
       existing_scan = Scan.find_by(hashcode: file_hash)
     
       if existing_scan
-        
         if user_signed_in?
           existing_scan.users << current_user unless existing_scan.users.include?(current_user)
           existing_scan.update(user_id: current_user.id) if existing_scan.user_id.nil?
@@ -107,8 +106,8 @@ class VirusTotalController < ApplicationController
     
         @results = existing_scan.scan_result
         @scan_id = existing_scan.vt_id
+        @scan = existing_scan
       else
-        # Use upload_larger_file if upload_type is 'larger'
         @scan_id = if params[:upload_type] == 'larger'
                      upload_larger_file(file_path)
                    else
@@ -117,7 +116,7 @@ class VirusTotalController < ApplicationController
       
         session[:current_scan_id] = @scan_id
         
-        scan = Scan.create!(
+        @scan = Scan.create!(  # Cambia da 'scan' a '@scan'
           file_name: params[:file].original_filename,
           file_type: params[:file].content_type,
           hashcode: file_hash,
@@ -129,13 +128,13 @@ class VirusTotalController < ApplicationController
         )
 
         if user_signed_in?
-          scan.users << current_user unless scan.users.include?(current_user)
+          @scan.users << current_user unless @scan.users.include?(current_user)
         end
     
         @results = wait_for_results
         if @results.present?
-          scan.update!(scan_result: @results)
-          Rails.logger.info "Scan results for #{scan.file_name}: #{@results}"
+          @scan.update!(scan_result: @results)
+          Rails.logger.info "Scan results for #{@scan.file_name}: #{@results}"
         else
           flash.now[:alert] = "Impossibile completare la scansione. Riprova più tardi."
         end
@@ -153,20 +152,20 @@ class VirusTotalController < ApplicationController
     existing_scan = Scan.find_by(file_name: url)
 
     if existing_scan
-      
       if user_signed_in?
         existing_scan.users << current_user unless existing_scan.users.include?(current_user)
         existing_scan.update(user_id: current_user.id) if existing_scan.user_id.nil?
       end
 
       @results = existing_scan.scan_result
-      @scan_id = existing_scan.vt_id  # Change this line
+      @scan_id = existing_scan.vt_id
+      @scan = existing_scan  # Aggiungi questa riga
     else
       @scan_id = submit_url(url)
       
       session[:current_scan_id] = @scan_id
 
-      scan = Scan.create(
+      @scan = Scan.create(  # Assegna il risultato a @scan
         file_name: url,
         file_type: 'url',
         hashcode: Digest::SHA256.hexdigest(url),
@@ -177,14 +176,13 @@ class VirusTotalController < ApplicationController
       )
 
       if user_signed_in?
-        scan.users << current_user unless scan.users.include?(current_user)
+        @scan.users << current_user unless @scan.users.include?(current_user)
       end
 
       @results = wait_for_results
       if @results.present?
-        scan.update(scan_result: @results)
+        @scan.update(scan_result: @results)
       else
-        # Handle the case when no results are found
         flash.now[:alert] = "Impossibile completare la scansione. Riprova più tardi."
       end
     end

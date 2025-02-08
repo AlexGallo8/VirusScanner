@@ -14508,3 +14508,91 @@ Processing by ScansController#show as HTML
   Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 2476)
 Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.6ms | Allocations: 2979)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "laveta@thompson.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "laveta"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "google_token", "google_refresh_token", "google_token_expires_at", "username", "password_reset_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-08 20:46:23.445596"], ["updated_at", "2025-02-08 20:46:23.445596"], ["auth_provider", "local"], ["auth0_uid", nil], ["google_token", "[FILTERED]"], ["google_refresh_token", "[FILTERED]"], ["google_token_expires_at", "[FILTERED]"], ["username", "test"], ["password_reset_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adelia@adams.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "adelia"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "niki@kirlin-abbott.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "niki"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jed_legros@dooley-williamson.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jed_legros"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eloy@effertz.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "eloy"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "lory@kunde.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "lory"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "chassidy.rice@breitenberg-beatty.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "chassidy.rice"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jena@powlowski-schumm.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jena"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test.user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test.user"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "google_token", "google_refresh_token", "google_token_expires_at", "username", "password_reset_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test.user@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-08 20:46:23.540159"], ["updated_at", "2025-02-08 20:46:23.540159"], ["auth_provider", "local"], ["auth0_uid", nil], ["google_token", "[FILTERED]"], ["google_refresh_token", "[FILTERED]"], ["google_token_expires_at", "[FILTERED]"], ["username", "test.user"], ["password_reset_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (3.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test.user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test.user"], ["LIMIT", 1]]
+  [1m[36mUser Create (11.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "google_token", "google_refresh_token", "google_token_expires_at", "username", "password_reset_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test.user@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-08 20:46:23.604900"], ["updated_at", "2025-02-08 20:46:23.604900"], ["auth_provider", "local"], ["auth0_uid", nil], ["google_token", "[FILTERED]"], ["google_refresh_token", "[FILTERED]"], ["google_token_expires_at", "[FILTERED]"], ["username", "test.user"], ["password_reset_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "different.test.user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "different.test.user"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "google_token", "google_refresh_token", "google_token_expires_at", "username", "password_reset_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "different.test.user@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-08 20:46:23.635204"], ["updated_at", "2025-02-08 20:46:23.635204"], ["auth_provider", "local"], ["auth0_uid", nil], ["google_token", "[FILTERED]"], ["google_refresh_token", "[FILTERED]"], ["google_token_expires_at", "[FILTERED]"], ["username", "different.test.user"], ["password_reset_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aldo@lowe.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "aldo"], ["LIMIT", 1]]
+  [1m[36mUser Create (4.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "google_token", "google_refresh_token", "google_token_expires_at", "username", "password_reset_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "aldo@lowe.example"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-08 20:46:23.646988"], ["updated_at", "2025-02-08 20:46:23.646988"], ["auth_provider", "local"], ["auth0_uid", nil], ["google_token", "[FILTERED]"], ["google_refresh_token", "[FILTERED]"], ["google_token_expires_at", "[FILTERED]"], ["username", "aldo"], ["password_reset_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" INNER JOIN "scan_users" ON "scans"."id" = "scan_users"."scan_id" WHERE "scan_users"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_1"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.2ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test_file.pdf"], ["file_type", nil], ["hashcode", "test_hashcode_1"], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-08 20:46:23.985456"], ["updated_at", "2025-02-08 20:46:23.985456"], ["scan_result", nil], ["file_data", nil], ["user_id", nil], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScanUser Create (0.5ms)[0m  [1m[32mINSERT INTO "scan_users" ("user_id", "scan_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["scan_id", 1], ["created_at", "2025-02-08 20:46:24.017008"], ["updated_at", "2025-02-08 20:46:24.017008"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mScan Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" INNER JOIN "scan_users" ON "scans"."id" = "scan_users"."scan_id" WHERE "scan_users"."user_id" = ? AND "scans"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kathline@mccullough.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kathline"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "google_token", "google_refresh_token", "google_token_expires_at", "username", "password_reset_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "kathline@mccullough.example"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-08 20:46:24.043313"], ["updated_at", "2025-02-08 20:46:24.043313"], ["auth_provider", "local"], ["auth0_uid", nil], ["google_token", "[FILTERED]"], ["google_refresh_token", "[FILTERED]"], ["google_token_expires_at", "[FILTERED]"], ["username", "kathline"], ["password_reset_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mComment Exists? (10.7ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_2"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.2ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test_file.pdf"], ["file_type", nil], ["hashcode", "test_hashcode_2"], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-08 20:46:24.139133"], ["updated_at", "2025-02-08 20:46:24.139133"], ["scan_result", nil], ["file_data", nil], ["user_id", nil], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "created_at", "updated_at", "scan_id", "likes_count", "dislikes_count") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["content", "Esse et quis. Eos porro ipsam. Beatae molestiae ea."], ["user_id", 1], ["created_at", "2025-02-08 20:46:24.141617"], ["updated_at", "2025-02-08 20:46:24.141617"], ["scan_id", 1], ["likes_count", 0], ["dislikes_count", 0]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."user_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m

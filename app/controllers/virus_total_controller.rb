@@ -4,7 +4,6 @@ class VirusTotalController < ApplicationController
   require 'uri'
   require 'digest'  # Add this at the top with other requires
 
-  API_KEY = '4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6'
   BASE_URL = 'https://www.virustotal.com/api/v3'
 
   def index
@@ -92,7 +91,7 @@ class VirusTotalController < ApplicationController
     scan = Scan.find_by(vt_id: scan_id)
     
     if scan
-      if scan.file_type == 'url'
+      if scan.file_type.to_s.downcase == 'url' || scan.file_type.to_s.downcase.include?('url')
         render json: {
           status: 'not_supported',
           message: 'L\'analisi comportamentale è disponibile solo per i file, non per gli URL.',
@@ -107,7 +106,7 @@ class VirusTotalController < ApplicationController
       
       request = Net::HTTP::Get.new(url)
       request["accept"] = 'application/json'
-      request["x-apikey"] = API_KEY
+      request["x-apikey"] = api_key
       
       response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
         http.request(request)
@@ -135,6 +134,10 @@ class VirusTotalController < ApplicationController
   end
 
   private
+
+  def api_key
+    Rails.application.credentials.virustotal[:api_key]
+  end
 
   def calculate_file_hash(file_path)
     Digest::SHA256.file(file_path).hexdigest
@@ -297,12 +300,13 @@ class VirusTotalController < ApplicationController
   end
 
   # Your existing helper methods remain the same
+  # Update upload_file method
   def upload_file(file_path)
     url = URI("#{BASE_URL}/files")
     
     request = Net::HTTP::Post.new(url)
     request["accept"] = 'application/json'
-    request["x-apikey"] = API_KEY
+    request["x-apikey"] = api_key   # Changed from API_KEY
     
     form_data = [['file', File.open(file_path)]]
     request.set_form form_data, 'multipart/form-data'
@@ -320,7 +324,7 @@ class VirusTotalController < ApplicationController
     
     request = Net::HTTP::Get.new(url)
     request["accept"] = 'application/json'
-    request["x-apikey"] = API_KEY
+    request["x-apikey"] = api_key   # Changed from API_KEY
     
     response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
       http.request(request)
@@ -335,7 +339,7 @@ class VirusTotalController < ApplicationController
     # Then, upload the file to the provided URL
     upload_request = Net::HTTP::Post.new(upload_uri)
     upload_request["accept"] = 'application/json'
-    upload_request["x-apikey"] = API_KEY
+    upload_request["x-apikey"] = api_key
     
     file = File.open(file_path)
     form_data = [['file', file]]
@@ -363,7 +367,7 @@ class VirusTotalController < ApplicationController
     
     request = Net::HTTP::Post.new(api_url)
     request["accept"] = 'application/json'
-    request["x-apikey"] = API_KEY
+    request["x-apikey"] = api_key
     request["content-type"] = 'application/x-www-form-urlencoded'
     request.body = "url=#{URI.encode_www_form_component(url)}"
     
@@ -379,7 +383,7 @@ class VirusTotalController < ApplicationController
     
     request = Net::HTTP::Get.new(url)
     request["accept"] = 'application/json'
-    request["x-apikey"] = API_KEY
+    request["x-apikey"] = api_key
     
     response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
       http.request(request)

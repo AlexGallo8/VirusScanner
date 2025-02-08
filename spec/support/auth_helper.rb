@@ -12,5 +12,6 @@ end
 
 RSpec.configure do |config|
   config.include AuthHelper, type: :feature
+  config.include AuthHelper, type: :request
   config.include Rails.application.routes.url_helpers
 end

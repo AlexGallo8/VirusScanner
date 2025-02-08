@@ -72,6 +72,7 @@ group :test do
   gem "webdrivers"
   gem "rack-test"
   gem "rack", "~> 2.2.8"
+  gem 'prawn'
 end
 
 gem "tailwindcss-rails", "~> 2.0"

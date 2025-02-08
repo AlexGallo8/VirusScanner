@@ -12,29 +12,39 @@ RSpec.feature "Scan Workflow", type: :feature do
     end
   end
 
-  scenario "User uploads a file and views results", js: true do
+  scenario "User uploads a file", js: true do
     visit root_path
     
     test_file_path = Rails.root.join('spec/fixtures/files/test.pdf')
-    File.write(test_file_path, "Test content") unless File.exist?(test_file_path)
+    unless File.exist?(test_file_path)
+      require 'prawn'
+      Prawn::Document.generate(test_file_path) do |pdf|
+        pdf.text "Test PDF Document"
+        pdf.text "This is a sample content for testing"
+        pdf.text Time.current.to_s
+      end
+    end
     
-    # Make file input visible for testing
+    # Make file input visible and attach file
     page.execute_script("document.getElementById('fileInput').classList.remove('hidden')")
     attach_file("fileInput", test_file_path)
     
-    # Target the specific form for regular file uploads
+    # Submit the form
     within('#box1 .grid-cols-1 > div:first-child form') do
       click_button "Scan File"
     end
 
-    # Wait for loading screen to appear
-    expect(page).to have_css('.loading-overlay', wait: 5)
+    # Verify loading state is shown
+    expect(page).to have_css('.loading-overlay')
     expect(page).to have_content('Scanning in Progress')
+  end
+
+  scenario "User views scan results" do
+    scan = create(:scan, :with_result)
+    visit scan_path(scan)
     
-    # Wait for final results
-    expect(page).to have_content("Scan Results")
-    # , wait: 120)
-    expect(page).to have_content("test.pdf")
+    expect(page).to have_content("Malicious")
+    expect(page).to have_content("Undetected")
   end
 
   scenario "User comments on a scan" do

@@ -76,5 +76,6 @@ RSpec.configure do |config|
     # Configure Capybara to use Selenium with Chrome in headless mode
     Capybara.javascript_driver = :selenium_chrome_headless
     Capybara.server = :puma, { Silent: true }
+    Capybara.default_max_wait_time = 10
   end
 end

@@ -1,17 +1,21 @@
 FactoryBot.define do
   factory :scan do
+    sequence(:hashcode) { |n| "test_hashcode_#{n}" }
     file_name { "test_file.pdf" }
-    file_size { 1024 }
-    file_type { "application/pdf" }
-    hashcode { Faker::Crypto.sha256 }
-    upload_date { Time.current }
-    association :user
 
-    trait :with_results do
-      after(:create) do |scan|
-        scan.results = {
-          'engine1' => { 'category' => 'malicious' },
-          'engine2' => { 'category' => 'undetected' }
+    trait :with_result do
+      scan_result do
+        {
+          'engine1' => {
+            'category' => 'malicious',
+            'method' => 'static',
+            'result' => 'detected'
+          },
+          'engine2' => {
+            'category' => 'undetected',
+            'method' => 'dynamic',
+            'result' => 'clean'
+          }
         }
       end
     end

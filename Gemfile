@@ -12,7 +12,9 @@ gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
+gem "puma", "~> 5.6.4"
+
+# Remove the duplicate test group that appears later in the file
 
 gem 'pycall'
 
@@ -68,6 +70,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "rack-test"
+  gem "rack", "~> 2.2.8"
 end
 
 gem "tailwindcss-rails", "~> 2.0"

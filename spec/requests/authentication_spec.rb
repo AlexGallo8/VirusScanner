@@ -4,35 +4,30 @@ RSpec.describe "Authentication", type: :request do
   describe "POST /users" do
     let(:valid_attributes) {
       {
-        user: {
-          username: "testuser",
-          email: "test@example.com",
-          password: "password123",
-          password_confirmation: "password123"
-        }
+        email: "test@example.com",
+        password: "Password123!",
+        password_confirmation: "Password123!"
       }
     }
 
     it "creates a new user" do
       expect {
-        post user_registration_path, params: valid_attributes
+        post registration_path, params: { user: valid_attributes }
       }.to change(User, :count).by(1)
       
       expect(response).to redirect_to(root_path)
       follow_redirect!
-      expect(response.body).to include("Welcome!")
+      expect(response.body).to include("Successfully created account!")
     end
   end
 
   describe "POST /users/sign_in" do
-    let(:user) { create(:user) }
+    let(:user) { create(:user, email: "test@example.com", password: "Password123!") }
 
     it "signs in the user" do
-      post user_session_path, params: {
-        user: {
-          email: user.email,
-          password: user.password
-        }
+      post session_path, params: {
+        email: user.email,
+        password: "Password123!"
       }
       
       expect(response).to redirect_to(root_path)
@@ -42,11 +37,17 @@ RSpec.describe "Authentication", type: :request do
   end
 
   describe "DELETE /users/sign_out" do
-    let(:user) { create(:user) }
+    let(:user) { create(:user, email: "test@example.com", password: "Password123!") }
 
     it "signs out the user" do
-      sign_in user
-      delete destroy_user_session_path
+      # Prima facciamo il login
+      post session_path, params: {
+        email: user.email,
+        password: "Password123!"
+      }
+      
+      # Poi facciamo il logout
+      delete session_path
       
       expect(response).to redirect_to(root_path)
       follow_redirect!

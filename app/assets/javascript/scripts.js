@@ -24,8 +24,24 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (backdrop && modalContent) {
                 function openModal() {
-                    modal.classList.remove('hidden');
-                    document.body.style.overflow = 'hidden';
+                    // Carica il form via AJAX solo per la registrazione
+                    if (modalType === 'registration') {
+                        fetch('/registration/new', {
+                            headers: {
+                                'Accept': 'text/html',
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        })
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('registration-form-container').innerHTML = html;
+                            modal.classList.remove('hidden');
+                            document.body.style.overflow = 'hidden';
+                        });
+                    } else {
+                        modal.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                    }
                 }
 
                 function closeModal() {

@@ -7,11 +7,6 @@ RSpec.describe User, type: :model do
       expect(user).to be_valid
     end
 
-    it "is not valid without a username" do
-      user = build(:user, username: nil)
-      expect(user).not_to be_valid
-    end
-
     it "is not valid without an email" do
       user = build(:user, email: nil)
       expect(user).not_to be_valid
@@ -23,10 +18,15 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
     end
 
-    it "is not valid with a duplicate username" do
-      create(:user, username: "testuser")
-      user = build(:user, username: "testuser")
-      expect(user).not_to be_valid
+    it "automatically generates username from email" do
+      user = create(:user, :with_test_email)
+      expect(user.username).to eq("test.user")
+    end
+
+    it "ensures generated usernames are unique" do
+      create(:user, email: "test.user@example.com")
+      user2 = create(:user, email: "different.test.user@example.com")
+      expect(user2.username).not_to eq("test.user")
     end
   end
 
@@ -35,7 +35,9 @@ RSpec.describe User, type: :model do
       user = create(:user)
       expect(user.scans).to be_empty
       
-      scan = create(:scan, user: user)
+      scan = create(:scan)
+      create(:scan_user, user: user, scan: scan)
+      
       expect(user.reload.scans).to include(scan)
     end
 

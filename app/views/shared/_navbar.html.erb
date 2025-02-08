@@ -69,7 +69,7 @@
   <div class="modal-backdrop dark:bg-gray-900 dark:bg-opacity-75">
     <div class="modal-content dark:bg-gray-800">
       <button id="close-registration-modal" class="close-button dark:text-white">&times;</button>
-      <%= render "registrations/form", user: User.new %>
+      <div id="registration-form-container"></div>
     </div>
   </div>
 </div>
@@ -78,7 +78,7 @@
   <div class="modal-backdrop dark:bg-gray-900 dark:bg-opacity-75">
     <div class="modal-content dark:bg-gray-800">
       <button id="close-session-modal" class="close-button dark:text-white">&times;</button>
-      <%= render "sessions/form", user: @user %>
+      <div id="session-form-container"></div>
     </div>
   </div>
 </div>

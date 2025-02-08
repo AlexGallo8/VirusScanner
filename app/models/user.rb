@@ -68,4 +68,25 @@ class User < ApplicationRecord
             google_token_expires_at: Time.at(access_token.expires_at)
         )
     end
+  private
+
+  def generate_username
+    return if username.present?
+    base_username = email.split('@').first
+    self.username = base_username
+    counter = 1
+    while User.exists?(username: self.username)
+      self.username = "#{base_username}#{counter}"
+      counter += 1
+    end
+  end
+
+  before_validation :set_username, on: :create
+
+  private
+
+  def set_username
+    return if username.present?
+    self.username = email.split('@').first if email.present?
+  end
 end

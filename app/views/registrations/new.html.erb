@@ -1,12 +1,10 @@
-<%= turbo_frame_tag "modal" do %>
-    <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelldby="modal-title" role="dialog" aria-modal="true">
-        <div>
-            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-            <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-x1 transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-                <h1 class="text-gray-800 font-semibold text-xl mb-4">Sign up</h1>
-                <%= render 'form', user: @user %>
-            </div>
+<div class="fixed z-10 inset-0 overflow-y-auto" aria-labelldby="modal-title" role="dialog" aria-modal="true">
+    <div>
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-x1 transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+            <h1 class="text-gray-800 font-semibold text-xl mb-4">Sign up</h1>
+            <%= render 'form', user: @user %>
         </div>
     </div>
-<% end %>
+</div>

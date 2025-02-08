@@ -3,6 +3,9 @@ class RegistrationsController < ApplicationController
 
   def new
     @user = User.new
+    if request.xhr?
+      render partial: 'form', locals: { user: @user }
+    end
   end
   
   def create

@@ -114,7 +114,6 @@
         </div>
 
         <%= form_tag(virus_total_scan_path, multipart: true, class: "space-y-6") do %>
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <div class="relative">
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <i class="fas fa-search text-gray-400 dark:text-gray-500"></i>

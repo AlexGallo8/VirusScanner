@@ -437,10 +437,18 @@
         const content = document.getElementById('behaviorContent');
         modal.classList.remove('hidden');
         
+        console.log('Fetching behavior analysis for scan ID:', scanId);
+        
         fetch(`/virus_total/${scanId}/behavior`)
-          .then(response => response.json())
+          .then(response => {
+            console.log('Raw response:', response);
+            return response.json();
+          })
           .then(data => {
+            console.log('API Response data:', data);
+            
             if (data.data && data.data.attributes) {
+              console.log('Behavior attributes:', data.data.attributes);
               const attributes = data.data.attributes;
               let html = '<div class="space-y-6">';
               
@@ -471,7 +479,24 @@
               html += '</div>';
               content.innerHTML = html;
             } else {
-              content.innerHTML = '<div class="text-center text-gray-600">Nessun dato comportamentale disponibile.</div>';
+              content.innerHTML = `
+                <div class="text-center p-8">
+                  <div class="mb-4">
+                    <i class="fas fa-link text-blue-500 text-4xl"></i>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Analisi non disponibile per URL
+                  </h3>
+                  <p class="text-gray-600">
+                    ${data.message}
+                  </p>
+                  <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                    <p class="text-sm text-gray-500">
+                      <span class="font-medium">URL analizzato:</span> ${data.file_name}
+                    </p>
+                  </div>
+                </div>
+              `;
             }
           })
           .catch(error => {

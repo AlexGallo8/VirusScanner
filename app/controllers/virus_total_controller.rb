@@ -87,10 +87,24 @@ class VirusTotalController < ApplicationController
   # User-story: get a summary of all behaviour reports for a file
   def get_behavior_analysis
     scan_id = params[:id]
+    Rails.logger.info "Fetching behavior analysis for scan_id: #{scan_id}"
+    
     scan = Scan.find_by(vt_id: scan_id)
     
     if scan
-      url = URI("#{BASE_URL}/analyses/#{scan.vt_id}/behavior_summary")
+      if scan.file_type == 'url'
+        render json: {
+          status: 'not_supported',
+          message: 'L\'analisi comportamentale è disponibile solo per i file, non per gli URL.',
+          file_type: scan.file_type,
+          file_name: scan.file_name
+        }
+        return
+      end
+    
+      url = URI("#{BASE_URL}/files/#{scan.hashcode}/behaviour_summary")
+      Rails.logger.info "Requesting behavior analysis for hash: #{scan.hashcode}"
+      
       request = Net::HTTP::Get.new(url)
       request["accept"] = 'application/json'
       request["x-apikey"] = API_KEY
@@ -99,8 +113,22 @@ class VirusTotalController < ApplicationController
         http.request(request)
       end
       
-      @behavior_data = JSON.parse(response.body)
-      render json: @behavior_data
+      Rails.logger.info "VirusTotal API Response Status: #{response.code}"
+      Rails.logger.info "VirusTotal API Response Body: #{response.body}"
+      
+      parsed_response = JSON.parse(response.body)
+      
+      if response.code == "200" && parsed_response["data"].nil?
+        render json: {
+          status: 'no_data',
+          message: 'Analisi comportamentale non disponibile per questo file. ' \
+                  'Questo può accadere se il file non è un eseguibile o se l\'analisi è ancora in corso.',
+          file_type: scan.file_type,
+          file_name: scan.file_name
+        }
+      else
+        render json: parsed_response
+      end
     else
       render json: { error: 'Scan not found' }, status: :not_found
     end

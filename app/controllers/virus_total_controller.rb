@@ -84,6 +84,28 @@ class VirusTotalController < ApplicationController
     end
   end
 
+  # User-story: get a summary of all behaviour reports for a file
+  def get_behavior_analysis
+    scan_id = params[:id]
+    scan = Scan.find_by(vt_id: scan_id)
+    
+    if scan
+      url = URI("#{BASE_URL}/analyses/#{scan.vt_id}/behavior_summary")
+      request = Net::HTTP::Get.new(url)
+      request["accept"] = 'application/json'
+      request["x-apikey"] = API_KEY
+      
+      response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
+        http.request(request)
+      end
+      
+      @behavior_data = JSON.parse(response.body)
+      render json: @behavior_data
+    else
+      render json: { error: 'Scan not found' }, status: :not_found
+    end
+  end
+
   private
 
   def calculate_file_hash(file_path)

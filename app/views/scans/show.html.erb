@@ -210,6 +210,18 @@
       <% end %>
     </div>
 
+    <!-- Add this after the Action Buttons section and before the Detailed Results Table -->
+    <div class="mt-4">
+      <button onclick="showBehaviorAnalysis('<%= @scan.vt_id %>')" 
+              class="w-full bg-white border-transparent shadow-md p-4 rounded-lg flex items-center justify-between hover:bg-gray-100 transition-all duration-300">
+        <span class="text-lg font-semibold text-gray-800 flex items-center">
+          <i class="fas fa-microscope mr-3 text-blue-500"></i>
+          Analisi Comportamentale Dettagliata
+        </span>
+        <i class="fas fa-chevron-right text-gray-600"></i>
+      </button>
+    </div>
+
     <!-- Detailed Results Table -->
     <div class="mt-4">
       <button onclick="toggleResultsTable()" 
@@ -302,7 +314,6 @@
                 </div>
               
               <% if user_signed_in? %>
-                <!-- Add this JavaScript before the closing </div> -->
                 <%= javascript_tag do %>
                   function voteComment(commentId, voteType) {
                     fetch(`/comments/${commentId}/vote`, {
@@ -384,6 +395,96 @@
         </div>
       </div>
     </div>
+    
+    <!-- Behavior Analysis Modal -->
+    <div id="behaviorModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden z-50">
+      <div class="fixed inset-0 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[80vh] overflow-y-auto">
+          <!-- Modal Header -->
+          <div class="border-b border-gray-100 p-6 sticky top-0 bg-white z-10">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-3">
+                <div class="p-2 rounded-lg bg-blue-100">
+                  <i class="fas fa-microscope text-blue-600 text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Analisi Comportamentale</h2>
+              </div>
+              <button onclick="closeBehaviorModal()" class="text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times text-2xl"></i>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Modal Content -->
+          <div class="p-6" id="behaviorContent">
+            <div class="animate-pulse flex space-x-4">
+              <div class="flex-1 space-y-4 py-1">
+                <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                <div class="space-y-2">
+                  <div class="h-4 bg-gray-200 rounded"></div>
+                  <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= javascript_tag do %>
+      function showBehaviorAnalysis(scanId) {
+        const modal = document.getElementById('behaviorModal');
+        const content = document.getElementById('behaviorContent');
+        modal.classList.remove('hidden');
+        
+        fetch(`/virus_total/${scanId}/behavior`)
+          .then(response => response.json())
+          .then(data => {
+            if (data.data && data.data.attributes) {
+              const attributes = data.data.attributes;
+              let html = '<div class="space-y-6">';
+              
+              // Process Categories
+              if (attributes.processes && attributes.processes.length > 0) {
+                html += `
+                  <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                      <i class="fas fa-cogs text-blue-500 mr-2"></i>
+                      Processi Rilevati
+                    </h3>
+                    <div class="space-y-2">
+                      ${attributes.processes.map(process => `
+                        <div class="bg-white p-3 rounded-md shadow-sm">
+                          <p class="text-sm text-gray-700">
+                            <span class="font-medium">Nome:</span> ${process.name}<br>
+                            <span class="font-medium">PID:</span> ${process.pid}
+                          </p>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                `;
+              }
+              
+              // Add other relevant sections here...
+              
+              html += '</div>';
+              content.innerHTML = html;
+            } else {
+              content.innerHTML = '<div class="text-center text-gray-600">Nessun dato comportamentale disponibile.</div>';
+            }
+          })
+          .catch(error => {
+            content.innerHTML = '<div class="text-center text-red-600">Errore durante il caricamento dei dati.</div>';
+            console.error('Error:', error);
+          });
+      }
+
+      function closeBehaviorModal() {
+        const modal = document.getElementById('behaviorModal');
+        modal.classList.add('hidden');
+      }
+    <% end %>
 
     <%= javascript_tag do %>
       document.getElementById('new-comment-form')?.addEventListener('submit', function(e) {

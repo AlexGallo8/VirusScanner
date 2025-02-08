@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post 'virus_total/scan', to: 'virus_total#scan'
   get 'virus_total/scan', to: 'virus_total#scan'
   
+  get 'virus_total/:id/behavior', to: 'virus_total#get_behavior_analysis', as: 'behavior_analysis'
+  
 
   resources :scans, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :comments, only: [:create]

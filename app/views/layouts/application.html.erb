@@ -13,15 +13,14 @@
     <%= javascript_include_tag 'https://code.jquery.com/jquery-3.6.0.min.js' %>
   </head>
   
-  <body>
-    
-      <%= render partial: "shared/navbar"%>
+  <body class="min-h-screen bg-white dark:bg-gray-900">
+    <%= render partial: "shared/navbar"%>
       
-      <main>
-        <% if notice %>
-          <div id="notice-toast" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 rounded shadow-lg transition-opacity duration-500" role="alert">
-            <%= notice %>
-          </div>
+    <main>
+      <% if notice %>
+        <div id="notice-toast" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-blue-100 dark:bg-blue-900 border-l-4 border-blue-500 text-blue-700 dark:text-blue-300 p-4 rounded shadow-lg transition-opacity duration-500" role="alert">
+          <%= notice %>
+        </div>
 
           <script>
             setTimeout(function() {
@@ -32,12 +31,12 @@
               }, 500);
             }, 5000);
           </script>
-        <% end %>
+      <% end %>
 
-        <% if flash[:alert] %>
-          <div id="alert-toast" class=" fixed top-4 right-4 bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded shadow-lg transition-opacity duration-500" role="alert">
-            <%= flash[:alert] %>
-          </div>
+      <% if flash[:alert] %>
+        <div id="alert-toast" class="fixed top-4 right-4 bg-red-100 dark:bg-red-900 border-l-4 border-red-500 text-red-700 dark:text-red-300 p-4 rounded shadow-lg transition-opacity duration-500" role="alert">
+          <%= flash[:alert] %>
+        </div>
 
           <script>
             setTimeout(function() {
@@ -48,12 +47,11 @@
               }, 500);
             }, 5000);
           </script>
-        <% end %>
+      <% end %>
 
-        <%= yield %>
-      </main>
+      <%= yield %>
+    </main>
 
-      <%= render partial: "shared/footer"%>
-    
+    <%= render partial: "shared/footer"%>
   </body>
 </html>

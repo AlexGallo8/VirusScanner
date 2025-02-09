@@ -21,41 +21,72 @@
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Scan File</h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <!-- Regular File Upload -->
-          <div>
-            <%= form_tag(virus_total_scan_path, multipart: true, class: "space-y-4") do %>
-              <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-4 transition duration-300 hover:border-blue-500 dark:hover:border-blue-400 group" id="dropzone">
-                <%= file_field_tag :file, class: "hidden", id: "fileInput" %>
-                <label for="fileInput" class="cursor-pointer block w-full">
-                  <div id="dropText" class="h-32 flex flex-col items-center justify-center space-y-3">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <i class="fas fa-cloud-upload-alt text-blue-500 text-2xl"></i>
-                    </div>
-                    <p class="text-gray-500 text-sm text-center">
-                      Regular files<br>(< 32MB)
-                    </p>
+        <% if !user_signed_in? %>
+          <%= form_tag(virus_total_scan_path, multipart: true, class: "space-y-4") do %>
+            <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-4 transition duration-300 hover:border-blue-500 dark:hover:border-blue-400 group" id="dropzone">
+              <%= file_field_tag :file, class: "hidden", id: "fileInput" %>
+              <label for="fileInput" class="cursor-pointer block w-full">
+                <div id="dropText" class="h-48 flex flex-col items-center justify-center space-y-3">
+                  <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-cloud-upload-alt text-blue-500 text-3xl"></i>
                   </div>
-                  <div id="filePreview" class="hidden h-32 flex flex-col items-center justify-center space-y-3">
-                    <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center">
-                      <i class="fas fa-file-alt text-green-500 text-2xl"></i>
-                    </div>
-                    <div class="text-center">
-                      <p id="fileName" class="text-gray-800 dark:text-gray-200 font-medium mb-2"></p>
-                      <button type="button" id="removeFile" class="text-red-500 hover:text-red-600 text-sm flex items-center justify-center space-x-1">
-                        <i class="fas fa-times"></i>
-                        <span>Remove</span>
-                      </button>
-                    </div>
+                  <p class="text-gray-500 text-sm text-center">
+                    Drop your file here or click to browse<br>
+                    (Max size: 32MB)
+                  </p>
+                </div>
+                <div id="filePreview" class="hidden h-48 flex flex-col items-center justify-center space-y-3">
+                  <div class="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center">
+                    <i class="fas fa-file-alt text-green-500 text-3xl"></i>
                   </div>
-                </label>
-              </div>
-              <%= submit_tag "Scan File", class: "w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
-            <% end %>
-          </div>
+                  <div class="text-center">
+                    <p id="fileName" class="text-gray-800 dark:text-gray-200 font-medium mb-2"></p>
+                    <button type="button" id="removeFile" class="text-red-500 hover:text-red-600 text-sm flex items-center justify-center space-x-1">
+                      <i class="fas fa-times"></i>
+                      <span>Remove</span>
+                    </button>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <%= submit_tag "Scan File", class: "w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
+          <% end %>
+        <% else %>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Regular File Upload -->
+            <div>
+              <%= form_tag(virus_total_scan_path, multipart: true, class: "space-y-4") do %>
+                <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-4 transition duration-300 hover:border-blue-500 dark:hover:border-blue-400 group" id="dropzone">
+                  <%= file_field_tag :file, class: "hidden", id: "fileInput" %>
+                  <label for="fileInput" class="cursor-pointer block w-full">
+                    <div id="dropText" class="h-32 flex flex-col items-center justify-center space-y-3">
+                      <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-cloud-upload-alt text-blue-500 text-2xl"></i>
+                      </div>
+                      <p class="text-gray-500 text-sm text-center">
+                        Regular files<br>(< 32MB)
+                      </p>
+                    </div>
+                    <div id="filePreview" class="hidden h-32 flex flex-col items-center justify-center space-y-3">
+                      <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center">
+                        <i class="fas fa-file-alt text-green-500 text-2xl"></i>
+                      </div>
+                      <div class="text-center">
+                        <p id="fileName" class="text-gray-800 dark:text-gray-200 font-medium mb-2"></p>
+                        <button type="button" id="removeFile" class="text-red-500 hover:text-red-600 text-sm flex items-center justify-center space-x-1">
+                          <i class="fas fa-times"></i>
+                          <span>Remove</span>
+                        </button>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                <%= submit_tag "Scan File", class: "w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
+              <% end %>
+            </div>
       
-          <!-- Larger File Upload -->
-          <% if user_signed_in? %>
+            <!-- Larger File Upload -->
             <div>
               <%= form_tag(virus_total_scan_path(upload_type: 'larger'), multipart: true, class: "space-y-4") do %>
                 <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-4 transition duration-300 hover:border-blue-500 dark:hover:border-blue-400 group" id="dropzoneLarger">
@@ -86,8 +117,8 @@
                 <%= submit_tag "Scan Larger File", class: "w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" %>
               <% end %>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       
         <!-- Google Drive Upload Button -->
         <% if user_signed_in? %>

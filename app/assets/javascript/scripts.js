@@ -11,53 +11,52 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Gestori per entrambi i pulsanti modali
+    // Modal handlers for both registration and session
     ['registration', 'session'].forEach(modalType => {
         const modal = document.getElementById(`${modalType}-modal`);
         const openButton = document.getElementById(`open-${modalType}-modal`);
         const closeButton = document.getElementById(`close-${modalType}-modal`);
+        const formContainer = document.getElementById(`${modalType}-form-container`);
         
-        // Check if all required elements exist
-        if (modal && openButton && closeButton) {
+        if (modal && openButton && closeButton && formContainer) {
             const backdrop = modal.querySelector('.modal-backdrop');
             const modalContent = modal.querySelector('.modal-content');
             
-            if (backdrop && modalContent) {
-                function openModal() {
-                    // Carica il form via AJAX solo per la registrazione
-                    if (modalType === 'registration') {
-                        fetch('/registration/new', {
-                            headers: {
-                                'Accept': 'text/html',
-                                'X-Requested-With': 'XMLHttpRequest'
-                            }
-                        })
-                        .then(response => response.text())
-                        .then(html => {
-                            document.getElementById('registration-form-container').innerHTML = html;
-                            modal.classList.remove('hidden');
-                            document.body.style.overflow = 'hidden';
-                        });
-                    } else {
-                        modal.classList.remove('hidden');
-                        document.body.style.overflow = 'hidden';
+            function openModal() {
+                // Load form via AJAX for both registration and session
+                fetch(`/${modalType}/new`, {
+                    headers: {
+                        'Accept': 'text/html',
+                        'X-Requested-With': 'XMLHttpRequest'
                     }
-                }
-
-                function closeModal() {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
-                }
-
-                openButton.addEventListener('click', openModal);
-                closeButton.addEventListener('click', closeModal);
-                backdrop.addEventListener('click', closeModal);
-
-                // Previene la chiusura quando si clicca sul contenuto del modal
-                modalContent.addEventListener('click', e => {
-                    e.stopPropagation();
+                })
+                .then(response => response.text())
+                .then(html => {
+                    formContainer.innerHTML = html;
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Setup form submission handler after form is loaded
+                    const form = formContainer.querySelector(`#${modalType}_form`);
+                    if (form) {
+                        handleFormSubmit(form);
+                    }
                 });
             }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                formContainer.innerHTML = ''; // Clear form content
+            }
+
+            openButton.addEventListener('click', openModal);
+            closeButton.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+
+            modalContent.addEventListener('click', e => {
+                e.stopPropagation();
+            });
         }
     });
 

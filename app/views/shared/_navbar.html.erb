@@ -2,7 +2,7 @@
   <div class="container mx-auto px-4 py-3">
   <div class="flex justify-between items-center ml-10">
     <%= link_to root_path, class: "flex items-center transition-transform duration-300 hover:scale-110" do %>
-      <%= image_tag("logo_vs.png", class: "w-16 h-auto transition-transform duration-300 ") %>
+      <%= image_tag("logo_vs.webp", class: "w-24 h-auto transition-transform duration-300 ") %>
       <% end %>
 
       <div class="lg:flex items-center space-x-6">
@@ -10,7 +10,7 @@
           <%= render 'shared/dark_mode_switch' %>
         </div>
         <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900 hover:bg-gray-200 p-4  rounded-full " %>
-       <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900 hover:bg-gray-200 p-4  rounded-full " %>
+        <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900 hover:bg-gray-200 p-4  rounded-full " %>
         
         <div class="lg:flex items-center space-x-4 login-buttons">
           <% if user_signed_in? %>
@@ -29,27 +29,27 @@
                 x-transition:leave="transition ease-in duration-100"
                 x-transition:leave-start="opacity-100 scale-100"
                 x-transition:leave-end="opacity-0 scale-90"
-                class="hidden absolute top-full right-0 z-10 py-2 mt-2 bg-white rounded-md shadow-xl w-64"
+                class="hidden absolute top-full right-0 bg-white dark:bg-gray-900 z-10 py-2 mt-2 rounded-md shadow-xl w-64"
               >
 
-                <%= link_to scans_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200" do %>
+                <%= link_to scans_path, class: "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" do %>
                   <i class="fas fa-history mr-2"></i>
                   Scans History
                 <% end %>
-                <%= link_to comments_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200" do %>
+                <%= link_to comments_path, class: "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" do %>
                   <i class="fas fa-comments mr-2"></i>
                   Comments History
                 <% end %>
-                <%= link_to edit_preferences_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200" do %>
+                <%= link_to edit_preferences_path, class: "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" do %>
                   <i class="fas fa-cog mr-2"></i>
                   Preferences
                 <% end %>
 
-                <hr class="border-gray-20 dark:border-gray-700 ">
+                
                 
                 <%= button_to session_path, 
                     method: :delete,
-                    class: " button-red flex items-center justify-center w-full" do %>
+                    class: "button-red flex items-center justify-center w-full dark:text-gray-300" do %>
                     <i class="fas fa-sign-out-alt mr-2"></i>
                     Log out
                 <% end %>

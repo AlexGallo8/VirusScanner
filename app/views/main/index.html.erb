@@ -119,20 +119,6 @@
             </div>
           </div>
         <% end %>
-      
-        <!-- Google Drive Upload Button -->
-        <% if user_signed_in? %>
-          <div class="mt-4">
-            <%= button_tag type: "button",
-                  onclick: "openDrivePicker()",
-                  class: "w-full px-4 py-2 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center" do %>
-              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48" class="mr-2">
-                <!-- SVG path remains the same -->
-              </svg>
-              Upload from Drive
-            <% end %>
-          </div>
-        <% end %>
       </div>
 
       <!-- URL Scan Card -->

@@ -1,27 +1,29 @@
-<div class="bg-white shadow-md rounded-lg overflow-hidden mt-2 transform transition-all duration-300 hover:shadow-lg mx-auto">
-  <div class="p-4 bg-gray-50 border-b border-gray-200">
+<div class="bg-white dark:bg-gray-800/80 shadow-md rounded-lg overflow-hidden mt-2 transform transition-all duration-300 hover:shadow-lg mx-auto">
+  <div class="p-4 bg-gray-50 border-b border-gray-200 dark:bg-gray-800/80 dark:border-gray-600">
     <div class="flex justify-start items-center gap-4">
       <div class="relative">
         <input type="text" 
                id="searchAntivirus" 
                placeholder="Cerca antivirus..." 
-               class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+               class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+                      transition-all duration-200 dark:bg-gray-800/80 dark:border-gray-600 dark:text-gray-300 
+                      dark:placeholder-gray-400"
                autocomplete="off">
       </div>
     </div>
   </div>
-  <div class="overflow-x-auto">
-    <table class="min-w-full divide-y divide-gray-200">
-      <thead class="bg-gray-50">
+  <div class="overflow-x-auto dark:bg-gray-800/80">
+    <table class="min-w-full">
+      <thead class="bg-gray-50 dark:bg-gray-800/80">
         <tr>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Antivirus</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stato</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dettagli</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Versione</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Metodo</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Antivirus</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Stato</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Dettagli</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Versione</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Metodo</th>
         </tr>
       </thead>
-      <tbody class="bg-white divide-y divide-gray-200" id="antivirusResults">
+      <tbody class="bg-white dark:bg-gray-800/80  dark:divide-gray-700" id="antivirusResults">
         <% 
           major_engines = ['Kaspersky', 'McAfee', 'Symantec', 'BitDefender', 'ESET-NOD32', 'Avast', 'Sophos']
           results.sort_by { |k, v| 
@@ -32,7 +34,7 @@
             ]
           }.each_with_index do |(engine, result), index| 
         %>
-          <tr class="hover:bg-gray-50 transition-colors duration-200 animate-fade-in antivirusRow" 
+          <tr class="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 animate-fade-in antivirusRow" 
               style="animation-delay: <%= index * 0.05 %>s"
               data-engine="<%= engine.downcase %>">
             <td class="px-6 py-4 whitespace-nowrap">
@@ -44,31 +46,33 @@
                        onerror="this.onerror=null; this.src='https://www.google.com/s2/favicons?domain=antivirus.com';">
                 </div>
                 <div class="ml-4">
-                  <div class="font-medium text-gray-900">
+                  <div class="font-medium text-gray-900 dark:text-white">
                     <%= engine %>
                     <% if major_engines.include?(engine) %>
-                      <span class="ml-2 px-2 py-0.5 text-xs bg-blue-100 text-blue-800 rounded-full">Premium</span>
+                      <span class="ml-2 px-2 py-0.5 text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full dark:text-white">Premium</span>
                     <% end %>
                   </div>
                 </div>
               </div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-              <% status_class = result['category'] == 'malicious' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800' %>
+              <% status_class = result['category'] == 'malicious' ? 
+                'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200' : 
+                'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200' %>
               <% status_icon = result['category'] == 'malicious' ? 'fas fa-virus' : 'fas fa-shield-check' %>
               <span class="px-3 py-1 inline-flex items-center text-sm font-semibold rounded-full <%= status_class %>">
                 <i class="<%= status_icon %> mr-1"></i>
                 <%= result['category'].capitalize %>
               </span>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
               <%= result['result'].presence || 'Non rilevato' %>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
               <%= result['engine_version'] || 'N/A' %>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              <span class="px-2 py-1 text-xs bg-gray-100 rounded-full">
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+              <span class="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 rounded-full">
                 <%= result['method'].capitalize %>
               </span>
             </td>

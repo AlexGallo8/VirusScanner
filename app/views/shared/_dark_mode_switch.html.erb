@@ -4,7 +4,7 @@
                 remote: true,
                 class: "dark-mode-btn p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700",
                 data: { turbo: false } do %>
-    <i class="fas fa-moon dark-icon text-gray-600 dark:text-yellow-400" style="display: <%= cookies[:dark_mode] == 'true' ? 'inline-block' : 'none' %>;"></i>
-    <i class="fas fa-sun light-icon text-gray-600 dark:text-yellow-400" style="display: <%= cookies[:dark_mode] == 'true' ? 'none' : 'inline-block' %>;"></i>
+    <i class="fas fa-moon dark-icon text-gray-600 dark:text-yellow-400 text-xl" style="display: <%= cookies[:dark_mode] == 'true' ? 'inline-block' : 'none' %>;"></i>
+    <i class="fas fa-sun light-icon text-gray-600 dark:text-yellow-400 text-xl" style="display: <%= cookies[:dark_mode] == 'true' ? 'none' : 'inline-block' %>;"></i>
   <% end %>
 </div>

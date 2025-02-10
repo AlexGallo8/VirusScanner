@@ -25,13 +25,13 @@
     </div>
   <% end %>
 
-  <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl">
+  <div class="bg-white/50 backdrop-blur-sm shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800/80">
     <div class="grid grid-cols-2 gap-8 p-8">
       <!-- Left Side: Profile Information -->
       <div class="space-y-6">
         <div class="flex items-center">
           <i class="fas fa-id-card text-indigo-600 text-xl mr-2"></i>
-          <h2 class="text-xl font-bold text-gray-900 dark:text-white">Profile Information</h2>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-gray-500">Profile Information</h2>
         </div>
         <p class="text-gray-600 dark:text-gray-300">Your profile information is visible to other users</p>
         <div class="space-y-4">
@@ -52,7 +52,7 @@
       <div class="space-y-6">
         <div class="flex items-center">
           <i class="fas fa-lock text-yellow-500 text-xl mr-2"></i>
-          <h2 class="text-xl font-bold text-gray-900">Change Password</h2>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-gray-500">Change Password</h2>
         </div>
         <p class="text-gray-600">Ensure your account is secure with a strong password</p>
         <div class="space-y-4">
@@ -63,7 +63,7 @@
                 <i class="fas fa-key text-gray-400 mr-2"></i>
                 
               </div>
-              <%= f.password_field :current_password, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" %>
+              <%= f.password_field :current_password, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" %>
             </div>
           </div>
 
@@ -73,7 +73,7 @@
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <i class="fas fa-lock text-gray-400"></i>
               </div>
-              <%= f.password_field :password, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" %>
+              <%= f.password_field :password, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" %>
             </div>
             <p class="mt-2 text-sm text-gray-500">Password must be at least 8 characters long</p>
           </div>
@@ -84,7 +84,7 @@
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <i class="fas fa-check-circle text-gray-400"></i>
               </div>
-              <%= f.password_field :password_confirmation, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" %>
+              <%= f.password_field :password_confirmation, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" %>
             </div>
           </div>
         </div>
@@ -101,20 +101,20 @@
 <% end %>
 
     <!-- Delete Account Section -->
-    <div class="mt-8 bg-white shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl">
+    <div class="mt-8 bg-white shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800/80">
       <div class="p-8">
         <div class="flex items-center mb-4">
           <i class="fas fa-trash-alt text-red-600 text-xl mr-2"></i>
-          <h2 class="text-xl font-bold text-gray-900">Delete Account</h2>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-gray-500">Delete Account</h2>
         </div>
-        <p class="text-gray-600 mb-6">This action cannot be undone. All your data will be permanently deleted.</p>
+        <p class="text-gray-600 mb-6 ">This action cannot be undone. All your data will be permanently deleted.</p>
         
         <%= button_to registration_path(current_user), 
             method: :delete,
             form: { 
               data: { confirm: "Sei sicuro di voler cancellare il tuo account?" }
             },
-            class: "btn button-red" do %>
+            class: " button-red bg-red-500" do %>
           <i class="fas fa-trash-alt mr-2"></i>
           <span>Elimina Account</span>
         <% end %>

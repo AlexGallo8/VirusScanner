@@ -1,8 +1,10 @@
 class User < ApplicationRecord
-    has_many :scan_users
+    has_many :scan_users, dependent: :destroy
     has_many :scans, through: :scan_users
-
     has_many :comments, dependent: :destroy
+    has_many :votes, dependent: :destroy
+    has_many :comment_votes, dependent: :destroy
+
     has_secure_password
     validates :password, 
               format: { 

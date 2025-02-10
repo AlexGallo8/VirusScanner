@@ -77,5 +77,8 @@ RSpec.configure do |config|
     Capybara.javascript_driver = :selenium_chrome_headless
     Capybara.server = :puma, { Silent: true }
     Capybara.default_max_wait_time = 10
+    # Add these lines to ensure proper protocol handling
+    Capybara.app_host = 'http://localhost'
+    Capybara.server_port = 3000
   end
 end

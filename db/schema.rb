@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_06_103331) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_10_120327) do
   create_table "comment_votes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "comment_id", null: false
@@ -72,7 +72,10 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_06_103331) do
     t.datetime "google_token_expires_at"
     t.string "username"
     t.string "password_reset_token"
+    t.string "remember_token"
+    t.datetime "remember_token_expires_at"
     t.index ["auth0_uid"], name: "index_users_on_auth0_uid", unique: true
+    t.index ["remember_token"], name: "index_users_on_remember_token"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

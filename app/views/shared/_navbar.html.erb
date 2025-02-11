@@ -1,8 +1,8 @@
-<nav class="bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-800">
-  <div class="container mx-auto px-4 py-3">
-  <div class="flex justify-between items-center ml-10">
-    <%= link_to root_path, class: "flex items-center transition-transform duration-300 hover:scale-110" do %>
-      <%= image_tag("logo_vs.webp", class: "w-24 h-auto transition-transform duration-300 ") %>
+<nav class="desktop-only bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-800 ">
+  <div class=" container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center ml-10">
+      <%= link_to root_path, class: "flex items-center transition-transform duration-300 hover:scale-110" do %>
+        <%= image_tag("logo_vs.webp", class: "w-24 h-auto transition-transform duration-300 ") %>
       <% end %>
 
       <div class="lg:flex items-center space-x-6">
@@ -11,18 +11,18 @@
         </div>
         <%= link_to "Home", root_path, class: "text-gray-700 hover:text-gray-900 hover:bg-gray-200 p-4  rounded-full " %>
         <%= link_to "About", about_path, class: "text-gray-700 hover:text-gray-900 hover:bg-gray-200 p-4  rounded-full " %>
-        
+
         <div class="lg:flex items-center space-x-4 login-buttons">
           <% if user_signed_in? %>
-            
+
           <div class="relative">
-              <button id="user-menu-button" class="inline-flex items-center p-4 rounded-full text-sm font-medium text-white">
+              <button id="desktop-user-menu-button" class="inline-flex items-center p-4 rounded-full text-sm font-medium text-white">
                 <i class="fas fa-user mr-2"></i>
                 <%= current_user.username %>
                 <i class="fas fa-chevron-down ml-2"></i>
               </button>
-              
-              <div id="user-dropdown"
+
+              <div id="desktop-user-dropdown"
                 x-transition:enter="transition ease-out duration-100"
                 x-transition:enter-start="opacity-0 scale-90"
                 x-transition:enter-end="opacity-100 scale-100"
@@ -45,9 +45,8 @@
                   Preferences
                 <% end %>
 
-                
-                
-                <%= button_to session_path, 
+
+                <%= button_to session_path,
                     method: :delete,
                     class: "button-red flex items-center justify-center w-full dark:text-gray-300" do %>
                     <i class="fas fa-sign-out-alt mr-2"></i>
@@ -65,10 +64,72 @@
   </div>
 </nav>
 
+<nav class="mobile-only bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-800 block lg:hidden">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <%= link_to root_path, class: "flex items-center transition-transform duration-300 hover:scale-110" do %>
+        <%= image_tag("logo_vs.webp", class: "w-24 h-auto transition-transform duration-300 ") %>
+      <% end %>
+
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center">
+          <%= render 'shared/dark_mode_switch' %>
+        </div>
+        <button id="mobile-menu-button" class="text-white dark:text-white hover:text-gray-900 dark:hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-md p-2" aria-label="Open main menu">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-800 mt-2 py-2 rounded-md">
+    <%= link_to "Home", root_path, class: "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" %>
+    <%= link_to "About", about_path, class: "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" %>
+
+    <% if user_signed_in? %>
+      <div class="relative">
+        <button id="mobile-user-menu-button" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 w-full text-left flex items-center justify-between">
+          <span>
+            <i class="fas fa-user mr-2"></i>
+            <%= current_user.username %>
+          </span>
+          <i class="fas fa-chevron-down ml-2"></i>
+        </button>
+
+        <div id="mobile-user-dropdown" class="hidden bg-white dark:bg-gray-900 z-10 mt-2 rounded-md shadow-xl w-full">
+          <%= link_to scans_path, class: "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" do %>
+            <i class="fas fa-history mr-2"></i>
+            Scans History
+          <% end %>
+          <%= link_to comments_path, class: "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" do %>
+            <i class="fas fa-comments mr-2"></i>
+            Comments History
+          <% end %>
+          <%= link_to edit_preferences_path, class: "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" do %>
+            <i class="fas fa-cog mr-2"></i>
+            Preferences
+          <% end %>
+          <%= button_to session_path,
+              method: :delete,
+              class: "button-red flex items-center justify-center w-full dark:text-gray-300 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" do %>
+              <i class="fas fa-sign-out-alt mr-2"></i>
+              Log out
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <button id="open-registration-modal-mobile" class="block mb-2 nav-button bg-blue-500 dark:bg-blue-600 text-white hover:bg-blue-600 dark:hover:bg-blue-700 transition-colors duration-200 px-4 py-2 text-sm w-full text-left">Sign up</button>
+      <button id="open-session-modal-mobile" class="block nav-button bg-blue-500 dark:bg-blue-600 text-white hover:bg-blue-600 dark:hover:bg-blue-700 transition-colors duration-200 px-4 py-2 text-sm w-full text-left">Log in</button>
+    <% end %>
+  </div>
+</nav>
+
 <div id="registration-modal" class="modal-container hidden">
   <div class="modal-backdrop dark:bg-gray-900 dark:bg-opacity-75">
     <div class="modal-content dark:bg-gray-800">
-      <button id="close-registration-modal" class="close-button dark:text-white">&times;</button>
+      <button id="close-registration-modal" class="close-button dark:text-white">×</button>
       <div id="registration-form-container"></div>
     </div>
   </div>
@@ -77,8 +138,84 @@
 <div id="session-modal" class="modal-container hidden">
   <div class="modal-backdrop dark:bg-gray-900 dark:bg-opacity-75">
     <div class="modal-content dark:bg-gray-800">
-      <button id="close-session-modal" class="close-button dark:text-white">&times;</button>
+      <button id="close-session-modal" class="close-button dark:text-white">×</button>
       <div id="session-form-container"></div>
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileUserMenuButton = document.getElementById('mobile-user-menu-button');
+    const mobileUserDropdown = document.getElementById('mobile-user-dropdown');
+    const desktopUserMenuButton = document.getElementById('desktop-user-menu-button');
+    const desktopUserDropdown = document.getElementById('desktop-user-dropdown');
+
+    const registrationModal = document.getElementById('registration-modal');
+    const sessionModal = document.getElementById('session-modal');
+    const openRegistrationModalButtons = document.querySelectorAll('#open-registration-modal, #open-registration-modal-mobile');
+    const openSessionModalButtons = document.querySelectorAll('#open-session-modal, #open-session-modal-mobile');
+    const closeRegistrationModalButton = document.getElementById('close-registration-modal');
+    const closeSessionModalButton = document.getElementById('close-session-modal');
+
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    if (mobileUserMenuButton && mobileUserDropdown) {
+      mobileUserMenuButton.addEventListener('click', function() {
+        mobileUserDropdown.classList.toggle('hidden');
+      });
+    }
+    if (desktopUserMenuButton && desktopUserDropdown) {
+      desktopUserMenuButton.addEventListener('click', function() {
+        desktopUserDropdown.classList.toggle('hidden');
+      });
+    }
+
+    openRegistrationModalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        registrationModal.classList.remove('hidden');
+        loadRegistrationForm(); // Assicurati che questa funzione sia definita nel tuo codice per caricare il form di registrazione
+      });
+    });
+
+    openSessionModalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        sessionModal.classList.remove('hidden');
+        loadSessionForm(); // Assicurati che questa funzione sia definita nel tuo codice per caricare il form di login
+      });
+    });
+
+
+    if (closeRegistrationModalButton) {
+      closeRegistrationModalButton.addEventListener('click', () => {
+        registrationModal.classList.add('hidden');
+      });
+    }
+
+    if (closeSessionModalButton) {
+      closeSessionModalButton.addEventListener('click', () => {
+        sessionModal.classList.add('hidden');
+      });
+    }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(event) {
+      if (mobileMenu && !mobileMenu.classList.contains('hidden') && !mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+      if (mobileUserDropdown && !mobileUserDropdown.classList.contains('hidden') && !mobileUserMenuButton.contains(event.target) && !mobileUserDropdown.contains(event.target)) {
+        mobileUserDropdown.classList.add('hidden');
+      }
+      if (desktopUserDropdown && !desktopUserDropdown.classList.contains('hidden') && !desktopUserMenuButton.contains(event.target) && !desktopUserDropdown.contains(event.target)) {
+        desktopUserDropdown.classList.add('hidden');
+      }
+    });
+  });
+</script>

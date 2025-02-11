@@ -1,3 +1,25 @@
+<style>
+/* Stili per mobile-only */
+@media (max-width: 767px) { /* breakpoint sm di tailwind è 640px, md è 768px, quindi 767px è mobile */
+  .mobile-only {
+    display: block !important;
+  }
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* Stili per desktop-only */
+@media (min-width: 768px) { /* breakpoint md di tailwind e superiori è desktop */
+  .mobile-only {
+    display: none !important;
+  }
+  .desktop-only {
+    display: block !important;
+  }
+}
+</style>
+
 <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="mb-10">
@@ -26,14 +48,82 @@
   <% end %>
 
   <div class="bg-white/50 backdrop-blur-sm shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800/80">
-    <div class="grid grid-cols-2 gap-8 p-8">
-      <!-- Left Side: Profile Information -->
+
+    <div class="desktop-only">
+      <div class="grid grid-cols-2 gap-8 p-8">
+        <!-- Left Side: Profile Information (Desktop) -->
+        <div class="space-y-6">
+          <div class="flex items-center">
+            <i class="fas fa-id-card text-indigo-600 text-xl mr-2"></i>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-gray-500">Profile Information</h2>
+          </div>
+          <p class="text-gray-600 dark:text-gray-500">Your profile information is visible to other users</p>
+          <div class="space-y-4">
+            <div class="relative">
+              <%= f.label :username, class: "block text-sm font-medium text-gray-700" %>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <i class="fas fa-user text-gray-400"></i>
+                </div>
+                <%= f.text_field :username, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-500 rounded-md" %>
+              </div>
+              <p class="mt-2 text-sm text-gray-500">This is your public display name</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Password Change (Desktop) -->
+        <div class="space-y-6">
+          <div class="flex items-center">
+            <i class="fas fa-lock text-yellow-500 text-xl mr-2"></i>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-gray-500">Change Password</h2>
+          </div>
+          <p class="text-gray-600">Ensure your account is secure with a strong password</p>
+          <div class="space-y-4">
+            <div class="relative">
+              <%= f.label :current_password, class: "block text-sm font-medium text-gray-700" %>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <i class="fas fa-key text-gray-400 mr-2"></i>
+
+                </div>
+                <%= f.password_field :current_password, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" %>
+              </div>
+            </div>
+
+            <div class="relative">
+              <%= f.label :password, "New Password", class: "block text-sm font-medium text-gray-700" %>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <i class="fas fa-lock text-gray-400"></i>
+                </div>
+                <%= f.password_field :password, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" %>
+              </div>
+              <p class="mt-2 text-sm text-gray-500">Password must be at least 8 characters long</p>
+            </div>
+
+            <div class="relative">
+              <%= f.label :password_confirmation, "Confirm New Password", class: "block text-sm font-medium text-gray-700" %>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <i class="fas fa-check-circle text-gray-400"></i>
+                </div>
+                <%= f.password_field :password_confirmation, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-only p-8 space-y-6">
+      <!-- Profile Information (Mobile) -->
       <div class="space-y-6">
         <div class="flex items-center">
           <i class="fas fa-id-card text-indigo-600 text-xl mr-2"></i>
           <h2 class="text-xl font-bold text-gray-900 dark:text-gray-500">Profile Information</h2>
         </div>
-        <p class="text-gray-600 dark:text-gray-300">Your profile information is visible to other users</p>
+        <p class="text-gray-600 dark:text-gray-500">Your profile information is visible to other users</p>
         <div class="space-y-4">
           <div class="relative">
             <%= f.label :username, class: "block text-sm font-medium text-gray-700" %>
@@ -41,14 +131,14 @@
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <i class="fas fa-user text-gray-400"></i>
               </div>
-              <%= f.text_field :username, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" %>
+              <%= f.text_field :username, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-500 rounded-md" %>
             </div>
             <p class="mt-2 text-sm text-gray-500">This is your public display name</p>
           </div>
         </div>
       </div>
 
-      <!-- Right Side: Password Change -->
+      <!-- Password Change (Mobile) -->
       <div class="space-y-6">
         <div class="flex items-center">
           <i class="fas fa-lock text-yellow-500 text-xl mr-2"></i>
@@ -61,7 +151,7 @@
             <div class="mt-1 relative rounded-md shadow-sm">
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <i class="fas fa-key text-gray-400 mr-2"></i>
-                
+
               </div>
               <%= f.password_field :current_password, class: "pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" %>
             </div>
@@ -91,6 +181,7 @@
       </div>
     </div>
 
+
     <!-- Center Bottom: Update Button -->
     <div class="flex justify-center p-6 border-t border-gray-200">
       <%= f.submit "Update Preferences", class: "inline-flex items-center justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" do %>
@@ -108,15 +199,15 @@
           <h2 class="text-xl font-bold text-gray-900 dark:text-gray-500">Delete Account</h2>
         </div>
         <p class="text-gray-600 mb-6 ">This action cannot be undone. All your data will be permanently deleted.</p>
-        
-        <%= button_to registration_path(current_user), 
+
+        <%= button_to registration_path(current_user),
             method: :delete,
-            form: { 
+            form: {
               data: { confirm: "Sei sicuro di voler cancellare il tuo account?" }
             },
             class: " button-red bg-red-500" do %>
           <i class="fas fa-trash-alt mr-2"></i>
-          <span>Elimina Account</span>
+          <span>Delete Account</span>
         <% end %>
       </div>
     </div>

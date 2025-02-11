@@ -19,6 +19,7 @@
 
  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+
 body {
   background: #FFFFFF;
   
@@ -487,3 +488,25 @@ input {
 .animate-spin {
   animation: spin 1s linear infinite;
 }
+
+
+
+/*responsiveness*/
+@media (min-width: 768px) {
+  .desktop-only {
+    display: block;
+  }
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+

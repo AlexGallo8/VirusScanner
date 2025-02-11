@@ -9,11 +9,11 @@
               <i class="fas fa-comments text-blue-600 dark:text-blue-400 text-4xl"></i>
             </div>
             <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400 bg-clip-text">
-              Cronologia Commenti
+               Comments History
             </h1>
           </div>
           <div class="bg-blue-50 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-6 py-2 rounded-full font-medium animate-pulse">
-            <%= pluralize(@comments.count, 'commento', 'commenti') %>
+            <%= pluralize(@comments.count, 'comment', 'comments') %>
           </div>
         </div>
       </div>
@@ -22,14 +22,15 @@
         <% if @comments.empty? %>
           <div class="text-center py-16 space-y-4">
             <i class="fas fa-comment-slash text-gray-400 dark:text-gray-500 text-6xl animate-bounce"></i>
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Nessun commento</h2>
-            <p class="text-gray-500 dark:text-gray-400">Non hai ancora lasciato nessun commento</p>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">No comments </h2>
+            <p class="text-gray-500 dark:text-gray-400"> You haven't written any comments yet</p>
           </div>
         <% else %>
-          <div class="mx-auto">
+          <!-- Desktop View -->
+          <div class="desktop-only">
             <table class="w-full">
               <thead>
-                <tr class=" border-gray-100 dark:border-gray-700">
+                <tr class="border-gray-100 dark:border-gray-700">
                   <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     <%= link_to comments_path(sort: 'file_name', direction: (@sort_column == 'file_name' && @sort_direction == 'asc' ? 'desc' : 'asc')),
                         class: "group inline-flex items-center hover:text-blue-600 dark:hover:text-blue-400 dark:text-white" do %>
@@ -41,7 +42,7 @@
                       <% end %>
                     <% end %>
                   </th>
-                  <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider dark:text-white">Commento</th>
+                  <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider dark:text-white">Comment</th>
                   <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     <%= link_to comments_path(sort: 'created_at', direction: (@sort_column == 'created_at' && @sort_direction == 'asc' ? 'desc' : 'asc')),
                         class: "group inline-flex items-center hover:text-blue-600 dark:text-white" do %>
@@ -53,10 +54,10 @@
                       <% end %>
                     <% end %>
                   </th>
-                  <th class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">Azioni</th>
+                  <th class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">Actions</th>
                 </tr>
               </thead>
-              <tbody class="">
+              <tbody>
                 <% @comments.each do |comment| %>
                   <tr class="group hover:bg-blue-50/50 dark:hover:bg-gray-700 transition-all duration-200 ease-in-out hover:scale-[1.01]">
                     <td class="px-6 py-4">
@@ -99,6 +100,62 @@
                 <% end %>
               </tbody>
             </table>
+          </div>
+
+          <!-- Mobile View -->
+          <div class="mobile-only space-y-4">
+            <div class="flex items-center justify-between mb-4 text-sm text-gray-500 dark:text-white">
+              <%= link_to comments_path(sort: 'file_name', direction: (@sort_column == 'file_name' && @sort_direction == 'asc' ? 'desc' : 'asc')),
+                  class: "flex items-center space-x-2 dark:text-white" do %>
+                <span>Ordina per file</span>
+                <i class="fas fa-sort"></i>
+              <% end %>
+              <%= link_to comments_path(sort: 'created_at', direction: (@sort_column == 'created_at' && @sort_direction == 'asc' ? 'desc' : 'asc')),
+                  class: "flex items-center space-x-2 dark:text-white" do %>
+                <span>Ordina per data</span>
+                <i class="fas fa-sort"></i>
+              <% end %>
+            </div>
+
+            <% @comments.each do |comment| %>
+              <div class="border-b border-gray-100 dark:border-gray-700">
+             
+                <div class="p-4">
+                  <div class="flex items-center space-x-4 mb-3">
+                    <div class="p-2 rounded-lg bg-gray-50 dark:bg-gray-700">
+                      <i class="fas fa-file text-gray-500 dark:text-gray-400 text-xl"></i>
+                    </div>
+                    <span class="font-medium text-gray-900 dark:text-white">
+                      <%= link_to comment.scan.file_name, 
+                          scan_path(comment.scan),
+                          class: "hover:text-blue-600 dark:text-blue-300 dark:hover:text-blue-400" %>
+                    </span>
+                  </div>
+                  <div class="text-sm text-gray-700 dark:text-gray-200 ml-12">
+                    <%= comment.content %>
+                  </div>
+                </div>
+
+                <!-- Seconda parte: data e azioni -->
+                <div class="p-4 bg-gray-50/50 dark:bg-gray-800/50">
+                  <div class="flex justify-between items-center">
+                    <div class="flex items-center text-sm text-gray-500 dark:text-gray-300">
+                      <i class="fas fa-clock mr-2"></i>
+                      <%= l(comment.created_at, format: :long) %>
+                    </div>
+                    <%= link_to comment_path(comment),
+                        method: :delete,
+                        data: { confirm: 'Sei sicuro?' },
+                        class: "inline-flex items-center px-3 py-2 rounded-lg 
+                               bg-red-100 dark:bg-red-900/80 text-red-600 dark:text-red-200 
+                               hover:bg-red-200 dark:hover:bg-red-800 transition-colors duration-200" do %>
+                      <i class="fas fa-trash mr-2"></i>
+                      Elimina
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>

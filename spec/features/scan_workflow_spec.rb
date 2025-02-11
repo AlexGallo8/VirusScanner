@@ -52,7 +52,7 @@ RSpec.feature "Scan Workflow", type: :feature do
     visit scan_path(scan)
 
     fill_in "comment[content]", with: "Test comment"
-    click_button "Pubblica commento"
+    click_button "Post Comment"
 
     expect(page).to have_content("Test comment")
   end

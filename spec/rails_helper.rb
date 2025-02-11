@@ -24,7 +24,7 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
@@ -73,12 +73,27 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.before(:each, type: :feature) do
-    # Configure Capybara to use Selenium with Chrome in headless mode
-    Capybara.javascript_driver = :selenium_chrome_headless
-    Capybara.server = :puma, { Silent: true }
+    # Change these configurations
+    Capybara.server = :puma
+    Capybara.server_host = '127.0.0.1' # Use IP instead of 'localhost'
+    Capybara.server_port = rand(3000..3999) # Dynamic port to avoid conflicts
+    Capybara.app_host = "http://#{Capybara.server_host}:#{Capybara.server_port}"
     Capybara.default_max_wait_time = 10
-    # Add these lines to ensure proper protocol handling
-    Capybara.app_host = 'http://localhost'
-    Capybara.server_port = 3000
+    
+    if ENV['HEADLESS'] == 'false'
+      Capybara.javascript_driver = :selenium_chrome
+    else
+      Capybara.javascript_driver = :selenium_chrome_headless
+    end
   end
+  # Add this configuration for request specs
+  config.before(:each, type: :request) do
+    host! '127.0.0.1'
+  end
+
+  # Or alternatively, you can configure it globally for all specs
+  config.before(:each) do
+    Rails.application.routes.default_url_options[:host] = '127.0.0.1'
+  end
+
 end

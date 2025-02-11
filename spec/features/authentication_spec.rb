@@ -39,7 +39,7 @@ RSpec.feature "Authentication", type: :feature do
     end
     
     # Then try to log out
-    click_button "Log out"
+    find("button[data-testid='desktop-logout-button']").click
     expect(page).to have_content("You have been logged out")
   end
 end

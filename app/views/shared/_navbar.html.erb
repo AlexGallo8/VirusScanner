@@ -48,6 +48,7 @@
 
                 <%= button_to session_path,
                     method: :delete,
+                    data: { testid: 'desktop-logout-button' },
                     class: "button-red flex items-center justify-center w-full dark:text-gray-300" do %>
                     <i class="fas fa-sign-out-alt mr-2"></i>
                     Log out
@@ -113,6 +114,7 @@
           <% end %>
           <%= button_to session_path,
               method: :delete,
+              data: { testid: 'mobile-logout-button' },
               class: "button-red flex items-center justify-center w-full dark:text-gray-300 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" do %>
               <i class="fas fa-sign-out-alt mr-2"></i>
               Log out

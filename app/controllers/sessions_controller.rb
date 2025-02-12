@@ -43,9 +43,12 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    current_user&.forget_me!
-    cookies.delete(:remember_token)
-    logout current_user
-    redirect_to root_path, notice: "You have been logged out."
+    if current_user
+      cookies.delete(:remember_token)
+      reset_session
+      redirect_to root_path, notice: "You have been logged out."
+    else
+      redirect_to root_path
+    end
   end
 end

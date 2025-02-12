@@ -32,7 +32,7 @@
             Uploaded on: <%= l(@scan.upload_date, format: :long) if @scan.upload_date.present? %>
           </span>
           <span class="text-sm text-gray-500 mt-1 text-center w-full">
-            by: <%= @scan.user&.username || "not_logged_user" %>
+            by: <%= @scan.user&.username || "User not logged" %>
           </span>
         </div>
 
@@ -210,17 +210,19 @@
       <% end %>
     </div>
 
-    <!-- Add this after the Action Buttons section and before the Detailed Results Table -->
-    <div class="mt-4">
-      <button onclick="showBehaviorAnalysis('<%= @scan.vt_id %>')"
-              class="w-full bg-white border-transparent shadow-md p-4 rounded-lg flex items-center justify-between hover:bg-gray-100 transition-all duration-300 dark:bg-gray-800/80 ">
-        <span class="text-lg font-semibold text-blue-500 flex items-center   dark:text-white">
-          <i class="fas fa-microscope mr-3 text-blue-500"></i>
-          Behavioral Analysis
-        </span>
-        <i class="fas fa-chevron-right text-gray-600"></i>
-      </button>
-    </div>
+    <!-- Behavioral Analysis -->
+    <% if user_signed_in? %>
+      <div class="mt-4">
+        <button onclick="showBehaviorAnalysis('<%= @scan.vt_id %>')"
+                class="w-full bg-white border-transparent shadow-md p-4 rounded-lg flex items-center justify-between hover:bg-gray-100 transition-all duration-300 dark:bg-gray-800/80 ">
+          <span class="text-lg font-semibold text-blue-500 flex items-center   dark:text-white">
+            <i class="fas fa-microscope mr-3 text-blue-500"></i>
+            Behavioral Analysis
+          </span>
+          <i class="fas fa-chevron-right text-gray-600"></i>
+        </button>
+      </div>
+    <% end %>
 
     <!-- Detailed Results Table -->
     <div class="mt-4">

@@ -2,7 +2,7 @@ class VirusTotalController < ApplicationController
   require 'net/http'
   require 'json'
   require 'uri'
-  require 'digest'  # Add this at the top with other requires
+  require 'digest'
 
   BASE_URL = 'https://www.virustotal.com/api/v3'
 

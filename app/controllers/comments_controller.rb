@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
   def destroy
     scan = @comment.scan
     @comment.destroy
-    redirect_to scan_path(scan), notice: 'Commento eliminato con successo!'
+    redirect_to comments_path, notice: 'Commento eliminato con successo!'
   end
 
   def vote

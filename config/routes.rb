@@ -46,10 +46,7 @@ Rails.application.routes.draw do
   get '/auth/auth0/callback', to: 'auth0#callback'
   get '/auth/failure', to: 'auht0#failure'
   get '/auth/logout', to: 'auht0#logout'
-
-  get 'virus_total/pick_from_drive'
-  post 'virus_total/download_from_drive', to: 'virus_total#download_from_drive'
-
+  
   root to: "main#index"
 
   post 'toggle_dark_mode', to: 'dark_mode#toggle'

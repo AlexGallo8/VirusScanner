@@ -31,12 +31,7 @@ class Auth0Controller < ApplicationController
           )
         end
         
-        # Aggiungere update delle scans, commenti e voti associati all'utente
-        
         login(local_user)
-
-        # Da aggiungere dopo redirect_to
-        # flash[:notice] = "Abbiamo unito il tuo account locale con quello Auth0."
       
       else
         # Caso improbabile: l'utente locale ha già un altro UID Auth0

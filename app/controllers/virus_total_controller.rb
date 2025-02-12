@@ -299,7 +299,6 @@ class VirusTotalController < ApplicationController
     end
   end
 
-  # Your existing helper methods remain the same
   # Update upload_file method
   def upload_file(file_path)
     url = URI("#{BASE_URL}/files")
@@ -324,7 +323,7 @@ class VirusTotalController < ApplicationController
     
     request = Net::HTTP::Get.new(url)
     request["accept"] = 'application/json'
-    request["x-apikey"] = api_key   # Changed from API_KEY
+    request["x-apikey"] = api_key
     
     response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
       http.request(request)

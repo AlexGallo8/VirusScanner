@@ -50,22 +50,6 @@ class ScansController < ApplicationController
 
   # POST /scans or /scans.json
   
-  
-=begin  
-  def create
-    @scan = Scan.new(scan_params)
-
-    respond_to do |format|
-      if @scan.save
-        format.html { redirect_to scan_url(@scan), notice: "Scan was successfully created." }
-        format.json { render :show, status: :created, location: @scan }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @scan.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-=end
   def create
     @scan = Scan.new(scan_params)
     if @scan.save

@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:destroy, :vote]  # Add :vote to before_action
+  before_action :set_comment, only: [:destroy, :vote]
   before_action :check_user, only: [:destroy]
 
   def index
@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
   def destroy
     scan = @comment.scan
     @comment.destroy
-    redirect_to comments_path, notice: 'Commento eliminato con successo!'
+    redirect_back(fallback_location: scan_path(scan), notice: 'Commento eliminato con successo!')
   end
 
   def vote

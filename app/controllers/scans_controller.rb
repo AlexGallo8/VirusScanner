@@ -53,7 +53,7 @@ class ScansController < ApplicationController
   def create
     @scan = Scan.new(scan_params)
     if @scan.save
-      virus_total_service = VirusTotalService.new('4fe8a3a6a41b79ced5a55201e606fe074d93105ac1570b9f61395b7b8d16a1f6')
+      virus_total_service = VirusTotalService.new(Rails.application.credentials.virustotal[:api_key])
       response = virus_total_service.upload_file(@scan)
       @scan.update(scan_result: response)
       render json: @scan, status: :created
@@ -96,9 +96,9 @@ class ScansController < ApplicationController
         vote.update!(vote_type: 'up')
         @scan.increment!(:vote_up)
       end
-      message = "Voto positivo registrato!"
+      message = "Positive vote has been registered!"
     else
-      message = "Hai già votato questo file!"
+      message = "You have already voted for this file!"
     end
 
     respond_to do |format|
@@ -118,9 +118,9 @@ class ScansController < ApplicationController
         vote.update!(vote_type: 'down')
         @scan.increment!(:vote_down)
       end
-      message = "Voto negativo registrato!"
+      message = "Negative vote has been registered!"
     else
-      message = "Hai già votato questo file!"
+      message = "You have already voted for this file!"
     end
 
     respond_to do |format|

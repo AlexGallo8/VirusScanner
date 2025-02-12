@@ -18,21 +18,21 @@ class CommentsController < ApplicationController
   
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to scan_path(@scan), notice: 'Commento aggiunto con successo!' }
+        format.html { redirect_to scan_path(@scan), notice: 'Comment successfully saved!' }
         format.json { 
           html = render_to_string(partial: 'comments/comment', locals: { comment: @comment }, layout: false)
           render json: { 
             status: 'success', 
-            message: 'Commento aggiunto con successo!',
+            message: 'Comment successfully saved!',
             html: html 
           }
         }
       else
-        format.html { redirect_to scan_path(@scan), alert: 'Errore nel salvare il commento.' }
+        format.html { redirect_to scan_path(@scan), alert: 'Error saving your comment.' }
         format.json { 
           render json: { 
             status: 'error', 
-            message: 'Errore nel salvare il commento.' 
+            message: 'Error saving your comment.' 
           }, 
           status: :unprocessable_entity 
         }
@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
   def destroy
     scan = @comment.scan
     @comment.destroy
-    redirect_back(fallback_location: scan_path(scan), notice: 'Commento eliminato con successo!')
+    redirect_back(fallback_location: scan_path(scan), notice: 'Comment successfully deleted!')
   end
 
   def vote
@@ -62,7 +62,7 @@ class CommentsController < ApplicationController
       @comment.comment_votes.create(user: current_user, vote_type: vote_type)
     end
   
-    @comment.reload  # Add this line to ensure we have fresh data
+    @comment.reload
   
     render json: {
       likes_count: @comment.likes_count,
@@ -90,7 +90,7 @@ class CommentsController < ApplicationController
 
   def check_user
     unless @comment.user == current_user
-      redirect_to comments_path, alert: 'Non sei autorizzato a modificare questo commento.'
+      redirect_to comments_path, alert: 'You are not allowed to edit this comment.'
     end
   end
 

@@ -35,9 +35,9 @@ class RegistrationsController < ApplicationController
     
     if @user&.destroy
       logout @user
-      redirect_to root_path, notice: "Il tuo account è stato eliminato con successo."
+      redirect_to root_path, notice: "Your account has been successfully deleted."
     else
-      redirect_to edit_preferences_path, alert: "Non è stato possibile eliminare l'account."
+      redirect_to edit_preferences_path, alert: "Unable to delete the account."
     end
   end
 

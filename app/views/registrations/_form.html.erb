@@ -1,8 +1,8 @@
 <div class="bg-gray-100 flex items-center justify-center rounded-2xl sm:px-6 lg:px-8 dark:bg-gray-900">
     <div class="max-w-md w-full">
         <div class="text-center">
-            <h2 class="mt-6 text-2xl font-extrabold text-gray-900 dark:text-gray-300">Benvenuto in VirusScanner</h2>
-            <p class="mt-2 text-sm text-gray-600 ">registrati per accedere all'area personale</p>
+            <h2 class="mt-6 text-2xl font-extrabold text-gray-900 dark:text-gray-300">Welcome to VirusScanner</h2>
+            <p class="mt-2 text-sm text-gray-600 ">signup to access your personal area</p>
         </div>
 
         <%= form_with(model: user, 
@@ -24,7 +24,7 @@
                     <%= form.label :email, class: "block text-sm font-bold text-gray-700 mb-2" %>
                     <%= form.email_field :email, 
                         class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800/80 dark:border-gray-700",
-                        placeholder: "Il tuo indirizzo email",
+                        placeholder: "Email",
                         autocomplete: "username" %>
                 </div>
 
@@ -32,7 +32,7 @@
                     <%= form.label :password, class: "block text-sm font-bold text-gray-700 mb-2" %>
                     <%= form.password_field :password, 
                         class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500  dark:bg-gray-800/80 dark:border-gray-700",
-                        placeholder: "La tua password",
+                        placeholder: "Password",
                         autocomplete: "new-password" %>
                 </div>
 
@@ -40,7 +40,7 @@
                     <%= form.label :password_confirmation, class: "block text-sm font-bold text-gray-700 mb-2" %>
                     <%= form.password_field :password_confirmation, 
                         class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500  dark:bg-gray-800/80 dark:border-gray-700",
-                        placeholder: "Conferma la password",
+                        placeholder: "Confirm password",
                         autocomplete: "new-password" %>
                 </div>
 
@@ -50,7 +50,7 @@
         <% end %>
 
         <div class="relative flex items-center justify-center text-sm mt-6">
-            <span class="px-4 text-gray-500">oppure continua con</span>    
+            <span class="px-4 text-gray-500">or continue with</span>    
         </div>
 
         <div class="mt-6 mb-6 flex justify-center">

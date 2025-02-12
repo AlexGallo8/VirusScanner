@@ -78,7 +78,7 @@ class VirusTotalController < ApplicationController
     elsif params[:url].present?
       process_url_scan
     else
-      flash[:alert] = "Per favore, seleziona un file da scansionare o inserisci un URL"
+      flash[:alert] = "Please select a file to scan or enter a URL"
       redirect_to virus_total_path and return
     end
   end
@@ -94,7 +94,7 @@ class VirusTotalController < ApplicationController
       if scan.file_type.to_s.downcase == 'url' || scan.file_type.to_s.downcase.include?('url')
         render json: {
           status: 'not_supported',
-          message: 'L\'analisi comportamentale è disponibile solo per i file, non per gli URL.',
+          message: 'Behavioral analysis is only available for files, not for URLs.',
           file_type: scan.file_type,
           file_name: scan.file_name
         }
@@ -120,8 +120,8 @@ class VirusTotalController < ApplicationController
       if response.code == "200" && parsed_response["data"].nil?
         render json: {
           status: 'no_data',
-          message: 'Analisi comportamentale non disponibile per questo file. ' \
-                  'Questo può accadere se il file non è un eseguibile o se l\'analisi è ancora in corso.',
+          message: 'Behavioral analysis not available for this file. ' \
+                  'This can happen if the file is not executable or if the analysis is still in progress.',
           file_type: scan.file_type,
           file_name: scan.file_name
         }
@@ -189,12 +189,12 @@ class VirusTotalController < ApplicationController
           @scan.update!(scan_result: @results)
           Rails.logger.info "Scan results for #{@scan.file_name}: #{@results}"
         else
-          flash.now[:alert] = "Impossibile completare la scansione. Riprova più tardi."
+          flash.now[:alert] = "Unable to complete the scan. Please try again later."
         end
       end
     rescue StandardError => e
       Rails.logger.error "Error in process_file_scan: #{e.message}"
-      flash.now[:error] = "Si è verificato un errore durante la scansione del file."
+      flash.now[:error] = "An error occurred while scanning the file."
       @results = nil
     end
   end
@@ -236,7 +236,7 @@ class VirusTotalController < ApplicationController
       if @results.present?
         @scan.update(scan_result: @results)
       else
-        flash.now[:alert] = "Impossibile completare la scansione. Riprova più tardi."
+        flash.now[:alert] = "The analysis is taking longer than expected. Please try again later."
       end
     end
   end
@@ -280,7 +280,7 @@ class VirusTotalController < ApplicationController
       @scan.update(scan_status: response['status']) if @scan
     end
     
-    flash.now[:alert] = "L'analisi sta richiedendo più tempo del previsto. Puoi controllare lo stato della scansione più tardi nella tua dashboard."
+    flash.now[:alert] = "The analysis is taking longer than expected. You can check the scan status later in your dashboard."
     nil
   end
 
@@ -455,7 +455,7 @@ class VirusTotalController < ApplicationController
       @scan.update(scan_status: response['status']) if @scan
     end
     
-    flash.now[:alert] = "L'analisi sta richiedendo più tempo del previsto. Riprova più tardi."
+    flash.now[:alert] = "The analysis is taking longer than expected. Please try again later."
     nil
   end
 end

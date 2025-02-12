@@ -36,7 +36,7 @@ class Auth0Controller < ApplicationController
       else
         # Caso improbabile: l'utente locale ha già un altro UID Auth0
         Rails.logger.error "Conflict: Local user with email #{email} already linked to another Auth0 UID."
-        redirect_to root_path, alert: 'Errore: email già collegata a un altro account'
+        redirect_to root_path, alert: 'Error: email already connected to another account!'
         return
       end
     else
@@ -63,7 +63,7 @@ class Auth0Controller < ApplicationController
         login(user)
       else
         Rails.logger.error "Failed to save new user: #{user.errors.full_messages}"
-        redirect_to root_path, alert: 'Registrazione fallita'
+        redirect_to root_path, alert: 'Registration failed'
         return
       end
     end
@@ -72,11 +72,11 @@ class Auth0Controller < ApplicationController
     redirect_to root_path
   rescue => e
     Rails.logger.error "Error in callback: #{e.message}"  # Debug log
-    redirect_to root_path, alert: 'Si è verificato un errore durante la registrazione'
+    redirect_to root_path, alert: 'An error occured during registration'
   end
 
   def failure
-    redirect_to root_path, alert: 'Autenticazione fallita'
+    redirect_to root_path, alert: 'Authentication failed'
   end
 
   def logout

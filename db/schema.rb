@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_10_120327) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_11_235739) do
   create_table "comment_votes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "comment_id", null: false
@@ -67,9 +67,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_10_120327) do
     t.datetime "updated_at", null: false
     t.string "auth_provider"
     t.string "auth0_uid"
-    t.string "google_token"
-    t.string "google_refresh_token"
-    t.datetime "google_token_expires_at"
     t.string "username"
     t.string "password_reset_token"
     t.string "remember_token"

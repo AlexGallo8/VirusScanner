@@ -45,32 +45,6 @@ class User < ApplicationRecord
       email
   end
 
-  # Gestione Google Token
-  def token_expired?
-      google_token_expires_at.present? && google_token_expires_at < Time.current
-  end
-
-  def refresh_google_token!
-      return unless google_refresh_token.present?
-  
-      client = OAuth2::Client.new(
-          Rails.application.credentials.google[:client_id],
-          Rails.application.credentials.google[:client_secret],
-          authorize_url: 'https://accounts.google.com/o/oauth2/auth',
-          token_url: 'https://accounts.google.com/o/oauth2/token'
-      )
-
-      access_token = OAuth2::AccessToken.new(client, google_token, {
-          refresh_token: google_refresh_token,
-          expires_at: google_token_expires_at.to_i
-      }).refresh!
-
-      update!(
-          google_token: access_token.token,
-          google_token_expires_at: Time.at(access_token.expires_at)
-      )
-  end
-
   def remember_me!
     loop do
       self.remember_token = SecureRandom.urlsafe_base64

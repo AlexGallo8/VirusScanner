@@ -1,8 +1,5 @@
-<div class="fixed z-10 inset-0 overflow-y-auto" aria-labelldby="modal-title" role="dialog" aria-modal="true">
-    <div>
-        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-        <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-x1 transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6 dark:bg-gray-800/80 dark:border-gray-700 ">
-            <%= render 'form', user: @user %>
-        </div>
+<div class="relative z-10 inset-0 overflow-y-auto" style="margin-top: 256px;" aria-labelldby="modal-title" role="dialog" aria-modal="true">
+    <div class="inline-block overflow-hidden align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-x1 transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6 dark:bg-gray-800/80 dark:border-gray-700 ">
+        <%= render 'form', user: @user %>
     </div>
 </div>

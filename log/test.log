@@ -23779,3 +23779,903 @@ Current User: viola_frami@ziemann.example (ID: 1)
   Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3018)
 Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 3880)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "carl@heller.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "carl"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:38:52.732942"], ["updated_at", "2025-02-13 07:38:52.732942"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "test"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "andres.osinski@waters.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "andres.osinski"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "delmer@kuvalis.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "delmer"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "odell.mcdermott@funk-steuber.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "odell.mcdermott"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johna_herzog@feest.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "johna_herzog"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "marcelene@nienow.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "marcelene"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "treena_schoen@durgan-orn.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "treena_schoen"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shirley.mills@effertz-bahringer.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shirley.mills"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test.user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test.user"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test.user@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:38:52.791559"], ["updated_at", "2025-02-13 07:38:52.791559"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "test.user"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test.user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test.user"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test.user@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:38:52.802507"], ["updated_at", "2025-02-13 07:38:52.802507"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "test.user"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "different.test.user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "different.test.user"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "different.test.user@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:38:52.809443"], ["updated_at", "2025-02-13 07:38:52.809443"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "different.test.user"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "antonio@berge.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "antonio"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "antonio@berge.example"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:38:52.818836"], ["updated_at", "2025-02-13 07:38:52.818836"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "antonio"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" INNER JOIN "scan_users" ON "scans"."id" = "scan_users"."scan_id" WHERE "scan_users"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_1"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.2ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test_file.pdf"], ["file_type", nil], ["hashcode", "test_hashcode_1"], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-13 07:38:53.079733"], ["updated_at", "2025-02-13 07:38:53.079733"], ["scan_result", nil], ["file_data", nil], ["user_id", nil], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScanUser Create (0.6ms)[0m  [1m[32mINSERT INTO "scan_users" ("user_id", "scan_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["scan_id", 1], ["created_at", "2025-02-13 07:38:53.097823"], ["updated_at", "2025-02-13 07:38:53.097823"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mScan Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" INNER JOIN "scan_users" ON "scans"."id" = "scan_users"."scan_id" WHERE "scan_users"."user_id" = ? AND "scans"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sebastian@hagenes.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sebastian"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "sebastian@hagenes.example"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:38:53.107216"], ["updated_at", "2025-02-13 07:38:53.107216"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "sebastian"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_2"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.4ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test_file.pdf"], ["file_type", nil], ["hashcode", "test_hashcode_2"], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-13 07:38:53.143320"], ["updated_at", "2025-02-13 07:38:53.143320"], ["scan_result", nil], ["file_data", nil], ["user_id", nil], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "created_at", "updated_at", "scan_id", "likes_count", "dislikes_count") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["content", "Et eum provident. Quaerat eum unde. Nihil sit qui."], ["user_id", 1], ["created_at", "2025-02-13 07:38:53.145866"], ["updated_at", "2025-02-13 07:38:53.145866"], ["scan_id", 1], ["likes_count", 0], ["dislikes_count", 0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."user_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/registration" for 127.0.0.1 at 2025-02-13 08:39:12 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:39:12.514354"], ["updated_at", "2025-02-13 07:39:12.514354"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "test"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1/
+Completed 302 Found in 119ms (ActiveRecord: 1.5ms | Allocations: 151720)
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:39:12 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: test@example.com (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2817)
+Importmap skipped missing path: application/application.js
+Importmap skipped missing path: application/controllers/application.js
+Importmap skipped missing path: application/controllers/index.js
+Importmap skipped missing path: application/custom_confirm.js
+Importmap skipped missing path: application/application.js
+Importmap skipped missing path: application/controllers/application.js
+Importmap skipped missing path: application/controllers/index.js
+Importmap skipped missing path: application/custom_confirm.js
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 1.1ms | Allocations: 320)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 7.1ms | Allocations: 2952)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 323)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 20490)
+Completed 200 OK in 1097ms (Views: 47.0ms | ActiveRecord: 0.2ms | Allocations: 636584)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:39:13.655170"], ["updated_at", "2025-02-13 07:39:13.655170"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "test"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2025-02-13 08:39:13 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"test@example.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+User logged in: test@example.com (ID: 1)
+Redirected to http://127.0.0.1/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1033)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:39:13 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: test@example.com (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 360)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 1037)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2137)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 2698)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:39:13.688195"], ["updated_at", "2025-02-13 07:39:13.688195"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "test"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2025-02-13 08:39:13 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"test@example.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+User logged in: test@example.com (ID: 1)
+Redirected to http://127.0.0.1/
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 825)
+Started DELETE "/session" for 127.0.0.1 at 2025-02-13 08:39:13 +0100
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: test@example.com (ID: 1)
+Redirected to http://127.0.0.1/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 507)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:39:13 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered main/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 400)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 101)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 921)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2053)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 2823)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/registration/new" for 127.0.0.1 at 2025-02-13 08:39:42 +0100
+Processing by RegistrationsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/_form.html.erb (Duration: 25.8ms | Allocations: 2644)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 29.3ms | Allocations: 2915)
+Importmap skipped missing path: application/application.js
+Importmap skipped missing path: application/controllers/application.js
+Importmap skipped missing path: application/controllers/index.js
+Importmap skipped missing path: application/custom_confirm.js
+Importmap skipped missing path: application/application.js
+Importmap skipped missing path: application/controllers/application.js
+Importmap skipped missing path: application/controllers/index.js
+Importmap skipped missing path: application/custom_confirm.js
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 1.0ms | Allocations: 318)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (Duration: 11.0ms | Allocations: 2830)
+  Rendered shared/_footer.html.erb (Duration: 1.8ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 64.4ms | Allocations: 20449)
+Completed 200 OK in 1014ms (Views: 84.4ms | ActiveRecord: 0.8ms | Allocations: 794748)
+Started POST "/registration" for 127.0.0.1 at 2025-02-13 08:39:43 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:39:43.973381"], ["updated_at", "2025-02-13 07:39:43.973381"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "test"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:3821/
+Completed 302 Found in 12ms (ActiveRecord: 0.8ms | Allocations: 2494)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:39:43 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: test@example.com (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2787)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.7ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 1044)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4571)
+Completed 200 OK in 44ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 7402)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:39:44.172466"], ["updated_at", "2025-02-13 07:39:44.172466"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "test"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/session/new" for 127.0.0.1 at 2025-02-13 08:39:44 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 11.2ms | Allocations: 1535)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 14.0ms | Allocations: 1768)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 101)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 924)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 3427)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.1ms | Allocations: 4252)
+Started POST "/session" for 127.0.0.1 at 2025-02-13 08:39:44 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+User logged in: test@example.com (ID: 1)
+Redirected to http://127.0.0.1:3337/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 988)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:39:44 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: test@example.com (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 364)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 3.1ms | Allocations: 1034)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2130)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 2687)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:39:44.256475"], ["updated_at", "2025-02-13 07:39:44.256475"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "test"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/session/new" for 127.0.0.1 at 2025-02-13 08:39:44 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 1.8ms | Allocations: 607)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 653)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.4ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (Duration: 3.8ms | Allocations: 920)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2300)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.1ms | Allocations: 2932)
+Started POST "/session" for 127.0.0.1 at 2025-02-13 08:39:44 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+User logged in: test@example.com (ID: 1)
+Redirected to http://127.0.0.1:3562/
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 840)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:39:44 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: test@example.com (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 363)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 1030)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2125)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 2693)
+Started DELETE "/session" for 127.0.0.1 at 2025-02-13 08:39:44 +0100
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: test@example.com (ID: 1)
+Redirected to http://127.0.0.1:3562/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 504)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:39:44 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered main/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 406)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 101)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 921)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2059)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 2827)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mScan Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mScan Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_3"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.2ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test_file.pdf"], ["file_type", nil], ["hashcode", "test_hashcode_3"], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-13 07:39:57.117272"], ["updated_at", "2025-02-13 07:39:57.117272"], ["scan_result", nil], ["file_data", nil], ["user_id", nil], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_3"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_6"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.2ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test_file.pdf"], ["file_type", nil], ["hashcode", "test_hashcode_6"], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-13 07:39:57.128836"], ["updated_at", "2025-02-13 07:39:57.128836"], ["scan_result", "{\"data\":{\"id\":\"test_scan_id\",\"attributes\":{\"stats\":{\"malicious\":2,\"undetected\":3}}}}"], ["file_data", nil], ["user_id", nil], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mScan Load (0.2ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "omar_kuphal@hoppe.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "omar_kuphal"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "omar_kuphal@hoppe.example"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:40:08.946730"], ["updated_at", "2025-02-13 07:40:08.946730"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "omar_kuphal"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2025-02-13 08:40:08 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"omar_kuphal@hoppe.example", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "omar_kuphal@hoppe.example"], ["LIMIT", 1]]
+User logged in: omar_kuphal@hoppe.example (ID: 1)
+Redirected to http://127.0.0.1/
+Completed 302 Found in 17ms (ActiveRecord: 0.3ms | Allocations: 3397)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:40:09 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: omar_kuphal@hoppe.example (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2814)
+Importmap skipped missing path: application/application.js
+Importmap skipped missing path: application/controllers/application.js
+Importmap skipped missing path: application/controllers/index.js
+Importmap skipped missing path: application/custom_confirm.js
+Importmap skipped missing path: application/application.js
+Importmap skipped missing path: application/controllers/application.js
+Importmap skipped missing path: application/controllers/index.js
+Importmap skipped missing path: application/custom_confirm.js
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.8ms | Allocations: 320)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 3.7ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 9.5ms | Allocations: 2951)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 323)
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 20486)
+Completed 200 OK in 59ms (Views: 46.1ms | ActiveRecord: 0.1ms | Allocations: 26584)
+  [1m[36mScan Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scans"[0m
+Started POST "/scans" for 127.0.0.1 at 2025-02-13 08:40:09 +0100
+Processing by ScansController#create as HTML
+  Parameters: {"scan"=>{"hashcode"=>"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "file_name"=>"test.pdf", "file_type"=>"application/pdf", "file_size"=>"0", "upload_date"=>"2025-02-13 07:40:09 UTC"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: omar_kuphal@hoppe.example (ID: 1)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.2ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test.pdf"], ["file_type", "application/pdf"], ["hashcode", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"], ["file_size", 0], ["upload_date", "2025-02-13 07:40:09"], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-13 07:40:09.309907"], ["updated_at", "2025-02-13 07:40:09.309907"], ["scan_result", nil], ["file_data", nil], ["user_id", nil], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? AND "scans"."id" != ? LIMIT ?[0m  [["hashcode", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mScan Update (1.6ms)[0m  [1m[33mUPDATE "scans" SET "updated_at" = ?, "scan_result" = ? WHERE "scans"."id" = ?[0m  [["updated_at", "2025-02-13 07:40:09.313527"], ["scan_result", "{\"data\":{\"id\":\"test_id\"}}"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 141ms (Views: 0.6ms | ActiveRecord: 2.9ms | Allocations: 139946)
+  [1m[36mScan Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "scans"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "drew@mayer.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "drew"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "drew@mayer.example"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:40:09.325703"], ["updated_at", "2025-02-13 07:40:09.325703"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "drew"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2025-02-13 08:40:09 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"drew@mayer.example", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "drew@mayer.example"], ["LIMIT", 1]]
+User logged in: drew@mayer.example (ID: 1)
+Redirected to http://127.0.0.1/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 826)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:40:09 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: drew@mayer.example (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 360)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 1037)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2137)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 2717)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_1"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.2ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test_file.pdf"], ["file_type", nil], ["hashcode", "test_hashcode_1"], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-13 07:40:09.359517"], ["updated_at", "2025-02-13 07:40:09.359517"], ["scan_result", "{\"engine1\":{\"category\":\"malicious\",\"method\":\"static\",\"result\":\"detected\"},\"engine2\":{\"category\":\"undetected\",\"method\":\"dynamic\",\"result\":\"clean\"}}"], ["file_data", nil], ["user_id", 1], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mScan Load (0.1ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/scans/1/upvote" for 127.0.0.1 at 2025-02-13 08:40:09 +0100
+Processing by ScansController#upvote as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: drew@mayer.example (ID: 1)
+  [1m[36mScan Load (0.0ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."scan_id" = ? AND "votes"."user_id" = ? LIMIT ?[0m  [["scan_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."scan_id" = ? LIMIT ?[0m  [["user_id", 1], ["scan_id", 1], ["LIMIT", 1]]
+  [1m[36mVote Create (1.5ms)[0m  [1m[32mINSERT INTO "votes" ("user_id", "scan_id", "vote_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["scan_id", 1], ["vote_type", "up"], ["created_at", "2025-02-13 07:40:09.414250"], ["updated_at", "2025-02-13 07:40:09.414250"]]
+  [1m[36mScan Update All (0.1ms)[0m  [1m[33mUPDATE "scans" SET "vote_up" = COALESCE("vote_up", 0) + ? WHERE "scans"."id" = ?[0m  [["vote_up", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1/scans/1
+Completed 302 Found in 54ms (ActiveRecord: 3.0ms | Allocations: 35001)
+  [1m[36mScan Load (0.1ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tula_damore@kozey.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tula_damore"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "tula_damore@kozey.test"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:40:09.427776"], ["updated_at", "2025-02-13 07:40:09.427776"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "tula_damore"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2025-02-13 08:40:09 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"tula_damore@kozey.test", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tula_damore@kozey.test"], ["LIMIT", 1]]
+User logged in: tula_damore@kozey.test (ID: 1)
+Redirected to http://127.0.0.1/
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms | Allocations: 824)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:40:09 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: tula_damore@kozey.test (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 357)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 1030)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2119)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 2683)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_2"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.2ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test_file.pdf"], ["file_type", nil], ["hashcode", "test_hashcode_2"], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-13 07:40:09.466710"], ["updated_at", "2025-02-13 07:40:09.466710"], ["scan_result", "{\"engine1\":{\"category\":\"malicious\",\"method\":\"static\",\"result\":\"detected\"},\"engine2\":{\"category\":\"undetected\",\"method\":\"dynamic\",\"result\":\"clean\"}}"], ["file_data", nil], ["user_id", 1], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/scans/1/comments" for 127.0.0.1 at 2025-02-13 08:40:09 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"content"=>"Test comment"}, "scan_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: tula_damore@kozey.test (ID: 1)
+  [1m[36mScan Load (0.1ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "created_at", "updated_at", "scan_id", "likes_count", "dislikes_count") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["content", "Test comment"], ["user_id", 1], ["created_at", "2025-02-13 07:40:09.500609"], ["updated_at", "2025-02-13 07:40:09.500609"], ["scan_id", 1], ["likes_count", 0], ["dislikes_count", 0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1/scans/1
+Completed 302 Found in 26ms (ActiveRecord: 0.9ms | Allocations: 41519)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/session/new" for 127.0.0.1 at 2025-02-13 08:40:24 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 28.8ms | Allocations: 2540)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 2804)
+Importmap skipped missing path: application/application.js
+Importmap skipped missing path: application/controllers/application.js
+Importmap skipped missing path: application/controllers/index.js
+Importmap skipped missing path: application/custom_confirm.js
+Importmap skipped missing path: application/application.js
+Importmap skipped missing path: application/controllers/application.js
+Importmap skipped missing path: application/controllers/index.js
+Importmap skipped missing path: application/custom_confirm.js
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 1.1ms | Allocations: 318)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.3ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (Duration: 8.4ms | Allocations: 2828)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 20336)
+Completed 200 OK in 1448ms (Views: 84.3ms | ActiveRecord: 23.5ms | Allocations: 648617)
+Started GET "/assets/custom_confirm" for 127.0.0.1 at 2025-02-13 08:40:26 +0100
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "odell.conn@rice-kunde.test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "odell.conn"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "odell.conn@rice-kunde.test"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:40:28.037218"], ["updated_at", "2025-02-13 07:40:28.037218"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "odell.conn"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2025-02-13 08:40:28 +0100
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"odell.conn@rice-kunde.test", "password"=>"[FILTERED]", "remember_me"=>"0"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "odell.conn@rice-kunde.test"], ["LIMIT", 1]]
+User logged in: odell.conn@rice-kunde.test (ID: 1)
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1027)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:40:28 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: odell.conn@rice-kunde.test (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2784)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 1.1ms | Allocations: 102)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.3ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 6.8ms | Allocations: 1043)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 4562)
+Completed 200 OK in 44ms (Views: 15.8ms | ActiveRecord: 0.3ms | Allocations: 7361)
+Started GET "/assets/custom_confirm" for 127.0.0.1 at 2025-02-13 08:40:28 +0100
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:40:29 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: odell.conn@rice-kunde.test (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 362)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.4ms | Allocations: 101)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.8ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 6.5ms | Allocations: 1030)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 2119)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.1ms | Allocations: 2673)
+Started GET "/assets/custom_confirm" for 127.0.0.1 at 2025-02-13 08:40:29 +0100
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/session/new" for 127.0.0.1 at 2025-02-13 08:40:30 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 5.1ms | Allocations: 608)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 654)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 1.4ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (Duration: 5.3ms | Allocations: 920)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 2301)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.2ms | Allocations: 2936)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "edward@howe.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "edward"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "edward@howe.example"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:40:30.593374"], ["updated_at", "2025-02-13 07:40:30.593374"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "edward"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2025-02-13 08:40:30 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"edward@howe.example", "password"=>"[FILTERED]", "remember_me"=>"0", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "edward@howe.example"], ["LIMIT", 1]]
+User logged in: edward@howe.example (ID: 1)
+Redirected to http://127.0.0.1:3194/
+Completed 302 Found in 8ms (ActiveRecord: 0.2ms | Allocations: 871)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:40:30 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: edward@howe.example (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 363)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.3ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 5.1ms | Allocations: 1030)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 2125)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.1ms | Allocations: 2692)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_1"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.2ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test_file.pdf"], ["file_type", nil], ["hashcode", "test_hashcode_1"], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-13 07:40:30.769173"], ["updated_at", "2025-02-13 07:40:30.769173"], ["scan_result", "{\"engine1\":{\"category\":\"malicious\",\"method\":\"static\",\"result\":\"detected\"},\"engine2\":{\"category\":\"undetected\",\"method\":\"dynamic\",\"result\":\"clean\"}}"], ["file_data", nil], ["user_id", nil], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/scans/1" for 127.0.0.1 at 2025-02-13 08:40:30 +0100
+Processing by ScansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: edward@howe.example (ID: 1)
+  [1m[36mScan Load (0.2ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scan Load (0.0ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering scans/show.html.erb within layouts/application
+  Rendered shared/_scan_results_table.html.erb (Duration: 1.6ms | Allocations: 1036)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."scan_id" = ?[0m  [["scan_id", 1]]
+  [1m[36mComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."scan_id" = ? LIMIT ?[0m  [["scan_id", 1], ["LIMIT", 1]]
+  Rendered scans/show.html.erb within layouts/application (Duration: 77.8ms | Allocations: 66799)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.3ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 1037)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 82.5ms | Allocations: 68568)
+Completed 200 OK in 89ms (Views: 83.0ms | ActiveRecord: 1.0ms | Allocations: 69848)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/session/new" for 127.0.0.1 at 2025-02-13 08:40:30 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 2.3ms | Allocations: 609)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 655)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.4ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (Duration: 4.7ms | Allocations: 920)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 2302)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.3ms | Allocations: 2935)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "leonard@casper.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "leonard"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "leonard@casper.example"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:40:30.916917"], ["updated_at", "2025-02-13 07:40:30.916917"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "leonard"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2025-02-13 08:40:30 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"leonard@casper.example", "password"=>"[FILTERED]", "remember_me"=>"0", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "leonard@casper.example"], ["LIMIT", 1]]
+User logged in: leonard@casper.example (ID: 1)
+Redirected to http://127.0.0.1:3228/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 839)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:40:30 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: leonard@casper.example (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 364)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 1030)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2126)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 2692)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_2"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.3ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test_file.pdf"], ["file_type", nil], ["hashcode", "test_hashcode_2"], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-13 07:40:30.952728"], ["updated_at", "2025-02-13 07:40:30.952728"], ["scan_result", "{\"engine1\":{\"category\":\"malicious\",\"method\":\"static\",\"result\":\"detected\"},\"engine2\":{\"category\":\"undetected\",\"method\":\"dynamic\",\"result\":\"clean\"}}"], ["file_data", nil], ["user_id", 1], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/scans/1" for 127.0.0.1 at 2025-02-13 08:40:30 +0100
+Processing by ScansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: leonard@casper.example (ID: 1)
+  [1m[36mScan Load (0.1ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scan Load (0.0ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering scans/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_scan_results_table.html.erb (Duration: 0.1ms | Allocations: 90)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."scan_id" = ?[0m  [["scan_id", 1]]
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."scan_id" = ? LIMIT ?[0m  [["scan_id", 1], ["LIMIT", 1]]
+  Rendered scans/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1671)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.3ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | Allocations: 1029)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3424)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.5ms | Allocations: 4270)
+Started POST "/scans/1/comments" for 127.0.0.1 at 2025-02-13 08:40:30 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"content"=>"Test comment"}, "commit"=>"Post Comment", "scan_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: leonard@casper.example (ID: 1)
+  [1m[36mScan Load (0.1ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "created_at", "updated_at", "scan_id", "likes_count", "dislikes_count") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["content", "Test comment"], ["user_id", 1], ["created_at", "2025-02-13 07:40:30.995634"], ["updated_at", "2025-02-13 07:40:30.995634"], ["scan_id", 1], ["likes_count", 0], ["dislikes_count", 0]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:3228/scans/1
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms | Allocations: 2130)
+Started GET "/scans/1" for 127.0.0.1 at 2025-02-13 08:40:31 +0100
+Processing by ScansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: leonard@casper.example (ID: 1)
+  [1m[36mScan Load (0.1ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scan Load (0.0ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering scans/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_scan_results_table.html.erb (Duration: 0.3ms | Allocations: 90)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."scan_id" = ?[0m  [["scan_id", 1]]
+  [1m[36mComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."scan_id" = ? LIMIT ?[0m  [["scan_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."scan_id" = ? ORDER BY "comments"."created_at" DESC[0m  [["scan_id", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommentVote Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comment_votes" WHERE "comment_votes"."comment_id" = ? AND "comment_votes"."vote_type" = ?[0m  [["comment_id", 1], ["vote_type", "like"]]
+  [1m[36mCommentVote Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comment_votes" WHERE "comment_votes"."comment_id" = ? AND "comment_votes"."vote_type" = ?[0m  [["comment_id", 1], ["vote_type", "dislike"]]
+  Rendered scans/show.html.erb within layouts/application (Duration: 21.2ms | Allocations: 6331)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.3ms | Allocations: 100)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | Allocations: 1029)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 8089)
+Completed 200 OK in 31ms (Views: 24.9ms | ActiveRecord: 2.6ms | Allocations: 8955)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/session/new" for 127.0.0.1 at 2025-02-13 08:40:31 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 1.3ms | Allocations: 607)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 653)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 920)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2300)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 2932)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "walter@mclaughlin-baumbach.example"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "walter"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "auth_provider", "auth0_uid", "username", "password_reset_token", "remember_token", "remember_token_expires_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "walter@mclaughlin-baumbach.example"], ["password_digest", "[FILTERED]"], ["created_at", "2025-02-13 07:40:31.072105"], ["updated_at", "2025-02-13 07:40:31.072105"], ["auth_provider", "local"], ["auth0_uid", nil], ["username", "walter"], ["password_reset_token", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["remember_token_expires_at", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2025-02-13 08:40:31 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"walter@mclaughlin-baumbach.example", "password"=>"[FILTERED]", "remember_me"=>"0", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Current User:  (ID: )
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "walter@mclaughlin-baumbach.example"], ["LIMIT", 1]]
+User logged in: walter@mclaughlin-baumbach.example (ID: 1)
+Redirected to http://127.0.0.1:3181/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 842)
+Started GET "/" for 127.0.0.1 at 2025-02-13 08:40:31 +0100
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: walter@mclaughlin-baumbach.example (ID: 1)
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 363)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 1030)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2125)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 2685)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mScan Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "scans" WHERE "scans"."hashcode" = ? LIMIT ?[0m  [["hashcode", "test_hashcode_3"], ["LIMIT", 1]]
+  [1m[36mScan Create (0.3ms)[0m  [1m[32mINSERT INTO "scans" ("file_name", "file_type", "hashcode", "file_size", "upload_date", "vote_up", "vote_down", "created_at", "updated_at", "scan_result", "file_data", "user_id", "vt_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["file_name", "test_file.pdf"], ["file_type", nil], ["hashcode", "test_hashcode_3"], ["file_size", nil], ["upload_date", nil], ["vote_up", 0], ["vote_down", 0], ["created_at", "2025-02-13 07:40:31.110252"], ["updated_at", "2025-02-13 07:40:31.110252"], ["scan_result", "{\"engine1\":{\"category\":\"malicious\",\"method\":\"static\",\"result\":\"detected\"},\"engine2\":{\"category\":\"undetected\",\"method\":\"dynamic\",\"result\":\"clean\"}}"], ["file_data", nil], ["user_id", nil], ["vt_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/scans/1" for 127.0.0.1 at 2025-02-13 08:40:31 +0100
+Processing by ScansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: walter@mclaughlin-baumbach.example (ID: 1)
+  [1m[36mScan Load (0.1ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scan Load (0.0ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering scans/show.html.erb within layouts/application
+  Rendered shared/_scan_results_table.html.erb (Duration: 0.2ms | Allocations: 90)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."scan_id" = ?[0m  [["scan_id", 1]]
+  [1m[36mComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."scan_id" = ? LIMIT ?[0m  [["scan_id", 1], ["LIMIT", 1]]
+  Rendered scans/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1261)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.4ms | Allocations: 100)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 1029)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3014)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 3866)
+Started POST "/scans/1/upvote" for 127.0.0.1 at 2025-02-13 08:40:31 +0100
+Processing by ScansController#upvote as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: walter@mclaughlin-baumbach.example (ID: 1)
+  [1m[36mScan Load (0.1ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."scan_id" = ? AND "votes"."user_id" = ? LIMIT ?[0m  [["scan_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."scan_id" = ? LIMIT ?[0m  [["user_id", 1], ["scan_id", 1], ["LIMIT", 1]]
+  [1m[36mVote Create (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("user_id", "scan_id", "vote_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["scan_id", 1], ["vote_type", "up"], ["created_at", "2025-02-13 07:40:31.169214"], ["updated_at", "2025-02-13 07:40:31.169214"]]
+  [1m[36mScan Update All (0.2ms)[0m  [1m[33mUPDATE "scans" SET "vote_up" = COALESCE("vote_up", 0) + ? WHERE "scans"."id" = ?[0m  [["vote_up", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:3181/scans/1
+Completed 302 Found in 34ms (ActiveRecord: 2.1ms | Allocations: 20603)
+Started GET "/scans/1" for 127.0.0.1 at 2025-02-13 08:40:31 +0100
+Processing by ScansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Current User: walter@mclaughlin-baumbach.example (ID: 1)
+  [1m[36mScan Load (0.1ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Scan Load (0.0ms)[0m  [1m[34mSELECT "scans".* FROM "scans" WHERE "scans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering scans/show.html.erb within layouts/application
+  Rendered shared/_scan_results_table.html.erb (Duration: 0.1ms | Allocations: 90)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."scan_id" = ?[0m  [["scan_id", 1]]
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."scan_id" = ? LIMIT ?[0m  [["scan_id", 1], ["LIMIT", 1]]
+  Rendered scans/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1260)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.4ms | Allocations: 100)
+  Rendered shared/_dark_mode_switch.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | Allocations: 1029)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 3018)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.6ms | Allocations: 3890)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
